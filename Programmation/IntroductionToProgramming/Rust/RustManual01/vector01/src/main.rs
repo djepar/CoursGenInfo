@@ -20,8 +20,27 @@ fn main() {
             v2.push(i);
             i+= 1;
         }
+        v2.pop();
     }
     for i in &v2 {
         println!("{}", i);
     }
+    #[derive(Debug)]
+    enum SpreadsheetCell {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+    
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    
+    ];
+
+    for j in &row {
+        println!("{:?}", j);
+    }
+
 }

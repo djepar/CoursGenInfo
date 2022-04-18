@@ -1079,3 +1079,118 @@ v.push(6);
 v.push(7);
 
 ```
+
+### Dropping a Vector Drops Its Elements
+Like for other struct, a vector is freed when it goes out of scope.
+```
+{
+    let v = vec![1,2,3,4];
+
+    //do stuff with v
+} // <- goes out of scope and is freed here. 
+
+```
+
+### Reading Elements of Vectors
+Two ways : indexing and the get method. 
+```
+let v = vec![1,2,3,4,5];
+let third: &i32 = &v[2];
+println!("The third element is {}", third);
+
+match v.get(2) {
+    Some(third) => println!("The third element is {}", third),
+    None => println!("There is no third element."),
+}
+
+```
+
+### Iterating over the Values in a Vector
+
+```
+let v = vec![100,32,72];
+for i in &v {
+    println!("{}", i);
+}
+
+//for mut ref
+
+let mut v = vec![100, 32, 57];
+    for i in &mut v {
+        *i += 50; // '*' deference operator to change the value that the mutable reference refers to. 
+    }
+
+```
+
+### Using an Enum to Store Multiple Types
+Vector can store values of the same type, so we can use an enum type to have different type in the Vector. 
+
+```
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+
+let row = vec![
+    SpreadsheetCell::Int(3),
+    SpreadsheetCell::Text(String::from("blue")),
+    SpreadsheetCell::Float(10.12),
+
+];
+
+```
+
+## Storing UTF-8 Encoded Text with Strings
+
+### What is a String?
+
+In the core language, Rust has one string type, the string slice : &str (often written without the &).
+The string slice is a reference to a UTF-8 encoded string type that is store elsewhere. 
+Both &str and String are UTF-8 encoded. 
+The Rust standard library also include : OsString, OsStr, CString and CStr
+String is foir owned and str is for borrowed variant of each of those string type. 
+
+### Creating a New String 
+`let mut s = String::new();`
+
+To add some data from the start
+
+```
+
+    let data = "initial contents";
+
+    let s = data.to_string();
+
+    // the method can also works on a literal directly.
+
+    let bonjour = "Bonjour High".to_string();
+    println!("{}, {}", s, bonjour);
+
+
+```
+
+### Updating a String
+A String can grow in size and its contents can change. 
+
+#### Appending to a String with push_str and push
+
+```
+let mut bonjour = "Bonjour High".to_string();
+
+
+bonjour.push_str(" as fuck");
+
+println!("{}, {}", s, bonjour);
+
+```
+
+#### Concatenation with the '+' Operator or the format! Macro
+
+```
+let s3 = bonjour + &s;
+println!("{}, {}", s, s3);
+```
+
+The '+' operator use the add method whose signature looks something like : 
+    `fn add(self, s: &str) -> String {something something}`
