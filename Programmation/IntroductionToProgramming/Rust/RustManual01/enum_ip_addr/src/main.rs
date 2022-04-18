@@ -1,15 +1,10 @@
 //See chapter 6 Enum
 
 enum IpAddrKind {
-    V4(String), 
+    V4(u8, u8, u8, u8), 
     V6(String),
 }
 
-
-
-fn route(ip_kind: IpAddrKind) {
-    print("Bonjoul");
-}
 
 fn main() {
 

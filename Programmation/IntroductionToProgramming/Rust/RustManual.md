@@ -762,4 +762,320 @@ The Rust enums is similar to the
 
 ## Defining an Enum
 Exemple, we get ip adresses that can either be v4 or v6. Because there is only a few option available, it make a good enumerate. 
+We use a double colon in the creation of an instances 
+    let four = IpAddrKind::V4;
+    let six = IpAddrKind::V6;
 
+The name of each enum variant that we define also becomes a function that construct an instance of the enum:
+    IpAdd::V4() for example is a functionn call taht take a String argument and returns an instance of the IpAddr type. 
+We get automatically the construction function when we define an enum. 
+
+Everything can go to an enum : strings, numeric types, structs and even another enum.
+
+
+## The match Control Flow Construct
+Match is a control flow construct : compare a value against a series of patterns and then execute code based on which pattern matches. 
+
+To define a match expression that has the variants of the enum as its pattern
+```
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+
+fn value_in_cents(coin: Coin) -> u8 {
+    match coin {
+        Coin::Penny => 1,    //this are the arms of the code
+        Coin::Nickel => 5,      //each arms is made of a pattern(Coin::Penny) and  some code.
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+    }
+}
+```
+No need of curly bracket for small code, but for bigger code it's important. 
+```
+    match coin {
+        Coin::Penny => {
+            println!("Lucky penny!");
+            1
+        } 
+
+        Coin::Nickel => 5, 
+        Coin::Dime => 10,
+
+        Coin::Quarter => 25,
+    }
+```
+
+### Matching with Option
+```
+   fn plus_one(x: Option<i32>) -> Option<i32> {
+        match x {
+            None => None,
+            Some(i) => Some(i + 1),
+        }
+    }
+
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
+```
+Rust Matches are exhaustive, if we take out 
+None in the match x, we didn't exhaust every last possibility and the code will not be valid. 
+
+### Catch-all Patterns and the _ Placeholder
+We can use other or '_' if we need a catfch-all patterns. 
+Must be at the end. 
+```
+match dice_roll {
+    3 => add_fancy_hat(),
+    7 => remove_fancy_hat(),
+    other => move_player(other),
+}
+match dice_roll {
+    3 => add_fancy_hat(),
+    7 => remove_fancy_hat(),
+    _ => reroll(),
+}
+match dice_roll {
+    3 => add_fancy_hat(),
+    7 => remove_fancy_hat(),
+    _ => (),
+}
+
+```
+
+## Concise Control Flow with if let
+For handling values that match one pattern while ignoring the rest.  
+
+#### The long version
+```
+let config_max = Some(3u8);
+match config_max {
+    Some(max) => println!("The maximum is configured to be {}", max),
+    u => (),
+}
+```
+
+#### The short version
+```
+let config_max = Some(3u8);
+if let Some(max) = config_max {
+    println!("The maximum is configured to be {}", max);
+}
+```
+
+# 7 Managing Growing Projects with Packages, Crates, and Modules
+Packages : A feature of Cargo for building, testing and sharing creates. 
+Crates : A tree of modules that produces a library or executable
+Modules and use: for controloing the organization, scope and privacy of paths. 
+Paths: a ways of naming an item, such as a struct, function or module.
+
+## 7.1 Packages and Crates
+Crates are either binary or library. 
+
+Packages is one or more crates that provide a set of functionality. Contains also a Cargo.toml file that describe how to build those crates. 
+
+A crate should group related functionality together in a scope. We can use for example trait of a crate as a function in the main because of the scope (example, Rng of rand can be use with rand or it can be a name of a new function in the main of my program.)
+
+## 7.2 Defining Modules to Control Scope and Privacy
+the 'use' keyword : bring a path into scope. 
+the 'pub' keyword to make item public. 
+the 'as' keyword for external package and the glob operator. 
+
+Modules : 
+    - Let us organize a code within a crate into groups for readability and easy reuse.
+    - Control the privacy of items (privacy boundary) (public mean it's can be use outside the code and private cannot be use outside the code.)
+
+We put the modules in the library files. 
+To create a library files with cargo : cargo new --lib library-name
+    
+## 7.3 Paths for Referring to an Item in the Module Tree
+Path can be either absolute or relative. 
+In both case, the path is followed by one or mode identifiers separated with double colons (:)
+
+Modules are privacy boundary, so if we want a function or struct to be private, we can put it in a module. 
+
+All items in Rust are private by default. 
+    - Parent module can't use the private items inside child modules
+    - Child modules can use the items in their ancestor modules. 
+
+To expose inner parts of child modules to ancestor modules : 'pub' keyword. 
+
+```
+pub fn eat_at_restaurant() {}
+```
+
+Making the module public with the pub keyword doesn't make the content public. 
+
+```
+mod front_of_house {
+    pub mod hosting {
+        pub fn add_to_waitlist() {}
+    }
+}
+
+pub fn eat_at_restaurant() {}
+```
+
+Privacy for absolute path :
+ - we start with crate (the root of our crate's module tree)
+ - front_of_house is not pub but the child eat_at_restaurant is defined in the same modules, so we can refer to front_of_house from eat_at_restaurant. 
+
+Privacy for relative path: 
+- the path starts from front_of_house. 
+
+### Starting Relative Path with super
+We can construct relative paths starting in the parent module by using the 'super' keyword. Like the '..'
+Easier if we move different module. 
+
+### Making Structs and Enums Public
+We can use 'pub' for structs and enums
+But  : 
+ - The pub will only make the struct public, not the field of the struct. 
+ - We can make all field public with 'pub' case by case.
+ - When creating an enum public, all of is variants are public. 
+
+## 7.4 Bringing Paths into Scope with the use keyword
+How to bring a path into scope and all their items : with 'use' keyword. 
+For example : use crate::front_of_house::hosting
+    hosting became a valid name in that scope. 
+
+### Creating Idiomatic 'use' Path
+The idiomatic way to bring add_to_waitlist into scope
+```
+use crate::front_of_house::hosting::add_to_waitlist;
+
+pub fn eat_at_restaurant() {
+    add_to_waitlist();
+    add_to_waitlist();
+    add_to_waitlist();
+}
+```
+The long way to put add_to_waitlist into scope. :
+```
+use self::front_of_house::hosting;
+
+pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+}
+```
+
+#### Exception
+We caan't bring two item with the same name into scope with 'use' statement. 
+In that case we need to do :
+```
+use std::fmt;
+use std::io;
+
+fn function1() -> fmt::Result {
+    //--snip--
+}
+
+
+fn function2() -> io::Result<()> {
+    //--snip--
+
+}
+```
+
+
+### Providing New Names with the as Keyword
+If we have two types with the same name, we can use as to give a new local name or alias for the type. 
+
+```
+use std::fmt::Result;
+use std::io::Result as IoResult;
+
+fn function1() -> Result {
+    //--snip
+}
+
+
+fn function2() -> IoResult<()> {
+    //--snip
+}
+```
+
+### Re-exporting Names with pub use
+Using 'use', the name in the new scope is private. 
+Re-exporting : We can combine 'pub' and 'use' to enable the code that callls our code to refer to that name as if it had been defined in that code's scope. 
+
+### Using External Package
+We need to add the external packages we want to the Cargo.toml. 
+For example : rand = "0.8.3"
+And we need to write in the code :
+use rand::Rng;
+
+The std library is also a crate that's external but we don't need to write it in Cargo.toml, just in the code. 
+For example  use std::collections::HashMap;
+
+
+### Using Nested Paths to Clean Up Large use Lists
+Not nested:
+```
+use std::cmp::Ordering;
+use std::io;
+```
+Nested :
+```
+use std::{cmp::Ordering, io};
+```
+The nested paths can be at any level : 
+```
+use std::io::{self, Write};
+```
+
+### The Glob Operator
+To defines all public items in a path into scope, we use the glob operator '*'
+```
+use std::collections::*;
+```
+
+## Separating Modules into Different Files 
+We just put the other files in the src under name.rs
+Then we can use it by written : 
+```
+mod front_of_house; //using a semi-colon at the place of a block ({} ) tells Rusts to load the contents of the module from another file with the same name as the module.  
+
+pub use crate::front_of_house::hosting;
+
+```
+
+
+# 8. Common Collections
+ - Data structures are called collections.  
+ - Collections can contain multiples values types. 
+ - They are store in the heap, so we don't need to know the size. 
+
+Popular collection in std Rust : 
+ - Vector : store a variable number of values next to each other. 
+ - String : collection of characters. 
+ - Hash map : allows you to associate a value with a particular key. It's a particular implementation of the more general data structure called a map.
+
+## 8.2 Storing Lists of Values with Vectors
+### Creating a New Vector
+
+`let v: Vec<i32> = Vec::new();`
+
+Vectors are implemented using generics (see Chapter 10)
+
+#### vec! Macro
+Using vec! let you create a new vector that holds the value you give it. 
+
+`let v = vec![1,2,3]`
+
+### Updating a Vector 
+To add an elements : we use the push method. 
+
+```
+let mut v = Vec::new();
+v.push(5);
+v.push(6);
+v.push(7);
+
+```
