@@ -1,0 +1,1 @@
+C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\restaurant-modules\target\debug\restaurant-modules.exe: C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\restaurant-modules\src\main.rs

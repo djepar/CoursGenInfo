@@ -1,0 +1,1 @@
+C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\method_syntax\target\debug\method_syntax.exe: C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\method_syntax\src\main.rs

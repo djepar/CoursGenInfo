@@ -1,1 +1,0 @@
-C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\all-string-attached\target\debug\all-string-attached.exe: C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\all-string-attached\src\main.rs
