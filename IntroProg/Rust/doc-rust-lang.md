@@ -191,14 +191,14 @@ You can compile the program and give the executable to someone else and they can
             Err(_) => continue;
         };
 
-Chapter 3 : Common programming concepts
-    Keywords
-        Words reserved by the language only.
-        We cannot use these words as names of variables or functions
-    Variables and Mutability
-        A immutable variable once bound to a name can't change that value.
-        To have a mutable variable 
-            let mut x = 5;
+# Chapter 3 : Common programming concepts
+### Keywords
+Words reserved by the language only.
+We cannot use these words as names of variables or functions
+### Variables and Mutability
+A immutable variable once bound to a name can't change that value.
+To have a mutable variable : `let mut x = 5;`
+
     Constants
         Like immutables variables, constants are values that are bound to a name and are not allowed to change
         Compare to variable, a constant cannot becomme mutable with 'mut'
@@ -304,7 +304,7 @@ Chapter 3 : Common programming concepts
             Rust is an expression-based language. 
             Statements : instruction that perform action but do not return a value. 
                 Function definitions are also statements
-            Expression evaluate ti a resulting value. 
+            Expression evaluate a resulting value. 
                 Calling a function or a macro is an expression
                 A new scope block created with curly bracket is an expression       
                     fn main() {
@@ -321,13 +321,13 @@ Chapter 3 : Common programming concepts
                 We can use the keyword and specifying a value, but most functions return the last expression implicitly. 
         Comments
             Ignore by the compiler
-            Written with //
+            Written with // or /* comment */
         Control Flow
             The ability to run some code depending on a if condition or to run some code repeatedly while a condition is true.
             if expression   
                 Branch the code depending on condition
                     Called arms
-                start with if keyword
+                Start with if keyword
                 Condition must be a bool, if the condition isn't a bool, wwe will get an error. 
             Handling multiple conditions with else if
                 You can use multiple conditions by combining if and else in an else if expression. 
@@ -1257,10 +1257,82 @@ use std::collections::HashMap;
 let teams = vec![String::from("Blue"), String::from("Yellow")];
 let initial_scores = vec![10,50];
 
-let mut scores: HashMap<_, _> = 
+let mut scores: HashMap<_, _> = //let Rust find the type of the data
     teams.ionto_iter().zip(initial_scores.into()).collect
 
 ```
+
+### Hash Maps and Ownership
+
+For types that implement the Copy trait like i32, the values are copied into the hash map.
+For other types like String, the values will be moved and the hash map will be the owner of those values. 
+
+If we instert references to values into the hash map, the values won't be moved into the hash map. The valuers that the references point to must be valid for at least as long as the hash map is valid. 
+
+### Accessing Values in a Hash Map
+
+
+```
+let team_name = String::from("Blue");
+let score = map.get(&team_name); //wrapped in a Some because of get (return an Option<&V>)
+```
+
+We can iterate over each key/value pair in a hash map in a similar manner as we do with vectors, using a for loop : 
+
+```
+for (key, value) in &scores {
+    println!("{}: {}", key, value);
+}
+
+```
+
+### Updating a Hash Map
+Only one value by key.
+
+#### Overwriting a value : 
+
+```
+scores.insert(String::from("Blue"), );
+scores.insert(String::from("Blue"), 25);
+
+```
+
+#### Only Inserting a Value if the Key has no Value :
+Entry is a special API that return an enum (called Entry) 
+
+
+```
+
+let mut scores = HashMap::new();
+
+scores.insert(String::from("Blue"), 10);
+
+scores.entry(String::from("Yellow")).or_insert(50);
+scores.entry(String::from("Blue")).or_insert(50);
+
+println!("{:?}", scores);
+```
+The or_insert method on Entry : return a mutable reference to the value for the corresponding Entry key if that key existes, and if not, inserts the parameter as the new value for this key and returns a mutable reference to the new value. 
+
+#### Updating a Value Based on the Old Value
+
+
+```
+let text = "hello world wonderful world";
+
+let mut map = HashMap::new();
+
+for word in text.split_whitespace() {
+    let count = map.entry(word).or_insert(0);
+    *count += 1;  //* '*' to deference count */
+}
+
+println!("{:?}", map);
+
+```
+### Hashing Functions
+SipHash is the default hashing function, slower but resistance to Denial of Service(DOS)
+
 
 
 

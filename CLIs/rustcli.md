@@ -67,7 +67,7 @@ To compile and run : `cargo run`
 To compile quietly : `cargo run --quiet`
 
 ## Writing and Running Integration Tests (p. 6 - __)
-Inside-out or unit testing are the two types of integration tests (will be seeing in chapter 4)
+Inside-out or unit testing are one type of test(will be seeing in chapter 4). The other type is outside-in or integration testing, test like a user would.
 
 "The convention in Rust projects is to create a tests directory parallel to the src directory for testing code" (p.6)
 
@@ -82,7 +82,7 @@ fn works() {
 }
 
 ```
-bv 
+ 
 #### To create a more complext test (p. 8-9)
 
 ```
