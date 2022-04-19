@@ -1194,3 +1194,78 @@ println!("{}, {}", s, s3);
 
 The '+' operator use the add method whose signature looks something like : 
     `fn add(self, s: &str) -> String {something something}`
+
+Some language don't take 1 byte each character like cyrilic (they take two)
+
+
+#### Bytes, Scalar Values and Grapheme Clusters (letter-ish), the three ways to look at strings from a rustecean perspectve. 
+
+Vector : String are stored as a vector. 
+
+Each char doesnt have the same number of bytes for each type of alphabet
+
+### Slicing String
+
+We cannot index a String in Rust. When we slice string we need to tell where it's start and where it's end. 
+`let s = &hello[0..4]`
+
+It's dangerous to slices string. 
+
+### Iterating Over 
+The best way is to be explicit if we want characters or bytes. 
+ Example : 
+
+```
+
+for c in "नमस्ते".chars() {
+    println!("{}", c);
+}
+```
+```
+for b in "नमस्ते".bytes() {
+    println!("{}", b);
+}
+```
+
+## Storing Keys with Associated Values in Hash Maps
+`HashMap<K,V>` 
+This type stores a mapping of keys of type K to values of type V using a hashing functino. 
+In other programming languages, we call that : hash, map, object, hash table, dictionary, or associative array.
+
+### Creating a New Hash Map
+
+```
+use std::collections::HashMap;
+
+let mut scores = HashMap::new();
+
+scores.insert(String::from("Blue"),10);
+scores.insert(String::from("Yellow"),50);
+```
+We created two teams (keys), one Blue with 10 points 
+(values) and one Yellow with 50 points. 
+
+Hash maps data are store on the heap. 
+
+Hash maps are homogenous, all of the keys must be of the same type and all of the values must have the same type
+
+Another way of constructing a hash map : using iterators and the collect method on a vector of tuples, where each tuple consists of a key and its values. 
+
+```
+use std::collections::HashMap;
+
+let teams = vec![String::from("Blue"), String::from("Yellow")];
+let initial_scores = vec![10,50];
+
+let mut scores: HashMap<_, _> = 
+    teams.ionto_iter().zip(initial_scores.into()).collect
+
+```
+
+
+
+
+
+```
+```
+```
