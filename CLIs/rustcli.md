@@ -98,6 +98,26 @@ fn run() {
 }
 
 ```
+We can see the path with echo $PATH or $env:Path with Powershell. 
+
+To translate the ':' to '\n' we just need to 
+echo $PATH | tr : '\n'
+
+To run the program we can write `.\name_of_file` in the debug file of the target file. 
+
+With `$?` we can access the exit status of the most recent command 
+like 
+
+```
+$ true
+$ echo $?
+0
+```
+
+"All the programs you will write in this book will be expected to return zero when terminate normally and a nonzero when there is an error. " (p. 12)
+
+
+
 
 
 
