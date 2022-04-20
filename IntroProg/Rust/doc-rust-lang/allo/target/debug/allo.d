@@ -1,1 +1,0 @@
-C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\allo\target\debug\allo.exe: C:\Users\jpara\Documents\Etudes\CoursGeneralinformatique\Programmation\IntroductionToProgramming\Rust\RustManual01\allo\src\main.rs

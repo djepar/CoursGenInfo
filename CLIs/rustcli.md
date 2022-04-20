@@ -84,7 +84,7 @@ fn works() {
 ```
  
 #### To create a more complext test (p. 8-9)
-
+in the test\cli.rs
 ```
 use std::process::Command;
 
