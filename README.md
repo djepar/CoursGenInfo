@@ -1,2 +1,4 @@
 # CoursGeneralinformatique
-Notes for a computer science general course. 
+Cours Général d'informatique. 
+
+A general course of computer science. 
