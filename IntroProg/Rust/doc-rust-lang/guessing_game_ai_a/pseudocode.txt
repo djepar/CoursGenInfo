@@ -1,0 +1,14 @@
+small_bound = 0;
+highest_bound = 101;
+
+loop {
+    try =  (highest_bound- small_bound) // 2
+    match   
+        The number is higher 
+            small_bound = try
+        The number is smaller
+            highest_bound = try
+        You  won
+            break;
+}
+

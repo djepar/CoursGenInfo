@@ -7,26 +7,31 @@ Given a list of integers, use a vector and return the median (when sorted, the v
 
 
 fn main() {
-    let sorted_lists_integer = vec![1,2,3,4,4,5,6,7,7,8,8,8];
-
-    //let median = median_sorted(sorted_lists_integer);
-    
-}
-
-fn sorting_list(list : &Vec<u32>) {
+    let mut sorted_lists_integer = vec![1,2,3,4,4,5,6,7,7,8,8,8];
+    let mut sorted = false;
     while !sorted {
-        for i in &list {
-            if *i < *(i+1) {
-                let buff = *i;
+        for i in &mut sorted_lists_integer {
+            sorted = true;
+            if *i < (*i+1) {
+                let mut buff = *i;
                 *i = *i+1;
-                *(i+1) = buff; 
+                (*i+1) = buff; 
+                sorted = false;
             }
         
         } 
     
     }
+    
+    for i in &mut sorted_lists_integer {
+        println!("{}", *i);
+    } 
+    //let median = median_sorted(sorted_lists_integer);
+    
+}
+/*
+fn sorting_list(list : &mut Vec<u32>) {
 
-    return list
 }
 
 fn median_sorted(list : Vec<u32>) {
@@ -45,3 +50,4 @@ fn median_sorted(list : Vec<u32>) {
     */
 }
 
+ */
