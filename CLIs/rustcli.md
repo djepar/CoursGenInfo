@@ -66,10 +66,12 @@ To compile and run : `cargo run`
 
 To compile quietly : `cargo run --quiet`
 
-## Writing and Running Integration Tests (p. 6 - __)
+## Writing and Running Integration Tests (p. 6 - 9)
 Inside-out or unit testing are one type of test(will be seeing in chapter 4). The other type is outside-in or integration testing, test like a user would.
 
 "The convention in Rust projects is to create a tests directory parallel to the src directory for testing code" (p.6)
+
+
 
 ```
 #[test] //tells Rust to run this function when testing. 
@@ -82,10 +84,14 @@ fn works() {
 }
 
 ```
- 
-#### To create a more complext test (p. 8-9)
+To run the test : `cargo test`
+
+
+assert! verify that some expectation i true, or assert_eq! to verify that something is an expected value. (p.7)
+#### To create a more complext test (p. 8-12)
 
 ```
+//in tests/cli.rs
 use std::process::Command;
 
 #[test]
@@ -98,12 +104,49 @@ fn run() {
 }
 
 ```
+Should run : 
+```
+running 1 test
+tests run ... ok
+```
+
+
+
+
+#### Path (p.9)
 We can see the path with echo $PATH or $env:Path with Powershell. 
 
 To translate the ':' to '\n' we just need to 
 echo $PATH | tr : '\n'
 
 To run the program we can write `.\name_of_file` in the debug file of the target file. 
+
+
+#### Dependencies for dev
+
+To find the program in the crate directory : assert_cmd
+
+So we need to change Cargo.toml like this : 
+```
+[package]
+name = "chapter1"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dev-dependencies]
+assert_cmd = "1"
+```
+
+#### Test 01 : runs
+This first test just look to see if the program appears to succeed
+
+
+#### Understanding Program Exit Values (p.11)
+"What does it mean for a program to run successfully? Command-line program should report a final exit status to the operating system to indicate success or failure. The POSIX standards dictate that the standard exit code is 0 to indicate success and any number from 1 to 255 otherwise. " (p.11)
 
 With `$?` we can access the exit status of the most recent command 
 like 
@@ -114,8 +157,14 @@ $ echo $?
 0
 ```
 
-"All the programs you will write in this book will be expected to return zero when terminate normally and a nonzero when there is an error. " (p. 12)
-
+### Testing the Program Output
+```
+\\in tests/cli.rs change the fn runs to : 
+#[test]
+fn runs() {
+    let mut cmd = Command::cargo_bin("chapter1").unwrap();
+    cmd.assert().success().stdout("Hello, world!\n");
+}
 
 
 
