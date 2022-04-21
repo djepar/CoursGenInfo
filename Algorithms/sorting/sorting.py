@@ -16,14 +16,3 @@ listA = sorting(listA)
 listB = sorting(listB)
 print(listA)
 print(listB)
-"""
-buff = 0
-sorted = False
-for i in range(len(list)):
-    sorted = True
-        if list[i] < list[i+1]:
-            buff = list[i]
-            list[i] = list[i+1]
-            list[i+1] = buff
-            sorted = False
-print(list)"""

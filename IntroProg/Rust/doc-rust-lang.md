@@ -372,8 +372,8 @@ To have a mutable variable : `let mut x = 5;`
                         }
 # Chapter 4 : Understanding Ownership                 
 ## 4.1 What is Ownership
-    Enable rust to make memory safety guarantess without a garbage collector.
-    Set of rules that governs how a rust program manages memory
+    Enable Rust to make memory safety guarantess without a garbage collector.
+    Set of rules that governs how a Rust program manages memory
         Ways to manage memory
             Garbage collection
             Manually manage memory
@@ -671,8 +671,10 @@ fn main() {
 The self   is short for &self
 We can have a mutable self, we just have to wrote &mut self as the first parameter
 
-Why using methods instead of functions : for organization
-    The user know where to find all the capabilities of a struct
+
+Why using methods instead of functions : for organization.
+
+The user know where to find all the capabilities of a struct
 
 We can also name a method the same name as a struct's field
 
@@ -712,6 +714,7 @@ fn main() {
 
 #### Associated Function
 All functions defined within an impl block are called associated functions
+
     We can define associated functions without self
         When we don't need and instance of the type to work with. 
         For exemple String::from
@@ -728,9 +731,8 @@ All functions defined within an impl block are called associated functions
             let sq = Rectangle::square(3)
 
 #### Multiple impl Blocks
-    We can do this :
 ```
-    impl Rectangle {
+impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
@@ -744,7 +746,7 @@ impl Rectangle {
 ```
 Or this without a problem (but this one is better, because more clear):
 ```
-    impl Rectangle {
+impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
@@ -756,18 +758,20 @@ Or this without a problem (but this one is better, because more clear):
 
 # Enums and Pattern Matching
 Enums for enumerations.
-Allow us to define a type by enuymerating its possible variants. 
-The Rust enums is similar to the 
-    algebraic data types of functional languages such as F#, OCaml and Haskell
+Allow us to define a type by enumerating its possible variants. 
+
+The Rust enums is similar to the algebraic data types of functional languages such as F#, OCaml and Haskell
 
 ## Defining an Enum
-Exemple, we get ip adresses that can either be v4 or v6. Because there is only a few option available, it make a good enumerate. 
+Exemple, we get IP adresses that can either be v4 or v6. Because there is only a few option available, it make a good enumerate. 
 We use a double colon in the creation of an instances 
     let four = IpAddrKind::V4;
     let six = IpAddrKind::V6;
 
 The name of each enum variant that we define also becomes a function that construct an instance of the enum:
-    IpAdd::V4() for example is a functionn call taht take a String argument and returns an instance of the IpAddr type. 
+
+    IpAdd::V4() for example is a functionn call that take a String argument and returns an instance of the IpAddr type. 
+
 We get automatically the construction function when we define an enum. 
 
 Everything can go to an enum : strings, numeric types, structs and even another enum.
@@ -826,7 +830,7 @@ Rust Matches are exhaustive, if we take out
 None in the match x, we didn't exhaust every last possibility and the code will not be valid. 
 
 ### Catch-all Patterns and the _ Placeholder
-We can use other or '_' if we need a catfch-all patterns. 
+We can use other or '_' if we need a catch-all patterns. 
 Must be at the end. 
 ```
 match dice_roll {
@@ -1333,6 +1337,37 @@ println!("{:?}", map);
 ### Hashing Functions
 SipHash is the default hashing function, slower but resistance to Denial of Service(DOS)
 
+# Chapter 9 : Error Handling
+
+## Unrecoverable errors with panic!
+
+When there is an unrecoverable error, Rust has the panic! macro.
+
+"panic! print a failure message, unwind and clean up the stack and then quit."
+
+### Unwinding or aborting
+
+Unwinding : clean the whole stacks but it's take time. 
+
+Abort: will stoop and not clean the stack, it's will need to be done by the operating system. To do this, we add in Cargo.toml :
+```
+[profile.release]
+panic = 'abort'
+
+```
+
+To see the panic in action : 
+
+```
+//in doc-rust-lang\panic
+
+fn main() {
+    panic!("crash and burn");
+}
+
+```
+
+### Using a panic! Backtraces
 
 
 
