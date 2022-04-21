@@ -84,12 +84,18 @@ fn works() {
 }
 
 ```
+<<<<<<< HEAD
 To run the test : `cargo test`
 
 
 assert! verify that some expectation i true, or assert_eq! to verify that something is an expected value. (p.7)
 #### To create a more complext test (p. 8-12)
 
+=======
+ 
+#### To create a more complext test (p. 8-9)
+in the test\cli.rs
+>>>>>>> 55b61d9bb367929a51703c4bac84309214550962
 ```
 //in tests/cli.rs
 use std::process::Command;
