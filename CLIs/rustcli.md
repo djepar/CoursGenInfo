@@ -172,13 +172,55 @@ fn runs() {
     cmd.assert().success().stdout("Hello, world!\n");
 }
 
+```
 
 
+# Chapter 2 : Test for Echo
+In this chapter, we create a Rust version of the echo program
 
+echo print its arguments to STDOUT :
+```
 
+admin@admins-MacBook-Pro CoursGenInfo % echo BOnjouR
+BOnjouR
+```
 
+To put the STDOUT to a file : 
+```
+admin@admins-MacBook-Pro CoursGenInfo % echo Bonjour > allo.txt
+admin@admins-MacBook-Pro CoursGenInfo % ls 
+Algorithms      IntroProg       Mathematics     allo.txt
+CLIs            LICENSE         README.md
+admin@admins-MacBook-Pro CoursGenInfo % cat allo.txt
+Bonjour
+```
+(p.19)
 
+## main()
 
+"All functions return a value, and the return type may be indicated with an arrow and the type such as `-> u32` to say that the functions returns an unsigned 32-bit integer. 
+The lack of any return type for main implies that the function returns what Rust calls the unit type. " (p.20)
+
+println! macro : "will automatically append a newline to the output.
+
+### Passing args : 
+```
+
+fn main() {
+    println!("{:?}",std::env::args());
+}
+```
+
+### Adding clap as a Dependency
+```
+[dependencies]
+clap = "2.33"
+```
+Then : `cargo build`
+ 
+To know the size of a project : `du -shc`
+
+`cargo clean` : to clear the target directory, we will need to recompile after (p.24)
 
 
 ```
