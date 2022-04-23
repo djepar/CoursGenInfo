@@ -237,6 +237,41 @@ println!("{:?}", wtv); // to format the debug view of the argument
 println!("{:#?}", wtv); // to include newlines and indentations to read the output, also called pretty-printing. (p.26)
 
 ```
+#### Runnning echoR without args : 
+Will give an error, but to see the output error message we need to write in the bash shell : 
+```
+cargo run 1>out 2>err
+cat err
+```
+It will redirect channel 1 (STOUT) to a file called out and channel 2 (STDERR) to a file called err.  (p.29)
+
+### Creating the Program Output
+
+Arg can use two functions that return mutiple values :
+
+    ArgMatches::values_of, will returns Option<Values>
+
+    ArgMatches::values_of_lossy, will returns Option<Vec<String>>
+
+Since, we want to return a string, we will use ArgMatches::values_of_lossy
+
+Definitions
+
+    "Option a value that is either None or Some< T>, where T is any type like a string or an integer. In the vase of AargMatches::values_of_lossy, the type T will be a vector of strings."
+
+    "Values : an iterator for getting multiple values out of an argument."
+
+    "Vec : A vector, whhich is a contiguous growable array type."
+
+    "String:  A string of characters " (p. 30)
+
+#### About unwrap : 
+Using Option::unwrap is risky because, if we unwrap a None, the program panic and crash. But in that case, we know that it's will only return a type, so we can safetly use unwrap : 
+
+
+```
+let text = matches.values_of_lossy("text").unwrap();
+```
 
 
 

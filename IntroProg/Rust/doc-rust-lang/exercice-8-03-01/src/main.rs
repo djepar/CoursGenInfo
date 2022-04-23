@@ -9,7 +9,7 @@ Given a list of integers, use a vector and return the median (when sorted, the v
 fn main() {
     let mut sorted_lists_integer = vec![1,2,3,4,4,5,6,7,7,8,8,8];
     let mut sorted = false;
-    while sorted == false {
+    while (sorted == false) {
         for i in sorted_lists_integer.iter_mut() {
             sorted = true;
             if *i < (*i+1) {
