@@ -210,6 +210,13 @@ fn main() {
     println!("{:?}",std::env::args());
 }
 ```
+For passing the -n argument/flag : 
+```
+cargo run Bonjour -n
+or
+cargo run -- -n Bonjour
+but not !!!!! cargo run -n Bonjour
+```
 
 ### Adding clap as a Dependency
 ```
@@ -221,6 +228,20 @@ Then : `cargo build`
 To know the size of a project : `du -shc`
 
 `cargo clean` : to clear the target directory, we will need to recompile after (p.24)
+
+
+Pretty-print the arguments 
+
+```
+println!("{:?}", wtv); // to format the debug view of the argument
+println!("{:#?}", wtv); // to include newlines and indentations to read the output, also called pretty-printing. (p.26)
+
+```
+
+
+
+
+
 
 
 ```
