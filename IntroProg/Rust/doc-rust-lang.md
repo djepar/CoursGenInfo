@@ -1380,10 +1380,129 @@ Accessing an element beyond the end of a vector :
 RUST_BACKTRACE=1 cargo run
 ```
 
+## Recoverable Errors with Result
+
+Recall : The Result enum as two variants : Ok and Err
+
+```
+enum Result<T,E> {
+    Ok(T),
+    Err(E),
+}
+```
+
+### Error handling for opening a file with panic!
+```
+use std::fs::File;
+
+fn main() {
+    let f = File::open("hello.txt");
+
+    let f = match f {
+        Ok(file) => file,
+        Err(error) => panic!("Problem opening the file: {:?}", error),
+    };
+}
+```
+### Matching on Different Errors
+For the same operation : opening a file, changing the behavior based on the type of failure (file not created or other problem)
+
+```
+use std::fs::File;
+use std::io::ErrorKind;
+
+
+fn main() {
+    let f = File::open("hello.txt");
+
+    let f = match f {
+        Ok(file) => file,
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Problem creating the file: {:?}", e),
+            },
+            other_error => {
+                panic!("Problem opening the file: {:?}", other_error)
+            }
+        },
+    };
+}
+```
+
+### Shortcuts for Panic on Error: unwrap and expect
+Unwrap : will panic! if it's unwrap nothing
+
+
+```
+use std::fs::File;
+
+fn main() {
+    let f = File::open("hello.txt").unwrap();
+}
+```
+
+Expect : will panic! and we can choose the panic message
+
+
+```
+use std::fs::File;
+
+fn main() {
+    let f = File::open("hello.txt").expect("Failed to open hello.txt");
+}
+```
+
+### Propagating Errors 
+
+"When a function's implementation calls something that might fail, instead of handling the error within the function itself, you can return the error to the calling code so that it can decide what to do."
+
+
+```
+use std::fs::File;
+use std::io::{self, Read};
+
+fn main() {
+    println!("Hello, world!");
+}
+
+fn read_username_from_file() -> Result<String, io::Error> {
+    let f = File::open("hello.txt");
+
+    let mut f = match f {
+        Ok(file) => file, 
+        Err(e) => return Err(e),
+    };
+
+    let mut s = String::new();
+
+    match f.read_to_string(&mut s) {
+        Ok(_) => Ok(s),
+        Err(e) => Err(e),
+    }
+}
+
+```
+
+### A Shortcut for Propagating Errors: the '?' Operator
+
+```
+fn read_username_from_file_shortcut() -> Result<String, io::Error> {
+    let mut f = File::open("hello.txt")?;
+    let mut s = String::new();
+    f.read_to_string(&mut s)?;
+    Ok(s)
+}
+```
+
+"The ? placed after a Result values is defined to work in almost the same way as the match expressions we defined before. If the value is an Err, the Err will be returned from the whole function as if we had used the return keyword so the error value gets propagated to the calling code. "
 
 
 
 
+
+
+```
 
 ```
 ```
