@@ -1,0 +1,9 @@
+#ifndef TITRE //comme tout opération de pré-processus, si la constante n'est pas définit, le reste du code est exécuté. 
+#define TITRE
+
+
+
+
+
+
+#endif

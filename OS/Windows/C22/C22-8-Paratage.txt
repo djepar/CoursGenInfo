@@ -1,0 +1,69 @@
+Les partages
+    Il est possible d'accéder à un autre ordinateur que celui sur lequel on est connecté. 
+        Le répertoire doit : 
+            Avoir été partager
+            Avoir les droits d'accès au partage
+    Créer un partage consiste à donner la permission à des usagers d'accéder à un dossier d'un ordinateur à distance. 
+    Exemple :
+        On a partagé le répertoire c:\AM1 sur Ordi1
+        La personne utilisant Ordi 2 peut accéder au rep c:\Am1 s'il a les droits 
+    La création du partage :
+        Il faut indiquer 
+            le dossier qui sera partagé 
+            Le nom du partage
+            Les droits qui seront donnés sur le partage. 
+            Mise en cache ou non
+                si mise en case : les autres ordinateurs ont accès aux même données même si l'ordinateur de partage est horsligne 
+                    Grâce à une copie locale. 
+        création    
+            Console MMC Dossiers partagés
+            Ligne de commande : CMD NET SHARE
+                $net share p1 = c:\Rep1 /Remark.. /cache... /grant...
+    Voir les Partage créés 
+        Console MMC Dossiers partagés   
+            Net view (avec le nom de l'ordinateur(le mien ou celui d'un autre usager))
+            Ex : $Net vieux \\529B22299 (l'adresse ip fonctionne egalement)
+                $netshare (sans paramètres juste pour voir les partages)
+    Se connecter à un partage   
+        Net use y:\\(nom de l'ordi)
+    Voir les connections
+        Pour l'usager   
+            Explorateur Windows
+            Ligne de commande net use (pas de paramètres)
+        Pour l'host
+            Console MMC Dossiers partagés
+            $Net share <nom du partage>
+    Se déconnecter
+        (Le lien n'existera plus mais le partage existera encore)
+        Explorateur Windows 
+            blablac voir labo
+        Ligne de commande   
+            $net use /delete
+    Détruire (arrêter) un partage
+        Le dossier est là, mais pas la permission d'y accéder
+        Explorateur windows
+            labo
+        Console MMC Dossiers partagés (arrêter le partage)
+        $Net share /delete
+Droits de partage
+    3 droits sont associés aux partages 
+        Contrôle totalité
+        Modifier
+        Lecture
+    Le droit le plus restrictif s'applique. 
+    Le plus simple : donner le droit de partage Contrôle total
+        On restreint au niveau des NTFS
+Partage administratifs
+    Partage qui est accessible seulement par les utilisateurs membres du groupe Administrateurs
+Partages cachés (secret)
+    Se termine par $
+Énumération basée sur l'accès (Access Based Enumeration ABE)
+    Seul les gens qui ont accès aux partages voient le partage. 
+    Voir Laboratoire 8b
+Accès aux partages lorsque l'UAC est activée
+    Si non utilisateur crée un partage, celui-ci ne sera pas dispo en tant qu'adin
+        Labo 8c
+Accès aux partages administratifs à distance
+    Impossible par defaut. 
+    Il faut modifier une clé de registre. 
+    Labop 8d. 

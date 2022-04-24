@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\Multifichier3\Source.cpp(8,17): warning C4326: le type de retour de 'main' doit être 'int' au lieu de 'void'
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\Multifichier3\Source.cpp(11,32): warning C4305: '=' : troncation de 'double' à 'float'
+  Source1.cpp
+  Génération de code en cours...
+  Multifichier3.vcxproj -> C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\Multifichier3\x64\Debug\Multifichier3.exe

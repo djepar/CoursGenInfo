@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Revision C22</title>
+        <LINK href="NoteCoursStyle.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+
+        </header>
+        <quote class="exergue">
+        La gang ici, je vous haïs. <br>
+        -Le prof
+
+            </quote>
+        <h2>Structure</h2>
+        <ul>
+            <li>Type de variable créé à partir des types de base.</li>
+            <li>Déclarer avant le main ou dans un header. </li>
+            <li>Nomemclature : Nom_s</li>
+            <li>Attention lorsqu'on dimensionne une structure ou un membre, nous devons mettre celle-ci entre crochet.</li>
+
+        </ul>
+        <h2>Les énumérations</h2>
+        <p>voir revisionscode</p>
+        <h2>Les fonctions</h2>
+        <dl>
+            <dt>Prototype :</dt>
+            <dd> le type retourner, le nom et les paramètres (max 256), à mettre avant le main, après les structures ou dans le header</dd>
+            <dt>L'appel de la fonction : </dt>
+            <dd>tous les paramètres à l'appel, à utilisé dans le module. Lorsqu'on appel une fonction qui comprend un paramètre tableau, il faut absolument mettre la taille de ce tableau (exemple : type Nom[], int Taille)</dd>
+            <dt>Corps d'une fonction : </dt>
+            <dd>après le main, ou dans un autre fichier source</dd>
+        </dl>
+        <p>Les types de retour : tous les types + void + structure + pointeurs, pas tableau(doit être pointé) </p>
+        <h3>Les fonctions récursives</h3>
+        <p>Une fonction qui s'appelle elle-même. (Pas pour les menus, dans ce cas, utiliser les boucles)</p>
+        <h2>Multifichier</h2>
+        <p>header et source</p>
+        <h2>Fstream</h2>
+        <h3>Lecture et écriture de fichier</h3>
+        <ul>
+            <li>Bibliothèque : fstream</li>
+            <li>Créer le flux</li>
+            <li>fstream Fichier;</li>
+            <li>Ouvrir un fichier : Fichier.open(path, mode) //path = string </li>
+            <li>Vérifier l'ouverture : if (Ficher.fail())</li>
+            <li>Fermeture : Fichier.close()</li>
+            <li>Mode d'ouverture : ios::in, out, app ou binary</li>
+            <ul>
+                <li>in : lecture</li>
+                <li>out : efface et écrit</li>
+                <li>app : écrit à la fin (app pour append) </li>
+                <li>binary : fichier en binaire</li>
+                <li>pour combiner plusieurs mode, il faut les séparer par "|", exemples :  ios::in|out, ios::in|binary </li>
+            </ul>
+        </ul>
+        <h3>Fichier texte</h3>
+        <p>Pour connaître la fin de fichier : if(Fichier.eof()) <br>
+        Pour écrire : Fichier &lt;&lt; "..." <br> 
+        Pour lire un caractère : fichier.get() <br> 
+        Pour lire un mot : fichier.get() &gt;&gt; variable //variable qui stocke le mot <br> 
+        Lire une phrase : getline(Fichier, variableStr, delimiter) //la variableStr qui stocke la ligne, le delimiter par défaut "\n", sinon on peut le changer <br> 
+        </p>
+        <h3>Fichier binaire</h3>
+        <p>Pas de string en binaire parce qu'il n'y a pas de taille précise à un string et nous devons savoir la taille exacte en binaire <br>
+        Écrire une valeur dans le fichier binaire : Fichier.write((char*)&variable, sizeof(var)); <br>
+        Lire un fichier binaire : Fichier.read((char*)&var, sizeof(type)); <br>
+        Skipper une partie du fichier : Fichier.skeep(NbrOctetASkipper, pointOrigine) //permet d'avancer d'un certains nombres de'octets dans le fichier. <br>
+        <strong>Point d'origine possible </strong> : ios::beg pour le début, ios::cur pour la position du curseur et ios::end pour le dernier caractère. <br>
+        Fin fichier : fichier.eof() 
+        </p>
+        <h1>Relire exemple csv et garder le code source pret</h1>
+    
+    </body>
+</html>

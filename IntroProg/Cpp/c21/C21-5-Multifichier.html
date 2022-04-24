@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Cours C11, Introduction à la programmation : Chapitre 1</title>
+        <LINK href="NoteCoursStyle.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="../../index.html">Accueil</a></li>
+         </header>
+        <quote class="exergue">
+            Un programme peut être composé de plusieurs fichiers sources qu'on appelle des modules. L'ensemble des modules formera un projet. -Marcel Litalien, manuel 2 p. 83.
+
+            </quote>
+        <h1>Théorie sur les variables</h1>
+        <h2>La durée de vie d'une variable</h2>
+        <p> <dfn id="dureevie">durée de vie</dfn> correspond au temps que la variable passe en mémoire (p.6 du module-6-multichier, ppt).</p>
+        <dl>
+            <dt>Variable permanente</dt>
+            <dd>Existera en mémoire jusqu'à la fin du programme.</dd>
+            <dt>Variable temporaire</dt>
+            <dd>Existera en mémoire jusqu'à une fin donnée, soit la fin du bloc où la varaible a été déclarée</dd>
+
+        </dl>
+        <p>Jusqu'à maintenant, nous avons toujours utilisés des variables internes (internes au main()).</p>
+        <h2>Déclaration de variable</h2>
+        <p>La <dfn id="declaration-variable">déclaration</dfn> d'un objet fixe et annonce son utilisations tandis que la <dfn id="definition-variable">définition</dfn> d'un objet alloue l'espace mémoire spécifique de l'objet. Dans le cas d'une fonction, la définition correspond au bloc de code qui compose le corps de cette fonction. <br>
+        La définition se fait dans un seul module, mais peut être utilisé dans d'autres modules, là où il sera déclaré. </p>
+        <h2>La portée et visibilité d'une varaible</h2>
+       <dl>
+            <dt>La visibilité</dt>
+            <dd>détermine où l'objet (variable ou fonction) est utilisable.</dd>
+            <dt>La portée</dt>
+            <dd>détermine où l'objet est connu, la visibilité est toujours plus petite ou égale à la portée. (LItalien, p. 84)</dd>
+        </dl>
+        <h2>Classe de mémorisation</h2>
+        <p>Chaque classe à un effet différent qui dépend de l'instruction, soit si c'est une définition ou une déclaration et si c'est une varaible ou une fonction. <br>
+        Le niveau d'accès (interne au module ou externe) influencera les classes de mémorisation.</p>
+        <h3>Comportement par défault</h3>
+        <table>
+            <tr>
+                <th>Type d'instruction</th>
+                <th>Niveau</th>
+                <th>Durée de vie</th>
+                <th>Visibilité</th>
+            </tr>      
+            <tr>
+                <td>Définition de variable</td>
+                <td>Externe</td>
+                <td>Permanente</td>
+                <td>Dans tous les modules</td>
+            </tr> 
+            <tr>
+                <td>Définition de variable</td>
+                <td>Interne</td>
+                <td>Temporaire</td>
+                <td>Bloc</td>
+            </tr>
+            <tr>
+                <td>Paramètre formel (variable)</td>
+                <td></td>
+                <td>Temporaire</td>
+                <td>Dans la fonction où elle est déclarée</td>
+            </tr> 
+            <tr>
+                <td>Définition de fonction</td>
+                <td>Externe</td>
+                <td>Permanente</td>
+                <td>Dans tous les modules</td>
+            </tr>
+            <tr>
+                <td>Déclaration de fonction</td>
+                <td>Externe</td>
+                <td>Permanente</td>
+                <td>Dans tous les modules</td>
+            </tr>
+        </table>
+        <h3>La classe AUTO</h3>
+        <p>Classe par défaut de toute variable déclarée dans un bloc, les paramètres d'une fonction sont également de type auto.</p>
+        <table>
+            <tr>
+                <th>Type d'instruction</th>
+                <th>Niveau</th>
+                <th>Durée de vie</th>
+                <th>Visibilité</th>
+            </tr>      
+            <tr>
+                <td>Définition de variable</td>
+                <td>Interne</td>
+                <td>Temporaire</td>
+                <td>Bloc</td>
+            </tr> 
+            <tr>
+                <td>Paramètre formel</td>
+                <td>Interne</td>
+                <td>Temporaire</td>
+                <td>Dans la fonction où elle est déclarée.</td>
+            </tr>
+        </table>
+        <h3>La classe REGISTER</h3>
+        <p>Accessible en écrivant register au début d'une définition de variable <br>
+        Permet un accès rapide à la valeur de la variable (pratique pour les variables à usage intense) <br>
+        La variable sera affectée aux registres du processeur et non dans la pile mémoire. <br>
+        La méthode est désuète. Les compilateurs appliquent des optimisations plus efficaces aujourd'hui. </p>
+        <table>
+            <tr>
+                <th>Type d'instruction</th>
+                <th>Niveau</th>
+                <th>Durée de vie</th>
+                <th>Visibilité</th>
+            </tr>      
+            <tr>
+                <td>Définition de fonction</td>
+                <td>Externe</td>
+                <td>Permanente</td>
+                <td>Dans tous les modules</td>
+            </tr>
+ 
+        </table>
+        <h3>La classe STATIC</h3>
+        <p>Accessible grâce au mot clé static <br>
+        Ne modifie pas la visibilité ou la porté <br>
+        Change la durée de vie d'une varaible. <br>
+        Permets de limiter la visibilité des variables globale au module uniquement</p>
+        <table>
+            <tr>
+                <th>Type d'instruction</th>
+                <th>Niveau</th>
+                <th>Durée de vie</th>
+                <th>Vseisibilité</th>
+            </tr>      
+            <tr>
+                <td>Définition de variable</td>
+                <td>Externe</td>
+                <td>Permanente</td>
+                <td>Module</td>
+            </tr> 
+            <tr>
+                <td>Définition de variable</td>
+                <td>Interne</td>
+                <td>Permanente</td>
+                <td>Bloc</td>
+            </tr>
+            <tr>
+                <td>Définition de fonction</td>
+                <td>Externe</td>
+                <td>Permanente</td>
+                <td>Module</td>
+            </tr>
+
+        </table>
+        <h3>La classe extern</h3>
+        <p>Accessible grâce au mot clé extern</p>
+        <p>Permets de rendre une variable ou une fonction accessible à tous les modules.</p>
+        <p>La définition d'une variable globale sert aussi de déclaration pour celle-ci jusqu'à la fin du fichier.</p>
+        <table>
+            <tr>
+                <th>Type d'instruction</th>
+                <th>Niveau</th>
+                <th>Durée de vie</th>
+                <th>Vseisibilité</th>
+            </tr>      
+            <tr>
+                <td>Définition de variable</td>
+                <td>Externe</td>
+                <td>Permanente</td>
+                <td>Module</td>
+            </tr> 
+        </table>
+        <h3>La déclaration de varaible ou de fonction</h3>
+       <p>La déclaration d'une varaible ou le prototype d'une fonction prépare le compilateur en réservant le type d'objet mais pas encore en réservant l'espace memoire. </p>
+       <h3>La définition de variable ou de fonction</h3>
+       <p>La définition permet de réserver l'espace mémoire pour une variable ou une fonction</p>
+    <h1>Division de fichier</h1>
+       <h2>Le fichier header</h2>
+       <h3>Dans un fichier header, on retrouve :</h3>
+       <ul>
+           <li>Les prototypes de fonctions et définitions des structures</li>
+           <li>Toujours un extension h</li>
+           <li>Commence par #ifndef TITRE //saut de ligne #define TITRE et se termine par #endif  </li>
+           
+       </ul>
+    </body> 
+</html>

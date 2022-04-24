@@ -1,0 +1,50 @@
+Variables d'environnement :
+    Windows a un système de variables qui peut être utilisé dans la plupart des systèmes (CMD, PSH, ect)
+    Affichage des variables d'environnement :
+        $set // liste complète des variables d'environnement en CMD
+        $set COMPUTERNAME    //afficher la valeur spécifique d'une variable
+    Se créer une variable   
+        Variables systèmes : tous les utilisateur.trices.
+        Variables utilisateur : un.e utilisateur.trice spécifique
+        $set donne les deux. 
+
+Registre Windows    
+    Apparait en 1992 avec 3.1.
+    Fct : 
+        Les configurations sont enregistrés dans le registre. 
+        Contient la quasi-totalité des paramètres Windows. 
+            Accessible par 
+                Panneau de configurations
+                GPO
+                Directement le registre
+    Organisation
+        Les données du registre sont organisées dans des HKEY(handle key ou encore poignée de clés)
+            Un peu comme les roots des registres
+            REGEDIT.EXE
+        Deux vraies clés    
+            HKEY_USERS
+                Tous les paramètres pour chaque SID
+            HKEY_LOCAL_MACHINE :
+                L'ensembles des clés de l'ordinateur, les plus fragile. 
+            Les autres clés sont simplement du mapping. 
+    Descriptions des clés du registre   
+        Chaque clé peut avoir plusieurs valeurs. 
+        Chaque valeur a un nom, un type et une donnée. 
+    Les types
+        REG_SZ : chaîne de caractère.
+        REG_MULTI_SZ : plusieurs chaînes de caractères
+        REG_BINARY : binaire
+        REG_DWORD : deux mots de 16 bits chaques
+        REG_QWORD : 64 bits
+        REG_EXPAND_SZ : Chaîne de caractère étendu (va interprété les variables d'environnement)
+    Modification d'un registre avec la commande Reg.EXE
+        Création d'une clé 
+            Pour créer la clé HKCU\AM1 
+            $reg.exe add HKCU\AM1
+        Ajouter une valeur dans la clé HKCU\AM1
+            Ajouter la valeur 18 à HKCU\AM1
+            $reg.exe add HKCU\AM1 /v nombre /t REG_DWORD /d 18
+    Règles d'utilisation
+        Impossible de tout savoir. 
+        À utiliser le moins possible puisque risqué 
+    

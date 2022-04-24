@@ -1,0 +1,8 @@
+enum typeBoite_e {
+    INFO,
+    ERREUR,
+    QUESTION
+};
+showbox(typeboite_e t)
+    switch(t)
+    caseInfo;

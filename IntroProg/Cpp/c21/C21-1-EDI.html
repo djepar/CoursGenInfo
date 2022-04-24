@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Chapitre 1 : L'utilisation de l'environnement de développement intégré (EDI)</title>
+        <LINK href="../../style.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html">Cours</a></li>
+            </ul>
+        </header>
+        <quote class="exergue">
+          
+
+        </quote>
+        <h1>Les erreurs fréquentes</h1>
+        
+        <h2>Confusion entre opérateur d'affectation et d'égalité.</h2>  
+          <code>
+                if (val=29) <br>
+                //devrait être : <br>
+                if (val == 29)<br>
+            </code>
+        
+        <h2>Problème de priorité des opérateurs.</h2>
+            <code>
+                while(carac = _getch() != '\r') devrait se lire <br>
+                // L'opérateur a priorité sur celui d'affectation, la valeur de carac sera 0 ou 1 et non la valeur lue. <br>
+                // La bonne façon : <br>
+                while((carac = _getch()) != '\r') <br>
+            </code> 
+        <h2>Erreurs d'indices dans les variables dimensionnées.</h2> <br>
+            <code>
+                void main(void) <br>
+                { <br>
+                    int tableau[4]; <br>
+                    int Compte:; <br>
+                    for(Compte=1; Compte &gt; 4; Compte++)  //L'indice du tableau doit débuter à 0. <br>
+                        ... <br>
+                } <br>
+            </code>
+        <h2>Omission d'un indice dans un tableau multidimensionnel</h2>
+            <code> 
+                tableau[0,1] <br>
+                //devrait se lire  <br>
+                tableau [0][1] <br>
+            </code>
+        <h2>Dépassement des limites d'un tableau</h2>
+            <p>Tout indice invalide (&lt;0 ou &gt;= au nombre d'éléments) provoque une erreur qui peut être difficile à détecter.</p>
+        <h2>Confusion entre constantes caractères et chaînes de caractères</h2>
+            <p>Une constante est placée entre '', tandis qu'une chaîne de caractères est placée entre des guillemets.</p>
+        <h2>Valeur retournée par une fonction de bibliothèque</h2>
+            <p>Il est important de vérifier la valeur de retour d'une fonction de la bibliothèque.</p>
+        <h2>Double emploi de noms de fonctions de bibliothèque</h2>
+            <p>Afin d'éviter la confusion, il est prudent de ne pas nommer une fonction personnelle avec le même nom qu'une fonction de la bibliothèque.</p>
+        <h2>Omission des fichiers d'en-tête pour les fonctions de bibliothèque</h2>
+            <p>L'utilisation d'une fonctionnalité d'une fonction de la bibliothèque nécessite de l'inclure pour ne pas avoir d'erreur.</p>
+            <code>
+
+                using namespace std; <br>
+                void main(void) { <br>
+                    cout &lt;&lt; "Bonjours Monde" <br>
+                } <br>
+                // Pour un code fonctionnel :
+                #include&lt;iostream&gt; <br>
+                using namespace std; <br>
+                void main(void) { <br>
+                    cout &lt;&lt; "Bonjours Monde" <br>
+                } <br>
+            </code>
+        <h2>Else non associé au bon if</h2>
+            <p>Sans accolade, le est est toujours associé au dernier if qui le précède.</p>
+            <code>
+                // on veut un programme qui dit de ne pas aller à l'école si malade, mais ajoute également une information additionnelle si nous avons de la fièvre <br>
+                if (EstMalade == true){ <br>
+                    if(EstFievreuse == true) { <br>
+                        cout &lt;&lt; "Boire une tisane de gingembre"; <br>
+                    } <br>
+                    else <br>
+                        cout &lt;&lt; "Ne pas aller à l'école"; <br>
+                } <br>
+                   
+                // dans ce cas, il serait préférable d'écrire  <br>
+                if (EstMalade == true){ <br>
+                    if(EstFievreuse == true) { <br>
+                        cout &lt;&lt; "Boire une tisane de gingembre"; <br>
+                    } <br>
+                } <br>
+                else <br>
+                    cout &lt;&lt; "Ne pas aller à l'école"; <br>                
+            </code>
+        <h2>Omission des doubles barres inversée dans les spécifications d'un chemin d'accès</h2>
+            <code>c:\temp\numero.txt devrait être c:\\temp\numero.txt</code>
+        <h2>Omission de l'instruction break après un case de l'instruction switch</h2>
+        <h2>Omission des &lt;&lt; dans un cout</h2>
+        <h2>Accolades {} mal placées ou manquantes</h2>
+        <h2>Oubli des parenthèses lors de l'appel à une fonction.</h2>
+            <p>clrscr; devrait être clrscr();</p>
+
+        </body>
+</html>

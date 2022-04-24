@@ -1,0 +1,148 @@
+Qu'est-ce que les droits NTFS :
+    New Technology File System, successeur à FAT32
+    L'ensemble des droits que les utilisateurs ont sur les fichiers.
+    Il y a un ensemble de droits spéciaux tels que parcours de dossier, exécuter des fichiers, liste du dossier, lecture de données, etc (voir Theorie des droits NTFS)
+
+Les droits ACL 
+    Contrôle total :
+        Sur tous les dossiers, sous-dossiers et fichiers. 
+            Tout
+    Modification
+        Sur les dossiers, sous-dossiers et fichiers
+            Parcours de dossier / Exécuter de fichier
+            Liste du dossier / Lecture de données
+            Attributs de lecture
+            Lecture des attributs étendus
+            Création de fichiers / Écriture de données
+            Création de dossier / ajout de données
+            Attribut d'écriture
+            Écriture d'attributs étendus
+            Suppression
+            Autorisations de lecture
+    Lecture et exécution 
+        Sur les dossiers, sous-dossiers et fichiers :
+            Parcours de dossier / Exécuter de fichier
+            Liste du dossier / Lecture de données
+            Attributs de lecture
+            Lecture des attributs étendus
+            Autorisations de lecture
+    Afficher du contenu de dossier
+        Sur les dossiers et les sous-dossiers
+            Liste du dossier / Lecture de données
+            Attributs de lecture
+            Lecture des attributs étendus
+            Autorisations de lecture
+    Lecture
+        Sur les dossiers, les sous-dossiers et les fichiers
+            Liste du dossier / Lecture de données
+            Attributs de lecture
+            Lecture des attributs étendus
+            Autorisations de lecture
+    Écriture    
+        Sur les dossiers, les sous-dossiers et les fichiers
+            Création de fichiers / Écriture de données
+            Création de dossier / ajout de données
+            Attribut d'écriture
+            Écriture d'attributs étendus
+
+Labo3a
+    L'usager qui crée un dossier est propriétaire
+
+
+Droits hérités
+    Les droits NTFS sont par défaults hérités, c-à-d qu'il sont appliqués sur les dossiers et fichiers des niveaux inférieurs.
+        Pour voir les droits d'un dossier :
+            Menu contextuel du répertoire > Sécurité
+                Si crochets noir = droits directs
+                Si crochets gris = droits hérités
+        Il est possible d'ajouter des droits par dessus des droits hérités
+            L'inverse n'est pas possible, il faut dans un premier temps désactivés les droits hérités
+
+La propagations des droits NTFS
+    Peut être circoncise.
+    Pour icalcs 
+        CI : container inherit
+        OI : object inherit
+        IO : inherit only
+        NP : no propagate
+    Lorsqu'on coupe un héritage à un niveau, les niveaux inférieurs sont également coupés. 
+
+
+La commande Icalcs
+    syntaxe : icalcs nom [/grant]
+                                octroyer des droits d'accès utilisateurs spécifiés    /grant:r Sid:perm 
+                                Avec :r, les autorisations remplacent toute autorisation  explicite précédemment accordée (de même propagation)
+                                Sans :r, les autorisations sont ajoutées aux autorisations explicites précédemment accordées.
+                                Exemples
+                                    Donner les droits à Alex d'écrire, avec propagation des autorisations
+                                        ICACLS  C:\AM4\Rep1  /grant  Alex :(OI)(CI)(W)
+                                    Donner les droits à Marie de modifier, avec propagation des fichiers mais pas des documents
+                                        ICACLS  C:\AM4\Rep1   /grant  Marie :(OI)(M)
+                                    Donner droits de lecture et écriture pour tous les dossiers, sous-dossiers et fichiers
+                                        ICACLS  C:\AM4\Rep1   /grant Gabrielle:(OI)(CI)(R)    Gabrielle :(OI)(CI)(W)
+                                    Enlever les droits d'écriture reçues en héritage
+                                        ICACLS  C:\AM4\Rep1\Rep2     /inheritance:d    
+                                        ICACLS  C:\AM4\Rep1\Rep2     /remove  Gabrielle      /grant  Gabrielle :(OI)(CI)(R)
+                                    Donner le droit de Modification au lieu de lecture  
+                                        ICACLS  C:\AM4\Rep1\Rep2    /remove  Gabrielle      /grant  Gabrielle:(OI)(CI)(M)
+                                        ICACLS  C:\AM4\Rep1\Rep2    /grant :r  Gabrielle:(OI)(CI)(M)
+                         [/remove]
+                                Avec :g, toutes les occurrences de droits accordés à ce SID sont supprimées. 
+                                Avec :d, toutes les occurrences de droits refusés à ce SID sont supprimées.
+                         [/inheritance]
+                                e - Active l’héritage.
+                                d - Désactive l’héritage et copie les ACE (acces control entry).
+                                r - Supprime toutes les ACE héritées.
+                        Pour voir les droits    
+                            ICACLS  C:\AM4
+    Les droits pour icacls
+        Contrôle total : F		
+        Écriture : W
+        Modification : M
+		Lecture :  R
+        Lecture et exécution : RX	
+    Le SID peut être numérique (ajouter un * avant le sid) ou nom convivial
+
+Notion de propriétaire
+    Pour afficher le propriétaire   
+        dir /q
+    Le créateur propriétaire descend d'un niveau à la fois en fonction de qui l'a créé.
+    L'usager qui crée le dossier ou document devient propriétaire du fichier ou documents. Il a un contrôle total et peut donner des droits NTFS aux autres.
+    Groupe Créateur Propriétaire
+        C'est un groupe spécial (groupe principal de sécurité) : seulement en créant un dossier qu'on peut appartenir à ce groupe.
+    Hiérarchie
+        Droits propriétaires
+            Groupe Créateur Propriétaire
+                usager
+    Pour modifier les droits du groupe Createur propriétaires   
+        Modifier Droits propriétaires **pas sur**
+        ou
+        Désactivé héritage + indiqué que les droits deviennent directs (icalcs C:\Test /inheritancelevel:d)
+            ou
+        désactiver l’héritage et supprimer tous les droits. On ajoute ensuite les droits voulus (prendre en note ceux qu'on veut remettre).
+    Set-owner : changer de propriétaire
+
+    Quel que commande
+        ICACLS  C :\AM4\Rep1\Rep2   /inheritance :r     
+        ICACLS  C :\AM4\Rep1\Rep2      /grant  Tech : (OI)(CI)(F)    
+        ICACLS  C :\AM4\Rep1\Rep2      /grant  Louis : (OI)(CI)(R)    Administrateurs (OI)(CI)(F)
+        ICACLS  C :\AM4\Rep1\Rep2      /grant  System : (OI)(CI)(F)    Utilisateurs(OI)(CI)(RX)
+        icacls  c:\_Lab3e\u1.txt  /setowner  administrateurs  
+
+EN CONLCUSION: L'avantage d'être le propriétaire d'un fichier (dossier) est de pouvoir modifier les autorisations NTFS et de se l'approprier, 
+même si nos autorisations effectives montrent le contraire.
+EN CONCLUSION: Le groupe "DROITS DU PROPRIÉTAIRE" permet de ne pas tirer profit des avantages d'être le propriétaire d'un fichier (dossier).
+
+
+Copier et coller/ déplacement
+    La copie fonctionne comme une création : 
+        le document hérite des autorisations du répertoire de destination.
+        (hérite du nouveau parent)
+    Déplacement :
+        Autorisation hérités :
+            hérite du nouveau parent
+        Autorisation directes
+            conserve les autorisations explicites (à éviter)
+
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>C22 - Module 1 - Configuration d'un environnement de travail</title>
+        <LINK href="../../style.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html">Cours</a></li>
+            </ul>
+        </header>
+        <quote class="exergue">
+          
+
+        </quote>
+        <h2>Création d'un utilisateur : New-LocalUser</h2>
+        <code class="powershell">New-LocalUser <br>
+        [-AccountExpires &lt;DateTime&gt;] <br>
+        [-AccountNeverExpires] <br>
+        [-Description &lt;String&gt;]<br> 
+        [-Disabled] <br>
+        [-FullName &lt;String&gt;]<br> 
+        [-Name] &lt;String&gt; <br>
+        <br> -Password &lt;SecureString&gt;
+        <br> [-PasswordNeverExpires] 
+        <br>[-UserMayNotChangePassword] 
+        <br>[-WhatIf] 
+        <br>[-Confirm] 
+        <br>[&lt;CommonParameters&gt;]
+        </code>
+
+
+
+
+        <h3>Exemples : </h3>
+        <code class="powershell">
+        New-LocalUser  -Name  ETU1   -NoPassword       (Crée l’usager ETU1 sans mot de passe) <br>
+
+        New-LocalUser  -Name  ETU2   -Password (ConvertTo-SecureString -AsplainText "AAAaaa111"  -Force) <br>
+        (Crée l’usager ETU2 et lui donne le mot de passe AAAaaa111) <br>
+        </code>
+
+        <h3>Destruction d’un utilisateur : Remove-LocalUser</h3>
+        <h3>Activation d’un compte d’usager : Enable-LocalUser (pour l’activer une fois créé)</h3>
+        <h3>Désactivation d’un compte d’usager :  Disable-LocalUser (pour le désactiver une fois créé)</h3>
+
+        <h3>Informations sur un usager : Get-LocalUser</h3>
+<h4>Exemple : </h4>
+<code>Get-LocalUser -Name "AdminContoso02"
+<br>
+Name             Enabled Description <br>
+----             ------- ----------- <br>
+AdminContoso02   True    Description of this account. <br>
+</code>
+<h3>Modification d’une propriété d’un usager : Set-LocalUser</h3>
+<code class="powershell">Set-LocalUser <br>
+    [-AccountExpires &lt;DateTime&gt;] <br>
+    [-AccountNeverExpires] <br>
+    [-Description &lt;String&gt;]<br> 
+    [-FullName &lt;String&gt;]<br> 
+    [-Name] &lt;String&gt; <br>
+    <br> -Password &lt;SecureString&gt;
+    <br> [-PasswordNeverExpires] 
+    <br>[-UserMayNotChangePassword] 
+    <br>[-WhatIf] 
+    <br>[-Confirm] 
+    <br>[&lt;CommonParameters&gt;]
+    </code>
+    <h3>Exemple : on veut changer la description de l’usager Admin07  (La nouvelle description devient Description of this account.)    </h3>
+    <code class="powershell">
+    PS C:\> Set-LocalUser -Name "Admin07" -Description "Description of this account."
+    </code>
+    <h3>Permettre l'éxécution de script à distance</h3>
+    <code class="powershell">enable-PSRemoting -SkipNetworkProfileCheck -Force <br>
+    Set-Item wsman:\localhostclient\trustedhosts -Value * -force <br> //permet l'auroisation aux professeur d'exécuter des scripts Powershell à distance
+    </code>
+
+
+
+    
+
+
+
+
+
+
+
+
+        </body>
+</html>

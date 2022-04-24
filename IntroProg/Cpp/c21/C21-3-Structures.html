@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Les structures</title>
+        <LINK href="NoteCoursStyle.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html">Cours</a></li>
+                <ul>
+                    <li><a href="NoteCoursC11/coursC11.html">C11: Intro a la prog(C++)</a></li>
+                 
+                 </ul>
+              </ul>
+        </header>
+        <quote class="exergue">
+            L'ensemble de ces rapports de production constitue la structure économique de la société, la base concrète sur laquelle s'élève une superstructure juridique et politique et à la­quel­le correspondent des formes de conscience sociales déterminées. Le mode de production de la vie matérielle conditionne le processus de vie social, politique et intellectuel en général.
+            -Dolly Parton
+
+        </quote>
+        <h1>Les types créés par l'utilisatrice</h1>
+        <p>Selon Stroustrup, la clé du C++ réside en partie dans la possibilité de créer des variables par les programmeur.e.s.</p>
+        <quote>A struct (a structure) is a sequence of elements (called members) of arbitrary types. <br>
+            • A union is a struct that holds the value of just one of its elements at any one time.<br>
+            • An enum (an enumeration) is a type with a set of named constants (called enumerators). <br>
+            • enum class (a scoped enumeration) is an enum where the enumerators are within the scope <br>
+            of the enumeration and no implicit conversions to other types are provided. Bjarne Stroustrup, in The C++ Programming Language, p.202</quote>
+            
+        <h1>Les structures</h1>
+        <p>Une <dfn id="structure">structure</dfn> est un type informatique créé par l'utilisatrice (user-created)<br>
+        Pour définir une structure : <br></p>
+        <h2>Définitions du type d'une structure et la définition des variables de cette structure.</h2>
+       <ol>
+           <li>La définition du type de la structure.</li>
+           <li>La définition des variables de la structure. Ce n'est que lors de la définition des variables que l'espace mémoire est réservé.</li>
+       </ol>
+
+
+
+    <h3>Cas 1 : Définitions simultanées (structure et variable)</h3>
+       struct NomDeLaStructure_s //NomDeLaStructure_s est de type structure<br> 
+       { <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_2; <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_N; <br>
+       } VarStruct; //VarStruct est une variable de type struct NomDeLaStructure_s.
+   </code>
+    <h3>Cas 2 : Définitions indépendantes</h3>
+        <code class="visualstudio">
+        struct NomDeLaStructure_s  //définition de la structure. Par convention nomme une structure en finissant avec le suffixe '_s' <br>
+            {
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_2; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_N; <br>
+            };
+        struct NomDeLaStructure_s VarStruct; //VarStruct est une variable de type  NomDeLaStructure_s
+        </code>
+    <h3>Cas 3: Définitions simultanées, sans nom de type</h3>
+        <code class="visualstudio">
+        struct <br> 
+            { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_2; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_N; <br>
+            } VarStruct;
+        </code>
+        <p>Dans ce cas, il faut absolument déclarer chaque des variables de ce type lors de la définition</p>
+    <h3>Cas 4 L Définition d'un type structure avec typedef, pour du C pur</h3>
+    <code class="visualstudio">
+        struct NomDeLaStructure<br> 
+            { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_1; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_2; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;…<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;type NomDuMembre_N; <br>
+            } 
+            typedef struct NomDeLaStructure NomDeLaStructure_s; <br>
+            NomDeLaStructure_s NomDeLaStructure; <br>
+        </code>
+    <h2>Conventions de codage</h2>
+    <dl>
+        <dt>Règle 1 : </dt>
+        <dd> Les déclaration des types structures devront être faites avant la fonction main()</dd>
+        <dt>Règle 2 : </dt>
+        <dd>Lorsqu'il y a trop de déclaration de type, mieux vaut les consignées dans un fichier d'en-tête.</dd>
+        <dt>Règle 3 : </dt>
+        <dd>L'identifiant pour les types-structures se terminera par le suffixe_s </dd>
+        <dt>Règle 4 :  </dt>
+        <dd>Les variables de type structure devront être déclarées à l'intérieur de la fonction main() ou de toutes autres fonctions du programmeur.</dd>
+        <dt>Règle 5 :</dt>
+        <dd>La déclaration d'une variable de type structure déclarée au niveau global (à l'extérieur du main()) devra être justifiées</dd>
+    </dl>
+    <h2>L'affectation d'une variable structure</h2>
+    <code class="visualstudio">
+        MonCompteBanque.NumeroCompte = 2345; //l'opérateur '.' signifie "élément de..." <br>
+        MonCompteBanque.NomCompte = "JeanPol"; <br>
+        MonCompteBanque.Adresse.NoCivique = 255 ; <br>
+        MonCompteBanque.Adresse.Rue = "Ontario est" <br>
+        MonCompteBanque.Adresse.CodePostal = "H2X 1X6" <br>
+        MonCompteBanque.Telephone = "(514)-982-3437"; <br>
+        MonCompteBanque.NumeroCompte = 201.0; <br>
+    </code>
+    <h2>Assignation des valeurs d'une structure à une autre structure</h2>
+    <code class="visualstudio">
+        struct MembreEquipe_s<br> 
+        { <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;string NomJoueur; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;int NumeroJoueur; <br>
+        } ;
+        MembreEquipe_s CapitaineJaune, CapitaineVert; <br>
+    </code>
+    <h2>Les tableaux de structure</h2>
+    <code class="visualstudio">
+        CompteBanque_s MaBanque[50] //MaBanque est un tableau de 50 structure CompteBanque_s
+    </code>
+</html>

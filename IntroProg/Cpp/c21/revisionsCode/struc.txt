@@ -1,0 +1,7 @@
+Struct Nom_s{   //declaration de la structure
+    type NomMembre;
+    type Membre2;
+    type Membredimensionne;
+};
+Structure.membre;
+Structure.membredimensionne[];

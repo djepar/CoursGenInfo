@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Cours C11, Introduction à la programmation : Chapitre 1</title>
+        <LINK href="NoteCoursStyle.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+
+        </header>
+        <quote class="exergue">
+
+
+
+        </quote>
+
+        <h1>Les fichiers</h1>
+
+        <h2>Les catégories d'opérations d'entrée-sortie</h2>
+
+        <h3>Les fichiers bufferisés et les fichiers non-bufferisés</h3>
+
+            <dt>Les fichiers bufferisés </dt>
+            <dd>Plus grande gamme de commandes et sont plus faciles à utiliser. L'utilisation de ces fichiers élimine la nécessité de définir les mémoires tampons dans lesquelles le contenu des fichiers est stocké. </dd>
+            <dt>Les fichiers non-bufferisés</dt>
+            <dd>Il faut définir la mémoires-tampons et s'occuper de l'intégrité des données lors que nous utilisont ce type de fichier. </dd>
+        <p> dans le cadre de ce cours nous aborderons seulement des fichiers bufferisés.</p>
+
+        <h3>Le mode de texte et le mode binaire</h3>
+
+        <dt>Mode texte</dt>
+        <dd>L'ensemble des données numériques sont converties en caractères ASCII</dd>
+        <dt>Mode binaire</dt>
+        <dd>L'ensemble des données sont converties en caractères binaire</dd>
+
+        <h3>La présentation des données dans les fichiers bufferisés</h3>
+
+        <p>Les données peuvent êtres lues et écrites dans un fichier bufferisé de la même manièere que pour le flux cin/cout</p>
+        <h4>Flux de données</h4>
+                <table>
+                    <tr>
+                        <th>Type d'opération</th>
+                        <th>Écran et clavier</th>
+                        <th>fichiers</th>
+  
+                    </tr>      
+                    <tr>
+                        <td>Écriture</td>
+                        <td>tous les types standards : cout &lt;&lt;</td>
+                        <td>tous les types standards (fich &lt;&lt; var;) pour les structures ( Fich.write(char*)&structure, sizeof(structure));</td>
+ 
+                    </tr> 
+                    <tr>
+                        <td>Écriture pour les types standards</td>
+                        <td>cin &gt;&gt; var ;</td>
+                        <td>fich &gt;&gt; var;</td>
+                    </tr> 
+                    <tr>
+                        <td>Écriture pour les types char</td>
+                        <td>le type get(), var = cin.get();</td>
+                        <td>le type get(), var = fich.get();</td>
+                    </tr> 
+                    <tr>
+                        <td>Écriture pour les types char </td>
+                        <td>_getch() et _getche, var = getche();</td>
+                        <td>Fich.read((char*)&structure, sizeof(structure));</td>
+                    </tr> 
+            <h3>Les types de io:: </h3>
+            <dt>Ios::in</dt>
+            <dd>Ouvrir le fichier, il doit exister (if not fail())</dd>
+            <dt>ios::out</dt>
+            <dd>Ouvrir pour écrire. Si le fichier n'existe pas, il sera créé. Si le fichier existe déjà, il sera réécrit.</dd>
+        
+    </body>
+</html>

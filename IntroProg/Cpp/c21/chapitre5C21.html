@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>C21 : Lire et écrire des fichiers</title>
+        <LINK href="../style.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html">Cours</a></li>
+                <ul>
+                    <li><a href="NoteCoursC11/coursC11.html">C11: Intro a la prog(C++)</a></li>
+     
+              </ul>
+        </header>
+        <quote class="exergue">
+
+        </quote>
+        <p>Le but principal de ce chapitre est d'apprendre d'écrire des données sur une donnée permanente</p>
+        <h1>Le format d'un fichier</h1>
+        <h2>Fichiers bufferisés et les fichiers non-bufferisés</h2>
+        <p>Les opérations sur les  <dfn id="fichierbufferise">fichiers bufferisés</dfn> sont plus faciles quant à leurs utilisations et offre un éventail plus large de commandes. L'utilisation de ces fichiers ne nécessite pas de définir les mémoires-tampons où sont stockés le contenu des fichiers.</p>
+        <p>Les opérations des fichiers non-bufferisés nécessitent la définition de la taille des mémoires-tampons et s'assurer de l'intégriter des données.</p>
+        <p>Dans le cadre du cours, nous utilions principalement les fichiers bufferisés par simplicité.</p>
+        <h2>Le mode texte et le mode binaire</h2> 
+        <p>Composé en dernier instance en binaire. <br>
+        Le format d'un fichier désigne de l'encodage</p>
+        <ul>
+            <li>D'une part, nous retrouvons les fichiers <strong>textes</strong>qui sont conservées sous forme de chaîne de caractère ASCII. Qui sont facilement modifibles.</li>
+            <li>D'autre part, nous retrouvons les fichiers <strong>binaire</strong></li>
+        </ul>
+        <table>
+            <tr>
+                <th>Type d'opération</th>
+                <th>écran et clavier (flux standard)</th>
+                <th>fichier (exemple :fich)</th>
+
+            </tr>
+            <tr>
+                <td>Écriture 1</td>
+                <td> tous les types standards : &lt;&lt; <br>
+                example: cout &lt;&lt; Variable;</td>
+                <td> 
+                    <ul>
+                        <li>tous les types standards : &lt;&lt; <br>
+                            exemple: fich &lt;&lt; Variable;</li>
+                        <li>pour les structures write() <br>
+                            exemple : Fich.write(char*)&structure,sizeof(structure)); 
+                        </li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Lecture</td>
+                <td> 
+                    <ul>
+                        <li>tous les types standards : &gt;&gt; <br>
+                            exemple : cin &gt;&gt; Variable</li>
+                        <li>le type char: get()
+                            exemple: cin &gt;&gt; Variables;
+                        </li>
+                        <li>le type char: _getch() et _getche() <br>
+                        exemple : Variable = _getch();</li>
+                    </ul>
+                </td>
+                <td> 
+                <ul>
+                    <li>tous les types standards : &gt;&gt; <br>
+                        exemple: fich &gt;&gt;</li>
+                    <li>le type char: get() <br>
+                        exemple : Variable = fich.get() </li>
+                    <li>pour les structures : read()<br>
+                    exemple : fich.read(char*)&structure,sizeof(structure));</li>
+                </ul>
+            </tr>
+        </table>
+        <h1>Ouverture et fermeture de fichier</h1>
+        <p>Pour manipuler des fichiers, le type <dfn id="fstream">fstream</dfn>en C++.<br>
+        on retrouve fstream dans &lt;fstream&gt;</p>
+        <h2>Ouvrir un fichier</h2>
+        <p>Pour ouvrir un fichier : </p>
+        <code class="visualstudio">
+            fstream Fichier; <br>
+            Fichier.open(NomEtCheminDuFichier, ModeFichier);
+        </code>
+        <p>En ce qui concerne le chemin du fichier, il est important de l'écrire à l'aide de double \\. </p>
+        <h3>Les modes d'ouverture de fichier</h3> 
+        <table>
+            <tr>
+                <th>Mode</th>
+                <th>Type</th>
+                <th>Objectif</th>
+                <th>Effet</th>
+            </tr>
+            <tr>
+                <td>ios::in</td>
+                <td>Lecture</td>
+                <td>Ouvre pour lire le fichier</td>
+                <td>Le fichier doit exister. Si le fichier n'existe pas, fail est alors vrai et il n'est pas possible d'utiliser fstream</td>
+            </tr>    
+            <tr>
+                <td>ios::out</td>
+                <td>Écriture</td>
+                <td>Oouvre pour écrire le fichier</td>
+                <td>Si le fichier n'existe pas, il sera créé, Si le fichier existe, son contenu sera effacé (perdu à jamais) </td>
+            </tr>
+            <tr>
+                <td>ios::in|ios::out</td>
+                <td>Lecture et écriture</td>
+                <td>Ouvre pour lire et écrire le fichier</td>
+                <td>Le fichier doit exister. Si le fichier n'existe pas, fail est alors vrai et il n'est pas possible d'utiliser fstream</td>
+            </tr>
+            <tr>
+                <td>ios::app</td>
+                <td>Écriture</td>
+                <td>Ouvre pour écrire le fichier à la fin</td>
+                <td>Le contenu du fichier n'est pas effacé. L'écriture se fait à la fin du fichier</td>
+            </tr>
+        </table>
+        <h3>Syntaxe d'ouverture</h3>
+        <h4>en mode écrit et écrire</h4>
+        <code class="visualstudio">
+            fstream Fichier; <br>
+            Fichier.open("exemple1.txt", ios::out); <br>
+            Fichier &lt;&lt; "Hello world" &lt;&lt; endl; //endl pour finir avec un saut de ligne <br>
+        </code>
+        <h3>Syntaxe de fermeture</h3>
+        <p>Les données du fichiers sont 'bufferisé', c'est seulement lorsque l'on ferme le fichier qu'on écrit sur le fichier</p>
+         <code class="visualstudio">
+            fstream Fichier; <br>
+            Ficher.close(); <br>
+        </code>
+        <img src="../../Images/fig1-c21chapitre5.png">
+        <h3>Syntaxe de lecture d'un fichier</h3>
+        <ul>
+            <li>Dans un premier temps, il faut toujours ouvrir le fichier dans le mode ios::in</li>
+            <li>La méthode <dfn id="get">get</dfn> permet de lire un caractère dans un fichier. Pour faire la lecture complète, il faut déplacer le curseur. La méthode get le gait pour nous. <br>
+            <code class="visualstudio"> char Caractere; <br>
+                Caractere = Fichier.get();
+            </code></li>
+            <li>La méthode <dfn id="eof">eof </dfn> s'assure que le fichier est lu en entier.
+            <code>if (Fichier.eof()) // il est vrai que le curseur est à la fin du fichier. </code></li>
+        </ul>
+        <h3>Lire et afficher le texte</h3>
+        <p>voir le code afficher.cpp</p>
+
+    </body>
+</html>

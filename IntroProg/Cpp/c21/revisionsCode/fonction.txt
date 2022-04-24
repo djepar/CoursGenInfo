@@ -1,0 +1,10 @@
+type_retour Nom(type_accepte Nom, ...) {
+    instruction; 
+    return valeur; //sauf si void
+                   //doit être du type_retour
+}
+
+void main(void) {
+    Nom(Val); //juste appeler la fonction sans conserver les valeurs de type_retour
+    Var1 = Nom(Val); //appel de fonction et valeur de retour entreposer dans Var1;
+}

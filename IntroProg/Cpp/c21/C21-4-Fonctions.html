@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Cours C11, Introduction à la programmation : Chapitre 1</title>
+        <LINK href="NoteCoursStyle.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="../../index.html">Accueil</a></li>
+         </header>
+        <quote class="exergue">
+    
+
+            </quote>
+        <h1>Les fonctions</h1>
+        <h2>Utilisation des fonctions</h2>
+        <p>Une fonction est un tout homogène, destiné à remplir une tâche bien définie.</p>
+        <h3>Pourquoi utiliser une fonction?</h3>
+        <ul>
+            <li>Afin de modulariser un programme(découper un travail complexe en plusieurs tâches simples)</li>
+            <li>Afin d'écrire une tâche qui se repéte plusieurs fois dans un programme.</li>
+        </ul>
+        <h3>Une fonction doit : </h3>
+        <ul>
+            <li>Être déclarée(écriture d'un prototype)</li>
+            <li>Être définie(écriture du corps de la fonction, du programme la composant)</li>
+            <li>être appelée(utilisation de la fonction)</li>
+        </ul>
+        <h2>Déclaration d'une fonction ou le prototype de la fonction</h2>
+        <p>Le prototype d'une fonction montre la forme de la fonction : son résultat(le type de la valeur de retour), le nom de la fonction et les paramètres. <br>
+        Les noms des paramètres est facultatifs, mais leurs types est obligatorires pour le compilateur.</p>
+        <code>type nom_fonction(type parametre_formel1, type parametre_forme2);</code>
+        <h2>Définition d'une fonction</h2>
+        <code>
+            type nom_fonction(type parametre_formel1, type parametre_forme2) { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;corps de la fonction <br>
+            } <br>
+        </code>
+        <h2>L'appel d'une fonction</h2>
+        <p>L'appel de fonction dépend des paramètres nécessaires. par exemple, clrscr(); ne nécessite aucun paramètre.</p>
+        <h2>L'instruction return</h2>
+        <p>L'instruction return indique la fin logique de la fonction(fin de son exécution), et le retour à la fonction apellante, elle peut prendre un paramètre de retour ou rien. Retourne toujours qu'une seule valeur. <br>
+        Trois exemples acceptable d'instruction return :</p>
+        <code> 
+            return valeur_de_retour;<br>
+            return Var1*Var2/3; <br>
+            return void; <br>
+        </code>
+    </body> 
+</html>

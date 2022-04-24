@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>La ROM, le BIOS et le CMOS</title>
+        <LINK href="NoteCoursStyle.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="cartemere.html">Carte-mère</a></li>
+                <li><a href="powershell.html">powershell</a></li>
+                <li><a href="ram.html">RAM</a></li>
+                <li><a href="Rom_Bios_CMOS.html">Rom, bios et CMOS</a></li>
+                <li><a href="stockagepermanent.html">Stockage Permanent</a></li>
+                <li><a href="SystemeExploitation.html">Système d'exploitation</a></li>
+              </ul>
+        </header>
+        <quote class="exergue">
+   
+
+            </quote>
+        <h1>La ROM (Read Only Memory)</h1>
+        <p>La <dfn id="rom">ROM</dfn> est la mémoire non volatile, c'est-à-dire qu'elle n'est pas perdu lors de l'arrêt de l'ordinateur. <br>
+        Également appelé mémoire morte, en opposition à la mémoire vive.  <br>
+        La ROM contient le programme BIOS (Basic Input OutPut System). Le bios est un programme qui a un rôle lors du démarrage de l'ordinateur.</p>
+        <h2>Historique des ROMs</h2>
+        <ul>
+            <li>Les ROM était dans un premier temps programmé en fondant les instructions sur la puce. </li>
+            <li>PROM : Programmable ROM, des roms qui pouvaient être programmés une seule fois, après la fabrication de la puce.</li>
+            <li>EPROM : Erasable PROM, peut finalement être programmé plusieurs fois mais nécessite un appareil de rayonnement UV. </li>
+            <li>EEPROM (Electrically EPROM) : Mémoire qui peut être effacé directement dans l'ordinateur sans équipement spécial. C'est une tension plus élevée qui permet d'effacer la mémoire de l'EEPROM. Permet de faire de nouvelle mise à jour de la carte-mère. </li>
+        </ul>
+        <h1>Le BIOS</h1>
+        <p>Le <dfn id="bios">BIOS</dfn> est un programme que l'on retrouve sur une puce de mémoire morte.</p>
+        <h2>Rôles du BIOS au démarrage</h2>
+        <h3>POST (Power on Self Tests)</h3>
+        <p>La première étape consiste à vérifier le fonctionnement des différentes composantes de l'ordinateur(CPU, RAM, cache, clavier, etc..). <br>
+        Lorsque le POST rencontre un problème, il envoie une suite de signaux sonores de durée différentes générés par un petit haut-parleur de la carte-mère. Il est possible de trouver la signification des codes avec une simple recherche google</p>
+        <h3>Configuration matérielles</h3>
+        <p>La deuxième étape consiste à s'occuper de la configuration du matériel. Par exemple le taux de rafraîchissement de la RAM, la vitesse de répétition des caractères du clavier, etc. <br>
+        Ces caractéristiques sont gardées dans le CMOS ou NVRAM, soit de la mémoire non-volatile grâce à une batterie. </p>
+        <h3>Chargement en RAM de certain pilote(drivers)</h3>
+        <p>Rappel : Programme en langage évolué (ex : C) --> Compilateur --> Programme en langage machine du CPU --> Exécution</p>
+        <h4>Contrôleur et pilotes</h4>
+        <p>Un contrôleur étant aussi un processeur a aussi son langage machine. 
+        Une instructions venant du système d'exploitation --> Pilote (Driver) --> Commandes en langage machine du contrôleur --> Exécution <br>
+        Un pilote doit avoir deux informations : les détails du OS et du contrôleur </p>
+        <p> La troisième étape de l'ouverture du BIOS consiste à ouvrir les pilotes essentiels comme l'écran, les autres pilotes sont exécutés une fois que le système d'exploitation est chargée.</p>
+        <h3>Chargement du Système d'exploitation</h3>
+        <p>Le Bios consulte ses données dans le CMOS afin de diriger la machine vers le lieu ou réside le SE. </p>
+    </body>
+</html>

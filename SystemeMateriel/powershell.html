@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Cours C11, Introduction à la programmation : Chapitre 1</title>
+        <LINK href="../../style.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="cartemere.html">Carte-mère</a></li>
+                <li><a href="powershell.html">powershell</a></li>
+                <li><a href="ram.html">RAM</a></li>
+                <li><a href="Rom_Bios_CMOS.html">Rom, bios et CMOS</a></li>
+                <li><a href="stockagepermanent.html">Stockage Permanent</a></li>
+                <li><a href="SystemeExploitation.html">Système d'exploitation</a></li>
+              </ul>
+        </header>
+        <quote class="exergue">
+            Le Powershell, c'est pour les vrai.e.s. <br>
+            -Patrick Webster
+
+        </quote>
+        <h1>Powershell</h1>
+            <p><dfn id="Powershell">Powershell</dfn> est un ______?????????</p>
+        <h2>Pourquoi utilisez Powershell</h2>
+        <ul>
+            <li>Plus de fonctionnalité que l'invite de commande</li>
+            <li>Les serveurs n'utilisent qu'un terminal et sans interface graphique.</li>
+            
+        </ul>
+        <h2>Chemins relatifs et absolues</h2>
+        <p>\ remplirrrrrrrrrrrrrrrrrrrrrr</p>
+        <h2>La syntaxe du PowerShell</h2>
+        <dl>
+            <dt>Verbe</dt>
+            <dd>détermine l'action à effectuer</dd>
+            <dt>Tiret</dt>
+            <dd>sépare le verbe du nom</dd>
+            <dt>Nom</dt>
+            <dd>identifie un composant sur lequel on veut effectuer une action</dd>
+            <dt>Paramètre</dt>
+            <dd>précédés d'un tiret et d'un espace</dd>
+            <dt>Valeurs de paramètres</dt>
+            <dd>séparées du paramètre par un espace</dd>
+        </dl>
+        <h2>ISE et ISE(x86)</h2>
+        <p>Nous ne voyons pas cela dans ce cours-ci, nous allons voir ça en C22.</p>
+    <h1>Commandes générales PowerShell</h1>
+   <dl>
+        <dt>Get-date</dt>
+        <dd>Donne la date</dd>
+        <dt>clear-host</dt>
+        <dd>même chose que </dd>
+        <dt>Set-location</dt>
+        <dd>Configurer le repertoire courant (cd)</dd>
+        <dl>man</dl>
+        <dd>Permet d'accéder au manuel</dd>
+        <dl>Get-help</dl>
+        <dd>Pour de l'aide, ajouter -examples est très utile</dd>
+    </dl>
+
+    <h2>New-item, commande de création</h2>
+    <p>Le <dfn id="new-item">new-item</dfn> est une commande de création qui a trois paramètres :</p>
+    <ul>
+        <li>-file ou -directoty : indique si on créé un fichier ou un répertoire</li>
+        <li>-path : indique l'endroit où on créé l'item</li>
+        <li>-name : indique le nom de l'item</li>
+    </ul>
+    <code class="terminal">new-item -path C:\RepX\RepY\Repz -name bob -type Directory <br> 
+    new-item -path C:\RepX\RepY -name bart.txt -type File<br>
+    New-Item C:\RepX\RepY\marge.txt -Type file</code>
+
+    <h2>Remove-item, commande de destruction</h2>
+    <quote>I have become death, destroyer of world</quote>
+    <code class="terminal">Remove-item C:\RepX\RepY\Repz\bob</code>
+
+    <h2>Get-content, commande d'acquisition</h2>
+    <code class="terminal">get-content C:\repx\repy\marge.txt</code>
+
+    <h2>Set-content et add-content</h2>
+    <p>Set-content écrase le fichier tandis que add-content ajoute aux contenus du fichier. <br>
+    Si le fichier n'existe pas, ces commandes le crée.</p>
+    <code class="terminal">set-content -path C:\repx -name marge.txt -value "you have nothing to loose" <br>
+    add-content -path C:\repx -name marge.txt -value "but your chains"   </code>
+
+    <h2>Copy-item </h2>
+    
+    <h1>Les paramètres génériques</h1>
+    <p>L'<dfn id="etoile">étoile </dfn> peut remplacer des caractères, afin de faire des recherches <br>
+    Par exemple * ou *b permet de trouver bob <br>
+    bob.txt ne serait pas trouvé
+    *.txt permettrait de trouver bob.txt</p>
+    <code class="terminal">get-childitem C:\RepC12\Rep1\rep2\* </code>
+
+
+    <h2>Paramètre -include</h2>
+    <p>Permet de paramètré les informations qu'on veut inclure </p>
+    <code class="terminal">get-childitem C:\RepC12\Rep1\rep2\* -include Fich*</code> <br>
+
+    <code class="terminal">get-childitem C:\RepC12\Rep1\rep2\* -include Fi*.txt</code> <br>
+
+    <code class="terminal">get-childitem C:\RepC12\Rep1\rep2\* -include *ic*</code> <br>
+    <h2>Paramètre -exclude</h2>
+    <p>Permet de paramètré les informations qu'on veut </p> <br>
+
+    <code class="terminal">get-childitem C:\RepC12\Rep1\rep2\* -exclude *.txt</code> <br>
+    <code class="terminal">get-childitem C:\RepC12\Rep1\rep2\* -exclude Fich*</code> <br>
+    <code class="terminal">get-childitem C:\RepC12\Rep1\rep2\* -exclude Fich*</code> <br>
+    
+    </body> 
+    
+</html>

@@ -1,0 +1,28 @@
+GPO = group policy object
+A GPO has a unique name, such as a GUID.
+
+Pour accéder à la console GPO :
+    Écrire : gpedit.msc
+
+Deux sections
+    Configuration ordinateur
+    Configuration utilisateurs
+    Des centaines de GPO.
+
+Lorsqu’on modifie une GPO, elle ne s’applique pas immédiatement. On doit redémarrer l’ordinateur... OU Utiliser gpupdate /force en ligne de commande. 
+
+Console MMC (Microsoft Management Console)
+    mmc.exe
+
+Il est possible de créer un rapport des GPO avec la commande gpresult.
+
+ rsop.msc pour afficher le Jeux de stratégie résultant
+ Pour produire un rapport
+     gpresult.exe  /f  /h  c:\temp\gpo_directeur.html
+    gpresult.exe  /f  /h  c:\temp\gpo_client2+non_admin.html
+
+Les GPO sont cumulatifs, si un même paramètres existes pour l'utilisateur et pour le groupe non-administrateurs, c'est le paramètre utilisateur qui l'emporte
+    groupe utilisateurs > non-administrateurs
+    Si un même paramètre existe pour utilisateur, tous les utilisateurs et un groupe == l'utilisateur l'emporte
+    Client > Groupe (admin ou non-Admin > Tous les utilisateur
+

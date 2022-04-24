@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Cours C21, Chapitre 2 : La résolution de problème </title>
+        <LINK href="NoteCoursStyle.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <ul>
+
+                 </ul>
+              </ul>
+        </header>
+        <quote class="exergue">
+        </quote>
+        <h1>Proposition d'une méthode de construction logiciel</h1>
+            <p>Il existe différente méthode de conception logiciel, en voici une proposée par le département d'information du CVM</p>
+        <h2>Les étapes de construction d'un logiciel</h2>
+            <ol>
+                <li>La phase d'analyse</li>
+                    <ul>
+                        <li>La définition du problème</li>
+                        <li>L'analyse des besoins</li>
+                        <li>La planification de l'implantation du système</li>
+                        <li>Le développement de l'architecture du système</li>
+                    </ul>
+                <li>La phase de conception et d'implantation qui comprend: </li>
+                    <ul>
+                        <li>Le design détaillé du projet</li>
+                        <li>La programmation des modules</li>
+                        <li>L'intégration des modules</li>
+                        <li>La validation des fonctions et des modules à l'aide d'un jeu d'essai</li>
+                        <li>La validation du système à l'aide de jeux d'essai</li>
+                    </ul>
+                <li>La phase de révision</li>
+                     <ul>
+                        <li>Les corrections et les modifications apport/es aux fonctions et aux modules</li>
+                        <li>Les améliorations apportées aux fonctions et modules</li>
+                    </ul>
+            </ol>
+       <h2>Exercices</h2>
+        <p>Pour chaque problème : 
+            <ul>
+                <li>Déterminer ce qui doit sortir du programme ou de la fonction</li>
+                <li>déterminer les données connues</li>
+                <li>rédiger le dictionnaire de données</li>
+                <li>rédiger le diagramme d'action</li>  
+            </ul>
+        </p>
+       <h3>Lire deux valeurs et faire afficher la plus petite des deux</h3>
+        <p>
+                Déterminer ce qui doit sortir du programme ou de la fonction <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; Sortir la plus petite valeur <br>
+                Déterminer les données connues  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;  Les deux valeurs qui seront lues ou entrés dans les paramètres de la fonction <br>
+                Rédiger le dictionnaire de données <br>
+                <table>
+                    <tr>
+                        <th>Identificateur</th>
+                        <th>Signification</th>
+                        <th>Type</th>
+                        <th>Valeur</th>
+                    </tr>
+                    <tr>
+                        <td>var 1</td>
+                        <td> Une des valeurs qui sera comparé</td>
+                        <td> int, mais pourrait être un float ou plus grand si nécessaire</td>
+                        <td> Lue</td>
+                    </tr>
+                    <tr>
+                        <td>var 2s</td>
+                        <td> Une des valeurs qui sera comparé</td>
+                        <td> int, mais pourrait être un float ou plus grand si nécessaire</td>
+                        <td> Lue</td>
+                    </tr>
+                </table>
+            Rédiger le diagramme d'action
+            <code>
+                    Lire Var1 et Var2
+                    Si Var1 &gt; Var 2 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;retourner V1 <br>
+                    Si Var1 == var 2 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; Écrire "Les deux valeurs sont égales" <br>
+                    Sinon <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;retourner V2 <br>
+            </code>
+        </p>
+        <h3>Lire un nombre entier et afficher un message indiquant s'il est positif, négatif ou nul.</h3>
+            <p>Déterminer ce qui doit sortir du programme ou de la fonction <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Sortir un string qui informe si le message est positif, négatif ou nul<br>
+            Déterminer les données connues  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;  Les deux valeurs qui seront lues <br>
+            Rédiger le dictionnaire de données <br>
+            <table>
+                <tr>
+                    <th>Identificateur</th>
+                    <th>Signification</th>
+                    <th>Type</th>
+                    <th>Valeur</th>
+                </tr>
+                <tr>
+                    <td>Var 1</td>
+                    <td>Le nombre a évaluer</td>
+                    <td>Int</td>
+                    <td>Lue</td>
+                </tr>
+            </table>
+            Rédiger le diagramme d'action
+            <code>
+                    Lire Var1
+                    Si Var1 &gt; 0 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; Écrire"Le nombre est positif" <br>
+                    Si Var1 == 0 <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; Écrire "Le nombre est nul" <br>
+                    Sinon <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Écr4ire "Le nombre est négatif" <br>
+            </code>
+        </p>
+        <h3>Lire un nombre réel positif représentant la valeur du rayon d'un cercle. Afficher l'aire et la circonférence de ce cercle.</h3>
+        <p>Déterminer ce qui doit sortir du programme ou de la fonction <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; Sortir l'aire et la circonférence d'un cercle à partir de son rayon<br>
+        Déterminer les données connues  <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;  La valeur lue  <br>
+        Rédiger le dictionnaire de données <br>
+        <table>
+            <tr>
+                <th>Identificateur</th>
+                <th>Signification</th>
+                <th>Type</th>
+                <th>Valeur</th>
+            </tr>
+            <tr>
+                <td>Rayon</td>
+                <td>Le nombre a évaluer</td>
+                <td>Float</td>
+                <td>Lue</td>
+            </tr>
+            <tr>
+                <td>circonference</td>
+                <td>La circonference du cercle</td>
+                <td>Float</td>
+                <td>2*PI*Rayon</td>
+            </tr>     
+            <tr>
+                <td>aire</td>
+                <td>L'aire du triangle</td>
+                <td>Float</td>
+                <td>PI*Rayon*Rayon</td>
+            </tr>
+            <tr>
+                <td>PI</td>
+                <td>Le nombre pi</td>
+                <td>const float</td>
+                <td>3.14159</td>
+            </tr>
+            <tr>
+                <td>continue</td>
+                <td>Un booléen afin de savoir si la personne a terminé avec ses rayons.</td>
+                <td>const float</td>
+                <td>3.14159</td>
+            </tr>
+        </table>
+        Rédiger le diagramme d'action
+        <code>  
+                Faire <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Rayon = 0 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Aire = 0 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Faire <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lire rayon <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si (Rayon &gt; 0) <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Écrire : "Le nombre doit être plus grand que 0" <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Tant que (Rayon &gt; 0) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;circonference =  2*PI*Rayon <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;aire = PI*Rayon*Rayon <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Écrire : circonference et aire <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Écrire : "Voulez-vous continuer?" <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Lire : 1 pour continuer 0 pour arreter  <br>
+                Tant Que (continue != 0) <br>
+        </code>
+    </p>
+    <table>
+        <tr>
+            <th>Identificateur</th>
+            <th>Signification</th>
+            <th>Type</th>
+            <th>Valeur</th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    </body>
+</html>

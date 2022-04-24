@@ -1,0 +1,13 @@
+﻿  contact.cpp
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Header.h(24,6): error C2182: 'EcrireCSV' : utilisation non conforme du type 'void'
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Header.h(24,16): error C2065: 'string' : identificateur non déclaré
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Header.h(24,23): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'path'
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\contact.cpp(5,6): error C2365: 'EcrireCSV' : redéfinition ; la précédente définition était 'variable de données'
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Header.h(24): message : voir la déclaration de 'EcrireCSV'
+  Source.cpp
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Header.h(24,6): error C2182: 'EcrireCSV' : utilisation non conforme du type 'void'
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Header.h(24,16): error C2065: 'string' : identificateur non déclaré
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Header.h(24,23): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'path'
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Source.cpp(5,17): warning C4326: le type de retour de 'main' doit être 'int' au lieu de 'void'
+C:\Users\HelloWorld\OneDrive - CEGEP du Vieux Montréal\ImprecisInformatique\NotesdeCours\NoteCoursC21\Exercices\LectureEcritureCSV\Source.cpp(11,2): error C2064: le terme ne correspond pas à une fonction qui prend 3 arguments
+  Génération de code en cours...

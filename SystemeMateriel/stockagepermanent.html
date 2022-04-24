@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+</head>
+<body>
+    <header>           
+         <ul>
+        <li><a href="cartemere.html">Carte-mère</a></li>
+        <li><a href="powershell.html">powershell</a></li>
+        <li><a href="ram.html">RAM</a></li>
+        <li><a href="Rom_Bios_CMOS.html">Rom, bios et CMOS</a></li>
+        <li><a href="stockagepermanent.html">Stockage Permanent</a></li>
+        <li><a href="SystemeExploitation.html">Système d'exploitation</a></li>
+      </ul></header>
+    <h1>Les disques durs</h1>
+    <ul>
+        <li>SSD : Sold state drive</li>
+        <li>HDD : Hard disk drive</li>
+    </ul>
+    <h2>Caractétistiques des disques durs</h2>
+    <ul>
+        <li>Vitesse de transfert : vitesse à laquelle les données circulent entre le disque dur et le système</li>
+        <li>Vitesse de recherche : temps requis pour trouver les données désirées sur le disque</li>
+        <li>Vitesse d'écriture :</li>
+        <li>Vitesse de lecture</li>
+        <li>Usure</li>
+        <li>Aspect physique (taille d'encombrement)</li>
+        <li>Taille du stockage</li>
+        <li>Prix</li>
+    </ul>
+    <h2>Les HDD</h2>
+    <p>Il s'agit de stockage magnétique</p>
+    <h3>Caractéristiques des HDD</h3>
+    <ul>
+        <li>Le RPM : vitesse de rotation des plateaux, on trouve 5400 tours/minutes, 7200 rpm (rapide), 10 000 (pro), 12 000 et 15 000 (ultramegapro)</li>
+        <li>Vitesses d'opération : composantes mécaniques à prendre en compte</li>
+        <ul>
+           <li>Vitesses d'accès : temps de positionnement le bras mécanique(<bold>temps de recherche ou seek time</bold> et attendre que la rotation emmène le fichier sous la tête de lecture (temps de latence) Ce sont les opérations les plus lente de l'accès aux données.</li>
+           <li>Vitesse de lecture : à partir du début du fichier, les données osnt lues à la même vitesse oà les plateaux tournent.</li>
+           <li>Même principe que la lecture, mais il faut imprimer.</li>
+        </ul>
+        <li>L'usure : </li>
+        <ul>
+            <li>Composants mécaniques</li>
+            <li>Substrat magnétique</li>
+            <li>Chocs physiques</li>
+            <li>Autres considérations MTF (mean time to failure), en heures d'opérations.à</li>
+        </ul>
+        <li>Le format : 2.5 ou 3.5 pouces. (plus grand : moins chère et espace de stockage plus grande</li>
+    </ul>
+    <h3>La vitesse de transfert</h3>
+    <p> La fitesse de transferts des disques HDD d/pend les facteurs ..............</p>
+    <h3>Capacité d'un disque dur : information moins pertinente aujourd'hui</h3>
+    <p>Nb d'octets par secteur * nb de secteurs par pistes * nb de pistes par cylindre * nb de cylindre</p>
+    <h2>Les SDD</h2>
+    <p>Mémoire flash. À partir e la technologie EEPROM et est utilisée entre autres dans les clés/lecteurs et USB et cartes SD. <br>
+    Micropuces sur un circuit imprimé, pas de pièces mécaniques mobiles.<br>
+    Type de constituant : transistor <br>
+    L'écriture des données est faite à l'aide d'impulsions électriques. <br>
+    La lecture des données se fait par l'accès à une adresses.</p>
+    <h3>Les caractéristiques du SSD</h3>
+    <ul>
+        <li>Vitesse d'opérations : Beaucoup plus rapide que le HDD. Parce qu'il n'y a pas de mouvement mécanique requis. Un système d'exploitation installé sur un disque SSD est bcp plus rapide que sur un HSS. C'est des mises à jour les plus efficaces en termes de gain de vitesse.</li>
+        <li>Usure : </li>
+        <ul>
+            <li>Composants électroniques : les cellules (transistors) qui conservent les bits d'informations ont un nombres <bold>nombre d'écriture limitées</bold>. Lorsque le nombre maximal d'écriture est atteint pour un bit, il ne retient plus l'information. Donc perte, d'une certaine quantité d'espace avec le temps. <bold>désavantage principal avec le HDD</bold> La donnée de mesure pour l'usure est en Tera-Byte-Written</li>
+            <li>Beaucoup plus résistant aux chocs physiques</li>
+            <li>Composantes électroniques de qualités variées.</li>
+        </ul>
+        <li>Facteur d'encombrement</li>
+        <ul>
+            <li>Sata : </li>
+            <li>Nvme</li>
+        </ul>
+        <li>Taille de stockage : généralement un peu inférieurs à leurs équivalents HDD.</li>
+        <li>Prix : à capacité et qualité équivalente qu'un HDD, c'est plus chère.  </li>
+        <li>Vitesse de transfert :  très rapide, pour la première fois, la vitesse de transfert vers l'ordinateur devient parfois plus lente que le disque dur. </li>
+    </ul>
+    <h2>L'interface d'un disque dur </h2>
+    <p>détermine les commandes utilisées pour la communication entre l'ordinateur et le disque dur, la vitesse de transmission des données, les types de conecteurs et de câbles utilisées etc. </p>
+    <ul>
+        <li>IDE : ancienne interface</li>
+        <li>SCSI : ancienne technologie haute game où il est possible d'écrire et de lire en même temps. </li>
+        <li>Serial ATA (SATA): technologie bien établie avec prix d'entrée de gamme et performance de base.</li>
+        <li>Serial Attached SCSI (SAS) : technologie bien établie haut de gamme avec la même capacité à lire et écrire en même temps comme SCI</li>
+        <NVMe>Interface plus récente, conçue spécifiquement pour SSD. Utilise le bus PCIe qui est plus rapide et procure des vitesses de transmission de données supérieures aux autres technologies d'interfaces.</NVMe>
+    </ul>
+    <h2>Paritions</h2>
+    <p>La partion consiste à diviser le disque en zone isolées. Les partiions permettent de cloisonner les données dans les zones différentes.</p>
+    <h3>Type de partitions</h3>
+    <li>MBR (Master Boot Record):existe depuis longtemps, </li>
+    <ul>
+        <li>compatible universellement, à certaines limites. </li>
+        <li>Nécessite de redémarrer l'ordinateur pour avoir accès aux différentes partitions.</li>
+        <li> Max 4 partitions de max 2 to chacunes.</li>
+        <li>Le secteur est la plus petite unité d'écriture d'un disque dur.</li>
+        <li>Les tables de partitions: le secteur de démarrage est stocké sur le premier secteur du disque, il contient la table de partitions, le dode de démaragger (boot loader) et les informations relatives au disque dur.</li>
+    </ul>
+    <li>GPT() : plus récente, doit être supportée par le matériel et le système d'exploitation. </li>
+    <ul>
+        <li>Supporte 128 partitions de 256 TB chacune. </li>
+        <li>Fonctionne seulement avec l'UEFI.</li>
+        <li>Utilise plusieurs secteurs du début du disque pour la table de partitions, pas suelemenet le premier secteur.</li>
+    </ul>
+    <h1>Le systèmes de fichiers</h1>
+    <p>Un <dfn id="systemefichier">systèmes de fichiers</dfn> est un mécanisme qui permet de conserver les données sur du stockage permanent, d'organiser et de localiser ces données. Les données sont alors conservées sous forme de fichiers.</p>
+    <h2>Les foncions du systèeme de fichiers</h2>
+    <ul>
+        <li>Manimulaption des fichiers : </li>
+        <li>Localisation des fichiers</li>
+        <li>Sécurité et contrôle d'accès</li>
+        <li>Intégrité des fichiers</li>
+        <li>Organisation des fichiers</li>
+        <li>Compression et chiffrement des données</li>
+        <li>journalisation des écritures</li>
+    </ul>
+    <h2>Clusters ou blocs</h2>
+    <p>L'organisation des fichiers au niveau de la machine se font par bloc : par cluster. <br>
+        Le nombre de secteur dans un cluster est de puissance 2. <br>
+        Un fichier occupera toujours un nombre entier de clusters peu importe sa taille. <br>
+        L'espace non occupé d'un cluster est de l'espace perdu.</p>
+    <h3>Exemple de gestion mémoire</h3>
+        <ul>
+            <li>Secteur : 512 octets</li>
+            <li>cluster : 4096 (4 secteurs)</li>
+            <li>Fichier : 6144 octets (1.5 cluster)</li>
+            <li>Espace non occupé par le disque : 8192 octets(2 clusters entiers)</li>
+            <li>Espace perdu : 0.5 cluster (2k)</li>
+        </ul>
+        <p>Le cluster est déterminé par l'ordinateur (CONTRAIREMENT AU SECTEUR QUI EST FAIT PAR LE MANUFACTURIER***) <br>
+        Des plus petits clusters réduisent l'espace perdu. Meilleur pour du stockage de bcp de petits fichiers <br>
+        Des clusters plus grands réduisent le nombre de d'emplacements à chercher sur le stockage = plus performant. Meilleur pour des gros fichiers. </p>
+    <h2>Localisation des fichiers et accès aux fichiers</h2>
+    <p>Au début du système de fichier : une liste de tous les fichiers. <br>
+        On trouve également une deuxièeme table pour l'adresse des fichiers. 
+    </p>
+    <h2>La fragmentation</h2>
+    <p>Lorsqu'un fichier est supprimé, l'espace disque est libéré pour stocker de nouveaux fichiers. Cela créé un espace vide sur le disque, possiblement entre 2 autres fichiers. <br>
+    Si on veut tstocker un fichier plus grand que cet espace disponible, le début du fichier occupera l'espace et le reste occupera un autre espace ailleurs. 
+<br> Le fichier sera stocké à plusieurs endroits non contigus. Ce phénomène s'appelle la fragmentation. <br>
+La défragmentation est un opération pour mettre les dossiers ensemble, opérations longues mais procure un gain de performance. MTN INUTILE, LES SE LE FONT automatiquement maintenant. </p>
+<h2>Le formatage</h2>   
+<p>Avant de pouvoir stocker des fichiers sur une partition, on doit créer les listes de métadonnées des fichiers, déterminer les clusters et effectuer d'autres opérations qui permettent d'organiser les fichiers. 
+    <br>Cette opération s'appelle formatter une partition. 
+</p>
+<h2>L'organisation des fichiers par l'utilisateur.trice</h2>
+<p>Le répertoire de départ : la racine. Sous windows : '\'.</p>
+<h2>.......</h2>
+<p>l'extension est utilisé par le système d'exploitation</p>
+</body>
+</html>

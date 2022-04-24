@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours</a></li>
+            <ul>
+                <li><a href="NoteCoursC11/coursC11.html">C11: Intro a la prog(C++)</a></li>
+                <ul>
+                    <li><a href="chapitre1.html">Chapitre 1 </a></li>
+                    <li><a href="chapitre2.html">Chapitre 2</a></li>
+                    <li><a href="chapitre3.html">Chapitre 3</a></li>
+                    <li><a href="chapitre4.html">Chapitre 4</a></li>
+                    <li><a href="chapitre5.html">Chapitre 5</a></li>
+                  </ul>
+             </ul>
+          </ul>
+    </header>
+
+    <h1>Chapitre 4</h1> <!-- p.116-149 -->
+
+    <h2> 4.1 La répétition</h2> 
+    <p>Pour prendre avantage de la rapidité d'un ordinateur, <dfn>les instructions de répétitions</dfn> permettent d'effectuer différent types de boucle afin de répéter une même séquence d'instruction plusieurs fois. </br> Les instructions de répétition sont le Pour, le Tant Que, et le Faire...Tant Que.</p>
+
+
+
+    <h2> 4.2 Les répétitions dans les diagrammes d'action </h2>
+   <table>
+       <caption>Règles des instructions de répétitions :</caption>
+       <tr>
+           <td><strong>règle 1</strong></td>
+           <td>Les critères de sélection d'un énoncé de répétion sont : </td>
+           <td><dfn>Pour</dfn> répète un bloc d'instruction un nombre connu et exact de répétion</td>
+           <td><dfn>Tant Que</dfn> répète un bloc d'instruction un nombre inconnu de répétion. C'est le changement d'une condition qui arrête la boucle. </td>
+            <td><dfn>Faire...Tant Que</dfn>repète au moins une fois un bloc d'instruction, puis le répète jusqu'à ce qu'il est un changement à la condition. </td>
+        </tr><tr>
+            <td><strong>règle 2</strong></td>
+            <td></td>
+        </tr><tr>
+            <td><strong>règle 3</strong></td>
+            <td><cite>Le double crochet signale le début et la fin du bloc d'instruction à répéter.</cite></td>
+            <!-- inserer image regle3p116.png -->
+
+    </tr>
+
+   </table>
+   
+   <!-- inserer limage exerciceP117 -->
+   
+   
+    <h2> 4.3 L'énoncé <strong>Pour</strong> </h2>
+    
+   <!-- inserer limage exerciceP117 -->
+    <cite>Un Pour est répété tant que sa condition est vraie, c'est pourquoi il s'agit d'une condition
+        pour poursuivre et non pas d'une condition d'arrêt. Notez que pour arrêter cette répétition,
+        ici la valeur de i devra dépasser 10 (ainsi la condition i<=10 sera fausse). Après le Pour,
+        la valeur de i est donc de 11. (p.117)</cite>
+
+    <h2> 4.4 L'instruction for</h2> <!-- p.118 -->
+        <p>Il s'agit de l'énoncé en C++ pour l'instruction de répétition Pour.
+        </br>La syntaxe :  for (Variable=valeur initiale; condition pour poursuivre; incrémentation) </br>&nbsp; bloc-instructions. </p>
+        <code> <!-- p. 118 -->
+            //Calculer et afficher la somme de 10 nombres logiques </br>
+            Somme = 0; </br>
+            for (i=1; i<=10; i++) </br>
+            { </br>
+                cout << "\nEntrez un nombre entier : "; </br>
+                cin >> Nombre; </br>
+                Somme += nombre; </br>
+            } </br>
+            cout << "La somme des nombres est: " << Somme;
+        </code>
+        <p><bold>Execution d'un for(), p. 118 </bold></p> 
+        <ol>
+            <li><cite>Affectation de la valeur initiale à la variable de contrôle. </li>
+            <li><cite>Évaluation de la condition pour poursuivre : </cite></li>
+            <ul>
+                <li><cite>Si la condition est fausse, on quitte le for() (la répétition se termine ici)</cite></li>
+                <li><cite>Si la condition est vraie, on exéute les instructions du for()(son bloc-d'instruction)</cite></li>
+            </ul>
+            <li><cite>Incrémentation (ou décrémentation) de la variable de contrôle.</cite></li>
+            <li><cite>Retour à l'étape 2.</cite> </li>
+        </ol>
+
+
+
+    <h2> 4.5 L'énoncé Tant que </h2>
+    <p>Cet énoncé est utile lorsque nous avons pas le nombre exact de fois que la boucle doit être répétée. </p>
+        
+
+    <h2> 4.6 L'instruction while() </h2> <!-- p. 126 -->
+  </br> La boucle continue tant que la condition n'est pas vraie. </p>
+    <!-- Inserer l'image p126.png plzzzzzzzzzz -->
+
+    <p>Il s'agit de l'énoncé en C++ pour l'instruction de répétition Tant Que.
+    </br><strong>syntaxe :</strong>> :  while (condition pour poursuivre) </br>&nbsp;bloc-instructions </br><strong>exemple :</strong> </p>
+    <code>
+        //Lire un âge valide (de 0 à 120 inclusivement)</br>
+        cout &lt;&lt; "Entrez votre \x83ge: "; </br>
+        cin &gt;&gt; Age;</br>
+        while (Age&lt;0 || Age&gt;120) {</br>
+            cout &lt;&lt; "\n\x83ge invalide, recommencez"; </br>
+            cin &gt;&gt; Age;
+        }
+        cout &lt;&lt; "\n\nVotre \x82ge est : " &lt;&lt;;
+    </code>
+
+    
+    <h2> 4.7 L'énoncé Faire...Tant que </h2> <!-- p. 138 -->
+    <p>L'énoncé <dfn>Faire...Tant que</dfn>, le bloc d'instruction est executé une première fois avant d'atteindre une condition de répétition.  </p>
+    <!-- inserer p138.png-->
+    <cite>il s'agit d'une
+    condition pour poursuivre, et non pas d'une condition d'arrêt. (p.138)</cite>
+
+
+    <h2> 4.8 L'instruction do...while() </h2> 
+    <p>Il s'agit de l'énoncé en C++ pour l'instruction de répétition Tant Que.
+    </br><strong>syntaxe :</strong>> :  do  </br>&nbsp;bloc-instructions </br>while (condition pour poursuivre); </br> <strong>exemple: </strong></p>
+    <code>
+        //Lire un âge valide (de 0 à 120 inclusivement)</br>
+        cout &lt;&lt; "Entrez votre \x83ge: "; </br>
+        cin &gt;&gt; Age;</br>
+        do {</br>
+            cout &lt;&lt; "\n\x83ge invalide, recommencez"; </br>
+            cin &gt;&gt; Age;
+        }
+        while(Age&lt;0 || Age&gt;120);
+        cout &lt;&lt; "\n\nVotre \x82ge est : " &lt;&lt;;
+    </code>
+    <cite>
+    Voici comment s'exécute un do…while():
+        <ol>
+            <li>Exécution du bloc-instructions du do…while() </li>
+            <li>Évaluation de la condition pour poursuivre :</li>
+            <ul>
+                <li>si la condition est fausse, on quitte le do…while() (la répétition se termine)</li>
+                <li>si la condition est vraie, on retourne à l'étape 1..(p.139)</li></cite>
+            </ul>
+        </ol>   
+    <h2> 4.9 La fonction time()  </h2>
+    <h2> 4.10 Exercices </h2>  
+
+
+</body>
+</html>
