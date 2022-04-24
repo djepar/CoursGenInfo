@@ -1369,6 +1369,18 @@ fn main() {
 
 ### Using a panic! Backtraces
 
+Accessing an element beyond the end of a vector :
+    will cause panic in rust. 
+    In C : it's called a buffer overread because it's will read beyond the end of a structure. Can lead to security vulnerabilities. 
+
+"Backtraces in Rust work as they do in other languages: the key to reading the backtrace is to start from the top and read untril you see files you wrote."
+
+
+```
+RUST_BACKTRACE=1 cargo run
+```
+
+
 
 
 
