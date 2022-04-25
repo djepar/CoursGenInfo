@@ -17,6 +17,9 @@ An algorithm take any of the possible input and transforms it to the desired out
 
 "Three desirable properties for a good algorithm" : correct, efficient and easy to implement. (p. 4)
 
+## Robot welding shortest path
+
+### Resolve with the Nearest Neighbor
 
 ```
 NearestNeighbor(P)
@@ -33,10 +36,9 @@ NearestNeighbor(P)
 
 Problem with the NearestNeighbor algorithm : doesn't find the shortest path. 
 
-PAGE 7 : faire ClosestPair
+### Resolve with the the ClosestPair(P) 
 
-
-
+" A different idea might repeatedly connect the closest pair of endpoints whose connection will not create a problem, such as premature termination of the cycle. Each vertex begins as its own single vertex chain. After merging everything together, we will end up with a single chain containing all the points in it. Connecting the final two endpoints gives us a cycle. " (p. 7)
 
 
 
