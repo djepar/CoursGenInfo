@@ -153,9 +153,37 @@ Hunting for counterexample :
 - Go for a tie
 - Seek extremes
 
+### 1.4 Induction and Recursion
+To be sure no counterexample is possible, we need a proof or demonstration of correctness. One of those method is mathematical induction. (p. 15)
+
+"recursion is mathematical induction in action. In both, we have general and boundary conditions, with the general condition breaking the problem into smaller and smaller pieces. The initial or boundary condition terminates the recursion." (ibid)
+
+"a computer scientist is a mathematician who only knows how to prove things by induction." (ibid)
+
+
+Common proof errors: 
+- Boundary errors
+- cavalier extension claims
+
+
+
+I don't know how to prove that : 
+```
+Problem: Prove the correctness of the following recursive algorithm for incrementing natural numbers, that is, y → y + 1:
+Increment(y)
+if (y = 0) then return(1) else
+if (y mod 2) = 1 then
+return(2 · Increm
+```
+
 
 
 ```
 ```
+
+```
+```
+
+
 ```
 ```
