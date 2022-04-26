@@ -7,18 +7,47 @@
 
 
 1-3. Design/draw a road network with two points a and b such that the fastest route between a and b is not the shortest route.
-1-4. [5] Design/draw a road network with two points a and b such that the shortest
-route between a and b is not the route with the fewest turns.
-1-5. [4] The knapsack problem is as follows: given a set of integers S = {s1, s2,...,sn},
-and a target number T, find a subset of S that adds up exactly to T. For example, there exists a subset within S = {1, 2, 5, 9, 10} that adds up to T = 22
+    Easiest : 
+        A --- C --- B
+    More complex :
+                -
+            -       -
+        A-              - B
+        ---------------- C
+    
+1-4. Design/draw a road network with two points a and b such that the shortest route between a and b is not the route with the fewest turns.
+
+                -
+            -       -
+        A-              - C
+        ----        ----- B
+            |------|
+
+
+1-5. [4] The knapsack problem is as follows: given a set of integers S = {s1, s2,...,sn}, and a target number T, find a subset of S that adds up exactly to T. For example, there exists a subset within S = {1, 2, 5, 9, 10} that adds up to T = 22
 but not T = 23.
+
 Find counterexamples to each of the following algorithms for the knapsack problem. That is, give an S and T where the algorithm does not find a solution that
 leaves the knapsack completely full, even though a full-knapsack solution exists.
-(a) Put the elements of S in the knapsack in left to right order if they fit, that
-is, the first-fit algorithm.
+(a) Put the elements of S in the knapsack in left to right order if they fit, that is, the first-fit algorithm.
+    S = 5, 4, 3 ,5 ,5
+    T = 11
 (b) Put the elements of S in the knapsack from smallest to largest, that is, the
 best-fit algorithm.
+    S = {10, 15, 22, 25, 30}
+    T = 30
+
+
+
 (c) Put the elements of S in the knapsack from largest to smallest.
+    S = {20, 10, 7, 5, 3}
+    T = 8
+
+
+
+
+
+
 1-6. [5] The set cover problem is as follows: given a set S of subsets S1,...,Sm of
 the universal set U = {1, ..., n}, find the smallest subset of subsets T ⊆ S such
 that ∪ti∈T ti = U. For example, consider the subsets S1 = {1, 3, 5}, S2 = {2, 4},
