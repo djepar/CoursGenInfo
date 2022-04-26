@@ -273,9 +273,26 @@ Using Option::unwrap is risky because, if we unwrap a None, the program panic an
 let text = matches.values_of_lossy("text").unwrap();
 ```
 
+#### Omitting endline 
 
+```
+// Long way : 
+    let mut ending = "\n";
+    if omit_newline {
+        ending = ""; //will not work
+    }
 
+// Short way
+    let ending = if omit_newline { "" } else { "\n" };
 
+```
+
+### Integration Tests
+
+Adding dev dependencies  in toml
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "2"
 
 
 
