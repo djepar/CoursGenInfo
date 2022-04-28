@@ -84,18 +84,12 @@ fn works() {
 }
 
 ```
-<<<<<<< HEAD
 To run the test : `cargo test`
 
 
 assert! verify that some expectation i true, or assert_eq! to verify that something is an expected value. (p.7)
 #### To create a more complext test (p. 8-12)
 
-=======
- 
-#### To create a more complext test (p. 8-9)
-in the test\cli.rs
->>>>>>> 55b61d9bb367929a51703c4bac84309214550962
 ```
 //in tests/cli.rs
 use std::process::Command;
@@ -294,6 +288,54 @@ Adding dev dependencies  in toml
 assert_cmd = "2"
 predicates = "2"
 
+
+"I often put the word dies somewhere in the test name to make it
+clear that the program is expected to fail under the given condi‐
+tions. If I run cargo test dies, then Cargo will run all the tests
+with names containing the string dies." (p.34)
+
+### Creating files to compare
+
+With a bash command (the files will be in tests/expected) : 
+
+
+```
+#!/usr/bin/env bash
+
+OUTDIR="tests/expected"
+[[ ! -d "$OUTDIR" ]] && mkdir -p "$OUTDIR"
+
+echo "Hello there" > $OUTDIR/hello1.txt
+echo "Hello"  "there" > $OUTDIR/hello2.txt
+echo -n "Hello  there" > $OUTDIR/hello1.n.txt
+echo -n "Hello"  "there" > $OUTDIR/hello2.n.txt
+
+```
+And then we can compare with a test in tests/cli.rs
+
+```
+#[test]
+fn hello1(){
+    let outfile = "tests/expected/hello1.txt";
+    let expected = fs::read_to_string(outfile).unwrap();
+    let mut cmd = Command::cargo_bin("echor").unwrap();
+    cmd.arg("Hello there").assert().success().stdout(expected);
+}
+
+```
+
+
+For the moment, we used unwrap to unpack an Ok value or propagate an Err. Now we will change the whole test to use '?' instand. 
+For that, we will need to create a type alias,"a specific type of
+Result that is either an Ok that always contains the unit type or some value that
+implements the std::error::Error trait" (p.36): To be sure, it's on the heap and not the stack. 
+
+
+```
+
+type TestResult = Result<(), Box<dyn std::error::Error>>;
+
+```
 
 
 ```
