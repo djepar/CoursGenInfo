@@ -86,15 +86,27 @@ nums_array = np.array(nums_list)
 type (nums_array)
 ``` (%39)
 
-
+```
 Multi-dimensional NumPy array
 
+row1 = [ 10 , 12 , 13 ]
+
+row2 = [ 45 , 32 , 16 ]
+
+row3 = [ 45 , 32 , 16 ]
+
+nums_2d = np.array([row1, row2, row3])
+
+nums_2d.shape
+``` (ibid)
+Output : 
+```
+(3, 3)
+```
 
 
-
-
-
-
+Using arrange() method : create a NumPy Array where the lower bound is the first parameter and the upper bound is the seconed parameter. [lower_bound, upper_bound[
+    - A third parameter 
 
 
 

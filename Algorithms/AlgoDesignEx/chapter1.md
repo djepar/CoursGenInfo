@@ -30,14 +30,12 @@ but not T = 23.
 Find counterexamples to each of the following algorithms for the knapsack problem. That is, give an S and T where the algorithm does not find a solution that
 leaves the knapsack completely full, even though a full-knapsack solution exists.
 (a) Put the elements of S in the knapsack in left to right order if they fit, that is, the first-fit algorithm.
-    S = 5, 4, 3 ,5 ,5
-    T = 11
+    S = 1, 2, 3
+    T = 4
 (b) Put the elements of S in the knapsack from smallest to largest, that is, the
 best-fit algorithm.
     S = {10, 15, 22, 25, 30}
     T = 30
-
-
 
 (c) Put the elements of S in the knapsack from largest to smallest.
     S = {20, 10, 7, 5, 3}
@@ -53,10 +51,12 @@ the universal set U = {1, ..., n}, find the smallest subset of subsets T ⊆ S s
 that ∪ti∈T ti = U. For example, consider the subsets S1 = {1, 3, 5}, S2 = {2, 4},
 S3 = {1, 4}, and S4 = {2, 5}. The set cover of {1,..., 5} would then be S1 and
 S2.
-Find a counterexample for the following algorithm: Select the largest subset for
-the cover, and then delete all its elements from the universal set. Repeat by
+Find a counterexample for the following algorithm: Select the largest subset for the cover, and then delete all its elements from the universal set. Repeat by
 adding the subset containing the largest number of uncovered elements until all
 are covered.
+    The set {} of the subset {} (!!!!!!!!!!!! really not sure)
+
+
 1-7. [5] The maximum clique problem in a graph G = (V,E) asks for the largest
 subset C of vertices V such that there is an edge in E between every pair of
 vertices in C. Find a counterexample for the following algorithm: Sort the
