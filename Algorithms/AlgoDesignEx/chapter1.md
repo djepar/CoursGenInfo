@@ -30,14 +30,12 @@ but not T = 23.
 Find counterexamples to each of the following algorithms for the knapsack problem. That is, give an S and T where the algorithm does not find a solution that
 leaves the knapsack completely full, even though a full-knapsack solution exists.
 (a) Put the elements of S in the knapsack in left to right order if they fit, that is, the first-fit algorithm.
-    S = 5, 4, 3 ,5 ,5
-    T = 11
+    S = 1, 2, 3
+    T = 4
 (b) Put the elements of S in the knapsack from smallest to largest, that is, the
 best-fit algorithm.
     S = {10, 15, 22, 25, 30}
     T = 30
-
-
 
 (c) Put the elements of S in the knapsack from largest to smallest.
     S = {20, 10, 7, 5, 3}
