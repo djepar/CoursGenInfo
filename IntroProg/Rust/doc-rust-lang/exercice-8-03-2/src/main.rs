@@ -3,11 +3,12 @@
 //becomes “irst-fay.” Words that start with a vowel have “hay”
 // added to the end instead (“apple” becomes “apple-hay”). 
 //Keep in mind the details about UTF-8 encoding!
+
 fn main() {
     let mut stringy = String::from("Hello");
-    let first_vowel = stringy[0];
-    let mut newstring = &stringy[1..4]; 
-    if start_with_vowel == true { 
+    let first_vowel = &stringy[0..0];
+    let mut newstring = String::from(&stringy[1..4]); 
+    if start_with_vowel(stringy) == true { 
         newstring += "-";
         newstring += "";
         newstring += "ay";
@@ -15,7 +16,7 @@ fn main() {
 
 }
 
-fn _starting_vowel(s :Vec<char>) -> bool {
+fn start_with_vowel(s :Vec<char>) -> bool {
     let vowel = ['a', 'e','i', 'o', 'u', 'A','E','I','O','U'];
     for letter in vowel {
         if s[0] == letter {

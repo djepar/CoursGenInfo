@@ -176,6 +176,38 @@ if (y mod 2) = 1 then
 return(2 · Increm
 ```
 
+## 1.5 Modeling the Problem
+
+"Modeling is the art of formulating your application in terms of precisely described, well-understood problems". (p. 17)
+
+### Combinatorial Objects
+To find a solution to a problem, the first thing is to pass from a particular problem to a set of general problem, common structure like thoses :
+- Permutations and ordering of items : do I need to arrange in a certains manner, changer certains items of place in a structure. "Permutations are likely trhe object in question whenever your problem seeks an 'arangement', 'tour', ordering' or 'sequence'" (p. 18)
+- Subsets : "represent selections from a set of item [...] They are likely the object of question whenever your problem seeks a 'cluster', a 'collection', 'committee', 'group', 'packaging', or 'selection'" (ibid)
+- Trees "represent hierarchical relationship between items. [...] They are likely the object in question whenever your problem seeks a 'hierarchy', 'dominance relationship', ancestor/descendant', or 'taxonomy'" (ibid)
+- Graphs "represent relationship between arbitrary pairs of objects. [...] Graphs are likely the object in question whenever you seek a 'network', 'circuit', 'web', or 'relationship'." (ibid)
+- Points "define location in some geometric space. [...] Points are likely the object in question whenever your problems work on 'site', 'positions', 'data records', or 'locations'. (ibid)
+- Polygons "define regions in some geopmetric spaces. [...] Polygons and polyhedra are likely the object in question whenever you are working on 'shape', 'regions' 'configurations' or boundaries'. " (ibid)
+- Strings "represent sequence of characters,  or patterns. [...] Strings are likely the object in question whenever you are dealing with 'text', 'characters', 'patterns' or 'labels'"
+
+
+### Recursive Objects
+
+ "Learning to think recursively is learning to look for big things that are made from smaller things of exactly the same type as the big things. "
+
+"Recursive descriptions of objects require both decomposition rules and basis cases, namely the specification of the smallest and simplest object where the decomposition stops. "
+
+### Proof by Contradiction : 
+- "Assume that the hypothesis (the statement you want to prove) is false. 
+- Develop some logical consequences of this assumption. 
+- Show that one consequence is demonstrably false, thereby showing that the assumption is incorrect and the hypothesis is true. " (p. 21)
+
+See the Euclid proof of infinite prime number. 
+
+READ WAR STORY AGAIN OF CHAPTER 1
+
+
+
 
 
 ```
