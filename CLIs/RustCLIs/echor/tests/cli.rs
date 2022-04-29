@@ -7,6 +7,18 @@ type TestResult = Result<(), Box<dyn std::error::Error>>;
 
 
 
+//testing the 4 files 
+fn run(args: &[&str], expected_file: &str) -> TestResult {
+    let expected = fs::read_to_string(expected_file)?;
+    Command::cargo_bin("echor")?
+        .args(args)
+        .assert()
+        .success()
+        .stdout(expected);
+    Ok(())
+}
+
+
 //test to be sure it's show the help documentation if the system crash  
 #[test]
 fn dies_no_args() {
@@ -16,18 +28,25 @@ fn dies_no_args() {
         .stderr(predicate::str::contains("USAGE"));
 }
 
-//running the arg hello should exit the program 
+
+
 #[test]
-fn runs() {
-    let mut cmd = Command::cargo_bin("echor")?;
-    cmd.arg("hello").assert().success();
-    
+fn hello1() -> TestResult {
+    run(&["Hello there"], "tests/expected/hello1.txt")
 }
 
 #[test]
-fn hello1(){
-    let outfile = "tests/expected/hello1.txt";
-    let expected = fs::read_to_string(outfile)?;
-    let mut cmd = Command::cargo_bin("echor")?;
-    cmd.arg("Hello there").assert().success().stdout(expected);
+fn hello1n() -> TestResult {
+    run(&["Hello there", "-n"], "tests/expected/hello1.n.txt")
+}
+
+
+#[test]
+fn hello2() -> TestResult {
+    run(&["Hello", "there"], "tests/expected/hello2.txt")
+}
+
+#[test]
+fn hello2n() -> TestResult {
+    run(&["Hello", "there", "-n"], "tests/expected/hello2.n.txt")
 }
