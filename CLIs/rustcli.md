@@ -398,7 +398,46 @@ fn hello2n() -> TestResult {
 
 # Chapter 3 Cat
 
+The cat function "concatenate and print files" (man cat)
 
+We first need to create 5 files :
+- an empty file name empty.txt
+- a one line file
+- 3 lines files
+- 9 lines files with a blank line to test -b vs 
+- a non accessible file (See next line for how to create it)
+
+```
+touch cant-touch-this && chmod 000 cant-touch-this     //make it's permission to unreadable
+```
+We can test a non existent file by writing cat wtv
+
+
+# Getting started
+
+Adding the dependencies in cargo.toml :
+```
+[dependencies]
+clap = "2.33"
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "2"
+rand = "0.8"
+```
+
+## TDD : Test Driven Development 
+
+From now on, we will use in this book the TDD method, which consist of writing the test before adding any feature. For each new feature, we write new test (before) (p. 48)
+
+The TDD cycles :
+```
+loop 
+    Add a test
+    Run all test and see that the new tests fail
+    loop
+        Write the code
+        Run the code
+    Refactor the code
 
 
 
