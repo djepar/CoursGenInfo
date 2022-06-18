@@ -1,6 +1,6 @@
 '''
-Create a turtle
-Read the 
+Create a turtle to plot the points
+Calculate 
 
 '''
 import turtle
