@@ -1,6 +1,0 @@
-Section 1-2
-1.2 Explain the characteristics of network topologies and network types.
-2.1 Compare and contrast various devices, their features and their appropriate placement on the network. 
-
-What is the most common network topology today?
-True or false : A hub is also called a multiport repeater
