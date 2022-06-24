@@ -1,6 +1,3 @@
-from curses import init_color
-from email import message
-from email.mime import application
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
@@ -31,4 +28,4 @@ answer = messagebox.askyesnocancel("Question", "Continue playing?")
 
 rgb_color, web_color = colorchooser.askcolor(parent=application_window, initialcolor=(255, 0, 0))
 #Start GUI
-window.mainloop()
+application_window.mainloop()
