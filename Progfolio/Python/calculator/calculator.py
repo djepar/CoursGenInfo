@@ -1,61 +1,50 @@
-from curses import window
-from sqlite3 import Row
+from string import hexdigits
 from tkinter import *
 
-def main():
-    #Create the entire GUI program
-    program = Calculator()
 
-    #Start the GUI event loop
-    program.window.mainloop()
 
-class Calculator:
+window = Tk()
+window.title="Calculator"
 
-    def __init__(self):
-        self.window = Tk()
-        self.window = title="Calculator"
-        self.operator_frame, self.screen_frame = self.create_frames()
+e = Entry (window, width=35, borderwidth=5)
+e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
-'''
-    def create_frames(self):
-        screen_frame = Frame(self.window, bg='red', width=300, height=300)
-        screen_frame.grid(row=1, column=1)
+def  button_click(number):
+    return 
 
-        operator_frame = Frame(self.window, bg='green', width=100, height=300)
-        operator_frame.grid(row=1, column=2)
-
-        return operator_frame, screen_frame
-'''
-    def button_add():
-        return 
-    def create_button(self):
-# Define buttons
-        button0 = Button(self.window, text="0", padx= 40, pady= 20, command=button_add)
-        button1 = Button(self.window, text="1", padx= 40, pady= 20, command=button_add)
-        button2 = Button(self.window, text="2", padx= 40, pady= 20, command=button_add)
-        button3 = Button(self.window, text="3", padx= 40, pady= 20, command=button_add)
-        button4 = Button(self.window, text="4", padx= 40, pady= 20, command=button_add)
-        button5 = Button(self.window, text="5", padx= 40, pady= 20, command=button_add)
-        button6 = Button(self.window, text="6", padx= 40, pady= 20, command=button_add)
-        button7 = Button(self.window, text="7", padx= 40, pady= 20, command=button_add)
-        button8 = Button(self.window, text="8", padx= 40, pady= 20, command=button_add)
-        button9 = Button(self.window, text="9", padx= 40, pady= 20, command=button_add)
+# Define button_s
+button_0 = Button(window, text="0", padx= 40, pady= 20, command=Lambda: button_click(0))
+button_1 = Button(window, text="1", padx= 40, pady= 20, command=Lambda: button_click(1))
+button_2 = Button(window, text="2", padx= 40, pady= 20, command=Lambda: button_click(2))
+button_3 = Button(window, text="3", padx= 40, pady= 20, command=Lambda: button_click(3))
+button_4 = Button(window, text="4", padx= 40, pady= 20, command=Lambda: button_click(4))
+button_5 = Button(window, text="5", padx= 40, pady= 20, command=Lambda: button_click(5))
+button_6 = Button(window, text="6", padx= 40, pady= 20, command=Lambda: button_click(6))
+button_7 = Button(window, text="7", padx= 40, pady= 20, command=Lambda: button_click(7))
+button_8 = Button(window, text="8", padx= 40, pady= 20, command=Lambda: button_click(8))
+button_9 = Button(window, text="9", padx= 40, pady= 20, command=Lambda: button_click(9))
+button_Plus = Button(window, text="+", padx= 40, pady= 20, command=Lambda: button_click())
+button_Eq = Button(window, text="=", padx= 91, pady= 20, command=Lambda: button_click())
+button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command=Lambda: button_click())
 
 # Putting the number on the scree
-button1.grid(row= , column=0)
-button2.grid(row= , column=1)
-button3.grid(row= , column=2)
+button_1.grid(row=3, column=0)
+button_2.grid(row=3, column=1)
+button_3.grid(row=3, column=2)
 
-button4.grid(row= , column=0)
-button5.grid(row= , column=1)
-button6.grid(row= , column=2)
+button_4.grid(row=2, column=0)
+button_5.grid(row=2, column=1)
+button_6.grid(row=2, column=2)
 
 
-button7.grid(row= , column=0)
-button8.grid(row= , column=1)
-button9.grid(row= , column=2)
+button_7.grid(row=1, column=0)
+button_8.grid(row=1, column=1)
+button_9.grid(row=1, column=2)
 
-button0.grid(row= , column=)
+button_0.grid(row=4, column=0)
+button_Clear.grid(row=4, column=1, columnspan=2)
+button_Plus.grid(row=5, column=0)
+button_Eq.grid(row=5, column=1, columnspan=2)
 
-if __name__ == "__main__":
-    main()
+#Start the GUI event loop
+window.mainloop()
