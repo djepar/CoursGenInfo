@@ -5,6 +5,9 @@
 ### Python - RS
     - Verify if all the  exercices are complete and work fine
     - Do the labs 
-
-#### Exception
-See again for chapter 13 with the exception to finish the exercices
+    - 16 - Recursivity
+      - Triangle 
+      - Reverse list 
+      - And the other
+    - Chapter 13 - Exception
+      - See again for chapter 13 with the exception to finish the exercices

@@ -1,6 +1,4 @@
-from string import hexdigits
 from tkinter import *
-
 
 
 window = Tk()
@@ -9,23 +7,38 @@ window.title="Calculator"
 e = Entry (window, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
-def  button_click(number):
-    return 
+def button_click(number):
+    e.insert(END, number)
 
+def button_clear():
+    e.delete(0,END)
+'''
+
+def button_plus():
+    first_number = e.get()
+    global f_num
+    e.delete(0, END)
+    f_num = int(first_number)
+
+def button_eq():
+    second_number = e.get()
+    e.delete(0, END)
+    e.insert(0, f_num + int(second_number))
+'''
 # Define button_s
-button_0 = Button(window, text="0", padx= 40, pady= 20, command=Lambda: button_click(0))
-button_1 = Button(window, text="1", padx= 40, pady= 20, command=Lambda: button_click(1))
-button_2 = Button(window, text="2", padx= 40, pady= 20, command=Lambda: button_click(2))
-button_3 = Button(window, text="3", padx= 40, pady= 20, command=Lambda: button_click(3))
-button_4 = Button(window, text="4", padx= 40, pady= 20, command=Lambda: button_click(4))
-button_5 = Button(window, text="5", padx= 40, pady= 20, command=Lambda: button_click(5))
-button_6 = Button(window, text="6", padx= 40, pady= 20, command=Lambda: button_click(6))
-button_7 = Button(window, text="7", padx= 40, pady= 20, command=Lambda: button_click(7))
-button_8 = Button(window, text="8", padx= 40, pady= 20, command=Lambda: button_click(8))
-button_9 = Button(window, text="9", padx= 40, pady= 20, command=Lambda: button_click(9))
-button_Plus = Button(window, text="+", padx= 40, pady= 20, command=Lambda: button_click())
-button_Eq = Button(window, text="=", padx= 91, pady= 20, command=Lambda: button_click())
-button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command=Lambda: button_click())
+button_0 = Button(window, text="0", padx= 40, pady= 20, command=lambda: button_click(0))
+button_1 = Button(window, text="1", padx= 40, pady= 20, command=lambda: button_click(1))
+button_2 = Button(window, text="2", padx= 40, pady= 20, command=lambda: button_click(2))
+button_3 = Button(window, text="3", padx= 40, pady= 20, command=lambda: button_click(3))
+button_4 = Button(window, text="4", padx= 40, pady= 20, command=lambda: button_click(4))
+button_5 = Button(window, text="5", padx= 40, pady= 20, command=lambda: button_click(5))
+button_6 = Button(window, text="6", padx= 40, pady= 20, command=lambda: button_click(6))
+button_7 = Button(window, text="7", padx= 40, pady= 20, command=lambda: button_click(7))
+button_8 = Button(window, text="8", padx= 40, pady= 20, command=lambda: button_click(8))
+button_9 = Button(window, text="9", padx= 40, pady= 20, command=lambda: button_click(9))
+button_Plus = Button(window, text="+", padx= 40, pady= 20, command= button_click(1))
+button_Eq = Button(window, text="=", padx= 91, pady= 20, command= button_click(1))
+button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command= button_click(1))
 
 # Putting the number on the scree
 button_1.grid(row=3, column=0)
