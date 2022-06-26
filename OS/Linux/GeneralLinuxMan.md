@@ -10,7 +10,7 @@ Intro
 
 getuid give access to the uid of a function of man
 
-The main function of an OS is to "provide us with an API, Application Program Interface" (p. 32)
+The main function of an OS is to "provide us with an API, Application Program Interface" (p.__)
 
 ## Linux Kernel
 
@@ -35,6 +35,25 @@ cpu info commands
 
 
 #### Arm Architecture 
-"ARM is a family of Reduced Instruction Set Computer (RISC)" (Hausenblas, p. 31)
+"ARM is a family of Reduced Instruction Set Computer (RISC)" (Hausenblas, p. 15)
+
+### Main function of the Kernel
+Management :
+    - of the process
+    - of the memory, allocating memory and mapping a file into memory. 
+    - of the network
+    - of the files
+    - of character devices and device drivers
 
 
+#### Process Management, from granular to smallest
+
+    - Session : "contain one or more process group and represent a high level user-facing unit with optional tty attached.The kernel identifies a session via a number called session ID(SID)." (ibid, p. 33)
+    - Process groups : "Contain one or more process" (idem). Can be found with process group ID (PGID).
+    - Process : the user-facing unit. "Abstractions that group multiple resources (address space, one or more threads, sockets, etc), which the kernel expose to you via /proc/self for the current process. The kernel identifies a process via a number called process ID(PID)" (idem) 
+    - Threads : "Implemented by the kernel as processes. That is, there is no dedicated data structures representing threads." (idem). It's share certain ressources with other process. 
+      - Group thread ID (TGID), meaning multithreading
+      - Thread id (TID)
+    - Task 
+      - In sched.h, there is task_struct, a data structure "that form the basis of implementing processes and threads alike. This data structure captures scheduling-related information, identifiers (such as PID and TGID), and signal handlers, as well as other information, such as the related to performance and security. 
+  ****** RENDU à la page 18
