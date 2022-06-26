@@ -4,27 +4,33 @@ from tkinter import *
 window = Tk()
 window.title="Calculator"
 
-e = Entry (window, width=35, borderwidth=5)
+e = Entry(window, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
+e.delete(0, END)
+
 def button_click(number):
-    e.insert(END, number)
+    current = e.get()
+    e.delete(0, END)
+    e.insert(0, str(current) + str(number))
 
 def button_clear():
     e.delete(0,END)
-'''
 
 def button_plus():
     first_number = e.get()
     global f_num
-    e.delete(0, END)
     f_num = int(first_number)
+    e.delete(0, END)
+    return f_num
 
 def button_eq():
     second_number = e.get()
     e.delete(0, END)
     e.insert(0, f_num + int(second_number))
-'''
+
+
+
 # Define button_s
 button_0 = Button(window, text="0", padx= 40, pady= 20, command=lambda: button_click(0))
 button_1 = Button(window, text="1", padx= 40, pady= 20, command=lambda: button_click(1))
@@ -36,9 +42,9 @@ button_6 = Button(window, text="6", padx= 40, pady= 20, command=lambda: button_c
 button_7 = Button(window, text="7", padx= 40, pady= 20, command=lambda: button_click(7))
 button_8 = Button(window, text="8", padx= 40, pady= 20, command=lambda: button_click(8))
 button_9 = Button(window, text="9", padx= 40, pady= 20, command=lambda: button_click(9))
-button_Plus = Button(window, text="+", padx= 40, pady= 20, command= button_click(1))
-button_Eq = Button(window, text="=", padx= 91, pady= 20, command= button_click(1))
-button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command= button_click(1))
+button_Plus = Button(window, text="+", padx= 40, pady= 20, command= button_plus)
+button_Eq = Button(window, text="=", padx= 91, pady= 20, command= button_eq)
+button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command= button_clear)
 
 # Putting the number on the scree
 button_1.grid(row=3, column=0)
