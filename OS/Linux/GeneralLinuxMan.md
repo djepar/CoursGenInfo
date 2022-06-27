@@ -56,4 +56,13 @@ Management :
       - Thread id (TID)
     - Task 
       - In sched.h, there is task_struct, a data structure "that form the basis of implementing processes and threads alike. This data structure captures scheduling-related information, identifiers (such as PID and TGID), and signal handlers, as well as other information, such as the related to performance and security. 
-  ****** RENDU à la page 18
+
+##### Commands for process management
+    - $ps
+    - $top
+#### Memory Management
+"Both physical and virtual memory are divided into fixed-length chunks we call pages"
+
+"The core of memory management : how to effectively provide each process with the illusation that its page actually exists in RAM while using the existing space optimally. 
+
+To look for information about memory /proc/meminfo

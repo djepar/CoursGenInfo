@@ -8,7 +8,6 @@ e = Entry(window, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 e.delete(0, END)
-
 def button_click(number):
     current = e.get()
     e.delete(0, END)
@@ -22,12 +21,51 @@ def button_plus():
     global f_num
     f_num = int(first_number)
     e.delete(0, END)
+    global operator 
+    operator = '+'
+    return f_num
+
+def button_Minus():
+    first_number = e.get()
+    global f_num
+    f_num = int(first_number)
+    e.delete(0, END)
+    global operator
+    operator = '-'
+    return f_num
+
+def button_Multi():
+    first_number = e.get()
+    global f_num
+    f_num = int(first_number)
+    e.delete(0, END)
+    global operator
+    operator = '*'
+    return f_num
+
+def button_Div():
+    first_number = e.get()
+    global f_num
+    f_num = int(first_number)
+    e.delete(0, END)
+    global operator
+    operator = '/'
     return f_num
 
 def button_eq():
     second_number = e.get()
     e.delete(0, END)
-    e.insert(0, f_num + int(second_number))
+    if operator == '+':
+        e.insert(0, f_num + int(second_number))
+    elif operator == '-':
+        e.insert(0, f_num - int(second_number))
+    elif operator == '*':
+        e.insert(0, f_num * int(second_number))
+    elif operator == '/':
+        e.insert(0, f_num / int(second_number))
+      
+        
+        
 
 
 
@@ -45,7 +83,15 @@ button_9 = Button(window, text="9", padx= 40, pady= 20, command=lambda: button_c
 button_Plus = Button(window, text="+", padx= 40, pady= 20, command= button_plus)
 button_Eq = Button(window, text="=", padx= 91, pady= 20, command= button_eq)
 button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command= button_clear)
+button_minus = Button(window, text="-", padx= 40, pady= 20, command= button_Minus)
+button_multi = Button(window, text="*", padx= 40, pady= 20, command= button_Multi)
+button_div = Button(window, text="/", padx= 40, pady= 20, command= button_Div)
+Trigo = OptionMenu(window, width=30, borderwidth=5)
 
+# Trig option 
+Trigo.option_add(label="cos", command=button_clear)
+Trigo.option_add(lavel="sin", command=button_clear)
+Trigo.option_add(lavel="tan", command=button_clear)
 # Putting the number on the scree
 button_1.grid(row=3, column=0)
 button_2.grid(row=3, column=1)
@@ -64,6 +110,10 @@ button_0.grid(row=4, column=0)
 button_Clear.grid(row=4, column=1, columnspan=2)
 button_Plus.grid(row=5, column=0)
 button_Eq.grid(row=5, column=1, columnspan=2)
+button_minus.grid(row=6,column=0)
+button_multi.grid(row=6, column=1)
+button_div.grid(row=6, column=2)
+Trigo.grid(row=7, column=0, columnspan=3, padx=10, pady=10)
 
 #Start the GUI event loop
 window.mainloop()
