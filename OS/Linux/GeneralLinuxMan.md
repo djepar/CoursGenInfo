@@ -63,6 +63,26 @@ Management :
 #### Memory Management
 "Both physical and virtual memory are divided into fixed-length chunks we call pages"
 
-"The core of memory management : how to effectively provide each process with the illusation that its page actually exists in RAM while using the existing space optimally. 
+"The core of memory management : how to effectively provide each process with the illusation that its page actually exists in RAM while using the existing space optimally." (Hausenblas, p. 19)
 
 To look for information about memory /proc/meminfo
+
+### Networking
+The layered architecture of Linux networking :
+    - "Sockets : for abstracting communication
+    - Transmission Control Protocol (TCP) and User Datagram Protocol (UDP): for connection-oriented communication and connectionless communication respectively.
+    - Internet Protocol (IP): For addressing machines" (ibid, p.21)
+
+### FileSystems
+"Linux uses filesystems to organize files and directories on storage devices such as hard disk drives (HDDs), and solid-state drives(SSDs) or flash-memory." (ibidem)
+
+### Device Drivers
+"A driver is a bit of code that runs in the kernel. Its job is to manage a device, which can be actual hardware" or a pseudo-device. (ibidem)
+
+Commands 
+    - ls -al /sys/devices
+    - mount
+
+## Syscalls or between land user and the Kernel
+"The service interface the kernel exposes and that user land entities call is the set of system calls, or syscalls for short." (ibid, p. 23)
+The system usually invoke the syscall through the C standard library
