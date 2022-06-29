@@ -8,6 +8,7 @@ e = Entry(window, width=35, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
 e.delete(0, END)
+
 def button_click(number):
     current = e.get()
     e.delete(0, END)
@@ -52,6 +53,12 @@ def button_Div():
     operator = '/'
     return f_num
 
+def Trigo():
+    
+
+
+        
+
 def button_eq():
     second_number = e.get()
     e.delete(0, END)
@@ -65,8 +72,8 @@ def button_eq():
         e.insert(0, f_num / int(second_number))
       
         
-        
-
+clicked = StringVar()
+clicked.set("cos")
 
 
 # Define button_s
@@ -86,12 +93,16 @@ button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command= button_
 button_minus = Button(window, text="-", padx= 40, pady= 20, command= button_Minus)
 button_multi = Button(window, text="*", padx= 40, pady= 20, command= button_Multi)
 button_div = Button(window, text="/", padx= 40, pady= 20, command= button_Div)
-Trigo = OptionMenu(window, width=30, borderwidth=5)
+#button_dot = Button(window, text=".", padx= 40, pady= 20, command= button_Dot)
+trigo = OptionMenu(window, clicked, "cos", "sin", "tan")
+
+'''
 
 # Trig option 
 Trigo.option_add(label="cos", command=button_clear)
 Trigo.option_add(lavel="sin", command=button_clear)
 Trigo.option_add(lavel="tan", command=button_clear)
+'''
 # Putting the number on the scree
 button_1.grid(row=3, column=0)
 button_2.grid(row=3, column=1)
@@ -113,7 +124,7 @@ button_Eq.grid(row=5, column=1, columnspan=2)
 button_minus.grid(row=6,column=0)
 button_multi.grid(row=6, column=1)
 button_div.grid(row=6, column=2)
-Trigo.grid(row=7, column=0, columnspan=3, padx=10, pady=10)
+trigo.grid(row=7, column=0, columnspan=3, padx=10, pady=10)
 
 #Start the GUI event loop
 window.mainloop()

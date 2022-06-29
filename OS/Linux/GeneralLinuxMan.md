@@ -86,3 +86,12 @@ Commands
 ## Syscalls or between land user and the Kernel
 "The service interface the kernel exposes and that user land entities call is the set of system calls, or syscalls for short." (ibid, p. 23)
 The system usually invoke the syscall through the C standard library
+
+## Kernel Extensions :
+How to know if kernel we are using : $uname -srm
+
+" In a nutshell, a module is a program that can load into a kernel on demand"
+To list available module $find /lib/modules/$(uname -r) -type f -name '*.ko*'
+List of module loaded on the kernel : $lsmod
+
+# Chapter 3 : Shell and scripting
