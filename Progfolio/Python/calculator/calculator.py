@@ -14,61 +14,37 @@ def button_click(number):
     e.delete(0, END)
     e.insert(0, str(current) + str(number))
 
+
+
 def button_clear():
     e.delete(0,END)
 
-def button_plus():
+def button_operator(operator):
     first_number = e.get()
     global f_num
     f_num = int(first_number)
     e.delete(0, END)
-    global operator 
-    operator = '+'
+    global operatorVar 
+    operatorVar = operator
     return f_num
 
-def button_Minus():
-    first_number = e.get()
-    global f_num
-    f_num = int(first_number)
-    e.delete(0, END)
-    global operator
-    operator = '-'
-    return f_num
 
-def button_Multi():
-    first_number = e.get()
-    global f_num
-    f_num = int(first_number)
-    e.delete(0, END)
-    global operator
-    operator = '*'
-    return f_num
-
-def button_Div():
-    first_number = e.get()
-    global f_num
-    f_num = int(first_number)
-    e.delete(0, END)
-    global operator
-    operator = '/'
-    return f_num
 
 def Trigo():
-    
+    return None
 
 
-        
 
 def button_eq():
     second_number = e.get()
     e.delete(0, END)
-    if operator == '+':
+    if operatorVar == '+':
         e.insert(0, f_num + int(second_number))
-    elif operator == '-':
+    elif operatorVar == '-':
         e.insert(0, f_num - int(second_number))
-    elif operator == '*':
+    elif operatorVar == '*':
         e.insert(0, f_num * int(second_number))
-    elif operator == '/':
+    elif operatorVar == '/':
         e.insert(0, f_num / int(second_number))
       
         
@@ -87,13 +63,12 @@ button_6 = Button(window, text="6", padx= 40, pady= 20, command=lambda: button_c
 button_7 = Button(window, text="7", padx= 40, pady= 20, command=lambda: button_click(7))
 button_8 = Button(window, text="8", padx= 40, pady= 20, command=lambda: button_click(8))
 button_9 = Button(window, text="9", padx= 40, pady= 20, command=lambda: button_click(9))
-button_Plus = Button(window, text="+", padx= 40, pady= 20, command= button_plus)
+button_Plus = Button(window, text="+", padx= 40, pady= 20, command= button_operator('+'))
 button_Eq = Button(window, text="=", padx= 91, pady= 20, command= button_eq)
 button_Clear = Button(window, text="Clear", padx= 79, pady= 20, command= button_clear)
-button_minus = Button(window, text="-", padx= 40, pady= 20, command= button_Minus)
-button_multi = Button(window, text="*", padx= 40, pady= 20, command= button_Multi)
-button_div = Button(window, text="/", padx= 40, pady= 20, command= button_Div)
-#button_dot = Button(window, text=".", padx= 40, pady= 20, command= button_Dot)
+button_minus = Button(window, text="-", padx= 40, pady= 20, command= button_operator('-'))
+button_multi = Button(window, text="*", padx= 40, pady= 20, command= button_operator('*'))
+button_div = Button(window, text="/", padx= 40, pady= 20, command= button_operator('/'))
 trigo = OptionMenu(window, clicked, "cos", "sin", "tan")
 
 '''
@@ -124,7 +99,7 @@ button_Eq.grid(row=5, column=1, columnspan=2)
 button_minus.grid(row=6,column=0)
 button_multi.grid(row=6, column=1)
 button_div.grid(row=6, column=2)
-trigo.grid(row=7, column=0, columnspan=3, padx=10, pady=10)
+trigo.grid(row=8, column=0, columnspan=3, padx=10, pady=10)
 
 #Start the GUI event loop
 window.mainloop()
