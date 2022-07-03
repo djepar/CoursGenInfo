@@ -95,3 +95,7 @@ To list available module $find /lib/modules/$(uname -r) -type f -name '*.ko*'
 List of module loaded on the kernel : $lsmod
 
 # Chapter 3 : Shell and scripting
+
+Scripting good practice:
+    -Fail fast and loud : with errfail and pipefail
+    -No sensitive information in a script, like password. Such information should be provide at runtime via user input or calling out to an API. 
