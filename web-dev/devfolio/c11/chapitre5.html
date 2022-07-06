@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="default.asp">Cours</a></li>
+            <ul>
+                <li><a href="NoteCoursC11/coursC11.html">C11: Intro a la prog(C++)</a></li>
+                <ul>
+                    <li><a href="chapitre1.html">Chapitre 1 </a></li>
+                    <li><a href="chapitre2.html">Chapitre 2</a></li>
+                    <li><a href="chapitre3.html">Chapitre 3</a></li>
+                    <li><a href="chapitre4.html">Chapitre 4</a></li>
+                    <li><a href="chapitre5.html">Chapitre 5</a></li>
+                  </ul>
+             </ul>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li><a href="about.asp">About</a></li>
+          </ul>
+    </header>
+
+    <h1> Chapitre 5</h1> <!-- p. 150-184 -->
+
+    <h2> 5.1 Les variables dimensionnées</h2>
+    <cite><dfn>Une variable dimensionnée</dfn>est un ensemble d'éléments de données qui sont tous du même type. </cite>
+    <p><strong>Syntaxe </strong>de la définition d'une variable dimensionnée : </br>
+    type variableName = value; (https://www.w3schools.com/cpp/cpp_variables.asp visité le 8 janvier 2021)
+    type identificateur[grandeur]; grandeur est l'indice.
+</p>
+    
+    
+    
+    
+    
+    <h2> 5.2 Les éléments d'une variable dimensionnée </h2>
+    <cite> l'indice est un déplacement, ses valeurs permises vont de 0 à grandeur-1. (p.152)</cite>
+
+
+
+    <h2> 5.3 La vérification des frontières </h2> 
+    <cite>Lors de l'utilisation d'une variable dimensionnée, le programmeur a la responsabilité de s'assurer,
+        en tout temps, que les indices sont dans l'intervalle permis. (p.152)</cite>
+    
+    <h2> 5.4 Les chaînes de caractères (string) et les variables dimensionnées </h2> <!-- (p.161) -->
+    <p>Même si une chaîne de caractère n'est pas une variable dimensionnée, il est possible de se référer à ses éléments à l'aide d'un indice. </p>
+    <cite>→Il est correct d'accéder à un élément d'une variable de type string pour consultation ou</br>
+        modification, mais on ne doit pas ajouter d'élément à cette variable. En fait, on ne doit
+        utiliser que des éléments existants seulement.
+        Il serait donc incorrect, ici, de faire:</br>
+         Chaine[7] = '!';</br>
+        pour y ajouter un caractère. Il faudrait plutôt utiliser la concaténation, réalisée avec
+        l'opérateur +, tel que dans l'exemple suivant: Chaine = Chaine + '!'; (p. 161)</cite>
+    
+    
+    <h2> 5.5 Les variables multidimentionnelles </h2>
+    <p><dfn>Les variables multidimentionnelles</dfn>permettent la création d'entités similaire à une matrice, avec rangée(ligne) et colonne.
+    </br><strong>Syntaxe : </strong>type NameofVariable[Rangée][Colonne]; ou type NameofVariable[Horizontal][Vertical]; ou type NameofVariable[Locean][LeSoleil]; </p>
+    
+    <h2> 5.6 Exercices </h2>
+    <h2> 5.7 Exercices sur les vecteurs </h2>
+    <h2> 5.8 Exercices sur les matrices </h2>
+
+</body>
+</html>

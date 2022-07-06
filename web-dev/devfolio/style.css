@@ -1,7 +1,9 @@
 code {
     color : blue;
 }
+
 .powershell {
+    text-align: right;
     background-color: blue;
     color : white;
 }
