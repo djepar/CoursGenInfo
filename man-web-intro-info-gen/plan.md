@@ -1,5 +1,8 @@
 Cours général d'informatique
 
+JAI CHANE CETTE LIGNE 
+
+
 Pour qui : des personnes qui n'ont pas de base ou très peu en programmation. 
 - Groupe adulte (18 ans et plus)
 - Ado [13,17]
