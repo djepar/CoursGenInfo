@@ -12,3 +12,8 @@ h2 {
 div {
     margin: 4px;
 }
+body{
+    color: #000000;
+    background-color:#FFFFFF;
+    font-family: Times, Arial, Cursive;
+ }
