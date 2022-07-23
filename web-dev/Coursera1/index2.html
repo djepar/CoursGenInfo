@@ -2,15 +2,43 @@
 <html>
 <head>
     <title>My Bio Page</title>
-    <link href="syle.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script>
+        function openMe() {
+            x= document.getElementById("demo");
+            x.className="open";
+        }
+        function closeMe() {
+            y = document.getElementById("demo");
+            y.className="close"
+        }
+    </script>
+    
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div id="bio" class="col-12 col-lg-6 text-center">
-                <h1>Jérémie Paradis</h1>
+                <h1 id="test">Jérémie Paradis</h1>
                
             </div>
+            <button onclick="document.getElementById('stuff').innerHTML = 'Clicked First Button';"> First</button>
+            <button onclick="document.getElementById('stuff').innerHTML = 'Clicked Second Button';"> Second</button>
+            <p>This stuff wont change</p>
+            <p id="stuff">this will be change</p>
+
+            <button type="button" onclick="openMe()">Open!</button>
+            <button type="button" onclick="closeMe()">Close!</button>
+            <p id="demo"> ἄνδρα μοι ἔννεπε, μοῦσα, πολύτροπον, ὃς μάλα πολλὰ
+                πλάγχθη, ἐπεὶ Τροίης ἱερὸν πτολίεθρον ἔπερσεν:
+                πολλῶν δ᾽ ἀνθρώπων ἴδεν ἄστεα καὶ νόον ἔγνω,
+                πολλὰ δ᾽ ὅ γ᾽ ἐν πόντῳ πάθεν ἄλγεα ὃν κατὰ θυμόν,
+                5ἀρνύμενος ἥν τε ψυχὴν καὶ νόστον ἑταίρων.
+                ἀλλ᾽ οὐδ᾽ ὣς ἑτάρους ἐρρύσατο, ἱέμενός περ:
+                αὐτῶν γὰρ σφετέρῃσιν ἀτασθαλίῃσιν ὄλοντο,
+                νήπιοι, οἳ κατὰ βοῦς Ὑπερίονος Ἠελίοιο
+                ἤσθιον: αὐτὰρ ὁ τοῖσιν ἀφείλετο νόστιμον ἦμαρ.
+                10τῶν ἁμόθεν γε, θεά, θύγατερ Διός, εἰπὲ καὶ ἡμῖν.</p>
             <div id="more" class="col-12 col-lg-6">
                 <h2>Favorite Music Artists</h2>
                 <ul>

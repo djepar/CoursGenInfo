@@ -17,3 +17,14 @@ body{
     background-color:#FFFFFF;
     font-family: Times, Arial, Cursive;
  }
+.close {
+    display : none;
+}
+.open {
+     display: block;
+ }
+
+button {
+    width: 150px;
+    background-color: rgb(28, 167, 248);
+}
