@@ -22,5 +22,6 @@ class TestRearrange(unittest.TestCase):
         testcase = "Bonjour"
         expected = "Bonjour"
         self.assertEqual(rearrange_name(testcase), expected)
+
 unittest.main()
 
