@@ -1,0 +1,1 @@
+Jun 1 11:06:48 ubuntu.local ticky: ERROR: Connection to DB failed (username)
