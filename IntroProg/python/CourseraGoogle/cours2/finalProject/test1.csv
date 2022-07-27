@@ -1,1 +1,3 @@
 Error,Count
+Connection to DB failed,8
+Tried to add information to a closed ticket,2

@@ -4,6 +4,7 @@ import operator
 import csv
 from collections import OrderedDict
 
+
 def createDicts(errorFile):
     errorsDict = {}
     per_user = {}
@@ -14,10 +15,13 @@ def createDicts(errorFile):
         matches = re.search(pattern, line)
         if matches[1] == "INFO: ":
             if matches[4] in per_user:
-                if "INFO" in per_user[matches[4]]:
+                print("Matches4 in peruser {}".format(matches[4]))
+                if "INFO" in per_user[matches[4]]:  
                     per_user[matches[4]]["INFO"] += 1   
+                    print(per_user[matches[4]]["INFO"])
             else:
                 per_user[matches[4]] = {"INFO" : 1}
+                print(per_user[matches[4]]["INFO"])
         elif matches[1] == "ERROR: ":
             if matches[2] in errorsDict:
                 errorsDict[matches[2]] +=1
@@ -29,7 +33,7 @@ def createDicts(errorFile):
             else:
                 per_user[matches[4]] = {"ERROR" : 1}
     f.close()
-    print(errorsDict, per_user)
+    #print(errorsDict, per_user)
     return errorsDict, per_user
 def sortValue(dic):
     dic  = sorted(dic.items(), key=operator.itemgetter(1), reverse=True)
@@ -43,28 +47,31 @@ def sortUsername(list):
 
 def creatingCsvError(dic, headerCSV):
     with open('test1.csv', 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=headerCSV)
-        writer.writeheader()
-        for el in dic:
-            
-        writer.writerows(dic)
-
+        writer = csv.writer(csvfile)
+        writer.writerow(headerCSV)
+        for key, val in dic.items():
+            temprow = [key[:-1], val]
+            writer.writerow(temprow)
+"""
 def creatingCsvInfo(dic, headerCSV):
     with open('test2.csv', 'w') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=headerCSV)
-        writer.writeheader()
-        writer.writerows(dic)
+        writer = csv.writer(csvfile)
+        writer.writerow(headerCSV)
+        for username, subDic1, subDic2 in dic.items():
+            temprow = [username, subDic1["ERROR"]]
+            print("username : {} subDic : {} subdic2 {}".format(username, subDic1, subDic2))
 
+            writer.writerow(temprow)
+"""
 def main():
     dictError, per_user = createDicts(sys.argv[1])
-    print("The type of dictError : {}".format(type(dictError)))
+    print(per_user)
     dictErrorList = sortValue(dictError)
     headerError = ["Error", "Count"]
     headerUser = ["Username", "INFO", "ERROR"]
     listUser = sortUsername(per_user)
-    print(dictError, type(dictError))
-    print(listUser, type(listUser))
+    print(dictErrorList, type(dictErrorList)) 
     creatingCsvError(dictErrorList, headerError)
-    creatingCsvInfo(listUser, headerUser)
+    #creatingCsvInfo(listUser, headerUser)
 
 main()
