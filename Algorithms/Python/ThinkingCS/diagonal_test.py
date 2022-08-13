@@ -1,7 +1,3 @@
-"""
-In a 9x9 grid, draw 16 diagonals
-
-"""
 grid = [[0 for column in range(9)] for row in range(9)]
 print(grid)
 def one_sweeping(grid):   #for /
@@ -23,9 +19,4 @@ def one_sweeping(grid):   #for /
                 return False
             else :
                 return False
-
-def two_sweeping(grid): #for \
-    newgrid = grid
-    if row +1 != 2  and column - 1 
-    
-          
+print()
