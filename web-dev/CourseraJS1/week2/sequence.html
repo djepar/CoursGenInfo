@@ -12,6 +12,24 @@
         console.log(myString);
         let newstring =  myString.toUpperCase();
         console.log(newstring);
+        var reallyLocation = myString.search("really");
+        console.log(reallyLocation);
+        var specialWord = myString.substr(reallyLocation, 6);
+        specialWord = specialWord.toUpperCase();
+        var newnewString = myString.replace("really", specialWord);
+        console.log(newnewString);
+
+        var food = ["Rice", "Bao Mi", "Banh Mi", "Pork"];
+        var FoodString = "I wish I could eat some ";
+        var iter = 0;
+        for(var eachItem of food){
+            if (iter % 2 === 0){
+                console.log(`${FoodString} ${eachItem}`);
+      
+            }
+            iter++;
+            }
+
     </script>
 </body>
 </html>
