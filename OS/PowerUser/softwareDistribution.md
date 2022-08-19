@@ -4,7 +4,7 @@ From Operating Systems and You, the google-coursera IT certification.
 ### Executable file(.exe)
  Contain instructions for a computer to execute when they're run. 
 Executable isnt something unique to Windows, but the special implementation of Windows is the portable executable or PE format. 
-#### PE format
+#### PE format (Portable Executable)
 The filename extension of PE are :
 - acm, .ax, .cpl, .dll, .drv, .efi, .exe, .mui, .ocx, .scr, .sys, .tsp
 
