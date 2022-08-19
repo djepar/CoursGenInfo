@@ -62,13 +62,13 @@
         <p id="copyright">copyright info</p>
     </footer>
     <script> 
-        var image = document.querySelector("#one img");
+        const image = document.querySelector("#one img");
         image.setAttribute('src', "http://meadpoint.net/images/xmasajax.jpg");
-        var bluish = document.querySelectorAll(" #two p");
+        const bluish = document.querySelectorAll(" #two p");
         for (eachP of bluish){
             eachP.style.color = "blue";
         }
-        var attribs = document.getElementsByTagName("a");
+        const attribs = document.getElementsByTagName("a");
 
         for (var i = 0; i < attribs.length; i++){
             var link = attribs[i].getAttribute("href");

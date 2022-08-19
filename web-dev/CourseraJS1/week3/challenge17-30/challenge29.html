@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 28</title>
+    <style>
+    body { height: 3000px;}
+    .one {background-color: aliceblue; transition: all 3s}
+    .two {background-color: cadetblue; transition: all 3s}
+    .three {background-color: yellowgreen; transition: all 3s}
+    .four {background-color: firebrick; transition: all 3s}
+    .five {background-color: magenta; transition: all 3s}
+
+
+
+
+      
+    </style>
+</head>
+<body>
+    <h1>Javascript Event Challenge 29</h1>
+    <p>The square can change!</p>
+    <div>
+    </div>
+   
+    <script>
+        
+        const bodyTag = document.querySelector("body");
+        window.addEventListener("scroll", function(){
+
+            var pageTop = window.pageYOffset;
+            switch (true){
+                case pageTop < 500:
+                    bodyTag.className = "one";
+                    break;
+                case pageTop < 1000:
+                    bodyTag.className = "two";
+                    break;
+                case pageTop < 1500:
+                    bodyTag.className = "three";
+                    break;
+                case pageTop < 2000:
+                    bodyTag.className ="four";
+                    break;
+                case pageTop < 2500:
+                    bodyTag.className = "five"
+                    break;
+                default:
+                    bodyTag.className = "five"
+            }
+        })
+    
+    </script>
+
+</body>
+</html>

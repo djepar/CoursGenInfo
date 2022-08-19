@@ -62,11 +62,10 @@
         <p id="copyright">copyright info</p>
     </footer>
     <script> 
-        var hOne = document.querySelector("h1");
-        var date = document.getElementsByClassName("date");
-        hOne.className = "red";
-        date[1].className = "red";
-
+        const para = document.getElementsByTagName("p");
+        for (eachitem of para){
+            eachitem.style.color = "blue";
+        }
     </script>
 </main>
 

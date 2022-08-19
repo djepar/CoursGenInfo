@@ -62,8 +62,11 @@
         <p id="copyright">copyright info</p>
     </footer>
     <script> 
-        var copyRight = document.getElementById("copyright");
-        copyRight.style.color = "green";
+        const hOne = document.querySelector("h1");
+        const date = document.getElementsByClassName("date");
+        hOne.className = "red";
+        date[1].className = "red";
+
     </script>
 </main>
 

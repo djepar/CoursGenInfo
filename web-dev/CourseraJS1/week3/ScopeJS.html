@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope in JS</title>
+</head>
+<body>
+    <h1>Scope in Javascript</h1>
+    <p>Have been problematic : some variables are global and other are local.</p>
+
+    <h2>Strategy #1 : Never use global scope</h2>
+    <p>Some text</p>
+
+    <p>Some text</p>
+
+    <p>Some text</p>
+
+    <p>Some text</p>
+
+    <h2>Strategy #2 : use strict</h2>
+
+    <h2>Strategy #2 : use const(unmutable) and let</h2>
+
+    <h2>Beware of Hoisting</h2>
+    <p>In Javascript, you can use a variable before it's assigned, but can lead to weird things, AVOID THAT. </p>
+    <script>
+        //Using "use stricts so forgetting to write var dont create a global variable"
+        "use strict";
+        var aVariable = "this is a global variable";
+        function testScope(){
+            var aVariable = "This is the local variable"
+            console.log(aVariable)
+            //globalVar = "I didn't put var in front of a var and now it's a global var"
+        }
+        testScope();
+        console.log(aVariable);
+        //console.log(globalVar);
+
+        //Namespacing : Everything is wrap in an anonymous function so there is no global variable
+        (function() {
+        var myPS = document.querySelectorAll("p");
+        for (var i = 0; i < myPS.length; i++){
+            myPS[i].style.color = "red";
+        }
+        })()
+
+        //Impossible to change cheese once it's assigned. 
+        //console.log(cheese); //this is hoisting the cheese
+        const cheese = "From";
+        //cheese = "biscuit";
+        console.log(cheese);
+
+        // Let variable can only be access through the loop
+        for (let i = 0; i < 10; i++){
+            console.log(`the value of i is ${i}`)
+        }
+        //This will not work because outside the loop :
+        //console.log(i)
+    </script>
+</body>
+</html>

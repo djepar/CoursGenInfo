@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 24</title>
+</head>
+<body>
+    <h1>Javascript Event Challenge 24</h1>
+    <div>
+    <p>Here is a paragraph of text</p>
+    <p>Here is another paragraph of text</p>
+    <p>Here is more text</p>
+    <p>Here is way more text</p>
+    </div>
+    <button>Add a paragraph</button>
+
+    <button id="hello">Add a paragraph the other way</button>
+
+    <script>
+        const btn = document.querySelector("button");
+        const container = document.querySelector("div");
+        btn.addEventListener("click", function (){
+            container.innerHTML += "<p>'Sing, Goddess, Achilles' rage'</p>"          
+        })
+        const btn2 = document.getElementById("hello");
+        btn2.addEventListener("click", function(){
+            var newP = document.createElement("p");
+            var pText = document.createTextNode("A new paragraph");
+            newP.appendChild(pText);
+            container.append(newP)
+        });
+    </script>
+</body>
+</html>
