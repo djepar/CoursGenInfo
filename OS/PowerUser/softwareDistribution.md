@@ -4,6 +4,8 @@ From Operating Systems and You, the google-coursera IT certification.
 ### Executable file(.exe)
  Contain instructions for a computer to execute when they're run. 
 Executable isnt something unique to Windows, but the special implementation of Windows is the portable executable or PE format. 
+
+
 #### PE format (Portable Executable)
 The filename extension of PE are :
 - acm, .ax, .cpl, .dll, .drv, .efi, .exe, .mui, .ocx, .scr, .sys, .tsp
@@ -69,5 +71,65 @@ A library :  a way to package a bunch of useful code tha tsomeone else wrote.
 TO install sysinternals and the chocolatey 
 ```
 Register-PackageSource -Name chocolatey -ProviderName chocolatey -Location https://chocolatey.org/api/v2
-
+```
 Find-Package sysinternals -IncludeDependencies
+
+## Linux : Package Dependencies and Package Manager
+Package managers : come with the works to make package installation and removal easier, including installing package dependencies. 
+dpkg is a package manager for Debian-based Linux systems.
+
+Apt and dpkg : both command-line package management interfaces
+
+Differences (from https://www.makeuseof.com/apt-vs-dpkg/ )
+ - APT or apt-get uses dpkg to install Package 
+ - APT can Download packages while dpkg only let you install local file. 
+ - Dpkg don't install dependencies. APt will.
+
+Installation with apt : `sudo apt install <program>`
+Uninstall with apt : `sudo apt remove <remove>`
+Update with apt : `sudo apt upgrade` or `sudo apt update`
+
+PPA : A Personal Package Archive, a software repository for uploading source packages to be built and published as an Advanced Packaging Tool (APT) repository by Launchpag
+
+In Linux repository sources are listed in : /etc/apt/sources.list
+#Package Managers
+## Windows : Package Manager
+Package manager : Makes sure that the process of software installation, removal, update, and dependency management is as easy and automatic as possible. 
+### Chocolatey : Third-party package manager
+Example : `choco install notepadplusplus.install`
+
+Can also use NuGet, another package manager
+
+## Windows : Underneath the hood
+To look what do an installer program do, we can use the Process Monitoring of the Microsoft CIS internals toolkits. 
+Orca.exe : a database table editor for creating and editing Windows Installer packages and merge modules. The tool provides a graphical interface for validation, highlighting the particular entries where validation errors or warnings occur. 
+
+Windows Software Development Kit(SDK) : includes redistributable components, documentation, installer, database validation tool, database table editor, database schema, development tools, VBScript tools, sample product and code samples. 
+
+Process Monitor : An advanced monitoring tool for Windows that shows real-time file system, Registry and process/thread activity. 
+
+## Linux : Underneath the Hood 
+Normally : from an app you have the code, the README files and a setup_script
+
+# Device Software Management
+Driver : Used to help our hardware devices interact with our Operating System
+## Windows : Device Manager
+In Windowws, Microsoft groups all of the devices and drivers on the computer in a single Microsoft management console :  the Device Manager
+Access it in run : devmgmt.msc
+Or Windows+x > Devices Manager
+
+## Linux : Devices and Drivers
+In Linux, even hardware are considere a file. 
+When a new device is connected, a device file is created in the /dev directory. 
+
+Character devices or character special files : 
+- like keyboard, or mouse transmit data character by character.
+- Raw devices, meaning that the programs don't read and write aligned block
+Block devices or block special files: 
+- like USB drives, hard drives, and CDROMS, transfer blocks of data; a data block.
+-  Buffered access to hardware devices and provide some abstraction from their specifics
+SD devices : mass storage devices
+/dev/sd[a-Z] 
+To see the list of the device : https://web.archive.org/web/20160424173724/https://www.kernel.org/doc/Documentation/devices.txt
+
+udev : "(userspace / dev) is a device manager for the Linux kernel, as the successor of devfsd and hotplug, udev primarily manages devices nodes in the /dev directory" (https://en.wikipedia.org/wiki/Udev, 20 august 2022)
