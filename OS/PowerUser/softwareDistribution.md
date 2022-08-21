@@ -133,3 +133,12 @@ SD devices : mass storage devices
 To see the list of the device : https://web.archive.org/web/20160424173724/https://www.kernel.org/doc/Documentation/devices.txt
 
 udev : "(userspace / dev) is a device manager for the Linux kernel, as the successor of devfsd and hotplug, udev primarily manages devices nodes in the /dev directory" (https://en.wikipedia.org/wiki/Udev, 20 august 2022)
+
+# Windows : Operating System Updates
+Windows IT Pro Blog : https://techcommunity.microsoft.com/t5/windows-it-pro-blog/bg-p/Windows10Blog
+
+# Linux : Operating System Updates
+With : `apt- upgrade`
+But it doesnt upgrade the kernel. To know the version of the kernel : `uname -r`
+For the full upgrade : `sudo apt full-upgrade`
+Linux kernel is a monolithic kernel
