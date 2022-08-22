@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours</a></li>
+            <ul>
+                <li><a href="NoteCoursC11/coursC11.html">C11: Intro a la prog(C++)</a></li>
+                <ul>
+                    <li><a href="chapitre1.html">Chapitre 1 </a></li>
+                    <li><a href="chapitre2.html">Chapitre 2</a></li>
+                    <li><a href="chapitre3.html">Chapitre 3</a></li>
+                    <li><a href="chapitre4.html">Chapitre 4</a></li>
+                    <li><a href="chapitre5.html">Chapitre 5</a></li>
+                  </ul>
+             </ul>
+          </ul>
+    </header>
+    <h1>Chapitre 2</h1>
+
+    <h2>2.1 Les opérations de sortie</h2> <!-- p. 33-43 -->
+    
+    <p>On trouve plusieurs types d'opérations de sortie pour la programmation : <cite>des affichages à
+        l'écran, des rapports imprimés, des chèques de paie ou encore des factures</cite>(p. 33)</p>
+    
+    <h3>2.1.1 La commande de sortie dans les diagrammes d'action</h3>
+    <p>La commande de sortie est : ÉCRIRE. </p>
+    
+    <h3>2.1.2 Le contrôle de la mise en page</h3> <!-- p. 34 -->
+    <p>Une séquence d'échappement permet de produire une mise en page en C et C++</p>
+    <table><caption>Séquences d'échappement: </caption>
+        <tr>
+            <td><strong></strong>\n</strong></td>
+            <td>passer à la ligne suivante;</td>
+        </tr>
+        <tr>
+            <td><strong>\t</strong></td>
+            <td>aller à la prochaine tabulation;</td>
+        </tr> <tr>
+            <td><strong>\"</strong></td>
+            <td>un guillemet;</td>
+        </tr> <tr>
+            <td><strong>\\</strong></td>
+            <td>un barre oblique inversée;</td>
+        </tr> <tr>
+            <td><strong>\r</strong></td>
+            <td>retour au début de la ligne(touche&lt;enter&gt;)</td>
+        </tr> <tr>
+            <td><strong>\b</strong></td>
+            <td>retour arrière(une colonne vers la gauche)</td>
+        </tr> <tr>
+            <td><strong>\a</strong></td>
+            <td>faire un bip!</td>
+        </tr> <tr>
+            <td><strong>\xhhh</strong></td>
+            <td>le caractère ASCII représenté par le nombre hhh(hexadécimal)</td>
+        </tr> <tr>
+            <td><strong>\ooo</strong></td>
+            <td>Le caractère ASCII représenté par le nombre ooo(octar</td>
+        </tr> <tr>
+            <td><strong>\0</strong></td>
+            <td>le caractère nul</td>
+        </tr>
+    </table>
+    <p>Il est également possible d'utiliser endl à la place de \n dans le flux cout, toutefois il y a une différence (LAQUELLE??????????)</p>
+    <h3>2.1.3 Le flux COUT</h3> <!-- p.34 -->
+    <p>Le flux cout affiche à l'écran n'importe quel type du C++ autant les string, char que les valeurs numériques.</p>
+    <p>Pour afficher le flux COUT ou faire tout autre opération nécessite le stream input-output, il faut inclure #include&lt;iostream&gt;</p>
+    <h3>2.1.4 Les manipulateurs</h3>
+    <p>Il est possible d'utiliser des manipulateurs avec la directive (#include&lt;iomanip&gt;)</p>
+    <table><caption>Les manipulateurs: </caption>
+        <tr>
+            <td><strong>setw(n):</strong></td>
+            <td>pour spécifier une largeur minimale de n caractères. On complète avec des espaces</td>
+        </tr>
+        <tr>
+            <td><strong>oct:</strong></td>
+            <td>pour écrire des entiers en octal</td>
+        </tr> <tr>
+            <td><strong>hex</strong></td>
+            <td>pour écrire des entiers en décimal</td>
+        </tr> <tr>
+            <td><strong>dec:</strong></td>
+            <td>pour écrire en décial (par défault)</td>
+        </tr> <tr>
+            <td><strong>setprecision(n)</strong></td>
+            <td>pour préciser n décimales pour les réels et n chiffre à afficher pour les entiers.</td>
+        </tr> <tr>
+            <td><strong>fixed</strong></td>
+            <td>pour activer la notation en virgule flottante des réels.</td>
+        </tr> <tr>
+            <td><strong>scientific:</strong></td>
+            <td>pour activiter la notation scientifique des réels</td>
+        </tr> <tr>
+            <td><strong>left :</strong></td>
+            <td>pour activer le cadrage à gauche</td>
+        </tr> <tr>
+            <td><strong>left</strong></td>
+            <td>pour activer le cadrage à gauche</td>
+        </tr> <tr>
+            <td><strong>right</strong></td>
+            <td>pour activer le cadrage à droite (par défault)</td>
+        </tr> <tr>
+            <td><strong>endl</strong></td>
+            <td>change de ligne comme pour \n, toutefois il y a une difference (LAQUELLE)</td>
+        </tr>
+    </table>
+    <cite>À l’exception de setw(), les manipulateurs modifient les caractéristiques de toutes les 
+        prochaines valeurs affichées. Les réglages durent donc jusqu’à un nouveau réglage fait par
+        ces mêmes manipulateurs. (p. 36)</cite> 
+    <h3>STD </h3> <!-- p. 38 -->
+    <p>Pour utiliser la commande, en plus d'inclure au début du programme iostream et iomanip, il faut également utiliser l'instruction :'using namespage std; avant la déclaration des fonctions et des variables. </p>
+    
+    
+    <h2>2.2 Les opérations d'entrée</h2>
+
+    <h3>2.2.1 La commande d'entrée dans les diagrammes d'action</h3>
+    <p>Par convention, une opération d'entrée s'écrit LIRE dans les diagrammes d'action.</p>
+    <h3>2.2.2 Le flux d'entrée <strong>cin</strong></h3>
+    <cite>La lecture à partir du flux cin est dite «bufferisée» car elle se sert d’un tampon où les données
+        sont stockées avant d’être affectées aux variables. Les données ne seront affectées aux variables
+        qu'après avoir pressé la touche <ENTER>. </br> </br> 
+        Le flux cin permet de lire des données de tous les types prédéfinis (int, float, char, string, etc.).
+        C’est l’opérateur &gt;&gt; (opérateur lire) qui sera utilisé pour transmettre les données vers les variables(p. 45)</cite>
+    Pour faire une entrée de donnée avec CIN, il faut :
+    <ul>
+        <li>supprimer les espaces initiaux,</li>
+        <li>mettre un espace comme séparateur entre les valeurs à lire. (on entend par espace : la touche espace, la tabulation (\t) et enter (\n)</li>
+        <li>Presser la touche &lt;ENTER&gt;</li>
+    </ul>
+    <cite>e la lecture à partir du flux cin se poursuit tant que les
+        données entrées sont correctes. On s'arrête dès qu'un caractère invalide est rencontré. (p. 88)</cite>
+    <h3>2.2.3 Les fonctions <strong>_getche()</strong> et <strong>_getch()</strong></h3>
+    <cite>
+        From https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/getch-getwch?view=msvc-170, visité le 6 janvier 2021 </br>
+        Syntax en C : </br>
+        <code>int _getch( void );
+        wint_t _getwch( void ); </code>
+        Remarks : 
+        The _getch and _getwch functions read a single character from the console without echoing the character. None of these functions can be used to read CTRL+C. When reading a function key or an arrow key, each function must be called twice; the first call returns 0 or 0xE0, and the second call returns the actual key code. </br>
+
+        These functions lock the calling thread and are therefore thread-safe. For non-locking versions, see _getch_nolock, _getwch_nolock. </br>
+
+        By default, this function's global state is scoped to the application. To change this, see Global state in the CRT.</br>
+        Example :
+        <code>
+        // crt_getch.c </br>
+        // compile with: /c</br>
+        // This program reads characters from</br>
+        // the keyboard until it receives a 'Y' or 'y'.</br>
+    </br>
+        #include <conio.h></br>
+        #include <ctype.h></br>
+        </br>
+        int main( void )</br>
+        {</br>
+        int ch;</br>
+    </br>
+        _cputs( "Type 'Y' when finished typing keys: " );</br>
+        do</br>
+        {</br>
+            ch = _getch();</br>
+            ch = toupper( ch );</br>
+        } while( ch != 'Y' );</br>
+    </br>
+        _putch( ch );</br>
+        _putch( '\r' );    // Carriage return</br>
+        _putch( '\n' );    // Line feed</br>
+
+    }
+</code>
+    </cite>
+
+    <p>Meme syntaxe pour getch</p>
+
+    <h3>2.2.4 La fonction <strong>getline()</strong></h3> <!-- P. 55 -->
+
+    <p>Getline permet de lire une chaîne de caractères qui comprend des espaces. </p>
+    <cite>La fonction getline() lira une chaîne vide dans le cas où il reste un \n dans le
+        tampon de lecture. (L'Italien, p.55)</cite>
+    
+    <h2>2.3 Les fonctions <strong>gotoxy()</strong> et <strong>clrscr()</strong></h2>
+    <p>Deux fonctions de la bibliothèque maison cvm.h servant à faciliter la mise en page de programme</br>
+    </br>La <dfn>gotoxy()</dfn> permet de déplacer le curseur à l'écran n'importe où sur l'écran.</br>
+    
+    La syntaxe de gotoxy : </br>
+        gotoxy(colonne, ligne) </br>
+        ligne = n; </br>
+        col = n;</br>
+    </p>
+    <p>La fonction <dfn>clrscr()</dfn> efface tout sur l'écran de sortie.</p>
+    
+    
+    <h2>La fonction <bold>MessageBoxA()</bold></h2>
+    <p><dfn>MessageBoxA</dfn>permet de créer facilement une boîte de message comprenant : titre, message, bouton.s et icône.</br>
+    </br>
+    Le fichier en-tete requis pour cette fonction est #include&lt;windows.h&gt;</br>
+    La syntaxe de cette fonction est : int MessageBoxA(Fenêtre Parent, Texte, Titre, Style);</br>    
+    </p>
+    <table><caption>Description des paramètres de MessageBoxA</caption> <!-- ENLEVER LES MULTIPLES THEAD -->
+    <tr>
+        <td><strong>Fenêtre Parent :</strong></td>
+        <td>Identifie la fenêtre parent de la fenêtre message. Si ce paramètre est NULL, c'est qu'il n'y a pas de parent.</td>
+    </tr> <tr>
+        <td><strong> Texte :</strong></td>
+        <td> Le message affiché.</td>
+    </tr> <tr>
+        <td><strong> Titre :</strong></td>
+        <td> Le titre affiché.</td>
+    </tr> <tr>
+        <td><strong> Style :</strong></td>
+        <td> Spécifie le contenu de la fenêtre de message.On peut y ajouter : nombre de bouton, bouton actif, icône et comportement</td>
+    </tr> 
+    </table> </br>
+    <table><caption>Les options de style de MessageBoxA</caption>
+    <thead>
+        <tr>
+            <th>Nombre de bouton :</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><strong> MB_ABORTRETRYIGNORE :</strong></td>
+        <td> Affiche trois boutons: Abandonner, Réessayer et Ignorer.</td>
+    </tr> 
+    <tr>
+        <td><strong> MB_OK :</strong></td>
+        <td> Affiche un bouton : OK</td>
+    </tr> <tr>
+        <td><strong> MB_OKCANCEL :</strong></td>
+        <td> Affiche deux boutons: OK et  annuler</td>
+    </tr> <tr>
+        <td><strong> MB_RETRYCANCEL :</strong></td>
+        <td> Affiche deux boutons:  Réessayer et annuler.</td>
+    </tr> <tr>
+        <td><strong> MB_YESNO :</strong></td>
+        <td> Affiche deux boutons: Oui et non.</td>
+    </tr> <tr>
+        <td><strong> YESNOCANCEL :</strong></td>
+        <td> Affiche trois boutons: Oui, non et Annuler.</td>
+    </tr> 
+   </tbody>
+   <thead>
+       <tr>
+           <th>Bouton actif</th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td><strong>MB_DEFBUTTON1</strong></td>
+           <td>défini le premier bouton comme celui qui est actif. </td>
+       </tr>  <tr>
+        <td><strong>MB_DEFBUTTON2</strong></td>
+        <td>défini le deuxième bouton comme celui qui est actif. </td>
+        </tr><tr>
+        <td><strong>MB_DEFBUTTON3</strong></td>
+        <td>défini le troisième bouton comme celui qui est actif. </td>
+        </tr>
+   </tbody>
+   <thead>
+       <tr>
+           <th>Icône :</th>
+       </tr>
+   </thead>
+   <tbody>
+       <tr>
+           <td><strong>MB_ICONEXCLAMATION </strong></td>
+            <td>l’icône «!» (point d’exclamation)
+            </td>
+       </tr>
+       <tr>
+           <td><strong> MB_ICONINFORMATION</strong></td>
+           <td> l’icône «i» minuscule</td>
+       </tr>
+       <tr>
+           <td><strong>MB_ICONQUESTION</strong></td>
+           <td>  l’icône «?» (point d’interrogation)</td>
+       </tr>
+       <tr>
+           <td>MB_ICONSTOP</td>
+           <td> l’icône «X» (stop)</td>
+       </tr>
+   </tbody>
+   <thead>
+    <tr>
+        <th>comportement :</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>MB_SYSTEMMODAL</td>
+        <td> la fenêtre restera visible jusqu'à réponse de l'usager</td>
+    </tr>
+    </table>
+    <table>
+        <caption>Description de la valeur de retour : </caption>
+    </table>
+    <table>
+    <tr>
+        <td>IDABORT </td>
+        <td>le bouton Abandonner a été sélectionné</td>
+    </tr> <tr>
+        <td>IDCANCEL</td>
+        <td>le bouton Annuler a été sélectionné</td>
+    </tr> <tr>
+        <td>IDIGNORE</td>
+        <td>le bouton Ignorer a été sélectionné</td>
+    </tr> <tr>
+        <td>IDNO</td>
+        <td>aucun bouton n’a été sélectionné</td>
+    </tr> <tr>
+        <td>IDOK </td>
+        <td>le bouton OK a été sélectionné</td>
+    </tr> <tr>
+        <td>IDRETRY </td>
+        <td>le bouton Réessayer a été sélectionné</td>
+    </tr><tr> 
+        <td> IDYES </td>
+        <td>le bouton Oui a été sélectionné</td>
+    </tr>
+    </table>
+    <h2>Exercices</h2>
+
+</body>
+</html>

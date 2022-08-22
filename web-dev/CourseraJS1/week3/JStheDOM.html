@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Javascript and the DOM</title>
+    <style>
+        .blue {
+            background-color : blue;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Javascript and the DOM</h1>
+    <h2 class="First">Some paragraphs</h2>
+    <p class = 'First'>Bonjour</p>
+    <p>Another paragraph</p>
+    <p>A third paragraph</p>
+    <h2 class="Second">Some other paragraphs</h3>
+    <p id="allo">Bonjour</p>
+    <p class ="Second">Another paragraph</p>
+    <p>A third paragraph</p>
+
+
+    <h2>A list</h2>
+    <div id="specialList">
+        <ul>
+            <li>Montreal</li>
+            <li>Paris</li>
+            <li>Hanoi</li>
+        </ul>
+    </div>
+    <button onclick="sampleFunction()">No more special</button>
+
+
+    <h2>Set attribute</h2>
+    <form>
+        <label><input type="checkbox">YES!</label>
+    </form>
+
+    <div class="moretext">
+    <h2>New text</h2>
+
+        <p>What is a sentence?</p>
+    </div>
+
+    <button onclick="removeText()">No more new text</button>
+
+    <script>
+        // Get elements By Tag Name
+        var myParagraph = document.getElementsByTagName("p");
+        console.log(myParagraph);
+        for(var i = 0; i < myParagraph.length; i++){
+            myParagraph[i].style.color = "red";
+            //alert(`this is the element ${i} `)
+        }
+
+        // Get elements by Class Name
+        var mySecond = document.getElementsByClassName("Second");
+        console.log(mySecond);
+
+        // Query Selector
+
+        var query1 = document.querySelector(".First")  //Select the first element
+        var query2 = document.querySelectorAll(".Second") //Select all the elements
+        console.log(`Query 1 = ${query1}`)
+        console.log(`Query 2 = ${query2}`)
+        for (eachitem of query2){
+            eachitem.style.color = "blue";
+        }
+        query1.style.color = "green";
+
+
+        //InnerHTML -- Change the HTML
+        var mySpecial = document.getElementById("specialList")
+        function sampleFunction(){
+            mySpecial.innerHTML = "<p>No more list</p>"
+        }
+        
+        //Class Name -- Add a class name to an element
+        var firstP = document.querySelector("p");
+        firstP.className = "blue"
+
+        //Set Attribute
+        var myCheckBox = document.querySelector("input");
+        myCheckBox.setAttribute("checked", "checked");
+
+        //Creating Elements and Nodes
+        var myTag = document.createElement("p");
+        var mySentence = document.createTextNode("This is a sentence -- This is a sentence -- This is a sentence");
+        myTag.appendChild(mySentence);
+        var myDiv = document.querySelector(".moretext");
+        myDiv.append(myTag);
+
+        //Removing Elements
+        function removeText() {
+            myDiv.removeChild(myDiv.children[1]);
+        }
+    </script>
+</body>
+</html>

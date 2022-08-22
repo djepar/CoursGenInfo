@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 25</title>
+</head>
+<body>
+    <h1>Javascript Event Challenge 25</h1>
+    <div>
+    <p>Here is a paragraph of text</p>
+    <p>Here is another paragraph of text</p>
+    <p>Here is more text</p>
+    <p>Here is way more text</p>
+    </div>
+    <button>Add a paragraph</button>
+
+    <button id="hello">Add a paragraph the other way</button>
+    <button>Remove a paragraph</button>
+    <script>
+        const btnAdd = document.querySelectorAll("button")[0];
+
+        const btnAdd2 = document.querySelectorAll("button")[1];
+        const btnRemove = document.querySelectorAll("button")[2];
+        const container = document.querySelector("div");
+        const allP = document.querySelectorAll("p");
+        btnAdd.addEventListener("click", function (){
+            container.innerHTML += "<p>'Sing, Goddess, Achilles' rage'</p>"          
+        })
+        btnAdd2.addEventListener("click", function(){
+            var newP = document.createElement("p");
+            var pText = document.createTextNode("A new paragraph");
+            newP.appendChild(pText);
+            container.append(newP)
+        });
+
+        btnRemove.addEventListener("click", function (){
+            container.removeChild(container.children[allP.length-1]);   
+        })
+    </script>
+</body>
+</html>

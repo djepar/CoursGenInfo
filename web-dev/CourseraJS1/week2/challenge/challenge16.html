@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Challenge 16</title>
+</head>
+<body>
+    <script>
+        var a_name= prompt("Quel est ton nom?", "");
+             
+        function hello(name){
+                if (name == null || name == "") {
+                    return ("Bonjour, sans-nom")
+                }
+                else{
+                return `Bonjour ${name}`;
+                }
+            }
+        function RandomInt(min, max){
+            return Math.floor((max -min +1)* Math.random()) + min;
+        }
+        var gifts = ["mushrooms", "twigs", "burn woods", "pieces of dirt"]
+        function hostpitality(name, gifts){
+            var max = gifts.length - 1
+            console.log(`Hello ${name}, would you like some  ${gifts[RandomInt(0,max)]}`)
+           
+        }
+        hostpitality(a_name, gifts)
+        function addStuff ( item1, item2 ) 
+        { 
+            function bonjour(){
+                console.log("allo")
+            }
+            bonjour()
+            var sum = item1 + item2; return sum; 
+        }
+
+        console.log(addStuff(4,2))
+         
+    </script>
+
+</body>
+</html>

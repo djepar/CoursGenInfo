@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours</a></li>
+            <ul>
+                <li><a href="coursC11.html">C11: Intro a la prog(C++)</a></li>
+                <ul>
+                    <li><a href="chapitre1.html">Chapitre 1 </a></li>
+                    <li><a href="chapitre2.html">Chapitre 2</a></li>
+                    <li><a href="chapitre3.html">Chapitre 3</a></li>
+                    <li><a href="chapitre4.html">Chapitre 4</a></li>
+                    <li><a href="chapitre5.html">Chapitre 5</a></li>
+                  </ul>
+             </ul>
+          </ul>
+    </header>
+
+    <h1>Chapitre 3</h1>
+    <h2>3.1 La sélection</h2>
+    <p>Pour créer une condtion, il faut créer une instruction de sélection. </p>
+    <ul>
+        <li>Règle 1 : La condition menant à la sélection doit être exprimée de manière à n'offrir que deux réponses possibles :vrai ou faux;</li>
+        <li>Règle 2 : si la sélection offre deux possibilités, il faut écrire l'énoncé sous la forme Si-Sinon</li>
+    </ul>
+    
+    <h2>3.2 Les sélections dans les diagrammes d'action</h2>
+    <p>Voici les instructions pour fare des sélections dans les diagrammes d'action</p>
+    <h2>3.3 La condition simple</h2>
+    <h2>3.4 La condition composée</h3>
+    <h2>3.5 La notion de <strong>bloc</strong> en langage C</h2>
+    <h2>3.6 L'instruction <strong>if()</strong></h2>
+    <h2>3.7 L'instruction <strong>if()-else</strong></h2>
+
+    <h2>3.8 Les fonctions <strong>cin.fail() </strong>, <strong>cin.clear()</strong> et <strong>cin.ignore()</strong></h2> <!-- p.88-89 -->
+    <p>Voici plusieurs fonctions utilent lorsque l'usager fait un erreur d'entrée de donnée.
+        <dfn>cin.fail()</dfn>est une méthode de validation d'entrée de donnée. Cette fonction retourne vrai lorsqu'une erreur est commiste, sinon elle retourne faux.
+    </br> Une fois que cin.fail() détecte une erreur, le flux cin devient inactif. </br>
+    De plus, il est important de viter le tampon de lecture à l'aide de cin.ignore(). </br> </p>
+    &nbsp; Par exemple, pour vider un tampon contenant 80 caractères, il faut écrire : cin.ignore(80,'\n')
+    </br>&nbsp; Cela effacera tous les caractères jusqu'au premier '\n' pour un maximum de 80 caractères. </p>
+
+
+    <h2>3.9 La <strong>sélection multiple</strong> et les <strong>if()-else</strong> imbriqués</h2>
+    <p>Lorsque nous avons à choisir un option sur un lot de plusieurs possibilités, il faut n-1, <cite> où n représente le nombre de
+        possibilité (p. 90)</cite></p>
+    <!-- insérer image exercice1p90.png et exercice2p90 Merci! -->
+
+    <h2>3.10 L'instruction <strong>switch()</strong></h2>
+    <p>L'instruction <dfn>switch()</dfn> permet une sélection multiple qui est plus clair que plusieurs if()-else imbriqués. </br>
+    Le paramètre de switch est l'expression évalué, qui doit être un entier (de type char, int, ...) </br>
+    Il n'y a qu'une paire d'accolade qui fait tout le bloc switch avec les différentes cases. </br>
+    Une seule alternative devra être choisi. Il est conseillé de mettre une clause par défault au cas qu'aucune donnée valide n'a été entrée. </br>
+    L'instruction switch() fonctionne en cascade, ce qui veut dire qu'il faut utiliser <strong>break</strong> pour éviter que les instructions qui suivent ne soient pas exécuté. Il est également possible de jouer avec ce phénomène de cascade s'il faut accumulé plusieurs instructions.</p>
+
+
+    <h2>3.11 Exercices</h2>
+
+
+
+</body>
+</html>

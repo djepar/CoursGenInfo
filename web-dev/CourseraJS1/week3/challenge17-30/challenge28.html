@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 28</title>
+    <style>
+        div {
+            width : 50px;
+            height: 50px;
+            background-color: rgb(58, 125, 218);
+            transition: all 2s;
+        }
+        .big {
+            width : 200px;
+            height: 200px;
+            background-color: rgb(202, 218, 58);
+            transition: all 2s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Javascript Event Challenge 28</h1>
+    <p>The square can change!</p>
+    <div>
+    </div>
+   
+    <script>
+        const squareMO = document.querySelector("div");
+        squareMO.addEventListener("mouseover", function(){
+            squareMO.className = "big"
+        })
+        squareMO.addEventListener("mouseleave", function(){
+            squareMO.removeAttribute("class");
+        })
+    </script>
+</body>
+</html>

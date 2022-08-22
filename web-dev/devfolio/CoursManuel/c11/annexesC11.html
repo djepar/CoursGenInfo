@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Annexes pour le cours C11</title>
+<LINK href="../../style.css" rel="stylesheet" type="text/css">
+<html lang="fr">
+<head>
+</head>
+<body class="grid-container">
+    <header class="grid-item">
+        <ul class="menu-verticale">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cours.html">Cours</a></li>
+            <ul>
+                <li><a href="NoteCoursC11/coursC11.html">C11: Intro a la prog(C++)</a></li>
+                <ul>
+                    <li><a href="chapitre1.html">Chapitre 1 </a></li>
+                    <li><a href="chapitre2.html">Chapitre 2</a></li>
+                    <li><a href="chapitre3.html">Chapitre 3</a></li>
+                    <li><a href="chapitre4.html">Chapitre 4</a></li>
+                    <li><a href="chapitre5.html">Chapitre 5</a></li>
+                  </ul>
+             </ul>
+          </ul>
+    </header>
+    <body>
+        <di class="grid-item"v>
+        <h1>ANNEXES</h1>
+        <h2>Le C ++ </h2>
+        <h2> Les opérateurs du C++ </h2> 
+        <h2> Les codes ASCII </h2> 
+        <h2> Les conversions (ajouts de moi)</h2> 
+        <p>Informations tirées de la page https://www.programiz.com/cpp-programming/type-conversion visionné le 9 janvier 2021 </p>
+        <h3> Conversion de type implicite</h3>
+        <p> Les <dfn>conversions implicitent</dfn> se font automatiquement par le compilateur.<br> Par exemple : </p>
+        <code>// Working of implicit type-conversion
+
+            #include <iostream><br>
+            using namespace std;<br>
+                                <br>
+            int main() {<br>
+            // assigning an int value to num_int<br>
+            int num_int;<br>
+            <br>
+            // declaring a double type variable<br>
+            double num_double = 9.99;<br>
+            <br>
+            // implicit conversion<br>
+            // assigning int value to a double variable<br>
+                num_int = num_double;<br> // Ici, une variable double
+            <br>
+            cout << "num_int = " << num_int << endl;<br>
+            cout << "num_double = " << num_double << endl;<br>
+            <br>
+            return 0;<br>
+            }<br>
+        <br>
+        Output : 
+        &nbsp; num_int = 9 <br>
+        &nbsp; num_double = 9.99
+        </code>
+        <p>Il faut se rappeler de la possibilité de perte de donnée lors de la conversion de type.  </p>
+        <p> AJOUTER annexe1.png</p>
+        <h3> Conversion de type explicent</h3>
+        <p> Les <dfn>conversions explicent</dfn> se font manuellement par le compilateur.<br> 
+            La <strong>syntaxe</strong> pour une conversion en C : (data_type)expression; <br>
+            La <strong>syntaxe</strong> pour une conversion en C++ : data_type(expression); </p>
+        </div>
+
+</body>
+</html>
+

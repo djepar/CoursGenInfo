@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Javascript Basic Challenge 
+    </h1>
+    <h2>
+        Challenge 8
+    </h2>
+    <script>
+            var nbr = prompt(`Write a number smaller than 10`, "Write your number here");
+            if (nbr < 10){
+                console.log("Your number is lower than 10, good job");
+                for (var i = 0; i < 10; i++){
+                    if (i == nbr){
+                        console.log(`Here is a ${i} <------This is your number`)
+                    }
+                    else {
+                    console.log(`Here is a ${i}`)
+                    }
+                }
+            }
+            else if (nbr >= 10){
+                console.log("You broke all rules, now the samsara is broken");
+            }
+            else {
+                console.log("You think you can broke the code!? This is not a number")
+            }
+            
+    </script>
+</body>
+</html>

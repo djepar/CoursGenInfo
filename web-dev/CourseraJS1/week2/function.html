@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Function in Javascript</title>
+</head>
+<body>
+    <script>
+            function printMessage(message) {
+                console.log(message);
+
+            }
+            printMessage("Bonjour");
+            function UpperString(text){
+                return text.toUpperCase();
+            }
+            console.log(UpperString("allo"));
+
+            function LongrandomInt(min, max){
+                
+                var numofValues = max - min + 1;
+                console.log(`First step : num of values : ${max} - ${min} + 1 = ${numofValues}`);
+                var randomNum = Math.random();
+                console.log(`Second step : Math random = ${randomNum}`)
+                var randomVal = randomNum * numofValues;
+                console.log(`Third step : Random val = ${randomNum} * ${numofValues} = ${randomVal}`)
+                var roundedrandomVal = Math.floor(randomVal);
+                var FinalNum = min + roundedrandomVal;
+                console.log(`Fourth step : floor of val + min : ${roundedrandomVal} + ${min} = ${FinalNum}`)
+                
+                return FinalNum
+              }
+            function ShortRandomInt(min, max){
+                /* Long version
+                var numofValues = max - min + 1;
+                var randomNum = Math.random();
+                var randomVal = randomNum * numofValues;
+                var roundedrandomVal = Math.floor(randomVal);
+                var FinalNum = min + roundedrandomVal;
+                */
+                return Math.floor( ( max - min + 1 ) * Math.random()) + min;
+            }
+
+            function ListGenerationNumber(min, max){
+                var an_array = [];
+                for (i = 0; i < 10; i++){
+                    an_array.push(ShortRandomInt(min,max));
+                }
+                return an_array
+            }
+            console.log(ListGenerationNumber(-15, 100));
+
+            //A function expression
+            var bonjour = function(){
+                var name= prompt("Quel est ton nom?", "");
+                console.log(`Bonjour ${name}`);
+
+            }
+            bonjour();
+        </script>
+</body>
+</html>

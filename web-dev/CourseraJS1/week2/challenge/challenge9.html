@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Javascript Basic Challenge 
+    </h1>
+    <h2>
+        Challenge 8
+    </h2>
+    <script>
+            function pickAcolor(){
+                var color = prompt(`Write a color`, "Write a color");
+                color = color.toLocaleLowerCase();
+                if (color == "red" || color == "blue" || color == "yellow"){
+                    console.log(`You picked a primary color : ${color}`)
+                }
+                else if (color == "purple" || color == "orange" || color == "green"){
+                    console.log(`You picked a secondary color : ${color}`)
+                }
+                else {
+                    console.log("Your neither pick a secondary or primary color")
+                }
+            }
+            pickAcolor();
+    </script>
+</body>
+</html>

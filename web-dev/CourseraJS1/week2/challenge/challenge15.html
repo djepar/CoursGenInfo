@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Challenge 15</title>
+</head>
+<body>
+    <script>
+        var a_name= prompt("Quel est ton nom?", "");
+             
+        function hello(name){
+                if (name == null || name == "") {
+                    return ("Bonjour, sans-nom")
+                }
+                else{
+                return `Bonjour ${name}`;
+                }
+            }
+        function ShortRandomint(min, max){
+            /* Long version
+            var numofValues = max - min + 1;
+            var randomNum = Math.random();
+            var randomVal = randomNum * numofValues;
+            var roundedrandomVal = Math.floor(randomVal);
+            var FinalNum = min + roundedrandomVal;
+            */
+            return Math.foor((max -min +1)* Math.random()) + min;
+        }
+        var gifts = ["mushrooms", "twigs", "burn woods", "pieces of dirt"]
+        function hostpitality(name, gifts){
+            for (var eachItem of gifts){
+                console.log(`Hello ${name}, would you like some ${eachItem}`)
+            }
+        }
+        hostpitality(a_name, gifts)
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Salut la gang</h1>
+
+
+
+    <script>
+        //This is a comment
+        /*
+            A longer comment
+        */
+        var hello = "Bonjour le monde";
+        console.log(hello)
+
+        //if statement
+        if(hello.length > 5) {
+            console.log(hello)
+        }
+        var z = [];
+        var iteration = 2
+        var n = 20
+        //iteration
+        for(var i = iteration; i <n; i+= iteration){
+            z.push(i);
+        }
+        console.log(z);
+
+        
+        var color = ["blue", "yellow",  "brown", "read"];
+        
+        //iterate through a list
+        for (var eachItem of color) {
+            console.log(eachItem);
+        }
+
+        //iterate through a string
+        var salut = "salut la gang"
+        for(var eachLetter of salut){
+            console.log(eachLetter);
+        }
+
+        //while loop
+        var incrementor = 0; //must be outside of the while loop
+        var text = "";
+        while (incrementor < 10){
+            text += "The incrementor has gone up to " + incrementor + "\n";
+            // another way of concatenated would be : `The incrementor has gone up to  ${incrementor} \n`
+            incrementor++;
+        }
+        console.log(text); 
+
+    </script>
+</body>
+</html>
