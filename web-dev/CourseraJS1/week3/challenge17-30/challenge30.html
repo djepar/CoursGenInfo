@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 30</title>
+    <style>
+    body { height: 3000px;}
+    .one {background-color: aliceblue; transition: all 3s}
+    .two {background-color: cadetblue; transition: all 3s}
+    .three {background-color: yellowgreen; transition: all 3s}
+    .four {background-color: firebrick; transition: all 3s}
+    .five {background-color: magenta; transition: all 3s}
+
+
+
+
+      
+    </style>
+</head>
+<body>
+    <h1>Javascript Event Challenge 30</h1>
+    <p>The square can change!</p>
+    <div>
+    </div>
+   
+    <script>
+        const bodyTag = document.querySelector("body");
+        document.addEventListener("keydown", function(event){
+            var keypress = event.which;
+            switch (keypress){
+                case 66:
+                    bodyTag.className = "one";
+                    break;
+                case 86:
+                    bodyTag = "two";
+                    break;
+                case 68:
+                    bodyTag.className = "three";
+                    break;
+                case 69:
+                    bodyTag.className ="four";
+                    break;
+                case 70:
+                    bodyTag.className = "five"
+                    break;
+                default:
+                    bodyTag.className = "five"
+            }
+        });
+    
+    </script>
+
+</body>
+</html>

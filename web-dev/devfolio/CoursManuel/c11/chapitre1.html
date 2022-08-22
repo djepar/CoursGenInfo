@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../NoteCoursStyle.css"
+    </head>
+    <div class="container">  
+    <body>
+        <header>
+            <ul>
+                <li><a href="default.asp">Cours</a></li>
+                <ul>
+                    <li><a href="../../index.html">C11: Intro a la prog(C++)</a></li>
+                    <ul>
+                        <li><a href="chapitre1.html">Chapitre 1 </a></li>
+                        <li><a href="chapitre2.html">Chapitre 2</a></li>
+                        <li><a href="chapitre3.html">Chapitre 3</a></li>
+                        <li><a href="chapitre4.html">Chapitre 4</a></li>
+                        <li><a href="chapitre5.html">Chapitre 5</a></li>
+                      </ul>
+                 </ul>
+                <li><a href="news.asp">News</a></li>
+                <li><a href="contact.asp">Contact</a></li>
+                <li><a href="about.asp">About</a></li>
+              </ul>
+        </header>
+        <main>
+        <h1>Chapitre 1</h1>
+
+        <article>
+        <h2>1.1 La programmation</h2>
+ 
+        <p class="metacours">Le cours s'articule en deux facettes : <br>            "L'élaboration d'algorithmes simples"   <br> "Le codage de ces algorithmes en langage C++" </p> <!-- p. 4-->
+            <p> L'<dfn>informatique</dfn>
+                    <ul>
+                        <li>Pour L'Italien, l'informatique <cite>consiste à résoudre un problème en trouvant une solution qui utilise l'ordinateur </cite>  </li>
+                        <li>Pour CNRTL, l'informatique est un <cite>[e]nsemble des opérations permettant la conception, la réalisation, le test, la maintenance de programmes </cite> d'apr. Morvan Informat. 1981 <cite>Programmation en langage machine, en langage assembleur, en langage évolué. La programmation inclut les travaux d'écriture et de mise au point des programmes (Le Garff1975) </cite></li></ul> </p> <!-- p.4 --> 
+                <br><p>Il n'y a pas de méthode universelle en programmation, mais nous pouvons toutefois faire un portrait général inspirés des lignes directrices communes aux différentes méthodes. </p>
+                <!-- paracitage pour toutes les grandes lignes de la page 4. : -->
+                <ol>
+                    <li>Analyser le problème</li> 
+                    <ul>
+    
+                        <li>Comprendre la problématique et les objectifs</li>
+                        <li>Regrouper les informations et définir les grandes lignes de la solution. Notez bien que ce processus doit ce faire dialectiquement en collaboration avec l'usager.ère. </li>
+                        <li>Retravailler la solution jusqu'a ce qu'elle soit acceptées</li>
+                    </ul>
+                <li>Élaborer la solution</li>
+                    <ul><li>Détailler et améliorer la solution.Le résultat obtenue de cette étape est un <dfn>algorithme</dfn> </li></ul>
+                <li>Programmer et documenter la solution</li>
+                    <ul>
+                        <li>Choisir le langage informatique approprié</li>
+                    <li>Traduire l'algorithme dans le langage choisi tout en documentant constament de programme</li> 
+                    </ul>
+                </ol>
+            </article>
+        <h2>1.2 Le diagramme d'action</h2>
+            <p><cite>Le <dfn>diagramme d'action</dfn> décompose la solution d'un problème en une série d'étapes logiques. Ceci est fait avec des énoncés d’un langage propre à la construction des diagrammes d'action. </cite></p> <!-- p.5-->
+            <p>Les six commandes du langage formel 
+                <ul>
+                    <li>Lire</li>
+                    <li>Écrire</li>
+                    <li>Si...Sinon</li>
+                    <li>Tant que...</li>
+                    <li>Faire... Tant que</li>
+                    <li>Pour</li>
+                </ul>    </p>  
+            <p>
+            Exemple de code:
+                <code>
+                    Écrire "Combien d'étudiants avez-vous?"<br>
+                    Lire NbEtudiant<br>
+                    CompteNbEtudiant = 0<br>
+                        Tantque CompteNbEtudiant < NbEtudiant <br>
+                            Écrire "Donnez la note de l'étudiant:" <br>
+                            Lire NoteEtudiant<br>
+                                Si NoteEtudiant < 0<br>
+                                    Écrire "Erreur, une note doit être positive ou nulle"<br>
+                                Sinon<br>
+                                    CompteNbEtudiant = CompteNbEtudiant + 1<br>
+                                SommeNoteEtudiant = SommeNoteEtudiant + NoteEtudiant <br>
+                    MoyenneNoteEtudiant = SommeNoteEtudiant / NbEtudiant   <br>
+                    Écrire "La moyenne de ce groupe est de:", MoyenneNoteEtudiant <br>
+                </code>
+                <code>
+                    print("Combien d'étudiants avez-vous?") <br>
+                    NbEtudiant = input()<br>
+                    SommeNoteEtudiant = 0<br>
+                    while CompteNbEtudiant < NbEtudiant:<br>
+                            print("Donnez la note de l'étudiant:" )<br>
+                            NoteEtudiant =  input()<br>
+                                if NoteEtudiant < 0:<br>
+                                    print("Erreur, une note doit être positive ou nulle")<br>
+                                else:<br>
+                                    CompteNbEtudiant = CompteNbEtudiant + 1<br>
+                                SommeNoteEtudiant = SommeNoteEtudiant + NoteEtudiant <br>
+                    MoyenneNoteEtudiant = SommeNoteEtudiant / NbEtudiant <br>
+                    print("La moyenne de ce groupe est de:", MoyenneNoteEtudiant) <br>
+                </code>
+    
+            </p>
+        <h2>1.3 Le dictionnaire de données</h2>
+            <p>Le <dfn>dictionnaire de données</dfn> <cite>"regroupe la liste de tous les éléments utilisés pour la résolution du problème et le codage de la solution."</cite></p> <!-- p.6-->
+            <table><caption>Le dictionnaire de données</caption>
+                <thead>
+                <tr>
+                    <th>Identificateur</th>
+                    <th colspan="2">Signification</th>
+                    <th>Type</th>
+                    <th>Valeur</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>___________ </td>
+                    <td colspan="2">____________          </td>
+                    <td>______________          </td>
+                    <td>______________          </td>
+                </tr>
+                </tbody> </table>
+                <h3>1.3.1 Les identificateurs</h3>
+                    <ul>
+                        <li>Les <dfn>constantes</dfn> sont normalement représenter en majuscules par convention pour les distinguer des variables</li>
+                        <li>Les <dfn>variables</dfn> doivent avoir un nom significatif. Par convention, chaque mot d'un nom d'une variable s'écrit avec une lettre majuscule</li>
+                        <li>Les <dfn>tableaux</dfn> sont des varaibles composée d'un ensemble d'éléments de même type. </li>
+                    </ul>
+                <h3>1.3.2 La signification</h3>
+                <p>Description de l'objet référencé par l'identificateur et son rôle. </p>
+                <h3>1.3.3. Le type</h3> <!-- p. 7-->
+                <table><caption>Les types disponibles en langage C++</caption>
+                    <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Grandeur</th>
+                        <th>Valeur représentée</th>
+    
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>char </td>
+                        <td>1 octet</td>
+                        <td>Un seul caractère ou un nombre entier(de -128 à 127)</td>
+                    </tr>
+                    <tr>
+                        <td>unsigned char </td>
+                        <td>1 octet</td>
+                        <td>Un seul caractère ou un nombre entier non signé(de 0 à 255)</td>
+                    </tr>
+                    <tr>
+                        <td>short</td>
+                        <td>2 octets</td>
+                        <td>Un nombre entier (de -32 768 à 32 767) </td>
+                    </tr>
+                    <tr>
+                        <td>unsigned short</td>
+                        <td>2 octets</td>
+                        <td>Un nombre entier non signé (de 0 à 65535) </td>
+                    </tr>
+                    <tr>
+                        <td>long (ou int)</td>
+                        <td>4 octets</td>
+                        <td>Un nombre entier (de -2 147 483 648 à 2 147 483 647)</td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>4 octets</td>
+                        <td>Un nombre réel (7 chiffres significatifs): +-2.2E-308 à 1.8E+308</td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>8 octets</td>
+                        <td>Un nombre réel en double précision (15 chiffre significatifs): +- 2.2E-308 à 1.9E+308)</td>
+                    </tr>
+                    <tr>
+                        <td>long double</td>
+                        <td>1 octet</td>
+                        <td>Un nombre réel (19 chiffre significatifs): +- 3.4E-4932 à 1.2E+4932)</td>
+                    </tr>
+                    <tr>
+                        <td>bool</td>
+                        <td>1 octet</td>
+                        <td>valeur booléenne <strong>true</strong> ou <strong>false</strong></td>
+                    </tr>
+                    <tr>
+                        <td>string</td>
+                        <td>variable</td>
+                        <td>Une chaine de caractères (plusieurs caractères) </td>
+                    </tr>
+                    <tr>
+                        <td>Type défini</td>
+                        <td></td>
+                        <td>tout type complexe défini par le programmeur</td>
+                    </tr>
+                    </tbody> </table>
+                    <p>Notez qu'il est nécessaire d'inclure la directive du préprocesseur #include  &ltstring&gt </string></p>
+        <h3>1.3.4 La valeur</h3>
+            <p><cite>Pour chaque identificateur on indiquera sa valeur(absolue ou calculée).</cite></p>
+    
+        <h2>1.4 La structure d'un programme en langage C</h2> <!-- p. 8 - 10-->
+            <ol>
+                <li><dfn>L'en-tête </dfn> : doit contenir le nom de l'auteur.trice, la date, le nom du programme et une description. </li>
+                <li><dfn>Les directives au préprocesseurs</dfn> : pour inclure les fonctions dans un programme C++, il faut inclure un '#include' puis mettre le fichier entre  &lt;  &gt; pour chaque fichier du préprocesseur. </li>
+                <li><dfn>Les types définis par lxs programmeur.euse.s</dfn>: cette section du code permet de définir de nouveau type qui ne sont pas définit par défaut.   </li>
+                <li><dfn>La déclaration des fonctions</dfn>: les fonctions sont déclarées ici (prorotype de la fonction). Le prototype inclut : <cite>le type de sa valeur de retour, son nom et le type et le nom de ses paramèetres.</cite> <!-- p.10--> La description détaillé des fonctions se fera dans la section 6. </li>
+                <li><dfn>La fonction main()</dfn> : fonction obligatoire, les sections sont séparées par des accolades ({}).</li>    
+                <li><dfn>La définition des autres fonctions</dfn>: chaque fonction est détaillée dans cette section. Chaque fonction est l'équivalent d'un petit programme</li>
+            </ol>
+        <h2>1.5 Les données</h2> 
+        <h3>1.5.1 L'espace-mémoire </h3><!-- p.11 -->
+            <p>Chaque variables, constantes ou données nécessitent un espace réservé par l'ordinateur, ce qu'on appelle un espace-mémoire</p>
+            <p>Pour bien comprendre l'espace mémoire, il faut être capable de :</p>
+            <ul>
+                <li>"diff/rencvier les espaces-mémoires les uns des autres;</li>
+                <li>localiser un espace-mémoire;</li>
+                <li>mettre une donnée dans un espace-mémoire;</li>
+                <li>retrouver la valeur d'une donnée d'un espace-mémoire particulier;</li>
+                <li>modifier la valeur d'une donnée existante d'un espace-mémoire;" (p. 11)</li>
+            </ul>
+            <p>Voici les éléments nécessaires d'un espace-mémoire proposés par les concepteur.trice.s de compilateurs :</p>
+            <ul>
+                <li>nom unique</li>
+                <li>type afin de déterminer la taille</li>
+                <li>valeur défini (qui peut être modifié si il s'agit d'une variable</li>
+            </ul>
+        <h3>1.5.2 Règles d'écritures des noms de variable et constante</h3> <!-- p.12-->
+            <ul>
+                <li>Doit être composé uniquement de caractères alpha-numériques et d'underscore. (Dans visual code, il est également possible d'utiliser les accents.</li>
+                <li>Ne pas commencer par un chiffre.</li>
+                <li>Sensibles aux majuscules et minuscules</li>
+                <li>Par convention : les constantes sont en majuscules tandis que les variables commencent avec une majuscule à chaque mot.</li>
+                <li>Ne pas commencer un nom avec un underscore</li>
+                <li>Ne pas utiliser des mots-réservés du langage et du compilateur.</li>
+            </ul>
+        <h3>1.5.3 La déclaration des variables</h3> <!-- p. 12-->   
+            <p>En C la déclaration de variables se fait toujours en début de fonction, tandis qu'en C++ les déclarations se font n'importe où dans le corps de la fonction</p>
+            <code>
+                void main (void) <br>
+                    {                               //Debut de main()                                        </br>       
+                        int Somme;                  //Déclarations des variables    </br> 
+                        short i, Compteur;          // réserve un espace-mémoire nommé 'i' et 'Compteur' de 2 octets chacun    </br> 
+                        float Moyenne, Note;        // réserve un espace-mémoire nommé 'Moyenne' et 'Note' de 4 octets chacun    </br> 
+                        double Distance, Salaire;   // réserve un espace-mémoire nommé 'Distance' et 'Note' de 8 octets chacun    </br> 
+                        char Lettre;                // réserve un espace-mémoire nommé 'Lettre' de 1 octet.    </br> 
+                    </br> 
+                        ...                            //Corps de la fonction main()    </br> 
+                        ...                            //Fin de la main()    </br> 
+                    </br> 
+    
+    
+                    }    </br> 
+            </code>
+        <h3>1.5.4 Les constantes</h3> <!-- p.14 -->
+            <p>Si une variable ne change pas dans un programme, il vaut mieux utiliser une constante. <br>
+            En physique par exmple, les constantes sont très importante :        </p>
+            <code>
+                void main(void)
+                {
+                    const float PLANCK_CONSTANT = 3*(10**8) //réserve un espce-mémoire nommé PLANCK_CONSTANT de 4 octets
+                }
+            </code>
+        <h3>1.5.5 L'affection des variables</h3> <!-- p.14-15 -->
+        <code>
+            #include&lt;string&gt;      </br> 
+            using namespace std;    </br> 
+            void main(void)      </br> 
+            {    </br> 
+                int NbEtudiant;   //syntaxe : type + ' ' + NomVariable + ;    </br> 
+                string NoCours;       </br> 
+                float Moyenne;     </br> 
+                
+                NbEtudiant = 32;     </br> 
+                NoCours = "420-101-90";     </br> 
+                Moyenne = 67.8;    </br> 
+                Moyenne = Moyenne +3; //il est possible de modifier le contenu d'un espace-memoire     </br> 
+            }    </br> 
+            </code>
+        <h3>1.5.6 Les caractères et les chaînes de caractères</h3> <!-- p. 13-16 -->
+        <p>Un <strong>caractère</strong>(type char) s'écrit entre apostrophe tandis qu'une <strong>(type string)chaîne de caractères</strong> est écrite entre guillemet </p>
+        <p id='string' class='encadre'>Une chaîne de caractère peut contenir 0 caractère et plus.  </br> 
+            La classe string est accessible grâce à l'appel de la fonction #include&lt;string&gt; et contient plusieurs fonctions et opérateurs pour manipuler ses chaînes.  </br> </p>
+            <table><caption>La classe string</caption>
+                <thead>
+                <tr>
+                    <th>Fonctions: </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>c_str </td>
+                    <td>transforme une string en chaîne de caractères standard (en langage C standard) </td>
+           
+                </tr>
+                <tr>  
+                    <td>length () ou size()</td>
+                    <td>donne la longeur de la chaîne</td>
+                        </tr>
+                <tr>
+                    <td>erase()</td>
+                    <td>vider la chaîne (équivalent à affecter la chaîne vide""</td>
+    
+                </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                    <th>Opérateurs:</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>=</td>
+                    <td>affectation</td>
+                </tr>
+                <tr>
+                    <td>+, +=</td>
+                    <td>addition</td>
+                </tr>
+                <tr>
+                    <td>==, <, >, <=, >=, !=</td>
+                    <td>opérateurs de relation</td>
+                </tr>
+                </tbody>
+    
+            </table>      
+        <code>
+        /*************************************************************************************************************************
+        AUTEUR: Marc L'Italien
+        NOM DU PROGRAMME: string.cpp
+        DESCRIPTION : Tests sur des variables de type string.
+        </code>
+        <h3>1.5.7  Les normes et conventions sur les noms des variables et constantes</h3> <!-- p. 17-18 -->
+        <p>En plus des règles syntaxiques, il est important de suivre les conventions pour facilités la lecture des noms de variables et constantes. </br>
+        S'il faut abréger des lettres pour un nom, mieux vaut le faire avec cohérences. </br>
+        Lorsque nous utilisons des noms courts, il faut les documenter. 
+        </p>    
+    
+        <h2>1.6 Les opérateurs</h2>
+        <cite>Les opérateurs sont des mots ou des symboles qui indiquent des opérations spécifiques que les
+            programmes devront exécuter</cite> <!-- p. 19 -->
+            <ul>
+                <li>les opérateurs d'arithmétiques;</li>
+                <li>les opérateurs d'affectation;</li>
+                <li>les opérateurs d'incrémentation et de décrémentation;</li>
+                <li>les opérateurs relationnels;</li>
+                <li>les opérateurs booléens.</li>
+            </ul>
+        <h3>1.6.1 Les opérateurs arithmétiques</h3>
+        <table><caption>Les operateurs arithmétiques</caption>
+        <tbody>
+            <tr>
+                <td>+</td>
+                <td>l'addition</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>la soustraction</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>la multiplication</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>la division</td>
+            </tr>
+            <tr>
+            <td> %</td>
+            <td>le modulo (pour les entiers seulement) </td> 
+             </tr>
+        </tbody>
+        </table>
+        <h3>1.6.2 L'arithmétique avec des variables de types différents</h3>  <!-- p.22 -->
+        <p>En C++, la précision d'un nombre dépend de son type. </br>
+            Lorsque nous utilisons plusieurs types, nous suivons cette hiérarchie :</p>
+             <table><caption>Hiérarchie des types numériques</caption>
+            <tbody>
+                <tr>
+                    <td>double</td>
+                    <td>8 octets</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>4 octets</td>
+                </tr>
+                <tr>
+                    <td>int ou long</td>
+                    <td>4 octets</td>
+                </tr>
+                <tr>
+                    <td>short</td>
+                    <td>2 octets</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>1 octet</td>
+                </tr>
+            </tbody>
+            </table>
+            <p>Il y a priorité des réels sur les entiers et une priorité des nombres plus longs sur les nombres plus court.</p>
+            <cite>e. Par exemple, pour diviser 49 par 12.5 on convertira tout d'abord 49 en double, soit 49.0, puis
+                on fera la division. Le résultat sera donc de type double.</cite>
+            <p>Si nous affectons une variable float à un int ou un double à un float, il y a perte de donnés possible. </p>
+            <h3>1.6.3 Les opérateurs d'affectation</h3> <!-- p.25 -->
+            <p>L'opérateur d'affectation de base est '=', mais nous trouvons également des opérateurs d'affectation arithmétiques ou opérateurs raccourcis </br> 
+            Exemple : Accumul = Accumul + 10 == Accumul += 10;</p>
+            <table> <caption>Les opérateurs d'affectations sont les suivants:</caption>
+            <tr>
+                <td>=</td>
+                <td>affectation simple</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>addition</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>soustraction</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>multiplication</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>division</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>modulo (pour entier seulement)</td>
+            </tr>
+            </table>
+            <h3>1.6.4 Les opérateurs d'incrémentation et de décrémentation</h3> <!-- p. 26 -->
+            <p>Les <dfn>opérateurs d'incrémentation</dfn> permettent de raccourcir certaines opérateurs. 
+            </br> Par exemple, au lieu d'écrire : Compteur = Compteur + 1;
+            </br> Nous pouvons écrire = Compteur++ ou ++Compteur.</p>
+            <table> <caption>Les opérateurs d'(in/dé)-crémentation : </caption>
+                <tr>
+                    <td>++</td>
+                    <td>pour l'addition, soit l'incrémentation</td>
+                </tr>
+                <tr>
+                    <td>--</td>
+                    <td>pour la soustraction, soit la décrémentation</td>
+                </tr>
+            </table>
+            <cite>Lorsque l'opérateur précède le nom de la variable il est exécuté avant toutes les autres opérations
+                écrites sur la même ligne (dans le même énoncé), sinon son exécution se fait après toutes les autres
+                opérations. (p.26)</cite>
+            <h3>Les opérateurs relationnels et les opérateurs de comparaison</h3> <!-- p. 28 -->
+            <p>
+                Les opérateurs relationels/comparaisons servent pour les conditions. 
+            </br>La valeur de retour est de type bool, soit 1 si c'est vrai et si c'est faux, 0.
+            </br>En C, faux == 0 tandis que vrai != 0, il est toutefois possible de creer deux constantes attribuées à vrai et faux valant respectivement 1 et 0.
+            </p>
+            <h3>Les opérateurs booléens</h3>
+            <p>Les opérateurs booléens permettent de vérifier la relation de plusieurs éléments d'une même expression conditionnelle.</p>
+            <table><caption>Les opérateurs booléens</caption>
+                <tr>
+                    <td>&&</td>
+                    <td>et</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>ou</td>
+                </tr>            <tr>
+                    <td>!</td>
+                    <td>négation</td>
+                </tr>
+            </table> 
+            <h2> Exercices</h2>
+    
+    <p>Hello World, you have nothing to loose but your string</p>
+    </main>
+    <aside>
+        
+    </aside>
+
+    </div> 
+    </body>
+</html>

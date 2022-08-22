@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing Events with Javascript</title>
+    <style>
+        #redSquare {
+            width : 50px;
+            height : 50px;
+            background-color: red;
+        }
+        #blueSquare {
+            width : 50px;
+            height : 5000px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Capturing Events with Javascript</h1>
+    <h2>Events Happen</h2>
+    <p>Javascript can listen for events and handle them, when they occur.</p>
+
+    <button>Don't press me</button>
+
+    <h2>Event Listeners</h2>
+    <p>A more modern way of capturing events is with the addEventListener(); method</p>
+
+    <button id="eventListener">Event listener</button>
+    </br>   
+    <button id="lambdaListener">Anonymous Event listener</button>
+
+    <h2>The event Object</h2>
+    <p>There is an event object that can be passed into event handlers, and sometimes you need to access it specifically.</p>
+    <button id="withParam">Button with an Object</button>
+    <p>Why use the event Object? For preventing Default Behavior : <br>
+        You can use the event object in combination with the preventDefault(); method to keep the browser from doing it's default behavior</p>
+    <p>Example, a link that is not direct to the website : <a href="www.google.com">Link to google</a></p>
+    
+    <h2>Forms</h2>
+    <form method="get">
+        <label>Your Name : <input type="text" name="name"></label>
+    </form>
+
+    <h2 id="mouseOverTitle">Roll the mouse over the boxe</h2>
+    <div id="redSquare"></div>
+    
+    <h2>Keystroke</h2>
+    <p id="key"></p>
+    <h2>Scroll Events</h2>
+    <div id="blueSquare"></div>
+
+    <script>
+        var btn = document.querySelector("button");
+
+        //with a named function
+        function ouch(){
+            alert("I told you not to press me");
+        }
+        btn.onclick = ouch;
+        /*  A lambda function
+          
+        btn.onclick = function(){
+            alert("I told you not to press me");
+        }
+        */
+
+
+        // With the addEventListener method
+        function yay(){
+            alert("Good work!!!!!")
+        }
+        var btnListener = document.getElementById("eventListener");
+        btnListener.addEventListener('click', yay);
+
+
+        var btnlambda = document.getElementById("lambdaListener");
+        btnlambda.addEventListener('click', function (){
+            alert("This is an anonymous event listener function")
+        });
+
+        var btnObj = document.getElementById("withParam");
+        btn.addEventListener("click", function(evt){
+            evt.target.style.backgroundColor = "red";
+            alert("With param")
+        });
+
+        //Example of Prevent Default
+        var link = document.querySelector('a');
+        link.addEventListener("click", function(event){
+            event.preventDefault();
+            alert("Sorry, Google is not available. ")
+        });
+
+        //More about Event : forms
+        var myForm = document.querySelector("form");
+        myForm.addEventListener("submit", function(evt){
+            evt.preventDefault();
+
+            var formData = document.querySelector("input").value;
+            alert(formData);
+        });
+
+        //Mouseover, Mouseout Event : HTML
+        var heading = document.getElementById("mouseOverTitle");
+        var box = document.querySelector("div");
+
+        box.addEventListener("mouseover", function(){
+            heading.innerHTML = "The mouse is over the box";
+        });
+        box.addEventListener("mouseout", function(){
+            heading.innerHTML = "The mouse has left the box";
+        })
+        box.addEventListener("mouseover", function(){
+            heading.innerHTML = "Roll the mouse over the box";
+        })
+
+
+        //Scroll Event
+        var pagetop;
+
+        window.addEventListener('scroll', function(){
+            pagetop = window.pageYOffset;
+            console.log(pagetop);
+        })
+
+        //Resize event
+        window.addEventListener("resize", function(){
+            console.log(`The window width is ${window.innerWidth}`)
+
+            console.log(`The window Height is ${window.innerHeight}`)
+        });
+
+        //Keydown Event 
+        /*This one will detect if a key was pressed on the keyboard. Of course it might be helpful to know which key was pressed */
+        document.addEventListener("keydown", function(event){
+            var key =  document.getElementById("key");
+            var char = String.fromCharCode(event.which);
+            key.innerHTML += char;
+        })
+    </script>
+</body>
+</html>

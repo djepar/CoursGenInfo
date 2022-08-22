@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 26</title>
+</head>
+<body>
+    <h1>Javascript Event Challenge 26</h1>
+    <div>
+    <p>Here is a paragraph of text</p>
+</div>
+    <button>Add a paragraph</button>
+    <button>Remove</button>
+  <script>
+        const btnAdd = document.querySelectorAll("button")[0];
+        const btnRemove = document.querySelectorAll("button")[1];
+        const container = document.querySelector("div");
+        
+        (function(){
+            var increment = 1;
+            btnAdd.addEventListener("click", function (){
+                container.innerHTML += `<p>'Sing, Goddess, Achilles' rage ${increment}'</p>`;
+                increment++;          
+            })
+            btnRemove.addEventListener("click", function (){
+
+            const allP = document.querySelectorAll("p");
+                if (increment > 1){
+                container.removeChild(container.children[allP.length-1]);   
+                increment--;
+                }
+                else {
+                    alert("You can't delete the last paragraph!!!!!")
+                }
+            })
+        })()
+    </script>
+</body>
+</html>

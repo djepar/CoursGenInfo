@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 27</title>
+</head>
+<body>
+    <h1>Javascript Event Challenge 27</h1>
+    <div>
+    <p>Here is a paragraph of text</p>
+</div>
+    <form>
+        <label>Enter a number <input type="text"></label>
+        <input type="submit" value="send number">
+    </form>
+    <script>
+        const formTag = document.querySelector("form");
+        
+
+        
+        formTag.addEventListener("submit", function(event) {
+            event.preventDefault;
+            var h1Tag = document.querySelector("h1");
+           
+            var sizeH1 = parseInt(document.querySelector("input").value);
+            console.log(sizeH1)
+            if(sizeH1){
+                h1Tag.style.fontSize = sizeH1 + "px";
+            }
+            else {
+                alert("Please enter a number")
+            }
+        });
+    </script>
+</body>
+</html>
