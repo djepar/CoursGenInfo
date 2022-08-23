@@ -23,6 +23,11 @@
                 <p>Self-learn programmer who have experience in a lot of thing. Doing some DIY IT since I was 13 years old, I began to study intensely programming in 2021.
                     I have experience in a lot of fields. I study so many things..
                 </p>
+                <h2>Online certificate</h2>
+                    <img src="../projet1/Certificates/OnlineCertificate1.png" alt="Interactivity in JavaScript at UMichigan" id="myimage">
+                    
+                    <p><a href="#" id="previous">previous</a> --- <a href="#" id="next">next</a></p>
+
             </main>
             <div id="sidebar">
                 <h2>Allo</h2>
@@ -40,11 +45,40 @@
                 Footer
             </div>
         </div>
+        <script>
+            (function(){
+                "use strict";
+                const myImages = ["Certificates/OnlineCertificate1.png", "Certificates/OnlineCertificate2.png", "Certificates/OnlineCertificate3.png"]
+
+                var currentImages = 0;
+                //document.getElementById("next").onclick = NextPhoto; 
+                const nextPhoto = document.getElementById("next");
+                nextPhoto.addEventListener("click", function (){
+                    currentImages++;
+                    if (currentImages > myImages.length - 1){
+                        currentImages = 0;
+                    }
+                
+                    document.getElementById("myimage").src = myImages[currentImages];
+                })
+                const previousPhoto = document.getElementById("previous");
+                //document.getElementById("previous").onclick = NextPhoto; 
+                previousPhoto.addEventListener("click", function (){
+                    currentImages--;
+                    if (currentImages < 0){
+                        currentImages = myImages.length - 1;
+                    }
+                
+                    document.getElementById("myimage").src = myImages[currentImages];
+                })
+
+            }) ()
+        </script>
     </body>
 </html>
 <!--
     Bibliography :
         The grid is inspired by : Angela Delise in the video : https://www.youtube.com/watch?v=68O6eOGAGqA
-
+        The slideshow is inspired by a project of Javascript from University of California Davis, by William Mead
 
 -->

@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <title>Progfolio</title>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -21,6 +22,29 @@
                 <p>
                     This main section show all the program and algorithm I develop. Some of it are in more than one language.
                 </p>
+                <h2>Converter</h2>
+                <h1>Miles to Kilometers Converter</h1>
+    
+    <div class="container top">
+    	<p>Type in a number of miles and click the button to convert the distance to kilometers.</p>
+        
+        <form method="post" action="somephpfile.php" id="convert">
+        
+        	<input type="text" name="distance" id="distance" placeholder="distance">
+            <input type="submit" name="convertdist" value="Convert Distance">
+        
+        </form>
+    </div>
+    <div class="container bottom" id="answer">
+    	<h2 class="invisible">Answer goes here</h2>
+    </div>
+    
+    <p id="directions">Press the "K" key to switch to kilometer converstion, press the "M" key to switch to mile conversion</p>
+	<div class="container bottom" id="answer">
+    	<h2 class="invisible">Answer goes here</h2>
+    </div>
+  
+
                       </main>
             <div id="sidebar">
                 <h2>List of program</h2>
@@ -34,9 +58,6 @@
                         </ul>
                     </ul>
                     <!-- Search Algorithm, etc...-->
-
-                    <li>JS online software</li>
-                    <!-- Calcultor, etc-->
 
                     <li>Code of the template with comment</li>
                     <!-- This section show some particular code of the template section -->
