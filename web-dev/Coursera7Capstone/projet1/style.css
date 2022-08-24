@@ -12,7 +12,7 @@
     "sidebar main main main"
     "sidebar content1 content2 content3"
     "footer footer footer footer"  ;
-    grid-gap: 0.2rem;
+    gap: 0.2rem 0.2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 800;
     box-sizing: border-box;
