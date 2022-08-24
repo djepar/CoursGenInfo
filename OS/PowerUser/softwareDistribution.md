@@ -142,3 +142,16 @@ With : `apt- upgrade`
 But it doesnt upgrade the kernel. To know the version of the kernel : `uname -r`
 For the full upgrade : `sudo apt full-upgrade`
 Linux kernel is a monolithic kernel
+
+# Filesystems
+
+## Review of Filesystems 
+Filesystem : Used to keep track of files and file storage on disk. 
+
+In Windows : NTFS
+In Linux : ext4
+Fat32 works with Windows, Linux and MacOS
+
+## Disk Anatomy
+A store device can be split into partition. 
+A partition is the piece of a disk tha tyou can manage. 
