@@ -153,5 +153,26 @@ In Linux : ext4
 Fat32 works with Windows, Linux and MacOS
 
 ## Disk Anatomy
-A store device can be split into partition. 
-A partition is the piece of a disk tha tyou can manage. 
+"A store device can be split into partition. "
+"A partition is the piece of a disk tha tyou can manage. "
+"To add a filesystem to a disk, first you need to create a partition."
+
+It's possible to add different filesystems on different partitions of the same disk. 
+
+"When you format a filesystem on a partition, it becomes a volume."
+
+Partition table : tells the OS how the disk is partitioned. 
+Two mains partition table schemes : Master Boot Record (MBR) and GUID Partition Table(GPT)
+
+MBR : Max 2TB of volume size, mostly on Microsoft, only 4 Partitions 
+GPT : becoming the new standard : 2TB or greater, one type of partition and unlimited nbr of partitions. 
+
+Windows : Disk Partitioning and Formatting a Filesystem
+Using the GUI : Disk Management
+
+PS : `Diskpart` 
+Then list disk
+To wipe a disk : clena
+
+
+
