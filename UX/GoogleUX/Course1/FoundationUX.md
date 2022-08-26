@@ -25,4 +25,23 @@ Phases :
 - Prototype : Producing an early model of a product to "demonstrates its functionality"
 - Test : Testing the prototype (in dialectical with the prototype phase)
 
+# Get to know UX design best practices and trends
 
+## Universal design, inclusive design and equity-focused design 
+The process of creating one product for users with the widest range of abilities and in the widest range of situations. 
+
+Inclusive design : making design choices that take into account personal identifiers like ability, race economic status, language, age and gender. 
+Inclusive design must be done by having marginal people in the process of creation to have their perspective too. 
+
+Universal design = "One size fits all"
+
+Inclusive design = "Solve for one, extend to many"
+
+There is no average person in inclusive design.
+
+Accessibility : The design of products, devices, services, or environments for people with disabilities. 
+
+Equity-focused design : Designing for groups that have been historically underrepresented or ignored when building products. 
+
+Equality : providing the same amount of opportunity and support. 
+Equity : providing different levels of opportunity and support for each person in order to achieve fair outcomes. 
