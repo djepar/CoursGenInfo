@@ -5,79 +5,76 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-            <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" href="styleCommon.css">
+        <script src="scriptCV.js" defer></script>
+        <script src="https://kit.fontawesome.com/2dea44a02d.js" crossorigin="anonymous"></script>
         <title>Curiculum Vitae</title>
     </head>
     <body>
         <div class="container">
-            <header>
-                <nav>
+                <nav class="menu">
                     <ul class="nav_links">
                         <li><a href="index.html" >Home</a></li>
                         <li><a href="progfolio.html">Progfolio</a></li>
                         <li><a href="cv.html" class="active">Curiculum Vitae</a></li>
-                        <li><a href="template.html">Template</a></li>
                     </ul>
-                    <a class="cta" href="contact.html">Contact</a>
+                    <!-- <a class="cta" href="contact.html">Contact</a> -->
            
                 </nav>
-            </header>
             <main>
                 <h2>Presentation</h2>
                 <p>Self-learn programmer who have experience in a lot of thing. Doing some DIY IT since I was 13 years old, I began to study intensely programming in 2021.
                     I have experience in a lot of fields. I study so many things..
                 </p>
                 <h2>Online certificate</h2>
-                    <img src="../projet1/Certificates/OnlineCertificate1.png" alt="Interactivity in JavaScript at UMichigan" id="myimage">
+                    <img src="../projet1/Certificates/OnlineCertificate1.png" alt="Coursera Certificate" id="myimage">
                     
                     <p><a href="#" id="previous">previous</a> --- <a href="#" id="next">next</a></p>
 
             </main>
+
             <div id="sidebar">
-                <h2>Allo</h2>
+                <h2>Work Experience</h2>
+                <ul>
+                    <li>Assistant Lifeguard</li>
+                    <li>Janitor</li>
+                    <li>Archivist</li>
+                    <li>Assistant Teacher</li>
+                    <li>Researcher</li>
+                    <li>Educator for a Youth Center</li>
+                    <li>Science Teacher</li>
+                </ul>
             </div>
             <div id="content1">
-                <h2>Expériences</h2>
-            </div>
-            <div id="content2">
-                Content2
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Python</li>
+                    <li>UX Design</li>
+                    <li>General IT Support knowledge</li>
+                </ul>
             </div> 
-            <div id="content3">
-                Content3
+            <div id="content2">
+                <h2>Social and Cultural Implication</h2>
+                <ul>
+                    <li>Improvisation</li>
+                    <li>Theater</li>
+                    <li>Organisation of cultural event</li>
+                    <li>Organisation of mobilisation </li>
+
+                </ul>
             </div>
             <div id="footer">
-                Footer
+                <h3>Contact information :</h3>
+                <p><i class="fa-solid fa-phone"></i> Phone : 111-111-1111 <br>
+                <i class="fa-solid fa-address-card"></i> Address : 1 One Street 11111, One, One <br>
+                <i class="fa-solid fa-envelope"></i> Email : one@onemail.one</p>
             </div>
         </div>
-        <script>
-            (function(){
-                "use strict";
-                const myImages = ["Certificates/OnlineCertificate1.png", "Certificates/OnlineCertificate2.png", "Certificates/OnlineCertificate3.png"]
-
-                var currentImages = 0;
-                //document.getElementById("next").onclick = NextPhoto; 
-                const nextPhoto = document.getElementById("next");
-                nextPhoto.addEventListener("click", function (){
-                    currentImages++;
-                    if (currentImages > myImages.length - 1){
-                        currentImages = 0;
-                    }
-                
-                    document.getElementById("myimage").src = myImages[currentImages];
-                })
-                const previousPhoto = document.getElementById("previous");
-                //document.getElementById("previous").onclick = NextPhoto; 
-                previousPhoto.addEventListener("click", function (){
-                    currentImages--;
-                    if (currentImages < 0){
-                        currentImages = myImages.length - 1;
-                    }
-                
-                    document.getElementById("myimage").src = myImages[currentImages];
-                })
-
-            }) ()
-        </script>
+        
     </body>
 </html>
 <!--

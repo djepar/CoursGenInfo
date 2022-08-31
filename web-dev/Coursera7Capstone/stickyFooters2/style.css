@@ -1,0 +1,16 @@
+#container {
+    min-height: 100vh;
+    margin-bottom: -75px; /*the exact height of the footer*/
+}
+#container:after{
+    content: "";
+    display: block;
+    height: 75px;
+}
+
+footer {
+    background-color : blueviolet;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+}
