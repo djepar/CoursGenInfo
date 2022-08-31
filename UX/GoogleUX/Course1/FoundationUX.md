@@ -45,3 +45,11 @@ Equity-focused design : Designing for groups that have been historically underre
 
 Equality : providing the same amount of opportunity and support. 
 Equity : providing different levels of opportunity and support for each person in order to achieve fair outcomes. 
+
+# Design Sprints
+
+Design sprint : A time-bound process, with five phases typically spread over 5 full 8-hour days. 
+
+The goal of design sprint : solve a critical challenge through designing, prototyping, and testing ideas with users. 
+
+Five phases : Understand, Ideate, Decide, Prototype and Test
