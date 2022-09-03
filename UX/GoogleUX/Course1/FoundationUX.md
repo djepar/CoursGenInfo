@@ -53,3 +53,25 @@ Design sprint : A time-bound process, with five phases typically spread over 5 f
 The goal of design sprint : solve a critical challenge through designing, prototyping, and testing ideas with users. 
 
 Five phases : Understand, Ideate, Decide, Prototype and Test
+
+## Planning a design sprints
+- User research
+- Call in the experts
+- Find the right space
+- Gather supplies
+- Plan introduction
+- Post-sprint planning
+
+## Sprint brief
+A document that you share with all your attendees to help them prepare for the sprint. 
+
+## Sprint retrospectives
+A collaborative critique of the team's design sprint. 
+"Questions you might ask during this part of the retrospective include:
+
+Which tools saved you the most time and effort?
+
+When did you feel the most satisfaction?
+
+What helped you make your best contribution to the team during this sprint?"
+## Desi

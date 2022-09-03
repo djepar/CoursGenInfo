@@ -167,12 +167,38 @@ Two mains partition table schemes : Master Boot Record (MBR) and GUID Partition 
 MBR : Max 2TB of volume size, mostly on Microsoft, only 4 Partitions 
 GPT : becoming the new standard : 2TB or greater, one type of partition and unlimited nbr of partitions. 
 
-Windows : Disk Partitioning and Formatting a Filesystem
+## Windows : Disk Partitioning and Formatting a Filesystem
 Using the GUI : Disk Management
+
+"DiskPart is a disk partitioning utility on the Windows operating system which uses the command line to perform operations."
+"DiskPart utility can be used to manage partitions of hard disks including creating, deleting, merging, or expanding partitions and volumes. It can also be used to assign a file formatting system to a partition or volume."
 
 PS : `Diskpart` 
 Then list disk
-To wipe a disk : clena
+To wipe a disk : clean
+
+### Cluster 
+"Cluster size is the smallest division of storage possible in a drive. cluster size is important because a file will take up the entire size of the cluster regardless of how much space it actually requires in the cluster."
+
+### Mounting
+"Making something accessible to the computer, like a filesystem or a hard disk."
 
 
+## Linux: Disk Paritioning and Formatting a Filesystem
 
+Look for the partition : `sudo parted -l`
+Then `sudo parted <path to the disk>
+
+## Linux : Mounting and Unmounting a Filesystem
+`sudo mount <path>`
+`sudo umount <path>`
+
+Go see `cat /etc/fstab` 
+    "Lists all available disk partitions and other types of file systems and data sources that may not necessarily be disk-based" (https://en.wikipedia.org/wiki/Fstab)
+And `sudo blkid`
+
+## Windows: Swap
+Virtual memory : "How our Os provides the physical memory available in our computer (like RAM) to the applications that run on the computer"
+
+Windows use Memory Manager to manage virtual memory. 
+"In Windows, pages saved to disk are stored in a special hidden file on the root partition of a volume called pagefile.sys"
