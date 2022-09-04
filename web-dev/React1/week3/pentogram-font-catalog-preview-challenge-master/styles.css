@@ -1,0 +1,21 @@
+       #Almarai{ font-family: 'Almarai'}
+        body {
+            text-align: center;
+            background-color: #272727;
+            color: rgb(255, 255, 255);
+        }
+        ul {
+            list-style-type: none;
+        }
+        #latin > :first-child {
+            font-family: latin;
+        }
+        #devanagari > :first-child{
+            font-family: devanagari;
+        }
+        #arabic > :first-child{
+            font-family: arabic;
+        }
+        li>:first-child {
+            text-decoration: underline;
+        }

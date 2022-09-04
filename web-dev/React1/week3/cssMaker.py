@@ -18,16 +18,17 @@ with open("latinFontDone.txt", 'w') as latinDone:
     for el in newfiles:
         elWithoutSpace = el.replace(" ", "")
         latinDone.write("\t\t<li> \n")
-        latinDone.write("\t\t\t<p>{}</p> \n".format(el))
-        latinDone.write("\t\t\t<p id=\'{}\'>Almost before we knew it, we had left the ground.</p> \n".format(elWithoutSpace))
+        latinDone.write("\t\t\t<p class='latin'>{}</p> \n".format(el))
+        latinDone.write("\t\t\t<p style=\"font-family:'{}'\">Almost before we knew it, we had left the ground.</p> \n".format(el))
         latinDone.write("\t\t</li> \n ")
 latinDone.close
+'''
 with open("latinCSS.txt", "w") as latinCSS:
     for el in newfiles:
         elWithoutSpace = el.replace(" ", "")
         latinCSS.write("#{}".format(elWithoutSpace) + "{" + " font-family: '{}'".format(el) +"}\n")
 latinCSS.close
-
+'''
 
 with open("alldeva.txt", 'r') as deva:
     allDeva = deva.readlines()
@@ -45,15 +46,17 @@ deva.close
 print(newfilesDeva)
 
 with open("devaFontDone.txt", 'w') as devaDone:
-    for el in newfiles:
+    for el in newfilesDeva:
         elWithoutSpace = el.replace(" ", "")
         devaDone.write("\t\t<li> \n")
-        devaDone.write("\t\t\t<p>{}</p> \n".format(el))
-        devaDone.write("\t\t\t<p id=\'{}\'>Almost before we knew it, we had left the ground.</p> \n".format(elWithoutSpace))
+        devaDone.write("\t\t\t<p class='Devanagari'>{}</p> \n".format(el))
+        devaDone.write("\t\t\t<p style=\"font-family:'{}'\">Almost before we knew it, we had left the ground.</p> \n".format(el))
         devaDone.write("\t\t</li> \n ")
 devaDone.close
+'''
 with open("devaCSS.txt", "w") as devaCSS:
     for el in newfiles:
         elWithoutSpace = el.replace(" ", "")
         devaCSS.write("#{}".format(elWithoutSpace) + "{" + " font-family: '{}'".format(el) +"}\n")
 devaCSS.close
+'''
