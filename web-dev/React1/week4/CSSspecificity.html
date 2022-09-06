@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=2, initial-scale=1.0">
+    <title>CSS specificity</title>
+    <style>
+        h1 {
+            background-color: yellow;
+        }
+        h1 {
+            background-color: red;
+        }
+        p {
+            color: yellow;
+        }
+        .para1 {
+            color: green;
+        } 
+        div #para2 {
+            color : blue;
+        }
+</style>
+</head>
+<body>
+    <h1>Work with CSS specificity</h1>
+    <p class="para1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi molestiae, qui dignissimos quis odio voluptatem libero nobis doloribus architecto nemo enim, assumenda, minima excepturi. Id aut eius qui nesciunt tempora.</p>
+    <div>
+        <p class="para1" id="para2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum quibusdam aperiam accusamus veniam dolor voluptatibus fuga. Molestiae numquam velit quaerat voluptatem, culpa quibusdam est nesciunt sed officiis, reiciendis, fugit animi!</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vel quibusdam nostrum quia doloribus cupiditate dolorem, nisi quidem est voluptas hic dignissimos nobis harum, tenetur odit consectetur adipisci? Ab, nulla?</p>
+</body>
+</html>

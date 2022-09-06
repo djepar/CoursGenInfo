@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display property</title>
+    <style>
+        p, ul {
+            border : 2px solid rebeccapurple; padding: .5em;
+        }
+        .block, li {
+            border: 2px solid blue; padding : .5em;
+        }
+        ul { 
+            display : flex; 
+            list-style: none; 
+        }
+        .block {
+            display : block;
+        } 
+        span {
+            margin: 20px; padding: 20px; 
+            width : 80px; height: 50px;
+            background-color : lightblue;
+            border :2px solid blue;
+            display : inline-block;
+        }  
+    </style>
+</head>
+<body>
+    <p>
+        I am a short paragraph.
+    </p>
+    <ul>
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item Three</li>
+    </ul>
+    <p>I am another paragraph. Some of the <span class='block'>words</span> have been wrapped in a <span>span element.</span></p>
+</body>
+</html>
