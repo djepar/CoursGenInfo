@@ -130,6 +130,8 @@ Block devices or block special files:
 -  Buffered access to hardware devices and provide some abstraction from their specifics
 SD devices : mass storage devices
 /dev/sd[a-Z] 
+
+To see the list of block on linux : `lsblk`
 To see the list of the device : https://web.archive.org/web/20160424173724/https://www.kernel.org/doc/Documentation/devices.txt
 
 udev : "(userspace / dev) is a device manager for the Linux kernel, as the successor of devfsd and hotplug, udev primarily manages devices nodes in the /dev directory" (https://en.wikipedia.org/wiki/Udev, 20 august 2022)
@@ -202,3 +204,52 @@ Virtual memory : "How our Os provides the physical memory available in our compu
 
 Windows use Memory Manager to manage virtual memory. 
 "In Windows, pages saved to disk are stored in a special hidden file on the root partition of a volume called pagefile.sys"
+
+## Linux : Swap
+Swap space : "the dedicated area of the hard drive used for virtual memory" in Linux. 
+Mkpart a part  : `mkpart primary linux-swap 5GiB 100%`
+Then : (quit first) `sudo mkswap /dev/sdb2`
+Finaly : `sudo swapon /dev/sdb2`
+
+## Windows : Files
+The data is the actual content of a file. 
+File meta-data : everything else related to that file. 
+With every NTFS files, there is a MTF section with MTF entry that include : file name, timestamp, permissions, compression, location, etc. 
+MTF = (Master file table)
+
+### Way to access a file : 
+- Shortcut
+- Symbolic links : shortcut at the files system level. There is an MTF with the location of another file. the difference with shortcut is that the operating system treats them like substitutes for the file they're linked to in almost every meaningful way. 
+    - To make a link : mklink
+- Hard link :  "when you create a hard link in NTFS, an entry is added to the MFT that points to the linked file record number, not the name file."
+
+## Linux: Files
+"In Linux, metadata and files are organized into a structure called an inode. Inodes are similar to the Windows NTFS MFT records"
+"In Linux, an inode stores everything about a file, except for the filenam and the file data"
+### Softlink
+The equivalent of shortcut in Linux are *softlink*.  "They're great for creating shortcuts to other files. 
+To create a softlink : `ln -s important_file important_file_softlink`
+### Hardlink
+Hardlink point to a physical location on a disk, "if you delete the file of a hardlink, all other hardlinks would still work."
+to create a hardlink `ln important_file important_file_hardlink`
+
+## Windows: Disk Usage
+Check the disk usage with "Computer management>Storage>Disk Management"
+
+### Defragmentation
+"The idea behind disk defragmentation is to take all the files stored on a fiven disk, and reorganize them into neighboring location."
+Mostly useful for disk-drive. 
+For solid state disk  : Trim "to reclaim unused portions of the solid state disk."
+Now done automatically, but can also be done manually with defragment and Optimize Drives tools.
+
+## Linux : disk Usage
+To know the disk usage : `du -h`
+To know how much free space :` df`
+
+## Windows : Filesystem Repair
+"Data buffer : A region of Ram that's used to temporarily store dat awhile it's being moved around."
+"So if you don't properly unmount a file system and give your buffer enough time to finish moving data, you run the risk of data corruption."
+To check for the disk : `chkdsk /F C:`
+
+## Linux : Filesystem Repair 
+`sudo fsck /dev/sda` : can damage the disk if use will using it. 
