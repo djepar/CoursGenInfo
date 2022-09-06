@@ -74,4 +74,15 @@ Which tools saved you the most time and effort?
 When did you feel the most satisfaction?
 
 What helped you make your best contribution to the team during this sprint?"
-## Desi
+## Introduction to UX research
+"UX research Focuses on understanding user behaviors, needs, and motivations through observation and feedback. "
+UX development is a continuous process of the product development life cycle
+
+### Foundational research
+"Always done before you start designing."
+"Answers the questions :
+- What should we build?
+- Waht are the user problems?
+- How can we solve them?"
+### Design research 
+"Design research answers the question : How should we built it?"
