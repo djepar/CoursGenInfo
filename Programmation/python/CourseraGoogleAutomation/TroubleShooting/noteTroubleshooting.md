@@ -48,3 +48,21 @@ To solve it rsync or Trickle
 ## Dealing with Intermittent Issues
 If possible, adding code to have more information. 
 Heisenbug or the observer effect : "observing a phenomen alters the phenomenon."
+
+# Binary Search a Problem
+Faster, but need a sorted list. 
+
+## Applying Binary Search in Troubleshooting
+Bisecting the problem : each part of the problem we know is working can be put aside.
+
+git let us use `bisect` that do that automaticaly. 
+
+## Finding Invalid Data 
+`cat contacts.csv | ./import.py --server test`
+Important to put server. 
+Using `wc` to count the number of files
+`wc -l contacts.csv`
+Searching invalid Data with head and tail
+`head -50 contacts.csv | ./import.py --server test`
+`less -50 contacts.csv | ./import.py --server test`
+`head -50 contacts.csv | tail -25 | head -13 ./import.py --server test`
