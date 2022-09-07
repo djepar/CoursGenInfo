@@ -253,3 +253,48 @@ To check for the disk : `chkdsk /F C:`
 
 ## Linux : Filesystem Repair 
 `sudo fsck /dev/sda` : can damage the disk if use will using it. 
+
+# Life of a Process
+
+## Program vs Processes Revisited
+Programs : "The applications that we can run, like the Chrome web browser."
+Processses : "Programs that are running"
+Each process avec a Process ID. 
+Background processes or deamon processes : run in the background. 
+
+## Windows : Process Creation and Termination
+"When Windows boots up, or starts, the first non-kernel user mode that starts is the Session Manager Subsystem or smss.exe. The smss.exe process is in charge of setting some stuff up for the OS to work."
+Then smss.exe start the Client/Server Runtime Subsystem (crss.exe) which take care of the Windows GUI and CLI. 
+To find the process on PS : `get-process`
+`cat .\processes.txt | Select-String "firefox"`
+To kill a mocking process : `taskkill /pid 10420`
+
+## Linux : Process Creation and Termination
+"In Linux processes have a parent child relationship. This means that every process that you launch comes from another process."
+Genesis : "When you startup your computer, the kernel creates a process called init, which has a PID of 1."
+
+# Managing Processes
+## Windows: Reading Process Information 
+"You can think of processes as programs in motion."
+Task manager (taskmgr.exe) "is one method of obtaining process information"
+
+## Linux : Reading Process Information
+to list every processes : `ps -x`
+To search : `ps -x | grep "string"`
+For a more detail list : `ps -ef`
+
+## Windows: Signals
+Signal is "a way to tell a process that something's just happened".
+"One of the most common signals [...] is called SIGINt, which stands for signal interrupt. 
+
+## Linux : Signals 
+"You can use sigint to interrupt a process and the default action of this signal is to terminate the process that's interruption."
+CTRL-C to do sigint. 
+
+## Windows: Managing Processes
+Process Explorer : "A utility Microsoft created to let IT Support Specialists, system administrators and other users look at running processes."
+
+## Linux: Managing Processes
+To end a program : `kill <PID>`
+With signal : kill -KILL <PID>` (Last resort, because no clean up)
+To stop : kill -tstp <pid>
