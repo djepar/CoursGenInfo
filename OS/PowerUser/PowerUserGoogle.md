@@ -298,3 +298,36 @@ Process Explorer : "A utility Microsoft created to let IT Support Specialists, s
 To end a program : `kill <PID>`
 With signal : kill -KILL <PID>` (Last resort, because no clean up)
 To stop : kill -tstp <pid>
+
+## Mobile App Management
+Can't see all the process, but we can see the foreground and background app.
+
+# Process Utilization
+
+## Windows : Resource Monitoring
+With Process Explorer or `Get-Process`
+To try by the CPU usage : `Get-Process | Sort CPU -descending | Select -first 3 -Property ID, ProcessName, CPU`
+
+## Linux : Resource Monitoring
+One of the most useful command for resource monitoring is `top` which list the process by usage
+
+To see the load average : `uptime` (funky time)
+
+`lsof` : it's list the open files and what processes are using them. 
+
+# Remote Access
+
+## Remote Connection and SSH
+Remote connection : "Allows us to manage multiple machines from anywhere in the world."
+Secure shell (SSH) : "A protocol implemented by other programs to securely access one computer from another" 
+
+Virtual private Network (VPN) : "Allows you to connect to a private network, like your work network, over the Internet". 
+
+## Remote Connections on Windows 
+PuTTY : "A free, open source software that you can use to make remote connections through several network protocols, including SSH".
+
+Using putty with powershell : `putty.exe -ssh cindy@104.104.104.104 22`
+
+Putty Link 
+
+Remote Desktop Protocol (RDP) : 
