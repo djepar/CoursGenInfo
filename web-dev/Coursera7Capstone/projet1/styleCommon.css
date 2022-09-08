@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background-color: #ffffff;
 }
 :root {
     --main-radius:5px;
@@ -52,21 +52,21 @@ h2 {
     padding: 1%;
 }
 nav {
-    background-color: #5BE6E4;
+    background-color: black;
     grid-area: nav;
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
     
 }
 main {
-    background-color: #5A3EE6; 
+   
     grid-area: main;
     border : solid rgb(0, 0, 0);
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
 }
 #sidebar {
-    background-color: #68E65A;
+   
     grid-area: sidebar;
     border : solid rgb(0, 0, 0);
     border-radius:var(--main-radius);
@@ -74,14 +74,13 @@ main {
 }
 #content1 {
 
-    background-color:rgb(167, 225, 51); 
     grid-area: content1;
     border : solid rgb(0, 0, 0);
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
 }
 #content2 {
-    background-color: #E85400; 
+   
     grid-area: content2;
     border : solid rgb(0, 0, 0);
 
@@ -89,15 +88,14 @@ main {
     padding-top:var(--main-padding);
 }
 #content3 {
-    background-color:rgb(167, 225, 51); 
-    grid-area: content3;
+     grid-area: content3;
     border : solid rgb(0, 0, 0);
 
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
 }
 #footer {
-    background-color: #E6DB8E; 
+   
     grid-area: footer;
     border : solid rgb(0, 0, 0);
 
