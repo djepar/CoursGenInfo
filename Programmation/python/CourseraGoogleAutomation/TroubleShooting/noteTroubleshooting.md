@@ -116,3 +116,37 @@ https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
 https://en.wikipedia.org/wiki/Cache_(computing)
 
 https://www.reddit.com/r/linux/comments/d7hx2c/why_nice_levels_are_a_placebo_and_have_been_for_a/
+
+# Slow code
+## Writing Efficient Code 
+"We should always start bu writing clear code that does what it should, and only try to make it faster if we realize that's not fast enough."
+"Trying to optimize every second out of a script is probably not worth your time." 
+__Good practice__ : 
+- "Storing data that was already calculated"
+- "Using the right data structures for the problem"
+- "Reorganizing the code so that the computer can stay busy while waiting for information form slow source."
+
+__Profiler__ : "A tool that measures the resources that our code is using, giving us a better understanding of what's going on."
+For C, the profiler is gprof
+For Python the profiler is cProfile 
+For example, the "Cprofile module is used to count how many times functions are called, and how long they run."
+
+Avoiding expensive action ("Those that can take a long time to complete")
+
+## Using the Right Data Structures
+Lists : "Sequences of elements. We can add, remove, or modify the elements in them, and we can iterate through the whole list to operate on each of the elements. "
+Called : "Arraylist in Java, Vector in C++, Array in Ruby, Slice in Go"
+Dictionaries : "Store key-value pairs. We add data by associating a value to a key, and then we retrieve a value by looking up a specific key."
+Called : "HashMap in Java, Unordered Map in C++, Hash in Ruby, Map in Go". 
+Advantage : really fast to find value with a key. 
+
+"If you need to acess elements by position, or will always iterate through all the elements, use a list to store them."
+"If we need to look up the elements using a key, we'll use a dictionary."
+
+## Expensive Loops
+"If you do an expensive operation inside a loop, you multiply the time it takes to do the expensive operation by the amount of times you repeat the loop."
+"Make sure that the list of elements that you're iterating through is only as long as you really need it to be."
+"Another thing to remember about loops is to break out of the loop once you've found what you were looking for"
+
+## Keeping Local Results
+"If we're parsing a large file and only keeping a few key pieces of information form it, we can create a cache to store only that information, or if we're getting some information over the network, we cna keep a local copu of the file to avoid downloading it over and over again". 
