@@ -66,3 +66,36 @@ Searching invalid Data with head and tail
 `head -50 contacts.csv | ./import.py --server test`
 `less -50 contacts.csv | ./import.py --server test`
 `head -50 contacts.csv | tail -25 | head -13 ./import.py --server test`
+
+# Introduction to Slowness
+## Why is my computer slow?
+Monitoring are system to see where is the bottleneck component. 
+On Linux : top
+MacOs : Activity Monitor
+Windows : Resource Monitor and Performance Monitor. 
+
+## How Computers Use Resources
+The data uses by a processes can be on the CPU/GPU, RAM,  Hard-driver or Network (from the quicker to slower)
+Cache is a good way to fasten the speed of an app : if the data is on the network, we can cache it on the RAM (etc).
+
+## Possible Causes of Slowness
+Use the process of elimination (like with every other problem) : 
+1. Looking for the simplest explanation. 
+2. Bissecting the problem
+
+Possibles causes
+- When a file uses by a program become to big. 
+    - Can be solve with logrotate
+- Can look if the problem is for all users or just some (help fin the cause)
+- If a program use a share-file system base on a network
+- Malicious software
+
+## Slow Web Server
+If the loading page is slow, we can use the tool `ab` (Apache Benchmark) "to figure out how slow it is."
+Priority in linux : lower the number, the higher the priority. 
+To change the priority  : `nice` and `renice`
+Example "for pid in $(pidof ffmpeg); do renice 19 #pid; done
+To resolve the ffmpeg problem
+`for pid in $(pidof ffmpeg); do while kill -CONT $pid: do sleep 1; done
+
+    
