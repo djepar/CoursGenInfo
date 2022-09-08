@@ -98,4 +98,21 @@ Example "for pid in $(pidof ffmpeg); do renice 19 #pid; done
 To resolve the ffmpeg problem
 `for pid in $(pidof ffmpeg); do while kill -CONT $pid: do sleep 1; done
 
-    
+## Monitoring tools
+https://docs.microsoft.com/en-us/sysinternals/downloads/procmon 
+
+http://www.brendangregg.com/linuxperf.html
+
+http://brendangregg.com/usemethod.html
+
+Activity Monitor in Mac:
+
+Performance Monitor on Windows
+
+https://www.digitalcitizen.life/how-use-resource-monitor-windows-7
+
+https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
+
+https://en.wikipedia.org/wiki/Cache_(computing)
+
+https://www.reddit.com/r/linux/comments/d7hx2c/why_nice_levels_are_a_placebo_and_have_been_for_a/
