@@ -86,3 +86,26 @@ UX development is a continuous process of the product development life cycle
 - How can we solve them?"
 ### Design research 
 "Design research answers the question : How should we built it?"
+
+# Explore UX Research Methods 
+
+## Choose the right research method. 
+
+### Who conduct the research?
+- Primary research : "research you conduct yourself."
+- Secondary research : "research that uses information someone else has put together"  
+
+### What is the type of data collected?
+- Quantitative research (what) : "Focuses on data that can be gathered bu counting or measuring"
+- Qualitative research (why) : "Focuses on observations about why and how things happen"
+
+### Methods 
+Interviews : "A research method used to collect in-depth information on peoples's opinions, thoughts, experiences, and feelings."
+Surveys : "An activity where many people are asked the same questions in order to understand what most people think about a product." Mix of quantitatives and qualitatives data. 
+Usability study : "A technique to evaluate a product by testing it on users"
+
+Key performance indicator (KPIs) : "Critical measure of progress toward an end goal"
+
+## Understand benefits and drawbacks of research methods
+At the start of a project, secondary research is a good starting point. 
+
