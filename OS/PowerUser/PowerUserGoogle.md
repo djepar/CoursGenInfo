@@ -330,4 +330,37 @@ Using putty with powershell : `putty.exe -ssh cindy@104.104.104.104 22`
 
 Putty Link 
 
-Remote Desktop Protocol (RDP) : 
+Remote Desktop Protocol (RDP)
+
+## Remote Connection File Transfer
+Secure Copy(SCP) : "A command you can use in Linux to copy files between computers on a network"
+`scp /home/jepar/Desktop/myfile.txt cindy@104.131.122.215`
+
+## Remote Connection File Transfer on Windows
+With putty : pscp.exe (PuTTy Secure Copy Client)
+`pscp.exe ~\Desktop\myfile.txt cindy@101.101.101.101`
+Used Shared Documents
+See also net share (https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh750728(v=ws.11)?redirectedfrom=MSDN)
+
+# Virtual Machine
+Virtual instance : "A single virtual machine"
+
+# System Monitoring : 
+Logging : "The act of creating log events"
+
+## The Windows Event Viewer
+"The events logged by the operating system are stored in an application called the __Event Viewer__."
+On run : eventvwr.msc
+
+## Linux Logs
+All the logs are in the /var/log
+Good one to check is : /var/log/syslog
+
+# Operating System Deployment
+"Imaging a machine means to format a machine with an image of another machine. This includes everything, from the operating system to the settings."
+
+## Operating Systems Deployment Methods 
+Disk Cloning tool : "It make a copy of an entire disk and allows you to back up a current machine or set up a new one." 
+Ex : clonezilla and symantec Ghost
+
+On linux : `dd if=/dev/sdd of=~/Desktop/my_usb.image.img bs =100M`
