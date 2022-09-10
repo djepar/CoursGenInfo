@@ -150,3 +150,60 @@ Advantage : really fast to find value with a key.
 
 ## Keeping Local Results
 "If we're parsing a large file and only keeping a few key pieces of information form it, we can create a cache to store only that information, or if we're getting some information over the network, we cna keep a local copu of the file to avoid downloading it over and over again". 
+
+## Slow Script with Expensive Loop
+Three values of the `time` command :
+- Real : "The amount of actual time that it took to execute the command. 
+- User : "The time spent doing operations in the user space"
+- Sys : "The time spent doing system-level operations. 
+
+pprofile3 and kcachegrind to see the file generated. 
+# When Slowness Problems Get Complex
+
+## Parallelizing Operations
+"Threads : Let us run parallel tasks inside a process"
+In Python, we can do threading or  __Asyncio__ module. 
+I/O bound, when the script is waiting for information. 
+"A script is __CPU bound__ iy you're running operations in parallel using all available CPU time."
+
+
+(From https://realpython.com/python-concurrency/)
+- "Threading (or pre-emptive multitasking) : the operating system decides when to switch tasks external to Python. 
+- Asyncio (cooperative multitasking) : the tasks decide when to give up control. 
+- Multiprocessing : The processess all run at the same time on different processor"
+## Slowly Growing in Complexity
+The more a file is large, the more we need to adjust the medium to contain it. CSV> SQLLite > DataServer (for example)
+
+## Using Threads to Make things Go Faster
+Python script :
+To run something in parallel we need : 
+- "Executor : "The process that's in charge of distributing the work among the different workers."
+- Futures module : "provides a couple of different executors; one for using threads and another for using processes."
+```
+from concurrent import futures
+
+
+executor = futures.ThreadpoolExecutor()
+for root, _, files in os.walk('images'):
+    for basename in progress_bar(files):
+        if not basename.endswith(".jpg");
+            continue
+        executor.submit(process_file, root, basename)
+print("Waiting for al threads to finish.")
+executor.shutdown()
+```
+To make process instead of thread :
+```
+from concurrent import futures
+
+
+executor = futures.ProcessPoolExecutor()
+for root, _, files in os.walk('images'):
+    for basename in progress_bar(files):
+        if not basename.endswith(".jpg");
+            continue
+        executor.submit(process_file, root, basename)
+print("Waiting for al threads to finish.")
+executor.shutdown()
+```
+
