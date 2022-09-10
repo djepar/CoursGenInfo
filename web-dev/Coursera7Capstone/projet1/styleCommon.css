@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background-color: #ffffff;
 }
 :root {
     --main-radius:5px;
@@ -12,17 +12,17 @@ body {
     list-style-type: circle;
     padding: 2px;
     margin: 2px;
+    text-align: center;
 }
 .menu {
-    padding: 10px;
-    border-radius: 10px;
+    padding: 20px;
 }
 .menu ul li a{
    text-decoration: none;
    text-shadow: 0px 1px 3px black;
    color: rgba(255, 255, 255, 0.942);
    padding: 5px 20px; 
-   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 .menu li a{
     transition: 0.3s;
@@ -52,21 +52,21 @@ h2 {
     padding: 1%;
 }
 nav {
-    background-color: #5BE6E4;
+    background-color: black;
     grid-area: nav;
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
     
 }
 main {
-    background-color: #5A3EE6; 
+   
     grid-area: main;
     border : solid rgb(0, 0, 0);
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
 }
 #sidebar {
-    background-color: #68E65A;
+   
     grid-area: sidebar;
     border : solid rgb(0, 0, 0);
     border-radius:var(--main-radius);
@@ -74,14 +74,13 @@ main {
 }
 #content1 {
 
-    background-color:rgb(167, 225, 51); 
     grid-area: content1;
     border : solid rgb(0, 0, 0);
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
 }
 #content2 {
-    background-color: #E85400; 
+   
     grid-area: content2;
     border : solid rgb(0, 0, 0);
 
@@ -89,15 +88,14 @@ main {
     padding-top:var(--main-padding);
 }
 #content3 {
-    background-color:rgb(167, 225, 51); 
-    grid-area: content3;
+     grid-area: content3;
     border : solid rgb(0, 0, 0);
 
     border-radius:var(--main-radius);
     padding-top:var(--main-padding);
 }
 #footer {
-    background-color: #E6DB8E; 
+   
     grid-area: footer;
     border : solid rgb(0, 0, 0);
 
