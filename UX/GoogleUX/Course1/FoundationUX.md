@@ -109,3 +109,17 @@ Key performance indicator (KPIs) : "Critical measure of progress toward an end g
 ## Understand benefits and drawbacks of research methods
 At the start of a project, secondary research is a good starting point. 
 
+# Identify types of Bias in Ux research
+Bias "Favoring or having prejudice against something based on limited information."
+- Confirmation bias : "Occurs when you start looking for evidence to prove a hypothesis you have"
+    - Overcoming confirmation bias : "Ask open-ended questions, actively listen, include a large sample of users" 
+- False consensus biais : " Overestimate the number of people who will agree with our idea or deisgn."
+    - Overcoming confirmation bias : "identify and articulate your own assumptions, survey large group of people"
+- Recency bias : " It's easiest to remember the last thing you heard"
+    - Overcoming the recency biais : details note and recording. 
+- Primacy biais : "Remember the first participant most strongly." 
+    - Overcoming recency & primacy biais : "Take detailed notes or recording, interview each participant in the same way".  
+- Implicit biais : "The collection of attitudes and stereotypes we associate to people without our conscious knowledge." 
+    - Overcoming implicit biais : "reflect on our own behaviors, ask others to point out our implicit biases"
+- Sunk cost fallacy : "the deeper we get into a project we've invested in, the harder it is to change course"
+    - Overcoming sunk cost fallacy : "break down your project into smaller phases, outline points where you can decide whether to continue or stop."
