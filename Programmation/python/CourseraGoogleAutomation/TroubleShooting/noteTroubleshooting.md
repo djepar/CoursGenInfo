@@ -206,4 +206,18 @@ for root, _, files in os.walk('images'):
 print("Waiting for al threads to finish.")
 executor.shutdown()
 ```
+## Worklabs
+"rsync(remote sync) is a utility for efficiently transferring and synchronizing files between a computer and an external hard drive and across networked computers by comparing the modification time and size of files. One of the important features of rsync is that it works on the delta transfer algorithm, which means it'll only sync or copy the changes from the source to the destination instead of copying the whole file. This ultimately reduces the amount of data sent over the network."
 
+```
+/home/student-01-cd6edbe0c987/data#!/usr/bin/env_python
+from multiprocessing import Pool
+def run(task)
+#do something with task here
+    print("Handling {}".format(task))
+    #Create a pool of specific number of CPUs
+    p = Pool(len(tasks))
+    #Start each task within the pool
+    p.map(run, tasks)
+
+```
