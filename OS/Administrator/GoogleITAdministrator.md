@@ -81,3 +81,4 @@ SFTP or Secure File transfer: SSH encryption, authentication
 TFTP or Trivial FTP : no encryption, no authentication
 
 Other way of booting a computer : PXE Boot (preboot execution)
+
