@@ -66,3 +66,41 @@ var assistantManager = {
     greeting: "Let's make some money"
 }
 ```
+To access an element : `assistantManager.health`
+We can change both with : `car["color"] = "green";
+and
+`car.color = "red"`
+
+## Arrays are Objects
+To add a new item at the end of an array : `fruits.push("pears");`
+To remove the last item : `fruits.pop();`
+
+
+## Math objet cheat sheet
+Number constants:
+- Pi : Math.PI
+- Euler : Math.E
+- The natual log of 2 : Math.LN2
+
+Rounding methods:
+- Math.ceil()
+- Math.floor()
+- Math.round() --> closest to .5
+- Math.trunc() --> "trims the decimal, leaving only the integer"
+
+Arithmetic and calculus methods
+- Math.pow(2,3)
+- Math.sqrt(16)
+- Math.cbrt(8) (cubic root)
+- Mat.abs(-10)
+- Math.log(), Math.log2
+- Math.min(listOfNum) Math.max(listofNum)
+- Math.sin(), Math.cos(), Math.tan()
+
+## String cheat sheet
+- `greet.length;`
+- `greet.charAt(0);`
+- `"Wo".concat("rl").concat("d"); `
+- `"hohoho.indexOf("h");` -->index of the first matches
+- `"hohoho.lastIndexOf("h");` -->index of the last matches
+- `"hohoho.split("h");` 
