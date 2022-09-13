@@ -146,3 +146,24 @@ For example popping a number or iterating a boolean.
 ### RangeError
 "A RangeError is thrown when we're giving a value to a function, but that value is out of the allowed range of acceptable input values."
 Ex : `(10).toString(3);
+
+```
+function addTwoNums(a,b){
+    try {
+        if (typeof(a) != "number") {
+            throw new ReferenceError("First arg != number")
+        }
+        else if (typeof(b) != "number") {
+            throw new ReferenceError("Second arg != number")
+        } else{
+            console.log(a+b)
+        }
+    } catch(err) {
+        console.log("Error!", err)
+    }
+
+    console.log("It still works")
+}
+addTwoNums(5,5)
+addTwoNums(5,'5')
+```
