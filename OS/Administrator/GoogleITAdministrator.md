@@ -73,3 +73,11 @@ SaaS : Software as a Service
 PaaS : Plateform as a Service
 
 DaaS : Directory as a Service
+
+# Network Services
+## FTP, SFTP, and TFTP
+FTP or File transfer service : no encryption, authentication
+SFTP or Secure File transfer: SSH encryption, authentication
+TFTP or Trivial FTP : no encryption, no authentication
+
+Other way of booting a computer : PXE Boot (preboot execution)
