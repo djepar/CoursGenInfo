@@ -104,3 +104,45 @@ Arithmetic and calculus methods
 - `"hohoho.indexOf("h");` -->index of the first matches
 - `"hohoho.lastIndexOf("h");` -->index of the last matches
 - `"hohoho.split("h");` 
+
+## Object Methods 
+A variable can take a function as a value.
+"If the function is a properfty of an object, it is then referred to as a method. "
+```
+var car = {
+    car.color = "red";
+}
+car.turnTheKey = function(){
+    console.log("The engine is running")
+}
+car.turnTheKey();
+```
+## TypeOf
+`console.log(typeof(3.14))`
+
+# Error Handling
+## Try and catch
+```
+try {
+    console.log(c+d);
+} catch(err) {
+    console.log("Something went wrong");
+}
+```
+The advantage is that the program don't stop when an error occurs. 
+
+## Syntax, logical and runtime errors
+### ReferenceError
+Problem with the variable not being declared or not reachable. 
+
+### SyntaxError
+"Any kind of invalid Javascript code will cause a SyntaxError"
+Ex : `var a "there's no assignment operator here";
+
+### TypeError
+Error related to an invalid type. 
+For example popping a number or iterating a boolean. 
+
+### RangeError
+"A RangeError is thrown when we're giving a value to a function, but that value is out of the allowed range of acceptable input values."
+Ex : `(10).toString(3);
