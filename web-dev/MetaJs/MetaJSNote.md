@@ -181,3 +181,20 @@ addTwoNums(5,'5')
 
 ## Scoping with var, let and const
 "When you use let and const to declare a variable, it is scoped to the block - even within if statements and loops, like the for or while loops. Therefore, the quantity variable you create will only exist within the for loop."
+
+# Object Oriented Programming
+"The thing to remember about Objects s that they exist in a hierarchal structure. Meaning that the original base or super class for everything is the Object class, all objects derive from this class. this allows us to utilize the Object.create() to create or instantiate objects of our classes. 
+```
+class Animal { /**/}
+var myDog = Object.create(Animal)
+console.log(Animal)
+```
+"A more common method of creating objects from classes is to use the new keyword. When using a default or empty constructor method, JavaScript implicitly calls the Object superclass to create the instance."
+
+```
+class Animal { /* ...class code here... */ }
+
+var myDog = new Animal()
+
+console.log (Animal)
+```
