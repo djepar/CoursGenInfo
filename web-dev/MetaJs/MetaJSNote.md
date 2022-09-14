@@ -174,3 +174,10 @@ addTwoNums(5,'5')
 - pass to other functions
 - save in a variable
 - return from other functions"
+
+## Pure Functions
+"A pure function returns the exact same results as long as it's given the same values."
+"Another rule for a function to be considered pure is that it should not have side-effects. A side-effect is any instnce where a function makes a change outside of itself."
+
+## Scoping with var, let and const
+"When you use let and const to declare a variable, it is scoped to the block - even within if statements and loops, like the for or while loops. Therefore, the quantity variable you create will only exist within the for loop."
