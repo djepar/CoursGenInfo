@@ -242,3 +242,11 @@ class HighSpeedTrain extends Train {
     }
 }
 ```
+
+## Default Parameters
+Ex : 
+```
+fucntion withDefaultParams(number = 10){
+    console.log('Result:', number * number)
+}
+```
