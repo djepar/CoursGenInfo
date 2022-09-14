@@ -242,3 +242,20 @@ class HighSpeedTrain extends Train {
     }
 }
 ```
+# Advanced JavaScript Features
+## De-structuring arrays and objects
+Copying a part of an object 
+Ex : 
+```
+let {PI} = Math; 
+
+let introduction = ["Bonjour", "le", "monde"]
+let [greeting, pronoun] = introduction;
+console.log(greeting);//"Bonjour";
+console.log(pronoun);//"le";
+
+//To skip item
+let [greeting,, world] = introduction;
+
+
+
