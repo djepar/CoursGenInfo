@@ -242,15 +242,6 @@ class HighSpeedTrain extends Train {
     }
 }
 ```
-
-
-
-
-
-
-
-
-
 # Advanced JavaScript Features
 ## De-structuring arrays and objects
 Copying a part of an object 
@@ -265,6 +256,78 @@ console.log(pronoun);//"le";
 
 //To skip item
 let [greeting,, world] = introduction;
+```
+## For of loops and objects
+"A for of loop cannot work on an object directly, since an object is not iterable"
+"Arrays are iterable"
 
+### Built-in methods
+- Object.keys() : `console.log(Object.keys(car2)); // ['speed', 'color']
+- Object.values()
+- Object.entries() //return keys and values
 
+Ex : To loop over an object keys 
+```
+for( key of Object.keys(clothingItem)) {
+    console.log(keys, ":", clothingItem[key])
+}
+```
 
+```
+// Task 1
+var dairy = ['cheese', 'sour cream', 'milk', 'yogurt', 'ice cream', 'milkshake'] 
+function logDairy() {
+    for (el of dairy) {
+        console.log(el)
+    }
+}
+
+    // Task 2
+const animal = {
+    canJump: true
+};
+const bird = Object.create(animal);
+
+bird.canFly = true;
+
+bird.hasFeathers = true;
+function birdCan() {
+    for (prop of Object.keys(bird)) {
+        console.log(`${prop}: ${bird[prop]}`)
+    }
+}
+birdCan(bird)
+// Task 3
+function animalCan() {
+    for (let i in bird) {
+        console.log(`${i}: ${bird[i]}`) //in this one we see canjump!!!!!!
+    }
+}
+
+animalCan();
+```
+
+## Data Structures examples
+### Working with arrays in JavaScript
+#### forEach() Method : "a function that will work on each array item"
+```
+const fruits = ['kiwi', 'manga', 'apple', 'pear'];
+function appendIndex(fruit, index){
+    console.log(`${index}. ${fruit}`)
+}
+fruits.forEach(appendIndex);
+```
+#### The filter() method : filters "based on a specific test"
+```
+const nums = [0,10,20,30,40,50];
+nums.filter(function(num){
+    return num > 20;
+})
+```
+#### The map method
+"This method is used to map each array item over to another array's item, based on whatever work is performed inside the function that is passed-in to the map as a parameter."
+```
+[0,10,20,30,40,50].map( function(num) {
+    return num / 10
+})
+```
