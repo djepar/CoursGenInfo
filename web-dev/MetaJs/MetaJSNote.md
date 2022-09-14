@@ -167,3 +167,10 @@ function addTwoNums(a,b){
 addTwoNums(5,5)
 addTwoNums(5,'5')
 ```
+
+# The functional programming paradigm
+## First-class functions
+"It means that a functoin in JavaScript is just another value that we can:
+- pass to other functions
+- save in a variable
+- return from other functions"
