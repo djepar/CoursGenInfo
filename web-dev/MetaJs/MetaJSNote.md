@@ -474,3 +474,24 @@ function randomNumber() {
 }
 //Arrow function
 let randomNumber() = () => Math.random
+```
+# JavaScript in the Browser
+## JavaScript modules
+Export with `export {name, draw, functionArea, reportPerimeter};`
+To import : `import {name, draw, functionArea, reportPerimeter} from 'path';` (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+
+## JavaScript DOM manipulation
+"The DOM is an in-memory representation of the active HTML document. Any changes made are local and do not affect the document stored on the webserver."
+
+## JavaScript selectors
+`document.querySelector('p')`
+`document.querySelectorAll('a')`
+`document.getElementbyId('heading')`
+`document.getElementsbyClassName('powershell')`
+
+## Event Handling
+User-triggered events : 
+```
+<button type="button" class="btn btn-lg btn-primary" onclick="clickHandler()">
+Primary Button
+</button>
