@@ -537,3 +537,24 @@ JSON.parse(jsonStr) // {greeting:'hello'}
 const aPlainObj = JSON.parse(jsonStr)
 const = data = {firstName : "John", lastName = "Doe"}
 JSON.stringify(data) // create the json of it. 
+```
+# Testing
+## Other JavaScript environments - node & NPM
+"Node.js can run in multiple settings" like CLI, desktop app and back-end of a web app. Separated from the JS of a browser. 
+NPM : Node packet manager "allows you to use a large number of libraries and frameworks as Node.js modules."
+## What is testing?
+"Tests as expectation-documenting code : code syntax that specifies the expected result of passing specific values to your functions. "
+Ex of jest test : /expect(concatStrings('123', '456').toBe('123456'));
+## Jest
+Mocking : Test to be sure that the module is stand-alone and test without having to wait for the other part. 
+Snapshot testing : "Used by we developers to verify that there are no regressions in the DOM"
+## Writing tests with Jest
+```
+//In the addFive.js
+function addFive(val) {
+    return val + 5;
+}
+module.exports = addFive;
+
+// Be sure to install : jest, npm and node
+//Create addFive.test.js
