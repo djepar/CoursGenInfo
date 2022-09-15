@@ -502,3 +502,38 @@ Primary Button
     }
     target.addEventListener('click', handdleClick)
 </script>
+```
+## Create content from output
+```
+let answer = prompt('What is your name?');
+if (typeof(answer) === 'string') {
+    var h1 = document.createElement('h1')
+    h1.innerText = answer;
+    document.body.innerText = '';
+    document.body.appendChild(h1);
+}
+```
+
+## Moving data around on the web
+"data interchange format based on Javascript objects." --> JSON (JavaScript Object Notation)
+
+### JSON rules 
+- Must be parse properly, otherwise won't be parse as a JS object. 
+- "Only a subset of values in JavaScript can be properly stringified to JSON and parsed from a JavaScript object into a JSON string."
+- "These values include :
+    - primitives value : strings, numbers, bolleans, null
+    - complex values: objects and arrays (no functions!)
+    - Objects have double-quoted strings for all keys
+    - Properties are comma-delimited both in json objects and in JSON arrays, just like in regular JavaScript code'
+    - String properties must be surronded in double quotes.
+    - Number properties are represented using the regular JavaScript number syntax
+"
+Ex ; `'[{ "color": "blue" }, {"color: "red"}]'`
+
+### To manipulated a JSON object
+```
+const jsonStr = '{"greeting":"hello"}'
+JSON.parse(jsonStr) // {greeting:'hello'}
+const aPlainObj = JSON.parse(jsonStr)
+const = data = {firstName : "John", lastName = "Doe"}
+JSON.stringify(data) // create the json of it. 
