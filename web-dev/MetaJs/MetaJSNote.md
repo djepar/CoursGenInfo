@@ -495,3 +495,10 @@ User-triggered events :
 <button type="button" class="btn btn-lg btn-primary" onclick="clickHandler()">
 Primary Button
 </button>
+<script>
+    const target = document.querySelector('body')
+    function handleClick() {
+        console.log('clicked the body')
+    }
+    target.addEventListener('click', handdleClick)
+</script>
