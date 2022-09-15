@@ -331,3 +331,146 @@ nums.filter(function(num){
     return num / 10
 })
 ```
+### Working with Objects in JavaScript
+#### Object to array 
+```
+const result = [];
+const drone = {
+    speed: 100,
+    color: 'yellow'
+}
+const droneKeys = Object.keys(drone);
+droneKeys.forEach( function(key) {
+    result.push(key, drone[key])
+})
+console.log(result)
+```
+### Working with Maps in JavaScript
+To create a new map : `new Map();`
+
+```
+let bestBoxers = new Map();
+bestBoxers.set(1, "The Champion");
+bestBoxers.set(2, "The Runner-up");
+bestBoxers.set(3, "The third place");
+
+console.log(bestBoxers);
+```
+
+### Working with Sets in JavaScript
+To create a new set : `new Set();`
+
+"The Set constructor can, for example, accept an array. 
+This means that we can use it to quickly filter an array for unique members."
+```
+const repetitiveFruits = ['apple','pear','apple','pear','plum', 'apple'];
+const uniqueFruits = new Set(repetitiveFruits);
+console.log(uniqueFruits);
+```
+
+### Spread Operator 
+"The spread operator is characterized by three dots."
+
+#### Add new members to arrays without using the push() methods
+```
+let veggies = ['onion', 'parsley'];
+veggies = [...veggies, 'carrot', 'beetroot'];
+console.log(veggies);
+```
+#### Convert a string to an array using the spread operator.
+```
+const greeting = "Hello";
+const arrayofCars = [...greeting];
+console.log(arrayofChars); // ['H', 'e', 'l', 'l', 'o']
+```
+#### Copy either an object or an array into a separate one
+```
+const car1 = {
+    speed: 200,
+    color: 'yellow'
+}
+const car 2 = {...car1}
+
+car1.speed = 201
+
+console.log(car1.speed, car2.speed)
+```
+### Rest operator
+"The rest operator allows you to take items from an array and use them to create a separate sub-array."
+#### Join arrays using the rest operator
+```
+const fruits = ['apple', 'pear', 'plum']
+const berries = ['blueberry', 'strawberry']
+const fruitsAndBerries = [...fruits, ...berries] // concatenate
+console.log(fruitsAndBerries); // outputs a single array
+```
+#### Join objects using the rest operator
+```
+const flying = { wings: 2 }
+const car = { wheels: 4 }
+const flyingCar = {...flying, ...car}
+console.log(flyingCar) // {wings: 2, wheels: 4}
+```
+
+
+
+
+
+```
+// Define a destructuring object with two regular variables and one rest variable:
+const { firstName, lastName, ...otherInfo } = {
+  firstName: "Oluwatobi",
+  lastName: "Sofela", 
+  companyName: "CodeSweetly",
+  profession: "Web Developer",
+  gender: "Male"
+}
+
+// Invoke the otherInfo variable:
+console.log(otherInfo);
+
+// The invocation above will return:
+{companyName: "CodeSweetly", profession: "Web Developer", gender: "Male"}
+```
+(from https://www.freecodecamp.org/news/javascript-rest-vs-spread-operators/)
+
+### Rest parameters 
+"The rest arameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent variadic function in JavaScript" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+```
+function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3));
+// expected output: 6
+
+console.log(sum(1, 2, 3, 4));
+// expected output: 10
+```
+## Arrow Function
+``` 
+//Normal function 
+function sum(a,b) {
+    return a + b
+}
+//Arrow functions
+let sum 2 = (a,b) => a+b
+
+
+//Normal function
+function isPositive(number){
+    return number >= 0
+}
+//Arrow function 
+let isPositive = number => number >= 0
+
+//Normal function
+function randomNumber() {
+    return Math.random
+}
+//Arrow function
+let randomNumber() = () => Math.random
