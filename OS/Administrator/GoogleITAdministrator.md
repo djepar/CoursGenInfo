@@ -82,3 +82,17 @@ TFTP or Trivial FTP : no encryption, no authentication
 
 Other way of booting a computer : PXE Boot (preboot execution)
 
+## NTP 
+One of the oldest protocol : Network Time Protocol.
+Keep the clock synchronize while connected to a network. 
+
+## Network Support Services Revisited
+Intranet : "An internal network inside a company; accessible if you're on a company's network."
+Proxy server : "Acts as an intermediary between a company's network and the Internet."
+
+## DNS
+"Domain Name System (DNS) :Maps human-understandable names to IP addresses"
+
+## DNS for Web Servers
+First : purchasing a domain name. 
+Second : pointing our website files to the domain name. 
