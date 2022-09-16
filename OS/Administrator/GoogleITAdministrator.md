@@ -130,3 +130,5 @@ lftp localhost
 
 ```
 lftp : "an ftp client program that allows us to connect to an ftp server."
+
+## Configuring Services in Windows
