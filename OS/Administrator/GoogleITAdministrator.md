@@ -131,4 +131,15 @@ lftp localhost
 ```
 lftp : "an ftp client program that allows us to connect to an ftp server."
 
-## Configuring Services in Windows
+# Configuring Network Services
+## Configuring DNS with Dnsmasq
+Install Dnsmasq : `sudo apt install dnsmasq`
+Start : `sudo service dnsmasq start`
+Try : `dig www.example.com @localhost`
+Stop : `sudo service dnsmasq stop`
+Run in debug mode : `sudo dnsmasq -d -q` (try in parallel to see magic)
+
+## Configuring DHCP with Dnsmasq
+`ip address show eth_cli`
+`cat dhcp.conf`
+Run `sudo dhclient -i eth_cli -v` then `ip address show eth_cli`
