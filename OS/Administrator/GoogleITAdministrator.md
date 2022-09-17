@@ -227,3 +227,21 @@ Centralized management : "A central service that provides instructions to all of
 "Directory services provide centralized authentication, authorization, and accounting, also known as AAA." 
 Configuration management can be done with : chef, puppet, sccm. 
 
+# LDAP (Lighweight Directory Access Protocol)
+LDIF : Data Interchange format :
+dn = distinguished name, dc : domain component, ou : organizational unit, cn : common name;
+
+## LDAP Authentification
+To authenticate : 
+- anonymous : "doesn't actually authenticate at all, and allows anyone to query the server. "
+- simple : "involves sending the password in plaintext"
+- sasl (simple authentication & security layer) : "involves a secure challenge-repsonse authentication mechanism"
+LDAP Bind operation : "A client authenticates to a directory server using the Bind operation."
+Kerberos : "a network authentication protocol that's used to authenticate user identity, secure the transfer of user credentials, and more."
+
+# Active directory
+"Active Directory (AD) : The native directory service for Mic rosoft Windows"
+Work in a similar way as OpenLDAP.
+Tools for AD : Active directory Administrative Center (ADAC). 
+Above a domain (hierarchiccally) is a forest. A Forest can have one or more domain. 
+"The service that hosts copies of the Active Directory are called Domain controllers. 
