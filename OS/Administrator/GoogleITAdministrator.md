@@ -162,3 +162,26 @@ Email protocol
 - Pop3 (Post Office Protocol 3): once view, can only accessible on one device. Good for storage limitation. 
 - IMAP (Internet Message Access Protocol) : the email are on the server
 - SMTP : protocol use to send email
+
+## Configuring Security Services
+HTTPS (Hyper text Transfer Protocol Secure) : "The secure version of HTTP, which makes sure the communication your web browser has with the website is secured through encryption."
+
+HTTPS can be done with Transport layer Security (TLS) or SSL
+
+# File Services
+## Network File Storage
+Network File System (NFS): "you can install NFS server software that modify the configuration files for the directories that you want to allow shared access to. Onece you do that, the NFS service will be running in the background of the server"
+
+"The Server Message Block (SMB) protocol is a network file sharing protocol that allows applications on a computer to read and write to files and to request services from server programs in a computer network." 9https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)?redirectedfrom=MSDN)
+
+# Print Services
+With Linux : Cups (Common UNIX Printing System)
+
+#Platform Services
+## Web Servers Revisited
+Web server : "stores and serves content to clients through the Internet"
+The most popular is Apache
+
+## What is a database server
+Databases " allow us to store, query, filter, and manage large amounts of data"
+"Data base management system (DBMS), [...] is a computer program that interacts with a databsae. A DBMS allows you to control access to a database, write data, run queries, and perform  any other tasks related to database management."
