@@ -221,3 +221,9 @@ Directory Information Shadowing Protocol (DISP)
 Directory Operational Binding Management Protocol (DOP)
 Active Directory
 Lightweight Directory Access Protocol (OpenLDAP) --> favorite directory protocol right now. 
+
+## Centralized Management
+Centralized management : "A central service that provides instructions to all of the different parts of my IT infrastructure"
+"Directory services provide centralized authentication, authorization, and accounting, also known as AAA." 
+Configuration management can be done with : chef, puppet, sccm. 
+
