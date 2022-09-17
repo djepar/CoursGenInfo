@@ -185,3 +185,20 @@ The most popular is Apache
 ## What is a database server
 Databases " allow us to store, query, filter, and manage large amounts of data"
 "Data base management system (DBMS), [...] is a computer program that interacts with a databsae. A DBMS allows you to control access to a database, write data, run queries, and perform  any other tasks related to database management."
+
+# Troubleshooting Platform Services
+"HTTP status codes are codes or numbers that indicate some sort of error or info messages that occurred when trying to access a web resource."
+
+# Managing Cloud Resources
+"Software as a Service (SaaS) : The software is already pre-configured and the user isn't deeply involved in the cloud configuration"
+" Infrastructure as a Service(IaaS) : You're hosting your own services in the cloud. You need to decide how you want the infrastructure to look, depending on what you want to run on it."
+Need to think of the Region : "If one of them fails for some reason, the others are still available and services can be migrated without visibly affecting users."
+Private cloud : "When your company owns the services and the rest of your infrastructure - whether on-site or in a remote data center"
+Hybrid cloud : private-public cloud. 
+
+## Typical Cloud Infrastructure Setups
+Typical Balancer "Ensures that each VM receives a balanced number of queries"
+Autoscaling : "It allows the service to increase or reduce capacity as needed, while the service owner only pays for the cost of the machines that are in use at any given time"
+
+## When and How to Choose Cloud
+"Most cloud provides offer free trials, so it's a good idea to test that out to see if they meet your needs, and to check how well your company's infrastructure integrates with the cloud provider's."
