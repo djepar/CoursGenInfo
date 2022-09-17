@@ -143,3 +143,22 @@ Run in debug mode : `sudo dnsmasq -d -q` (try in parallel to see magic)
 `ip address show eth_cli`
 `cat dhcp.conf`
 Run `sudo dhclient -i eth_cli -v` then `ip address show eth_cli`
+
+# Software Services
+## Configuring Communication Services
+Communication service "enable employees in a company to talk to one another."
+Instant communication 
+- Internet Relay Chat (IRC) : chat messages. Work in a client/server model. 
+- Paid for option : like HipChat and Slack. 
+- XMPP : Extensible Messageing and Presence Protocol (Ex : Pdgin and Adium )
+
+## Configuring Email Services
+Two ways to set up email domain address
+- "Run your own managed server. Using this option, you set up the emails services software on a server, then you create a DNS record for your mail server."
+
+DNS : "A record is used for hostnames, but for email servers, we use MX for the mail exchange record."
+
+Email protocol 
+- Pop3 (Post Office Protocol 3): once view, can only accessible on one device. Good for storage limitation. 
+- IMAP (Internet Message Access Protocol) : the email are on the server
+- SMTP : protocol use to send email
