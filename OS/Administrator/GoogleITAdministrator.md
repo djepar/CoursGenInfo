@@ -202,3 +202,22 @@ Autoscaling : "It allows the service to increase or reduce capacity as needed, w
 
 ## When and How to Choose Cloud
 "Most cloud provides offer free trials, so it's a good idea to test that out to see if they meet your needs, and to check how well your company's infrastructure integrates with the cloud provider's."
+
+# Introduction to Directory Service
+## What is a Directory Server
+"Directory Server : Contains a lookup service that provides mapping between network resources and their network addresses"
+
+
+Should support replication : "The stored directory data can be copied and distributed across a number of physically distributed servers, but still appear as one, unified datastore for querying and administrating."
+"Directory services : useful for organizing data and making it searchable for an organization"
+OUs : Organization units
+
+Advantages of replicatoins :
+Redundancy  : "Directory server replication grants you redundancy by having multiple copies of the database being served by multiple servers."
+Decreased latenty : "The added servers that provide lookup services also reduce the latency for client querying the service."
+## Implementing Directory Services
+Directory System Protocol (DSP)
+Directory Information Shadowing Protocol (DISP)
+Directory Operational Binding Management Protocol (DOP)
+Active Directory
+Lightweight Directory Access Protocol (OpenLDAP) --> favorite directory protocol right now. 
