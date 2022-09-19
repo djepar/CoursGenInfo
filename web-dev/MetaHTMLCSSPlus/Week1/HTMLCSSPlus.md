@@ -224,3 +224,5 @@ Ex: `<iframe src="placeholder.png" width="200" height="350" sandbox=" "allow="pa
 ## Flexbox 
 "Flexbox is a type of container. 
 Flexvox overcome the limitations caused by containers such as block and inline because it does a better job of sclaing over larger web pages and also provides more dynamic control of the containers."
+"The most common use of flexbox in CSS are creating a responsive search bar, navigation bar and image gallery."
+

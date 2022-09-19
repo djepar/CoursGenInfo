@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar charts 2</title>
+    <style>
+        .columns {
+            display: flex;
+            height: 400px;
+            max-width: 300px;
+            align-items: stretch;
+            border: 1px solid black;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-end;
+        }
+        .bar {
+            border-right: 1px solid white;
+
+        }
+        .one { background-color: aqua;}
+        .two {background: gold;}
+    </style>
+</head>
+<body>
+    <div class="columns">
+        <div class="container">
+            <div class="bar one" style="flex-basis: 25%;"></div>
+            <div class="bar two" style="flex-basis: 20%;"></div>
+        </div>
+        <div class="container">
+            <div class="bar one" style="flex-basis: 45%;"></div>
+            <div class="bar two" style="flex-basis: 40%;"></div>
+        </div>
+        <div class="container">
+            <div class="bar one" style="flex-basis: 15%;"></div>
+            <div class="bar two" style="flex-basis: 50%;"></div>
+        </div>
+        
+        <div class="container">
+            <div class="bar one" style="flex-basis: 5%;"></div>
+            <div class="bar two" style="flex-basis: 60%;"></div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
