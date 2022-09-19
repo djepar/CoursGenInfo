@@ -260,4 +260,14 @@ Star selectors (*) --> select all element on the web-page.
 - Universal selectors have zero specificity value.
 """
 
+## Pseudo-class selector
+Order : LVHA --> :link, :visited, :hover, :active
+
+
+# CSS Effects
+
+Effect : "A change which is a result or consequence of an action or other cause"
+
+Animation : "Graphics in motion transitioning over time."
+
 
