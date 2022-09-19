@@ -156,3 +156,71 @@ Type attribute :
     <source src="dance.mp4" type="video/mp4">
     <source src="dance.ogg" type="audio/mpeg"> <!-- Fallback if the file format is not supported or a problem occurs. -->
 </video>
+```
+
+## Embedded players 
+```
+<audio loop controls>
+    <source src="music.ogg" type="audio/ogg">
+</audio>
+```
+
+## Images
+Normal image : `img src="photo.png" width="320" alt="My Profile Photo">`
+
+"To ensure that screen reader accessibility software can interpret images displayed in the browser. To support this, the <img> tag is combined with the <figure> and the <figcaption> tags to provide a description of the image. The <img> tag is added inside the <figure> tag and the <figcaption> is specified after it."
+
+```
+<figure>
+    <img src="photo.png" width="320" alt="My Profile Photo">
+    <figcaption>A photo of myself on a beach in 2015</figcaption>
+</figure>
+```
+Supported file types :
+"""
+- .APNG – Animated Portable Network Graphics 
+
+- .AVIF – AV1 Image Format 
+
+- .GIF – Graphics Interchange Format 
+
+- .JPEG / .JPG – Joint Photographic Expert Group image format 
+
+- .PNG – Portable Network Graphics 
+
+- .SVG – Scalable Vector Graphics 
+
+- .WEBP – Web Picture Format 
+
+"""
+
+## iFrames 
+"An iFrames is a HTML element that allows you to place embed content from another website into a webpage."
+`<iframe src="https://www.example.com" width="200" height="150"></iframe>`
+
+For security purpose, we can disable camreand and microphone access :
+`iframe src="https://www.example.com" allow="camera 'none'; microphone 'none';"></iframe>`
+Sandbox attribute to disable download or popups : `<iframe src="https://www.example.com" sandbox=" "></iframe>` 
+With empty value, all the sandbox restrictions will apply. 
+
+## iFrame as a picture
+Ex: `<iframe src="placeholder.png" width="200" height="350" sandbox=" "allow="payment 'non'; camera 'none'; microphone 'none'">
+
+## The canvas element
+- Interactive image : GIF, webP
+  - Zero interativity
+  - Embed animated content.
+- 2D canvas : "allows 2D graphics to be drawns in the web browser." Good for videogame and animation.  
+ 
+- WebGL 
+  - Work with the GPU of the computer
+  - Good for 3D.
+
+
+
+# Creating layouts
+"In essence, the idea behind any CSS web layout is to create an optimally designed web page that has a good view ports at any given point."
+
+## Flexbox 
+"Flexbox is a type of container. 
+Flexvox overcome the limitations caused by containers such as block and inline because it does a better job of sclaing over larger web pages and also provides more dynamic control of the containers."
