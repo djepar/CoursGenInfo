@@ -226,3 +226,38 @@ Ex: `<iframe src="placeholder.png" width="200" height="350" sandbox=" "allow="pa
 Flexvox overcome the limitations caused by containers such as block and inline because it does a better job of sclaing over larger web pages and also provides more dynamic control of the containers."
 "The most common use of flexbox in CSS are creating a responsive search bar, navigation bar and image gallery."
 
+# CSS Selectors
+Attribute selectors : 
+Syntax : 
+- `[attr=value]{}` :element with an href matching the value
+- `[attr~=value]{}` : elements whose class attribute contains the value
+- `[attr$=value]{}` : ending with
+- `[attr*=value]{}` : contain the value
+And more
+
+nth-of-type and nth-child selectors
+Ex : 
+```
+li:nth-of-type(2){
+    color:aqua;
+}
+```
+
+Ex :
+```
+ul:nth-child(2){
+    color:aqua;
+}
+```
+Star selectors (*) --> select all element on the web-page. 
+
+## Selectors and their specificity
+
+"""
+- Every selector will have a score and place in the hierarchy
+- In the case of selectors with equal specificity, the latest or last written rule the one that will be applied
+- In general, ID selector should be appliedin cases where you need to be certain about a rule.
+- Universal selectors have zero specificity value.
+"""
+
+
