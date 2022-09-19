@@ -270,4 +270,14 @@ Effect : "A change which is a result or consequence of an action or other cause"
 
 Animation : "Graphics in motion transitioning over time."
 
+## CSS Animation
+@keyframes : "to create advanced animations."
+`@keyframes animationname {keyframes-selector {css-styles;}}`
+From - to syntax to show transition;
+```
+@keyfrabes animationame {
+    from { color:blue;}
+    to {color:red;}
+}
 
+```

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        .minutes {
+            animation: cycle 6s infinite linear;
+        }
+        .hours {
+            animation: cycle 60s infinite linear;
+        }
+        @keyframes cycle {
+            from {transform : rotate(0deg);}
+            to {transform : rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="minutes hand"></div>
+        <div class="hours hand"></div>
+    </div>
+</body>
+</html>
