@@ -281,3 +281,91 @@ From - to syntax to show transition;
 }
 
 ```
+
+## Preprocessor : sass, scss
+"CSS preprocesses are special compilers used to create a CSS file that can be referenced by an HTML document. They are generally used to reduce the amount of CSS need to write and allow you to reuse values across multiple rules."
+Only an extension of CSS. 
+Can be use "to create variables, loops, and if else statements". 
+"commonly used preprocessor : Sass, LESS, Stylus and PostCSS".
+Need a compiler on top of the webserver. 
+"Preprocessors have their own scripting language that adds logical structures, automation properties, reusability and bloating of the code" 
+
+"Syntactically Awesome Style Sheets(SASS) is a scripting language that CSS compiles and interprets into CSS. SCSS which stands for Sassy CSS is the syntax for the SASS and can be seen as an advanced version of both SASS and CSS."
+
+SCSS : extension of CSS, "every CSS stylesheet is a valid SCSS" 
+Ex :
+```
+$font-stack: Arial;
+$primary-color: lightblue;
+
+body P{
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+```
+
+
+
+SASS also knows as indented syntax : "it use indentation rather than brackets to indicate the nesting of selectors and newlines rathen than semicolons to separates properties."
+
+```
+$font-stack: Arial
+$primary-color: lightblue
+body
+    font: 100% $font-stack
+    color: $primary-color
+```
+
+In both SASS and SCSS, we can declare variable
+
+Directive like @mixin and @include
+"In the first step, you will add properties that you want to reuse inside @mixin"
+"In the second step, you use the second directive @include and add the mixin identifier that you have created using the @mixin directive". 
+Syntax : 
+```
+@mixin name{
+    property:value;
+    property;value;
+}
+```
+For ex : 
+```
+@mixin some-rules {
+    color: lightblue;
+    font-size: 25px;
+    font-weight: bold;
+}
+div {
+    @include some-rules;
+}
+```
+
+Stylus CSS :
+No bracket, colons and semicolons are used, but using them doesnt affect the code. 
+"you can also use '$' or any other symbol before variables, but you are not 'required' to do so."
+Ex : 
+```
+body
+    font 100% arial
+    color lightblue
+```
+
+Function with Stylus
+```
+add(a,b)
+    a+b
+div 
+    margin add(10px, 20px)
+```
+
+# Debugging
+## Handling errors
+"CSS handles errors differently, the code does not break or stop executing. Code with error is ignored."
+Linter --> Creating a .styleintrc.json
+```
+{
+    "rules": {
+        "alpha-value-notation": "number",
+        "color-no-hex": true
+    }
+}
