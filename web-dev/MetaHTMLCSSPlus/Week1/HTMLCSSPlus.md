@@ -369,3 +369,15 @@ Linter --> Creating a .styleintrc.json
         "color-no-hex": true
     }
 }
+```
+## Debugging the front-end
+Example of problem with CSS 
+- "Content overflow from parent to child or container class.
+- Misplaced elements in relation to its container class
+- Browser and device-related inconsistencies resulting in variable viewports."
+
+How to fix bugs :
+- Isolation by reduced test case : "one way to deal with a problem is to replicate your code and systemarically remove any code unrelated to the HTML and CSS elements that could be the source of the problem."
+- Items inside containers : "often, isolation will not work, as the problem is the result of the relative mapping of elements"
+- Relocating items : "move a certain element to observe its behavior."
+- 
