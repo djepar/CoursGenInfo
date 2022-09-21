@@ -380,4 +380,16 @@ How to fix bugs :
 - Isolation by reduced test case : "one way to deal with a problem is to replicate your code and systemarically remove any code unrelated to the HTML and CSS elements that could be the source of the problem."
 - Items inside containers : "often, isolation will not work, as the problem is the result of the relative mapping of elements"
 - Relocating items : "move a certain element to observe its behavior."
-- 
+- Getting familiar with the box model : error are common with the box. 
+- Browser issues : "browsers have their own default CSS stylesheets called user-agent styles." Sometime the website will misbehaves with the browser. 
+- Using dev tools.
+
+## Browser-specific CSS
+- "Specify the density of the schemes"
+- "Apply differents styles to different media types or devices"
+
+## UI Testing
+- "Automated user acceptance testing"
+- "Cross-device testing [to] ensure consistency across different screen sizes, device software and hardware"
+- "Visual regression testing"
+  
