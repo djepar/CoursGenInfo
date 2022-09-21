@@ -247,3 +247,4 @@ Above a domain (hierarchiccally) is a forest. A Forest can have one or more doma
 "The service that hosts copies of the Active Directory are called Domain controllers. 
 
 "Flexible Single-Master Operations (FSMOs) in AD are used to prevent conflicting updates in cases where conflict resolution is inappropriate. By planning the management of FSMOs, you enhance the availability of your Active Directory deployment."
+
