@@ -1,0 +1,140 @@
+:root {
+  background-color: #E80E82;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 0.5fr 0.5fr 2fr 0.5fr;
+      grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr;
+      grid-template-areas: "header header header " "nav nav nav " "main main main" "footer footer footer ";
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #812b59;
+}
+
+.container img {
+  max-width: 100px;
+}
+
+.container h1 {
+  font-size: 3rem;
+}
+
+.container h2 {
+  font-size: 2rem;
+}
+
+.container header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+}
+
+.container header img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container nav {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: nav;
+  padding: 1rem;
+}
+
+.container nav ul {
+  list-style-type: circle;
+  padding: 2px;
+  margin: 2px;
+  text-align: center;
+}
+
+.container nav li {
+  display: inline-block;
+}
+
+.container nav li a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0.7;
+  padding: 5px 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #049C00;
+  color: white;
+  text-decoration: none;
+}
+
+.container nav li a:hover {
+  opacity: 1;
+}
+
+.container nav li .active {
+  background-color: #11f309;
+}
+
+.container main {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
+  border-top: solid #800505;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 0.2fr 1fr;
+      grid-template-rows: 0.2fr 1fr;
+      grid-template-areas: "main__main main__main main__main" "articles articles articles";
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container main section {
+  display: -ms-grid;
+  display: grid;
+}
+
+.container footer {
+  border-top: solid #800505;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.container footer div {
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container footer div:first {
+  border-right: solid #800505;
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: "header" "nav" "main" "footer";
+  }
+}
+/*# sourceMappingURL=style.css.map */
