@@ -73,7 +73,24 @@
         grid-template-areas: 
         "section1 section1 section1"
         "sect2-1 sect2-2 sect2-3";
+        section, article{
+            border :rgb(0, 0, 0) solid;
+            h2 {
+                text-align: center;
+            }
+            img {
+                display: block;
+                margin-right: auto;
+                margin-left: auto;
+                width : 200px;
+                height: 200px;
+            }
+            p {
+                padding: 20px;
+            }
+        }
     }
+    
     #section1 {
         grid-area : section1;
     }
@@ -100,9 +117,9 @@
     }
 
     footer {
-         grid-area: footer;
+        grid-area: footer;
         display : flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         div {
             width: 50%;
             align-items: center;
@@ -114,23 +131,25 @@
     }
 }
 
-@media only screen and (max-width:550px){
+@media only screen and (max-width:650px){
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr;
         grid-template-areas: 
         "header"
         "nav"
         "main"
-        "footer"
+        "footer";
+
+        menu {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas: 
+            "section1"
+            "sect2-1"
+            "sect2-2"
+            "sect2-3";
+        }
     }
-    menu {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
-        "section1"
-        "sect2-1"
-        "sect2-2"
-        "sect2-3";
-    }
+  
 }

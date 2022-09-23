@@ -10,7 +10,7 @@
       grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: 0.5fr 0.5fr 2fr 0.5fr;
       grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr;
-      grid-template-areas: "header header header " "nav nav nav " "main main main" "footer footer footer ";
+      grid-template-areas: "header header header " "nav nav nav " "main main main" "footer footer footer ";
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #812b59;
 }
@@ -91,7 +91,27 @@
       grid-template-rows: 1fr 1fr;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas: "section1 section1 section1" "sect2-1 sect2-2 sect2-3";
+      grid-template-areas: "section1 section1 section1" "sect2-1 sect2-2 sect2-3";
+}
+
+.container main section, .container main article {
+  border: black solid;
+}
+
+.container main section h2, .container main article h2 {
+  text-align: center;
+}
+
+.container main section img, .container main article img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 200px;
+  height: 200px;
+}
+
+.container main section p, .container main article p {
+  padding: 20px;
 }
 
 .container #section1 {
@@ -144,8 +164,8 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 
 .container footer div {
@@ -159,20 +179,20 @@
   border-top: solid #800505;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
   .container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
-        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
-        grid-template-areas: "header" "nav" "main" "footer";
+    -ms-grid-rows: 0.4fr 0.4fr 2.2fr 1.2fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr;
+        grid-template-areas: "header" "nav" "main" "footer";
   }
-  menu {
+  .container menu {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -ms-grid-rows: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: "section1" "sect2-1" "sect2-2" "sect2-3";
+        grid-template-areas: "section1" "sect2-1" "sect2-2" "sect2-3";
   }
 }
 /*# sourceMappingURL=style.css.map */

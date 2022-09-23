@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .box {
+            float: left;
+            margin: 15px;
+            width: 150px;
+            height: 100px;
+            padding: 1em;
+            background-color: lightgray;
+        }
+        .special {
+            background-color: lightslategray;
+            padding: 10px;
+            color: #fff;
+        }
+        
+        .clear {
+            clear: float;
+        }
+        .wrapper {
+            background-color: lightslategray;
+            padding: 10px;
+            color : #fff;
+        }
+        .wrapper::after {
+            content : "";
+            clear: both;
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Simple float example
+    </h1>
+    <div class="wrapper">
+    <div class="box">Float</div>
+    <p class="special">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, minima quam. Dolorem, enim error reprehenderit, maiores ullam hic molestias dolores cumque odit repellendus, nam magni provident illo! Dolor, repellendus quae.</p>
+    </div>
+    <p class="clear">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit tempora debitis possimus autem libero, pariatur est, perspiciatis quidem voluptatibus nesciunt earum culpa repellendus ipsa, magnam magni qui ullam necessitatibus non!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, distinctio praesentium eaque quaerat deserunt dolor sint provident et rem officia laborum assumenda est voluptates corrupti quisquam, sapiente rerum voluptate ut.</p>
+
+</body>
+</html>
