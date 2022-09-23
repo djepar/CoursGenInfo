@@ -57,6 +57,7 @@
 
 .container nav li {
   display: inline-block;
+  width: 20%;
 }
 
 .container nav li a {
@@ -84,26 +85,56 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: main;
-  border-top: solid #800505;
-  border-radius: var(--main-radius);
-  padding-top: var(--main-padding);
   display: -ms-grid;
   display: grid;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 0.2fr 1fr;
-      grid-template-rows: 0.2fr 1fr;
-      grid-template-areas: "main__main main__main main__main" "articles articles articles";
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      grid-template-areas: "section1 section1 section1" "sect2-1 sect2-2 sect2-3";
 }
 
-.container main section {
-  display: -ms-grid;
-  display: grid;
+.container #section1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: section1;
+}
+
+.container #sect2-1 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: sect2-1;
+}
+
+.container #sect2-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: sect2-2;
+}
+
+.container #sect2-3 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: sect2-3;
+}
+
+.container #section1 {
+  background-image: url("images/background-banner.jpg");
+  border-radius: 25px;
+  margin: 20px;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.container #section1 h1 {
+  -webkit-text-decoration: underline 10px;
+          text-decoration: underline 10px;
 }
 
 .container footer {
-  border-top: solid #800505;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -124,8 +155,8 @@
           align-items: center;
 }
 
-.container footer div:first {
-  border-right: solid #800505;
+.container footer #contact {
+  border-top: solid #800505;
 }
 
 @media only screen and (max-width: 550px) {
@@ -135,6 +166,13 @@
     -ms-grid-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
         grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
         grid-template-areas: "header" "nav" "main" "footer";
+  }
+  menu {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "section1" "sect2-1" "sect2-2" "sect2-3";
   }
 }
 /*# sourceMappingURL=style.css.map */

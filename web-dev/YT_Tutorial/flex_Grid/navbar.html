@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box Tutorial 1 : Navigation </title>
+    <style>
+        
+/* to help visualize */
+header {
+  --border-width: 5px;
+}
+
+.nav-list {
+  border: var(--border-width) solid hsl(var(--clr-orange) / 0.5);
+}
+
+.nav-list > li {
+  border: var(--border-width) solid hsl(var(--clr-green) / 0.5);
+}
+
+.info {
+  font-size: 1.5rem;
+  margin-top: max(3rem, 10vh);
+}
+
+.dot {
+  padding: 0.25rem;
+  width: 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.orange {
+  background: hsl(var(--clr-orange));
+}
+.green {
+  background: hsl(var(--clr-green));
+}
+/* general styling */
+
+    header {
+    margin-block: 3rem;
+    }
+
+    :root {
+    --clr-orange: 7 100% 63%;
+    --clr-blue: 239 100% 50%;
+    --clr-green: 125 50% 50%;
+    --spacer: 2rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    body {
+    min-height: 100vh;
+    padding: var(--spacer);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    }
+
+    h1 {
+    margin-bottom: 1em;
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    line-height: 1.1;
+    color: hsl(var(--clr-orange));
+    text-shadow: 0.05em 0.05em 0 hsl(0 0% 0% / 0.7);
+    }
+
+        .nav-list {
+           display: flex;
+            margin : 0;
+            padding: 0;
+            list-style: none;
+            gap: 5rem;
+            flex-wrap: nowrap;
+        }
+        .nav-list li {
+            flex-shrink: 1;
+            flex-grow: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Service Information</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
+<!-- https://www.youtube.com/watch?v=u044iM9xsWU -->
