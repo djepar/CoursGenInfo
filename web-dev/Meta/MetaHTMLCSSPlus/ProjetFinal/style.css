@@ -94,10 +94,6 @@
       grid-template-areas: "section1 section1 section1" "sect2-1 sect2-2 sect2-3";
 }
 
-.container main section, .container main article {
-  border: black solid;
-}
-
 .container main section h2, .container main article h2 {
   text-align: center;
 }
