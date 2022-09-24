@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index</title>
+    <style>
+        p {
+            background-color: blueviolet;
+            border : 1px solid black;
+            padding : 10px;
+            margin : 10px;
+        }
+        span {
+            background: yellow;
+            border : 1px solid black;
+        }
+        .positioned {
+            position : absolute;
+            background : blue;
+            top : 30px;
+            right : 30px;
+        }
+        p:nth-of-type(1){
+            position: absolute;
+            background: lime;
+            top: 30px;
+            right: 10px;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Z-index</h1>
+    <p>I am a basic block...</p>
+    <p class="positioned">Now I'm absolutely positioned...</p>
+    <p>We are separated...</p>
+    <p>Inline elements <span>like this one</span> an <span>this one</span>... <span>wrap onto a new line if possible (like this one containing text)</span></p>
+</body>
+</html>
