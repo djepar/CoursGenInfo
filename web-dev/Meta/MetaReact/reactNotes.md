@@ -111,4 +111,41 @@ export default App;
 "JSX syntax looks very similar to HTML. What ares its advandates is that it allows you to write JavaAcript code inside what looks like HTML elements."
 "All component names in React must be capitalized."
 
-Transpiling : "interpreting a programming language and translatint it to a specific target language".
+## Transpiling JSX
+"A browser cannot understand JSX syntax."
+Transpiling : "interpreting a programming language and translating it to a specific target language".
+With the help of Babel, JSX is transform into plain JS code. 
+
+## Customizing the project
+Two approaches to organize by files :
+- "Grouping by features
+- Grouping by file type"
+Better not to nest folders too deep.
+
+className : the "class" attribute is already a reserved keyword in JSX, so to assign a class for the HTML of a React, the syntax is className.
+
+# Component Use and Styling
+
+## Principles of components : Props
+Ex :
+Index.js :
+```
+import React from 'react';
+import reactDOM from 'react-dom/client';
+import App from './App.js'
+ReactDOM.createRoot(
+    document.querySelector('#root')
+).render(<App title="Welcome" />)
+```
+App.js
+```
+import React from 'react';
+export function App(props) {
+    return (
+        <h1>{props.title}</h1>
+    );
+};
+```
+"Props are passed using JSX syntax : it's helpful to think of props as arguments that components can accept and are passed using JSX".
+"Props are like a JavaScript object, in that they can accept many data types including strings, integers, functions, arrays and objects."
+We can never change the props in the component. 
