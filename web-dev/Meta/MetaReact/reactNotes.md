@@ -149,3 +149,118 @@ export function App(props) {
 "Props are passed using JSX syntax : it's helpful to think of props as arguments that components can accept and are passed using JSX".
 "Props are like a JavaScript object, in that they can accept many data types including strings, integers, functions, arrays and objects."
 We can never change the props in the component. 
+
+## Introducing JSX
+Let developper to "write HTML directly inside JavaScript code"
+"You can define how React renders a component using a regular JavaScript function"
+"The HTML code must be wrapped in a top level element, such as a div tag."
+
+## Props and children
+"There is a special prop known as props.children".
+
+## Styling JSX elements
+Ways to add style with React
+
+### With a link 
+Add a link HTML element in the head of the index.html
+
+### Inline style
+Ex :
+```
+function Promo(props){
+    return (
+        <div className="promo-section">
+            <div>
+                <h1 style={{color:"tomato", fontSize:"40px", fontWeight:"bold"}}>
+                    {props.heading}
+                </h1>
+            </div>
+            <div>
+                <h2>{props.promoSubHeading}</h2>
+            </div>
+        </div>
+    );
+}
+export default Promo;
+```
+### Inline with variable
+```
+function Promo(props){
+    const styles = {
+        color: "tomato",
+        fontSize: "40px"
+    }
+    return (
+        <div className="promo-selection">
+            <div>
+                <h1 style={styles}>
+                    {props.heading}
+                </h1>
+            </div>
+            <div>
+                <h2>{props.promoSubHeading}</h2>
+            </div>
+        </div> 
+    );
+}
+```
+
+## JSX syntax and the arrow function
+JSX function declaration
+```
+function Nav(props){
+    return (
+        <ul>
+            <li>{props.first}</li>
+        </ul>
+    )
+}
+```
+JSX Function expression
+```
+const Nav = function(props){
+    return (
+        <ul>
+            <li>{props.first}</li>
+        </ul>
+    )
+}
+```
+Components as Arrow Functions 
+```
+const Nav = (props) => {
+    return (
+        <ul>
+            <li>{props.first}</li>
+        </ul>
+    )
+}
+```
+"The arrow itself can be though of as the replacement for the function keyword.
+The parameters that this arrow funtion accepts are listed before the arrow itself"
+
+Ex of the smallest possible function 
+`const example = function() {}`
+`const example = () => {}`
+
+"Another interesting thing about arrow functinos is the implicit return. However, it only works if it's on the same line of code as the arrow itself. In other words, the implicit return works if the entire component is a single line of code."
+`const Nav = () => <ul><li>Home</li></ul>`
+
+### Using Arrow Functions in Other Situations
+For the forEach() built-in array method. `[10,20,30].forEach(item => item * 10)`
+
+## Embedded JSX expressions
+"Allows JavaScript values to be inserted into HTML of React element"
+
+Ex :
+```
+function formatName(firstName, surname) {
+    return firstName + " "  + surname;
+}
+```
+Embedded Functions Output :
+`const result = <p>{ formatName("Jane", "Wilson")}</p>`
+
+Expressions in HTML Attributes
+`const url = "photo.png";`
+`const result = <img src={url}></img>;`
