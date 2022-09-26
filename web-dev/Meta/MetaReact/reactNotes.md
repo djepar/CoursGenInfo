@@ -269,4 +269,89 @@ Expressions in HTML Attributes
 ## Ternary operators and functions in JSX
 there is a easier way to do if...else conditional with the ternary operator.
 Syntax : `name == Bob ? "Yes, it is Bob" : "I don't know this person";`
- 
+
+### Using ternary expressions in JSX
+```
+function Example() {
+    return (
+        <div className="heading">
+            <h1>{Math.random() >= 0.5 ? "Over 0.5" : "Under 0.5"}</h1>
+            </div>
+    );
+};
+```
+### Using function calls in JSX
+"Another way to work with an expression in JSX is to invoke a function. Function invocation is an expression because every expression returns a value, and function invocation will always return a value, even when that return value is undefined"
+For example with the Math.floor and Math.random
+```
+function Example2() {
+    return (
+        <div className="heading">
+            <h1>Here's a random number from 0 to 10:
+                {Math.floor(Math.random()*10)+1}
+            </h1>
+        </div>
+    );
+};
+```
+
+```
+function Example3() {
+    const getRandomNum = () => Math.floor(Math.random()*10)+1
+    return (
+        <div classname="heading">
+            <h1>Here's a random number from 0 to 10: { getRandomnum()} </h1>
+        </div>
+    );
+};
+```
+
+## Expressions as props
+Ex : 
+```
+const bool = false;
+const str1 = "just";
+
+function Example(props){
+    return (
+        <div>
+            <h2>The value of the toggleBoolean prop is: {props.toggleBoolean.toString()}</h2>
+            <p>The value of the math prop is: <em>{props.math}</em></p>
+            <p>The value of the str prop is: <em>{props.str}</em></p>
+        </div>
+    );
+};
+
+export default functoin App(){
+    return (
+        <div className="App">
+            <Example 
+            toggleBoolean={!bool}
+            math={(10+20)/3}
+            str={str1 + ' another ' + ' string '}
+            />
+        </div>
+    );
+};
+```
+
+## Embedding in attributes
+```
+import avatar from './avatar.png'
+
+function Logo(props){
+    const userPic = <img src={avatar}/>
+    return userPic;
+}
+
+function App() {
+    return (
+        <div>
+            <h1>Hello World!</h1>
+            <Logo />
+        </div>
+    );
+}
+
+export default App;
+```
