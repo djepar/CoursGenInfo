@@ -264,3 +264,9 @@ Embedded Functions Output :
 Expressions in HTML Attributes
 `const url = "photo.png";`
 `const result = <img src={url}></img>;`
+
+
+## Ternary operators and functions in JSX
+there is a easier way to do if...else conditional with the ternary operator.
+Syntax : `name == Bob ? "Yes, it is Bob" : "I don't know this person";`
+ 
