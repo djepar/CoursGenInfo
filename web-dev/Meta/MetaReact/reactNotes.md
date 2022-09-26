@@ -355,3 +355,48 @@ function App() {
 
 export default App;
 ```
+
+# Dynamic events and how to handle them
+## Types of events 
+"Evevents are the process by which JavaScript interacts with HTML and can occur when the user or the browser manipulated a page."
+For examples : clicks, movements or commands. 
+### Event Groups
+"""
+- Clipboard events
+- Composition events
+- Keyboard events
+- Mouse events
+- Selection events
+- Touch events
+- Wheel events
+- Animation events
+"""
+
+## Eventful issues
+using the try...catch syntax to find error easily.
+
+Reminder of JS try..catch :
+```
+try {
+    (5).toUpperCase();
+}
+catch(e){
+    console.log(`Oops, you can't uppercase a number. 
+        Trying to do it resulted in the following`, e);
+}
+```
+
+ReferenceError in React (prop should be props)
+```
+function NumBillboard(props){
+    return(
+        <>
+            <h1>{prop.num}</h1>
+        </>
+    )
+}
+export default NumBillboard;
+```
+
+## Syntax for handlers
+Event (click a button) --> Event Handler(onClick) --> Action (open menu)
