@@ -400,3 +400,106 @@ export default NumBillboard;
 
 ## Syntax for handlers
 Event (click a button) --> Event Handler(onClick) --> Action (open menu)
+
+Event handling in HTML 
+```
+<button id="js-btn"
+onclick="clickhandler()">Click me!</button>
+```
+In React
+1. ""Plug into" HTML element on which to listen to an event"
+```
+const jsBtn = document.getElementById('js-btn')
+jsBtn.addEventListener('click', function(){
+    console.log('clicked')
+})
+```
+2. "Use addEventListener method on the document object"
+```
+<button
+onclick={clickHandler}>
+Click me!</button>
+```
+
+## Event handling and embedded expressions
+### Handling events using inline anonymous ES5 functions
+```
+<button onclick={function(){console.log('first example')}}>
+    An inline anonymous ES5 function event handler
+</button>
+```
+
+### Handling events using inline anonymous ES6 functions (arrow functions)
+```
+<button onClick={() => console.log('second example')}>
+    An inline anonymous ES6 function event handler
+</button>
+```
+
+### Handling events using separate function declarations
+```
+function App(){
+    function thirdExample(){
+        console.log('third example');
+    };
+    return(
+        <div className="thirdExample">
+            <button onClick={thirdExample}>
+                using a separate function declaration
+            </button>
+        </div>
+    );
+};
+export default App;
+```
+
+### Handling events using separate function expressions
+```
+function App(){
+    const fourthExample = () => console.log('fourth example');
+    return(
+        <div className="fourthExample">
+            <button onclick={fourthExample}>
+                using a separate function expression
+            </button>
+        </div>
+    );
+};
+export default App;
+```
+
+## JavaScript bind()
+"The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+
+```
+var foo = {
+    x:3
+}
+var bar = function(){
+    console.log(this.x);
+}
+bar(); //undefined
+var boundFunc = bar.bind(foo);
+boundFunc(); //3
+``` 
+(https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
+
+"There are two ways you can get around this [using bind]" (https://reactjs.org/docs/handling-events.html#gatsby-focus-wrapper)
+
+### Public class fields syntax 
+```
+class LoggingButton extends React.Component {
+    //this syntax ensures `this` is bound within handleClick
+    handleClick = () => {
+        console.log('this is:', this);
+    };
+    render(){
+        return (
+            <button onClick={this.handleClick}>
+                Click me
+            </button>
+        );
+    }
+}
+```
+(https://reactjs.org/docs/handling-events.html#gatsby-focus-wrapper)
