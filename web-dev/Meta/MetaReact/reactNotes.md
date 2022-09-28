@@ -506,3 +506,54 @@ class LoggingButton extends React.Component {
 
 ## Synthetic events
 Normalize behavior for all browser. 
+
+## Passing a function vs calling a fct
+Calling (WRONG in this case)= `return <button onClick={this.handleclick()}>Click me</button>`
+Passing = `<button onClick={this.handleClick}>Click me</button>`
+### How to pass a paremeter to an event handler then
+Like this : `button onClick={() => this.handleClick(id)}/>`
+Or : `<button onClick>={this.handleClick.bind(this, id)}/>`
+
+# Data and Events
+## Parent-child data flow
+
+Using a centralized point of data : 
+- "Allow you to edit multiple items at the same time if they reference the same data, reduces odds of typing errors, and is more efficient when data changes often"
+Ex : 
+Initialy
+```
+//Promo Heading Component
+function PromoHeading(){  // --> Parent component
+    return (
+        <h1>80% off sale!</h1> // --> Child component
+    )
+}
+export default PromoHeading;
+
+```
+Then
+```
+//Promo component
+const data = {
+    heading : "99% off all items!"
+    callToAction: "Everything must go!"
+}
+function Promo(){
+    return(
+        <div>
+        <PromoHeading
+        heading={data.heading}
+        callToActoin={data.callToAction}
+        />
+        </div>
+    )
+}
+
+//PromoHeading component
+function PromoHeading(props){
+    return (
+        <h1>{props.heading}</h1>
+        <h2>{props.callToAction}</h2>
+    )
+}
+```
