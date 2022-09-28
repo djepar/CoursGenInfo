@@ -250,3 +250,5 @@ Above a domain (hierarchiccally) is a forest. A Forest can have one or more doma
 
 ## Managing Active Directory Users and Groups
 For PS command for new AD group : `New-ADGroup`
+
+

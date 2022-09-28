@@ -503,3 +503,6 @@ class LoggingButton extends React.Component {
 }
 ```
 (https://reactjs.org/docs/handling-events.html#gatsby-focus-wrapper)
+
+## Synthetic events
+Normalize behavior for all browser. 
