@@ -251,4 +251,11 @@ Above a domain (hierarchiccally) is a forest. A Forest can have one or more doma
 ## Managing Active Directory Users and Groups
 For PS command for new AD group : `New-ADGroup`
 
-
+## GPO or Group Policiy Object
+GPO is " a set of policies and preferences that can be applied to a gorup of objects in the directory."
+Need to be link to work : " When you link a GPO, all of the computers or users under that domain, site, or OU will have that policy applied."
+"A Group Policy Object can contain computer configuration, user configuration, or both."
+Policies : "Setting that are reapplied every few minutes, and aren't meant to be changed even by the local administrators"
+Group policy preferences : "Settings that, in many cases, are meant to be a template for settings."
+"Many policies and preferences in GPOs are represented as values in the Windows Registry"
+"Windows Registry : A hierarchical database of settings that Windows, and many Windows applications, use for storing configuration data".
