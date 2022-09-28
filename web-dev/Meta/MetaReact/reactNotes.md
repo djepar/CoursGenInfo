@@ -557,3 +557,24 @@ function PromoHeading(props){
     )
 }
 ```
+
+## Children and data
+"State data is a component's internal data, which it can control and mutate. Props data is outside of the component and is immutable"
+
+## Hooks
+useState hook : Manage the state 
+First, import the useState : `import React, {useState} from 'rect';`
+
+Provide any name : `const [showMenu, setShowMenu] = useState(false);`
+Without array destructuring :
+``` 
+var menustate = useState(false);
+var showmenu = menuState[0]; //Access first item in array
+var setShowMenu = menustate[1]; //Access second item in array
+```
+
+"Calling the useState hook does two things : 
+- Creates a state variable with an initial value (showMenu)
+- Creates a function to set that state variable's value (setShowMenu)"
+
+"Hooks can be called only at the top level and only form React functions"
