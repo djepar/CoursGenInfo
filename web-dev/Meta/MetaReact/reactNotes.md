@@ -578,3 +578,51 @@ var setShowMenu = menustate[1]; //Access second item in array
 - Creates a function to set that state variable's value (setShowMenu)"
 
 "Hooks can be called only at the top level and only form React functions"
+
+"In React, state is always referred to the local state of a component."
+
+## What is State
+"Data in a component that determines behavior. "
+
+"A child component will receive the data via properties, passing state that's set in a parent stateful component."
+
+useState hook : " Enables use of components for controlling state"
+
+"In React, State is kept in a state of variables. The main way to change State is to alter these variables."
+
+### Stateless component
+```
+function App(){
+    return <h1>A completely stateless component!</h1> //--> only render the text
+};
+```
+### Stateful component
+```
+function App(){
+    const [ word, setWord ] = React.useState("Hello");
+
+    return (
+        <div>
+            <h1>A state value: {word}</h1> // --> Render a variable
+    )
+}
+```
+
+## Observing state
+
+`const [date, setDate] = React.useState(new Date());`
+Where is the date is where we can __access date state__ and the setDate is where we __update state__.
+
+
+## Managing state
+"Lifting state up is about cutting the state from the child component and moving it to the parent component's code, with the intent of making the state available in sibling components".
+
+## Prop drilling
+"A situation where you are passing data form a parent to a child component, then to a grand child component, and so on, until it reaches a more distant component further down the component tree, where this data is required."
+
+"The more layers there are, the more repetitive and unnecessary this feels."
+
+## React state management
+Context API is easier then Prop drilling. 
+To put in place a Context APi, it's require a Context Provider ("component that store the state") which will be use by Context Consumer ("Component that will use the state")
+
