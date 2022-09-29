@@ -259,3 +259,24 @@ Policies : "Setting that are reapplied every few minutes, and aren't meant to be
 Group policy preferences : "Settings that, in many cases, are meant to be a template for settings."
 "Many policies and preferences in GPOs are represented as values in the Windows Registry"
 "Windows Registry : A hierarchical database of settings that Windows, and many Windows applications, use for storing configuration data".
+
+
+## Group Policy Troubleshooting 
+"One of the most common issue you might encounter is when a user isn't able to __login__ to their computer, or isn't able to __authenticate__ to the Active Directory domain."
+"The SRC records that we're interested in are _ldap._tcp.dc._msdcs.DOMAIN.NAME, where DOMAIN.NAME is the DNS name of our domain".
+PS : `Resolve-DNSName -Type SRC _ldap._tcp.dc._msdcs.DOMAIN`
+
+UTC Time can cause authentification problem. 
+
+
+"A common issue that you might have to troubleshoot is when a GPO-defined policy or preference fails to apply to a computer"
+To force the update of the gpo : gpupdate/force/sync
+
+Replication failure
+
+Check for the $env:LOGONSERVER
+
+## Stateful vs. stateless
+Stateless : "state not needed to work"
+Stateful : "state must be maintained to work"
+
