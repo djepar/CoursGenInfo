@@ -627,3 +627,15 @@ Context API is easier then Prop drilling.
 To put in place a Context APi, it's require a Context Provider ("component that store the state") which will be use by Context Consumer ("Component that will use the state")
 
 For help wiht immutable variable in Rect : https://github.com/immerjs/immer and https://github.com/kolodny/immutability-helper
+
+
+## Pure function
+From : https://beta.reactjs.org/learn/keeping-components-pure
+
+- Same input, same output
+- It's doesn't "change objects or variables that existed before it was called"
+
+### Side Effects
+"Components should only *return* their JASX, and not *change* any objects or variables that existed before rendering"
+
+Event Handler can content side effet, because it's the point to change how the website look.
