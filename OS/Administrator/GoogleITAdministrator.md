@@ -252,7 +252,7 @@ Above a domain (hierarchiccally) is a forest. A Forest can have one or more doma
 For PS command for new AD group : `New-ADGroup`
 
 ## GPO or Group Policiy Object
-GPO is " a set of policies and preferences that can be applied to a gorup of objects in the directory."
+GPO is " a set of policies and preferences that can be applied to a group of objects in the directory."
 Need to be link to work : " When you link a GPO, all of the computers or users under that domain, site, or OU will have that policy applied."
 "A Group Policy Object can contain computer configuration, user configuration, or both."
 Policies : "Setting that are reapplied every few minutes, and aren't meant to be changed even by the local administrators"
@@ -280,3 +280,8 @@ Check for the $env:LOGONSERVER
 Stateless : "state not needed to work"
 Stateful : "state must be maintained to work"
 
+# OpenLDAP
+Lightweight directory access protocol.
+Can work on Linux, MacOS and Windows. 
+To install it : `sudo atp-get install slapd ldap-utils`
+On my version of linux, it's said that the version now is `ldap-utils` without the slapd
