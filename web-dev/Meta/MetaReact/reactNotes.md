@@ -639,3 +639,15 @@ From : https://beta.reactjs.org/learn/keeping-components-pure
 "Components should only *return* their JASX, and not *change* any objects or variables that existed before rendering"
 
 Event Handler can content side effet, because it's the point to change how the website look.
+
+# Linking and Routing
+### Approach to Single Page Applications
+1. Bundling : "when the browser requests the application, return and load all necessary HTML, CSS and JavaScript immediately"
+2. Lazy loading or code splitting : "when the browser requests the application, return only the minimu HTML, CSS and JavaScript needed to load the application, for example, when a user navigates to a specific section of the application."
+
+## Basic Types of navigation
+"In React, the entire app is loaded inside a single div, you're not actually visiting different pages, and different views are rendered when React makes changes to the Virtual Dom, with React updating the real DOM accordingly"
+
+## The navbar
+React Router : "A library that gives you more control over the routing of components."
+To install : ` npm i react-router-dom@6`
