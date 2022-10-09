@@ -650,4 +650,4 @@ Event Handler can content side effet, because it's the point to change how the w
 
 ## The navbar
 React Router : "A library that gives you more control over the routing of components."
-To install : ` npm i react-router-dom@6`
+To install : ` npm i react-router-dom`
