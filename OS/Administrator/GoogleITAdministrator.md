@@ -285,3 +285,24 @@ Lightweight directory access protocol.
 Can work on Linux, MacOS and Windows. 
 To install it : `sudo atp-get install slapd ldap-utils`
 On my version of linux, it's said that the version now is `ldap-utils` without the slapd
+
+
+# Planning for Data Recovery
+## Data Recovery
+"The process of trying to restore data after an unexpected event that results in data loss or corruption.
+
+"When an unexpected event occurs, your main objective is to resume normal operations as soon as possible, while minimizing the disruption to business functions."
+
+"The best way to be prepared for a data-loss event is to have a well-thought-out disaster plan and procedure in place."
+
+## Types of Backup
+### Data backup solution
+- Full backup --> all include
+- Differential backup --> only files that change are backup
+- Regular incremental backups --> "when only the data that's changed in file since the last incremental backup is backed up"
+- File compression for backup
+  
+### Data storage solution
+**RAID** : Redundant Array of Independent Disks
+"A method of taking multiple physical disks and combining them into one large virtual disk."
+NOT A REPLACEMENT FOR BACKUP
