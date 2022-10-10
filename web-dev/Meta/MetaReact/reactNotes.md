@@ -651,3 +651,22 @@ Event Handler can content side effet, because it's the point to change how the w
 ## The navbar
 React Router : "A library that gives you more control over the routing of components."
 To install : ` npm i react-router-dom`
+
+
+## Conditional components
+Components that are visible only if the condition is true. Good for components visible only once log in.
+
+
+## Conditional chains 
+From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+```
+function example() {
+  return condition1 ? value1
+        : condition2 ? value2
+        : condition3 ? value3
+        : value4;
+}
+
+
+
+```
