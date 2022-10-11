@@ -666,7 +666,32 @@ function example() {
         : condition3 ? value3
         : value4;
 }
-
-
-
 ```
+# Using Assets in React
+"In React, assets can be things like images, style sheets, font, media files, or basically any file that's needed by your app at runtime."
+
+"You'll want to keep the sound file and image file in the Assets"
+"The others pertain to external functionality, but are not stricly necessary for the app to run."
+
+Asset can be imported
+`import cat from './assets/images/cat.jpg'`
+Or use with the path reference
+`<img src={require('./assets/images/cat.jpg')}>`
+
+## Bundling assets
+"The app's file will likely be bundled when working with a React app. Bundling is a process that takes all the imported files in an app and joins them into a single file, referred to as a bundle"
+Tool to create a bundle for react : `create-react-app`
+
+### Webpack (another tool)
+- Transpile code so older browser can understand it.
+- Optization of the code
+- Process SCSS to CSS
+- Buld source maps
+- "produce various kinds of files based on rules and templates"
+
+Two modes : production and development.
+
+## Audio and video
+- Video Element :  `<video src={myVid} width="{375} height={250} controls />`
+- Embedded third-party videos
+- Third-party NPM package, for example the react-player
