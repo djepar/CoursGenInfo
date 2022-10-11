@@ -287,8 +287,8 @@ To install it : `sudo atp-get install slapd ldap-utils`
 On my version of linux, it's said that the version now is `ldap-utils` without the slapd
 
 
-# Planning for Data Recovery
-## Data Recovery
+# Data Recovery
+
 "The process of trying to restore data after an unexpected event that results in data loss or corruption.
 
 "When an unexpected event occurs, your main objective is to resume normal operations as soon as possible, while minimizing the disruption to business functions."
@@ -306,3 +306,28 @@ On my version of linux, it's said that the version now is `ldap-utils` without t
 **RAID** : Redundant Array of Independent Disks
 "A method of taking multiple physical disks and combining them into one large virtual disk."
 NOT A REPLACEMENT FOR BACKUP
+
+## Disaster Recovery Plans
+"A collection of documented procedures and plans on how to react and handle an emergency or disaster scenario, from the operational perspective"
+
+- Preventive measures : "Any procedures or systems in place that will proactively minimize the impact of a disaster"
+- Detection measures : "Meant to alert you and your team that a disaster has occurred that can impact operations"
+- Corrective or recovery measures : "Those enacted after a disaster has occurred" 
+
+### Designing a Disaster Recovery Plan
+-Perform risk assessment : "Allows you to prioritize certain aspects of the organizations that are more at risk if there's an unforeseen event"
+- Determine backup and recovery system 
+- Determine Dectection & Alert Measure
+- Determine detection & alert measures & Test Systems
+- Determine recovery measures
+
+## Post-mortem
+"We create a post-mortem after an incident, an outage, or some event when something goes wrong, or at the end of a project to analyze how it went."
+
+### Writing a post-mortem
+- Brief summary
+- Detailed Timeline
+- Root Cause
+- Resolution and recovery Efforts
+- Actions to Avoid Same Scenario
+- Optional : what went well (useful to justify the backup cost and effort)
