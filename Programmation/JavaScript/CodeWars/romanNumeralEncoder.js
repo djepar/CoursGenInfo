@@ -21,10 +21,11 @@ let symbols = [
 
 
 //Pass the array to see if there is less than 3 consecutive symbols
-function lessThree(arrayNum){
-  console.log(arrayNum)
+function MoreThree(arrayNum, target){
   if (arrayNum[arrayNum.length -1] === arrayNum[arrayNum.length  -2] &  arrayNum[arrayNum.length  -2] === arrayNum[arrayNum.length  -3]){
-    return true
+    if(arrayNum[arrayNum.length -1] === target){
+      return true
+    }
   }
   else {
     return false
@@ -32,21 +33,21 @@ function lessThree(arrayNum){
 }
 const test1 = ["M", "M", "M"]
 const test2 = ["C"]
-console.log(lessThree(test1));
-console.log(lessThree(test2));
+// console.log(MoreThree(test1));
+// console.log(MoreThree(test2));
 function nextSymbol(symbols, num, symArrays){
   for (el of symbols){
+    console.log(el)
     if (el.value <= num){
-      return el.sym
-    }
-    else {
-      return "Erreur"
+      if (!(MoreThree(symArrays, el.sym))){
+        return el.sym
+      }
     }
   }
 }
 
-console.log(nextSymbol(symbols, 350, ["M", "M", "M"]))
-console.log(nextSymbol(symbols, 100))
+// console.log(nextSymbol(symbols, 1050, ["M", "M", "M"]))
+console.log(nextSymbol(symbols, 1663, []))
 function solution(number){
     // convert the number to a roman numeral
   }
