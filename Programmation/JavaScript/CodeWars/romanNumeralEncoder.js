@@ -1,23 +1,18 @@
-//Create a function taking a positive integer as its parameter and returning a string containing the Roman Numeral representation of that integer.
+//Create a function taking a positive integer as its parameter and
+// returning a string containing the Roman Numeral representation of that integer.
 
-let symbols = [
-  { "sym" : "M",
-    "value": 1000 },
-    { "sym" : "D",
-    "value": 500 },
-    { "sym" : "C",
-    "value": 100 },
-    { "sym" : "L",
-    "value": 50 },
-    { "sym" : "X",
-    "value": 10 },
-    { "sym" : "V",
-    "value": 5 },
-    { "sym" : "I",
-    "value": 1 }
 
-]
-//console.log(symbols)
+
+let dicSym = {
+  "M": 1000,
+  "D": 500,
+  "C": 100,
+  "L": 50,
+  "X": 10,
+  "V": 5,
+  "I": 1,
+}
+
 
 
 //Pass the array to see if there is less than 3 consecutive symbols
@@ -35,21 +30,27 @@ const test1 = ["M", "M", "M"]
 const test2 = ["C"]
 // console.log(MoreThree(test1));
 // console.log(MoreThree(test2));
-function nextSymbol(symbols, num, symArrays){
-  for (el of symbols){
+function nextSymbol(num, symArrays){
+  for (el in dicSym){
     console.log(el)
-    if (el.value <= num){
-      if (!(MoreThree(symArrays, el.sym))){
-        return el.sym
+    if (dicSym[el] <= num){
+      if (!(MoreThree(symArrays, el))){
+        return el
       }
     }
   }
 }
 
 // console.log(nextSymbol(symbols, 1050, ["M", "M", "M"]))
-console.log(nextSymbol(symbols, 1663, []))
+console.log(nextSymbol(1663, []))
 function solution(number){
-    // convert the number to a roman numeral
-  }
+  let currentValue = number;
+  let symArrays = [];
+  // while (currentValue !== 0){
+  //   let tempSym = nextSymbol(currentValue, symArrays);
+  //   console.log(tempSym)
+  //   currentValue -= symbols[]
+  // }
+}
 
 
