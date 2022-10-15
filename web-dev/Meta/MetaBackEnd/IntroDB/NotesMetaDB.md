@@ -24,3 +24,10 @@ Big data is
 - Types of data "combination of structured, semi-structured and unstructured data"
 - Data power: "more powerful than traditional data when solving problems"
 - Data insights : "Provides unique insights to help improve decision making"
+
+## Database Evolution
+"""
+- (1970s-1990s) - Flat files, hierarchical and network
+- (1980s-present) - Relational
+- (1990s-present) - Object-oriented, object-relational, web-enabled
+"""
