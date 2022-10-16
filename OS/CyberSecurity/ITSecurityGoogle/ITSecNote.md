@@ -54,3 +54,16 @@ Social engineering : "an attack method that relies heavily on interactions with 
 - Spear phishing
 - Spoofing : "a source masquerading around as something else"
 - tailgating : "Gaining access into a restricted area or building by following a real employee in"
+
+# Cryptography
+Encryption : "The act of taking a message, called **plaintext**, and applying an operation to it, called a **cipher**, so that you receive a garbled, unreadable message as the output, called ciphertext"
+
+Decryption : ciphertext --> plaintext
+
+Encryption algorith : "The underlying logic of process that's used to convert the plaintext into ciphertext"
+
+Cryptosystem : "A collection of algorithms for key generation and encryption and decryption operations that comprise a cryptographic service should remain secure - even if everything about the system is known except the key"
+Also knowns as Shannon's maxim : "the enemy knows the system"  which mean "The system should remain secure even if your adversary knows exactly what kind of encryption systems you're employing, as long as your keys remain secure"
+Frequency analysis : "The practice of studying the frequency with which letters appear in a ciphertext"
+Steganography : "The practice of hiding information form ovservers, but not encoding it"
+## Symmetric Encryption
