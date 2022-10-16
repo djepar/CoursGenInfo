@@ -37,3 +37,20 @@ Malware : "A type of malicious software that can be used to obtain your sensitiv
   - Ping flood (a lot of ping)
   - SYN flood | Half-open attackss
   - Distributed denial-of-service attack(DDoS) : A DoS attack using multiple systems
+
+# Other Attacks
+## Client-side Attacks
+- Injection attacks
+  - To prevent injection attacks : "validating input and sanitizing data"
+- Cross-site scription (XSS) attacks : "A type of injection attack where the attacker can insert malicious code and target the user of the service"
+
+## Password Attacks
+Password attacks : "utilize software like password-crackers that try and guess your password"
+- Brute-force attack
+
+## Deceptive Attacks
+Social engineering : "an attack method that relies heavily on interactions with humans instead of computers"
+- Phising attack
+- Spear phishing
+- Spoofing : "a source masquerading around as something else"
+- tailgating : "Gaining access into a restricted area or building by following a real employee in"
