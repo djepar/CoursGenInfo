@@ -67,3 +67,12 @@ Also knowns as Shannon's maxim : "the enemy knows the system"  which mean "The s
 Frequency analysis : "The practice of studying the frequency with which letters appear in a ciphertext"
 Steganography : "The practice of hiding information form ovservers, but not encoding it"
 ## Symmetric Encryption
+Same key to encrypting and decrypting.
+- Substitution cipher : "An encryption mechanism that replaces parts of your plaintext with ciphertext"
+- Stream cipher : "takes a stream of input and encrypts the stream one character or one digit at a time, outputting one encrypted character or digit at a time"
+- Block ciphers : "Thecipher takes data in, places it into a bucket or block of data that's a fixed size, then encodes that entire block as one unit"
+
+## Symmetric Encryption Algorithms
+Data encryption Standard (DES) was adopted as the Federal Information Processing standard (FIPS).
+Then : Advanced Encryption Standard was replaced. "Because of the large key size, brute-force attacks on AES are only theoreticla right now, because the computing power required (or time required using modern technology) exceeds anything feasible today"
+"An important thing to keep in mind when considering various encryption algorithms is **speed** and **ease of implementation**."
