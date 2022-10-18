@@ -76,3 +76,37 @@ Same key to encrypting and decrypting.
 Data encryption Standard (DES) was adopted as the Federal Information Processing standard (FIPS).
 Then : Advanced Encryption Standard was replaced. "Because of the large key size, brute-force attacks on AES are only theoreticla right now, because the computing power required (or time required using modern technology) exceeds anything feasible today"
 "An important thing to keep in mind when considering various encryption algorithms is **speed** and **ease of implementation**."
+
+# Public Key or Asymmetric Encryption
+Grant us 
+- Confidentiality
+  - Through encryption-decryption
+- Authenticity
+  - By digital signature 
+- Non-repudiation
+  - Cannot "dispute the origin of the message"
+
+Message Authentication Codes (MAC) : "A bit of information that allows authentication of a received message, ensuring that the message came from the alleged sender and not a third party"
+HMAC : "Keyed-hash message authentication code"
+CMACs : "Cipher-based Message Authentication Codes"
+CBC-MAC : "Cipher block chaining message authentication codes"
+
+## Asymmetric Encryption Algorithms
+Digital Signature Algorithm (DSA)
+- RSA
+- DH
+
+Elliptic curve cryptographiy (ECC) : 
+"A public-key encryption system that uses the algebraic structure of elliptic curves over finite fields to generate secure keys"
+"Both Diffie-Hellmen and DSA have elliptic curve variants, referred to as ECDH and ECDSA, respectively"
+
+"US NEST recommends using EC encryption, and the NSA allows its use to protect top secret data with 384 bit EC keys. But the NSA has expressed concern about EC encryption being potentially vulnerable to quantum computing attacks, as quantum computing technology continues to evolve and mature."
+
+# Hashing
+Hashing or has function : "A type of function or operation that takes in an arbitrary data input and maps it to an output of fixed size, called a hash or digest"
+"Hashing can also be used to identify duplicate data sets in databases or archives to speed up searching of tables or to remove duplicate data to save space."
+"Cryptographic hashing is distinctly different from encryption because cryptographic hash functions should be one directional."
+"The ideal cryptographic hash function should be deterministic, meaning that the same input value should always return the same hash value."
+
+## Hashing Algorithms
+"SHA1 is part of the Secure Hash Algorithm suite of functions, designed by the NSA, published in 1995."
