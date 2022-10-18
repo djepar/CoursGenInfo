@@ -31,3 +31,126 @@ Big data is
 - (1980s-present) - Relational
 - (1990s-present) - Object-oriented, object-relational, web-enabled
 """
+
+## Additional reading
+### The ACID properties of the relational databases:
+"""
+- Atomicity : All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are. 
+- Consistency : Data remains in a consistent state from state to finish, reinforcing data integrity
+- Isolation : The intermediate state of a transaction is not visible to other transactions, and as a result, transactions that run concurrently appear to be serialized. 
+- Durbility : after the successful completion of a transaction, changes to data persist and are not undone, even in the event of a system failure.
+
+"""
+from : https://www.ibm.com/cloud/learn/relational-databases
+
+Difference between relational database vs relational database management system 
+The relational database is the content while the management system is the software that control it like MySQL (https://www.ibm.com/cloud/learn/relational-databases)
+
+# Intro to SQL
+SQL : "Standard language that can interact with structured data on databases."
+
+"A database interprets and make sense of SQL instructions with the use of a Database Management System (DBMS)
+
+## SQL usage
+CRUD operations :
+- Create
+- Read
+- Update
+- Delete
+
+SQL subsets :
+- Data Definition Language (DDL)
+  - DDL Create commande : "Used to create storage objects in a database, like a tables"
+  - DDL Drop command : "Remove an existing object form a database".
+- Data Manipulation Language (DML)
+  - DML Insert command : "Insert records of data into a database table"
+  - DML Delete command : "Delete one or more rows of data from a table"
+- Data Query Language (DQL)
+  - DLQ Select command : "retrieve data from one or multiple tables letting you specify the data fields that you want based on preferred filter criteria"
+- Data Control Language (DCL)
+  - DLC commands : "Grant and revoke DCL commands are used to give users access privileges to data, and to revert access privileges already given to users".
+
+## Advantages of SQL
+- User-friendly : "SQL requires very little coding skill to use".
+- Standard language : "compatible with all available relational databases".
+- Portable language : "SQL can be used on any hardware running any OS."
+- "covers all areas of database management administration".
+- Data processing : "SQL processes large amounts of data quickly and efficiently".
+
+## SQL syntax introduction
+### Create a database and tables using the DDL subset of SQL
+
+__CREATE__ Command 
+Syntax : 
+- `CREATE DATABASE College;`
+- `CREATE TABLE  Student;`
+Example
+`CREATE DATABASE College;`
+`CREATE TABLE  Student;`
+__ALTER__ Command :
+"To change the structure of a table sin the database such as changing the name of a table, adding a primary key to a table, or adding or deleting a column in a table.
+1. Syntax to add a column into a table: `ALTER TABLE table_name ADD (column_name datatype(size))`
+2. Syntax to add a primary key to a table: `ALTER TABLE table_name ADD primary key (column_name);`
+
+__DROP__ Command :
+To delete a datable or a table
+`DROP TABLE table_name;`
+
+__TRUNCATE__ Command
+"Remove all records from a table, which will empty the table but not delete the table itself"
+`TRUNCATE TABLE table_names;`
+
+__COMMENT__ Command
+`--This is a comment`
+
+### Utilize the DML subset of SQL to populate and modify data in a database
+__SELECT__ Command:
+"To retrieve data from tables in the database."
+`SELECT * FROM table_name;`
+
+
+
+
+__INSERT__ command :
+```
+INSERT INTO table_name (column_one, column_two, column_three...) VALUES (value1, value2, value3, ...);
+```
+Example :
+```
+INSERT INTO Student (column_ID, first_name, last_name...)
+VALUES(value1, value2, value3, ...)
+```
+
+__UPDATE__ Command
+"Update or modify data contained within a table in the database."
+Syntax : `UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;`
+Example : 
+```
+UPDATE Student
+SET data_of_birth = "2000-10-12"
+WHERE ID = 02;
+```
+
+__DELETE__ Command
+Delete data from a table in the database
+Syntax : `DELETE FROM table_name WHERE condition;`
+```
+DELETE FROM Student 
+WHERE ID = 03;
+```
+
+### Read and query data within databases using the DQL subset of SQL
+Query data within a table:
+```
+SELECT first_name, last_name,
+FROM Student
+WHERE ID = "01"
+```
+
+### DLC Commands
+- GRANT
+- REVOKE
+
+### TLC Commands
+- COMMIT : "Command to save all the work you have already done in the database".
+- ROLLBACK : "Command to restore a database to the last committed state"
