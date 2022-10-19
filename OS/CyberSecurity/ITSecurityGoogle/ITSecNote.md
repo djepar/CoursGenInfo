@@ -110,3 +110,43 @@ Hashing or has function : "A type of function or operation that takes in an arbi
 
 ## Hashing Algorithms
 "SHA1 is part of the Secure Hash Algorithm suite of functions, designed by the NSA, published in 1995."
+
+"A successful brute force attack, against even the most secure system imaginable, is a function of attacker time and resources"
+
+Rainbow tables : table of list of password hash
+Password salt : "Additional randomized data that's added into the hashing function to generate a hash that's unique to the password and salt combination"
+
+# Cryptography Application
+## Public Key Infrastructure (PKI)
+A digital certificate contains
+"""
+- Info on public key
+- Registered owner
+- digital signature
+"""
+"The entity that's responsible for storing, issuing and signing certificates is referred to as CA or __Certificate Authority__"
+Registration Authority : "responsible for verifying the identities of any entities requesting certificates to be signed and stored with the CA"
+"A central repository is needed to securely store and index keys, and a certificate management system of some sort makes managing access to stored certificates and issuance of certificates easier."
+Most common certificates : "SSL or TLS server certificate" 
+
+SSL or TLS client certificate : "As the name implies, these are certificates that are __bound to clients__ and are used to __authenticate__ the client to the server, allowing access control to an SSL/TLS service."
+
+Code signing certificate: "This allow users of these signed applications to verify the signatures and ensure that the application was not tampered with."
+
+Based on chain-of-trust with the root certificate at the top.
+"A certificate that has no authority as a CA is referred to an __end-entity__ or __leaf certificate__"
+
+"The X.509 standard is what defines the format of digital certificates"
+"""
+The filed defined in X.509 certificate are:
+- Version : What version of the X.509 standard the certificate adheres to
+- Serial number : A unique identifier for the certificate assigned by the CA which allows the CA to manage and identify individual certificates
+- Certificate Signature Algorithm : This field indicates what public key algorithm is used for the public key and what hashing algorithm is used to sign the certificate
+- Issuer Name : This field contains information about the authority that signed the certificate
+- This contains two subfields - "Not before" and "Not After" -which define the dates when the certificate is valid for"
+- Subject : This field contains identifying information about the entity the certificate was issued to
+- Subject Public Key Info : These two subfields define the algorithm of the public key, along with the public key itself.
+- Certificate Signature Algorithm : Same as the Subject Public Key Info field : these two fields must match
+- Certificate Signature Value : The digital signature data itself
+"""
+An alternative to the chain of trust is the web of trust
