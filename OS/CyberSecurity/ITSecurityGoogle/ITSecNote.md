@@ -143,10 +143,33 @@ The filed defined in X.509 certificate are:
 - Serial number : A unique identifier for the certificate assigned by the CA which allows the CA to manage and identify individual certificates
 - Certificate Signature Algorithm : This field indicates what public key algorithm is used for the public key and what hashing algorithm is used to sign the certificate
 - Issuer Name : This field contains information about the authority that signed the certificate
-- This contains two subfields - "Not before" and "Not After" -which define the dates when the certificate is valid for"
+- Validity : This contains two subfields - "Not before" and "Not After" -which define the dates when the certificate is valid for"
 - Subject : This field contains identifying information about the entity the certificate was issued to
 - Subject Public Key Info : These two subfields define the algorithm of the public key, along with the public key itself.
 - Certificate Signature Algorithm : Same as the Subject Public Key Info field : these two fields must match
-- Certificate Signature Value : The digital signature data itself
+- Certificate Signature Value : The digital sign.02
+- ature data itself
 """
 An alternative to the chain of trust is the web of trust
+
+## Cryptography in Action
+HTTPS: "The secure version of HTTP, the HyperText Transport Protocol" could also be call http over TLS or SSL.
+TLS and SSL grant us :
+"""
+1. A __secure__ communication line, which means data being transmitted is protected from potential eavesdroppers
+2. The ability to __authenticate__ both parties communicating, though typically only the server is authenticated by the client.
+3. The __integrity__ of communications, meaning there are checks to ensure that messages aren't lost or altered in transit.
+"""
+Look for the diagram for the TLS handshake
+"The session key is the shared symmetric encryption key used in TLS sessions to encrypt data being sent back and forth."
+Secure Shell : "A secure network protocol that uses encrpytion to allow access to a network service over unsecured networks."
+Pretty-Good-Privacy (PGP) : "An encryption application that allows authentication of data, along with privacy from third parties, relying upon asymmetric encryption to achieve this."
+
+## Securing Network Traffic
+Virtual Private Network (VPN): "A mechanism that allows you to remotely connect a host or network to an internal, private network, passing the data over a public channel, like the internet."
+IPSec: 
+- Transport mode : "When transport mode is used, only the payload of the IP packet is encrypted, leaving the IP headers untouched"
+- Tunnel mode : "In tunnel mode, the netire IP packet, heder payload and all, is encrypted and encapsulated inside a new IP packet with new headers".
+Layer 2 tunneling Protocol (L2TP) in conjunction with IPSec: "L2TP doesn't provide encryption itself. It's a simple tunneling protocol that allows encapsulation of different protocols or traffic over a network that may not support the type of traffic being sent. L2TP can also jus tsegregate and manage the traffic"
+
+"The __tunnel__ is provided by L2TP which permits the passaing of unmodified packets from one network to another. The __secure channel__, on other hand, is provided by IPsec, which provides confidentiality, integrity and authentication of data being passed."
