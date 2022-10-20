@@ -38,7 +38,7 @@ Big data is
 - Atomicity : All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are. 
 - Consistency : Data remains in a consistent state from state to finish, reinforcing data integrity
 - Isolation : The intermediate state of a transaction is not visible to other transactions, and as a result, transactions that run concurrently appear to be serialized. 
-- Durbility : after the successful completion of a transaction, changes to data persist and are not undone, even in the event of a system failure.
+- Durablity : after the successful completion of a transaction, changes to data persist and are not undone, even in the event of a system failure.
 
 """
 from : https://www.ibm.com/cloud/learn/relational-databases
@@ -154,3 +154,47 @@ WHERE ID = "01"
 ### TLC Commands
 - COMMIT : "Command to save all the work you have already done in the database".
 - ROLLBACK : "Command to restore a database to the last committed state"
+
+# Basic database structure
+## What are tables in databases?
+### What are a database table at a conceptual level
+"A table is made up of rows and columns which hold data"
+"A table is stored in a database [which can] holds multiple tables."
+"A table is also known as an entity"
+ 
+
+### Explain how data is structured in a database table
+Inside a table there is columns (also called fields)
+- Data Type
+  - Numeric : INT, TINYINT, BIGINT, FLOAT, REAL
+  - Char and string : CHAR, VARCHAR
+  - Date and Time : DATE, TIME, DATETIME
+  - Binary: BINARY, VARBINARY
+  - Other
+    - "Character Large Object(CLOB) : for storing a large block of text in some form of text encoding.
+    - Binary Large Object (BLOB) for storing a collection of binary data such as images.
+- SQL interaction
+
+## Table overview
+
+Primary key : "In a table, [the] field or column that is knows as a key which can uniquely identify a particular tuple (row) in a relation (table)."
+Can also be composite (a set of two columns make a key)
+
+Foreign key : "Takes are linked with one another through a key column (the primary key) of one table that's also present in the related tables as foreigh key"
+
+Integrity constraints 
+- Key constraints : "The key constraint specifieds that there should be a column, or columns, in a table that can be used to fetch data for any row" (the primary key, which should never have the value NULL)
+- Domain constraints : "Domain constraints refer to the rules defined for the values that can be stored for a certain column."
+- Referential integrity constraints : "When a table is related to another table via a foreign key column, then the referenced column value must exist in the other table."
+
+## Types of keys in a database table
+
+Key attribute : "Used to uniquely identify an individual record of data"
+
+Candidate key attribute : "Any attribute that contains a unique value in each row of the table"
+
+Composite key attribute : "A key composed of two or more attributes to form a unique value in each new row."
+
+Alternate key : "A candidate key not selected as the primary key"
+
+Foreign key : "An attribute that references a unique key in another table"
