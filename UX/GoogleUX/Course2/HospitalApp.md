@@ -25,9 +25,3 @@ All the questions can be either understood as : the app already exist and we wan
 
 # Personas
 
-## Personas : Charlie Rolf
- 1. Photo
-   2. Info : age, education, hometown, family, occupacion
-   3. Brief story or scenario
-   4. Goals and frustration
-   5. Quote capturing the attitude or personality
