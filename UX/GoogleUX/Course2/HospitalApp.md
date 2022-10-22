@@ -5,10 +5,10 @@ Sharpen : Design a service summary app for a hospital.
 
 ## Defining target audience
 - People who need to go to the hospital
-  - A lot
-  - A little
-  - Periodically 
-- Location : 100 km of the hospital (or less if in a highly-populated area)
+  - A lot but only for a certain period of their life (so mostly really sick people (like cancer patient, or something like that)
+  - A little (people who go to general checkup and little thing, or just one operation)
+  - Periodically (chronic sickeness)
+- Location : 100 km of the hospital (or less if in a highly-populated area). London, Ontario.
 - Age : with respect to the demographic of the hospital
 - Career : don't really care, it's not important in that scenario, diverse, but if more people are unemployed, it's better to have more of those because they may be strugguling more with the and computer.
 
