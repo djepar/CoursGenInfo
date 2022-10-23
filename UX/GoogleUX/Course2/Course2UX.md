@@ -60,3 +60,47 @@ Create through research.
    3. Brief story or scenario
    4. Goals and frustration
    5. Quote capturing the attitude or personality
+
+# Craft user stores 
+User story : "A fictoinal one-sentence story told from the persona's point of view to inspire and inform design decisions."
+Structure : "As a [type of user], I want to [action], so that [benefit]"
+
+# Create a user journey map
+User journey : "The series of experiences a user has as they achieve a specific goal".
+
+Journey map : a graphic representation of the user journey
+
+Benefits of user journey mapping:
+- Helps UX designers create obstacle-free paths for users.
+- Reduces impact of designer bias.
+- Highlights the pain points.
+- Identifies improvement opportunities
+  
+# Accessibility 
+Curb cut effect : "A phenomenon that describes how products and policies designed for people with disabilities often end up helping everyone."
+
+# Define problem and hypothesis statements
+## Create problem statements
+Problem statement : "A clear description of the user's needs that should be addressed"
+- Human-centered
+- Broad enough for creative freedom
+- Narrow enough to be solved by a design
+
+Structure : "[username] is a [user characteristics] who needs [user needs] because [insight]"
+Example : "Aman is an athlete who needs to sign up for workout classes because the class he wants to participate in fills up fast"
+
+Problem statement let us :
+- Establish goals
+- Understand constraints
+- Define deliverables
+- Create benchmarks for success
+
+The 5 Ws and H help to formulate the problem statement: who, what, when, where, why, and how (from https://www.toptal.com/designers/product-design/design-problem-statement)
+
+The Four Ws : Question to Answer :
+- Who is afected?
+- What is the problem?
+- Where does it happen?
+- Why does it matter?
+(from https://www.toptal.com/designers/product-design/design-problem-statement)
+
