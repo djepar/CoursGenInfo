@@ -40,3 +40,23 @@ Best practices related to interview questions:
 What the users : says, thinks, does and feels
 
 Aggregated empathy maps : represent a visualization of everything designers know about an entire user segment or group of similar users.
+
+# Identify user pain points
+Pain Points : "Any UX issues that frustrate the user and block the user from getting what they need"
+__Types of Pain Points__ :
+- Financial (paywall)
+- Product (quality issue)
+- Process (a -/-> b)
+- Support
+
+# Create personas
+Personas : "Fictional users whose goals and characteristics represent the needs of a larger group of users"
+Create through research. 
+1. Which user group the persona represents
+    - User group : "A set of people who have similar interests, goals, or concerns." 
+2. Build a persona
+   1. Photo
+   2. Info : age, education, hometown, family, occupacion
+   3. Brief story or scenario
+   4. Goals and frustration
+   5. Quote capturing the attitude or personality

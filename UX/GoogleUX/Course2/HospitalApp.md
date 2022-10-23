@@ -1,7 +1,7 @@
 Sharpen : Design a service summary app for a hospital. 
 # Define your research goals and questions
 ## Goals  
-- I want to know how to make life easier for people to access 
+- I want to know how to make life easier for people to access the hospital app
 
 ## Defining target audience
 - People who need to go to the hospital
@@ -22,3 +22,6 @@ All the questions can be either understood as : the app already exist and we wan
   - Is there things from other app concept you would use in this one?
   - Can you tell me a moment where you use this app in a significant moment of your life (good or bad, for a birth or cancer) and how it's affect the use of the app.
 - How often do you go to the hospital.
+
+# Personas
+
