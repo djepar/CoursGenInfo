@@ -104,3 +104,9 @@ The Four Ws : Question to Answer :
 - Why does it matter?
 (from https://www.toptal.com/designers/product-design/design-problem-statement)
 
+## Define hypothesis statements
+Hypothesis statement : "Our best educated guess on what we thiknk the solution to a design problem migh be"
+
+Structure : "If [action] then [outcome]"
+
+Example : "If Amal download the gyms app, then he can reserve his favorite class in advance"
