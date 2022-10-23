@@ -215,3 +215,10 @@ Numeric data types : "The datatypes that let columns store data as numbers withi
 - text < 16.7 millions
 - medium > 16.7 millions < 4gig of data
 - longtext < 4gig
+
+## Default values
+Database constraints : "Limit the type of data that cna be stored in a table"
+- NOT NULL : "The NOT NULL SQL contraints is used to ensure the data fields are always completed and never left blank."
+  - NOT NULL SQL statement : `CREATE TABLE Customer(customer_id int NOT NULL, customer_name varchar(255) NOT NULL);`
+- Default : "sets a default value for a column of no value is specified"
+  - Default statement : `CREATE TABLE Customer(customer_name varchar(255) default "Bonjour");`
