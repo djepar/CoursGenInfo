@@ -198,3 +198,20 @@ Composite key attribute : "A key composed of two or more attributes to form a un
 Alternate key : "A candidate key not selected as the primary key"
 
 Foreign key : "An attribute that references a unique key in another table"
+
+
+# SQL data types 
+Data types : "Datatypes tell a database management system how to interpret the value of a column"
+
+## Numeric data types
+Numeric data types : "The datatypes that let columns store data as numbers within the database".
+- TINYINT 0-255 (+ or -)
+- INT 4BILLIONS (+ or -)
+
+## String data types
+- char : "the given length of characters is predetermined" ex : var(50)
+- varchar : "the given length of characters is variable" varchar(50)
+- TinyText : < 255 char
+- text < 16.7 millions
+- medium > 16.7 millions < 4gig of data
+- longtext < 4gig
