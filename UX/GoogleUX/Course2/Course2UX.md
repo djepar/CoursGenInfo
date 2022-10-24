@@ -109,4 +109,60 @@ Hypothesis statement : "Our best educated guess on what we thiknk the solution t
 
 Structure : "If [action] then [outcome]"
 
-Example : "If Amal download the gyms app, then he can reserve his favorite class in advance"
+Example : "__If__ Amal download the gyms app, __then__ he can reserve his favorite class in advance"
+
+OR
+
+"We believe that [action] for [user] would [outcome]"
+
+Example "__We believe that__ a simplified mode of the dog walker app __for__ Arnold __will__ allow them to hire dog walker efficently".
+
+# Create a value proposition
+## Determine a value proposition
+Value proposition : "the reason why a consumer should use a product or service"
+"""
+- What does your product do?
+- Why should the user care?
+"""
+Steps : 
+"""
+1. Describe your product's features and benefits
+2. Explain the value of the product (the features organise by value)
+3. Connect these features and benefits with the needs of your users
+4. Review your official value proposition list
+"""
+
+
+# Explore the influence of psychology in UX design
+## Understand human factors 
+The human factor "refers to the range of variables humans bring to their product interactions. Common human factors that inform design include but are not limited to limited concentration, impatience, fears, prejudices, and limited memory"
+
+## Psychology principles that influence design
+Von Restorff effect (Isolation effect): "When multiple, similar objects are present, the one that differs from the rest is most likely to be remembered"
+
+Call-to-action (CTA) : "A visual prompt that tells the user to take action"
+The CTA should stand out.
+
+Serial position effect : "When people are given a list of items, they are more likely to remember the first few and the last few, while the items in the middle tend to blur"
+
+Hick's Law : "The more options a user has the longer it takes for them to make a decision"
+
+# Understand design ideation
+Ideation : "The rocess of generating a broad set of ideas on a given topic, with no attempt to judge or evaluate them"
+Evaluate the ideas : 
+"""
+- Feasible : Technically possible to build
+- Desirable : Best at solving the user problem
+- Viable : Financially beneficial for the business
+"""
+Steps : "Brainstorming out loud, documenting all ideas, focusing on quantity without allowing evaluation, gathering a diverse team, questioning the obvious, then evaluating the ideas."
+
+Preparing for ideation : 
+"""
+- Empathize with your users : by creating empathy maps, personas, user stories, and user journey maps.
+- Define the problem 
+- Establish a creative environment
+- Set a time limit
+- Assemble a diverse team
+- Think outise the box 
+"""

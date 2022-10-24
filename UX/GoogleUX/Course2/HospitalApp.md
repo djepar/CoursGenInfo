@@ -25,3 +25,39 @@ All the questions can be either understood as : the app already exist and we wan
 
 # Personas
 
+# Specific value proposition
+Question 1
+What is your specific value proposition for your portfolio project? 
+1. Describe your product's features and benefits.
+  - Easy-to-use 
+  - Scheduling with more flexibility
+  - Automating recurrent appointment
+  - Free
+  - Work on a range of device
+  - A centralize place for medical information
+  - Calendar of all the appointment
+  - Easy way to communicate with doctor
+  - Parking can be pay on the app and reimburse when available 
+  - No phone waiting
+  - Can send all the require document to insurance or employer easily (for sick leave and such)
+2. Explain the value of the product.
+  - Accessible
+    - Easy to use
+    - No phone waiting
+    - Parking can be pay on the app and reimburse when available
+  - Flexible
+    - Automating recurrent appointment
+    - Scheduling with more flexibility
+  - Cost
+    - Free
+  - Easy access to all information
+    - A centralize place for medical information
+    - Calendar of all the appointment
+    - Can send all the require document to insurance or employer easily (for sick leave and such)
+3. Connect these features and benefits with the needs of your users.  
+  - Yuki Doak  : "With his hearing disabilities, the app let him schedule without the phone, which is more easy."
+  - Estel Rastelli : "The app is free"
+  - Martel Oltman  : "The app is easier to use than the website of other hospital because there is no mobile compatibility"
+  - Breah Rumble : "Because she visit his mother everyday at the hospital, having to pay parking with the app easily is a little relieve"
+  - Durk Crissler : "Being on a sick leave is not easy, but with the app, he only had to press a button and write the email of HR and all his information was sent easily."
+  - Josilyn Kidder : "With a lot of appointment, the automation is really nice for her"
