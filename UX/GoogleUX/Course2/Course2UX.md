@@ -149,15 +149,16 @@ Hick's Law : "The more options a user has the longer it takes for them to make a
 
 # Understand design ideation
 Ideation : "The rocess of generating a broad set of ideas on a given topic, with no attempt to judge or evaluate them"
-Evaluate the ideas : 
+## Evaluate the ideas 
 """
 - Feasible : Technically possible to build
 - Desirable : Best at solving the user problem
 - Viable : Financially beneficial for the business
 """
-Steps : "Brainstorming out loud, documenting all ideas, focusing on quantity without allowing evaluation, gathering a diverse team, questioning the obvious, then evaluating the ideas."
+## Steps of ideation
+ : "Brainstorming out loud, documenting all ideas, focusing on quantity without allowing evaluation, gathering a diverse team, questioning the obvious, then evaluating the ideas."
 
-Preparing for ideation : 
+## Preparing for ideation 
 """
 - Empathize with your users : by creating empathy maps, personas, user stories, and user journey maps.
 - Define the problem 
@@ -166,3 +167,44 @@ Preparing for ideation :
 - Assemble a diverse team
 - Think outise the box 
 """
+
+## Why should we come up with a lot of ideas
+- List of ideas is narrowed based on constraints
+- Need to focus on equity
+- Let users test the ideas
+
+## Regonize business needs during design ideation
+Branding : tone and voice
+"Design can help facilitate a conversation between a business and its users"
+
+## Scope the competition
+Competitive audit : "An overview of your competitors' strengths and weakness"
+"""
+- Identifying your key competitors
+- Reviewing the products that your competitors offer.
+- Understanding how your competitors position themselves in the market.
+- Examining what your competition does well and what they could do better.
+- Considering how your competitors talk about themselves.
+"""
+
+Direct competitors : "Have offerings that are similar to your product and focus on the same audience"
+Indirect competitors : "Have a similar set of offerings but focus on a different audience, or have a different set of offerings and focus on the same audience"
+
+## Benefits to competitive audits :
+"""
+- Inform your design process
+- Solve usability problems
+- Reveal gaps in the market
+- Provide reliable evidence
+"""
+## Limitations of competitive audits 
+"""
+-Strifle creativity
+- Depend on how well you interpret the findings
+- Not all design work well in all cases
+- Need to be done regularly
+"""
+
+## Steps to conduct a competitive audit
+1. Outline the steps
+2. 
