@@ -30,18 +30,33 @@ const test1 = ["M", "M", "M"]
 const test2 = ["C"]
 // console.log(MoreThree(test1));
 // console.log(MoreThree(test2));
+
+//Pass the current value and the list of symbol to see what next
 function nextSymbol(num, symArrays){
   for (let i = 0; i < listSym.length; i++){
     if (dicSym[listSym[i]] <= num){
       //if (!(MoreThree(symArrays, listSym[i]))){
       if (symArrays[symArrays.length -1] === symArrays[symArrays.length  -2] &  symArrays[symArrays.length  -2] === symArrays[symArrays.length  -3]){
-        if ((dicSym[listSym[i]] + dicSym[listSym[i-1]])  <= num){
+        console.log(dicSym[listSym[i]] + dicSym[listSym[i-1]])
+
+        if ((dicSym[listSym[i]] + dicSym[listSym[i-1]])  >= num){
           let newlist = symArrays;
-          newlist.pop;
-          newlist.pop;
-          newlist.pop;
-          newlist.push(listSym[i-1]);
+          
+          console.log("newlist", newlist)
+          newlist.pop();
+          newlist.pop();
+          newlist.pop();
+          
+          console.log("newlist", newlist)
+          console.log(i)
+
           newlist.push(listSym[i])
+          symcounter = 6
+          while((dicSym[listSym[i]] - dicSym[listSym[i-1]]) > num){
+            symcounter--;
+          }
+          newlist.push(listSym[i-1]);
+          console.log("newlist", newlist)
           return newlist
         }
         return listSym[i]
@@ -51,6 +66,7 @@ function nextSymbol(num, symArrays){
 }
 
 console.log(nextSymbol(1050, ["M", "M", "M"]))
+console.log(nextSymbol(4, ["I", "I", "I"]))
 console.log(nextSymbol(4, ["I", "I", "I"]))
 
 //console.log(nextSymbol(1663, []))
