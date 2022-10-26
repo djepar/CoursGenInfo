@@ -74,7 +74,7 @@ Same key to encrypting and decrypting.
 
 ## Symmetric Encryption Algorithms
 Data encryption Standard (DES) was adopted as the Federal Information Processing standard (FIPS).
-Then : Advanced Encryption Standard was replaced. "Because of the large key size, brute-force attacks on AES are only theoreticla right now, because the computing power required (or time required using modern technology) exceeds anything feasible today"
+Then : Advanced Encryption Standard was replaced. "Because of the large key size, brute-force attacks on AES are only theoretical right now, because the computing power required (or time required using modern technology) exceeds anything feasible today"
 "An important thing to keep in mind when considering various encryption algorithms is **speed** and **ease of implementation**."
 
 # Public Key or Asymmetric Encryption
@@ -173,3 +173,20 @@ IPSec:
 Layer 2 tunneling Protocol (L2TP) in conjunction with IPSec: "L2TP doesn't provide encryption itself. It's a simple tunneling protocol that allows encapsulation of different protocols or traffic over a network that may not support the type of traffic being sent. L2TP can also jus tsegregate and manage the traffic"
 
 "The __tunnel__ is provided by L2TP which permits the passaing of unmodified packets from one network to another. The __secure channel__, on other hand, is provided by IPsec, which provides confidentiality, integrity and authentication of data being passed."
+
+## Cryptographic Hardware
+Trusted Platform Module or TPM : "TPM offers - secure generation of keys,
+- random number generation,
+- remote attestation, 
+- data binding and sealing.
+  
+A TPM has a unique secret RSA key burned into the hardware at the time of manufacture, which allows a TPM to perform things like hardware authentication"
+
+TEE : Trusted Execution Environment :"provides a full-blown isolated execution environment that runs alongside the main OS."
+
+Full disk encryption (TPE) : "practice of encrypting the entire drive in the system"
+- PGP (commercial)
+- Bitlocker (Microsoft)
+- Filevault 2 (Apple)
+- dm-crypt (Linux)
+
