@@ -69,7 +69,7 @@ The difference between slice and splice
 - "slice lets you copy an array or a part of it"
 - "splice mutates the array (to insert or delete items).
 
-Example of adding 
+### Adding to an array
 ```
 setArtists( // Replace the state
   [ // with a new array
@@ -79,7 +79,7 @@ setArtists( // Replace the state
 );
 ```
 
-Example of deleting
+### Deleting an item in an array
 ```
 <ul>
 {artists.map(artist => (
@@ -96,3 +96,90 @@ Example of deleting
     </li>
 </ul>
 ```
+
+### Transforming an array
+```
+function handleClick(){
+    const nextShapes = shapes.map(shape => {
+        if(shape.type === "square"){
+            //No change
+            return shape;
+        } else{
+            // Return a new circle 50px below
+            return {
+                ...shape,
+                y : shape.y + 50.
+            };
+        }
+    });
+    setShapes(nextShapes);
+    }
+```
+
+### Replacing items in an array
+```
+function handleIncrementClick(index){
+    const nextCounters = counters.map((counter, i) =>{
+        if (i === index){
+            return c+1;
+        } else{
+            // The rest haven't changed
+            return c;
+        }
+    });
+    setCounters(nextCounters)
+}
+```
+
+### Inserting into an array
+...arr + splice()
+```
+function handleClick(){
+    const insertAt = 1; 
+    const nextArtists = [
+        // Items before the insertion point: 
+        ...artists.slice(0, insertAt),
+        //New item:
+        {id : nextId++, name: name},
+        // Items after the insertion point:
+        ...artists.slice(insertAt)
+    ];
+    setArtists(nextArtists);
+    setName('');
+}
+```
+
+### Making other changes to an array
+Like reverse() and sort()
+"You can copy the array first, and then make changes to it."
+
+```
+function handleClick(){
+    const nextList = [...list];
+    nextList.reverse();
+    setList(nextList);
+}
+```
+
+### Updating objects inside arrays
+New item + inserting it with map
+```
+setMyList(myList.map(artwork => {
+    if(artwork.id === artworkId){
+        //Create a *new* object with changes
+        return {...artwork, seen: nextSeen};
+    } else {
+        // No changes
+        return artwork;
+    }
+}));
+```
+"In general, you should only mutate objects that you have just created. If you were inserting a _new_ artwork, you could mutate it, but if you're dealing with something that's already in state, you need to make a copy."
+
+### Write concise update logic with Immer
+Immer "lets you write using the convenient but mutating syntax and takes care of producing the copies for you"
+```
+updateMyTodos(draft => {
+    const artwork = draft.find(a => a.id === artworkId);
+    artwork.seen = nextSeen;
+})
