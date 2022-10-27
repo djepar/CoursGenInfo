@@ -11,7 +11,7 @@ const products = [
     ["Bow2", 500],
     ["Axe2", 50],
     ["Sword2", 25],
-    ["Superbonjour", 500],
+    ["Superbonjour", 800],
     ["Axe2", 50],
     ["Super2 Sword", 1],
     ["Sword2", 25],
@@ -20,12 +20,18 @@ const products = [
     ["Super3s Sword", 1],
     
 ]
+// Sum of everything
 let initalvalue = 0
 let newprod = products.reduce((acc, product)=> acc + product[1], 0
 );
+//console.log(newprod)
 
+//Create a list of all the item
 let newprod2 = products.reduce((acc, product) => [...acc, product[0]], []);
+//console.log(newprod2)
 
+
+//Create a dictionary of all the item
 let count = 0;
 let newprod3 = products.reduce((acc, product) => {
     count++
@@ -33,11 +39,13 @@ let newprod3 = products.reduce((acc, product) => {
 }, {});
 //console.log(newprod3)
 
+
+// Find the biggest number
 result = products.reduce((acc, product) => {
     if (acc === null || product[1]> acc) return product[1];
     return acc;
 }, null);
-//console.log(result)
+console.log(result)
 
 result2 = products.reduce((acc, product) => {
     if (acc === null || product[1] < acc) return product[1];
