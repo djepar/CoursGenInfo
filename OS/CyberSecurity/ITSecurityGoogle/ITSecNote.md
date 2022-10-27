@@ -190,3 +190,29 @@ Full disk encryption (TPE) : "practice of encrypting the entire drive in the sys
 - Filevault 2 (Apple)
 - dm-crypt (Linux)
 
+# AAA Security : Authentication, Identification and  Accounting
+- Identification : "The idea of describing an entity uniquely"
+- Authentication (authn) : "proving who you claim to be"
+- Authorization (authz) : "pertains to the resources and identity has acces to"
+
+"Incorporating good password policies into an organization is key to ensuring that employees are securing their accounts with strong passwords"
+
+## Multifactor authentication
+A system where users are authenticated by presenting multiple pieces of information or objects.
+Three types : 
+- Something you know : password /pin
+- Something you have : ATM / Bank card
+- Somthing you are: Biometric ID
+
+## Certificates
+"Certificates are public keys that are signed by a certificate authority or CA as a sign of trust"
+
+"In order to issue client certificates, an organization must setup and maintain CA infrastructure to issue and sign certificates"
+
+"Certificate revocation list (CRL) : A signed list published by the CA which defines certificates that have been explicitly revoked"
+
+## LDAP
+Lightweight Directory Access Protocol (LDAP) : "An open, industry-standard protocol for accessing and maintaining directory services"
+
+## RADIUS
+Remote Authentication Dial-In User Service(RADIUS) : "A protocol that provides AAA services for users on a network"
