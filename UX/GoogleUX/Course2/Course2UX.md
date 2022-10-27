@@ -206,5 +206,11 @@ Indirect competitors : "Have a similar set of offerings but focus on a different
 """
 
 ## Steps to conduct a competitive audit
-1. Outline the steps
-2. 
+"""
+1. Outline the goals
+2. Create a spreadsheet with a list of your competitors
+3. Call out the specific aspects you want to compare
+4. Research each company
+5. Analyse findings
+6. Summarize findings in a report
+"""
