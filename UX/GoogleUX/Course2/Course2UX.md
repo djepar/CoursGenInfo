@@ -214,3 +214,4 @@ Indirect competitors : "Have a similar set of offerings but focus on a different
 5. Analyse findings
 6. Summarize findings in a report
 """
+

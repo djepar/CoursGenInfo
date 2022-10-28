@@ -223,3 +223,29 @@ Database constraints : "Limit the type of data that cna be stored in a table"
 - Default : "sets a default value for a column of no value is specified"
   - Default statement : `CREATE TABLE Customer(customer_name varchar(255) default "Bonjour");`
 
+## Create and read
+### CREATE and DROP database
+- To create a database : `CREATE DATABASE database_name;`
+- To drop a database : `DROP DATABASE database;`
+
+### CREATE TABLE statement
+- Create table :  `CREATE TABLE table_name( column1_name DATATYPE...);`
+  - Ex : `CREATE TABLE customers(customerName VARCHAR(100), phoneNumber INT);`
+
+### ALTER TABLE statement
+- Alter table syntax : `ALTER TABLE table_name ADD (column_name DATA TYPE)`
+  -  Ex 
+     - `ALTER TABLE students ADD(age INT, country VARCHAR(50), nationality VARCHAR(255))`
+     - `ALTER TABLE students DROP COLUMN nationality;`
+     - `ALTER TABLE students MODIFY country VARCHAR(100);`
+
+### Insert statement
+- Insert syntax : `INSERT INTO table_name (column1_name, column2_name, column3_name) VALUES (value1, value2, value3);`
+  - or `INSERT INTO table_name (column1_name, column2_name, column3_name) VALUES (value1, value2, valu3),(value1, value2, valu3), (value1, value2, valu3))`
+Ex : 
+```
+INSERT INTO players(ID, name, age, start_date) VALUES (1, "Yuval", 25, "2020-10-15")
+INSERT INTO players(ID, name, age, start_date) VALUES(2, "Mark", 27, "2020-10-12"), (3, "Karl", 26, "2020-10-07");
+SELECT * FROM players;
+```
+
