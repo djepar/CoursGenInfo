@@ -215,3 +215,35 @@ Indirect competitors : "Have a similar set of offerings but focus on a different
 6. Summarize findings in a report
 """
 
+# Brainstorm deisgn ideas by sketching
+## Use How Might We to ideate
+- How : "Explore a bunch of ideas"
+- Might : "Our ideas are possible solutions, not the only solution"
+- "We" : "Collaborative effort"
+
+Example : 
+"Problem : Olivia is a parent who needs a way to ride her bike with her 2-year-old Luca because he can't ride his own bike"
+Too broad : "How might we design a seat for a child to ride a bike with an adult"
+Too specific : "How might we design a safe, forward-facing seat that attaches to an adult's bicycle, so a child can choose to ride or sleep while an adult rides on amountain trail"
+Better : "How might we design a safe and comfortable seat for a child to ride a bike with an adult?"
+
+Ways to cerate How Might We phrases:
+"""
+- Amp up the good
+- Explore the opposite
+- change a status quo
+- Break the point-of-view into pieces
+- Remove the bad
+- Go after the adjective
+- Question an assumption
+- Cerate an analogy using the established need or context
+- Identify unexpected resources that can provide assistance
+"""
+
+## Use Crazy Eights to ideate
+Sketching : "the point of sketching is to move as quickly as possible to record lots of ideas"
+
+How to do Crazy Eights ideation:
+- Split a white piece of paper in 8
+- Put a timer 1 min * 8
+- Inspire on a problem statement
