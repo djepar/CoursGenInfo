@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations on Complex data Structures</title>
+</head>
+<body>
+    <h1>Operation on complex data</h1>
+    <script>
+        const products = [
+         
+    ["Sword", 25],
+    ["Bow", 500],
+    ["Axe", 50],
+    ["Super Sword", 41.1],
+    ["Sword2", 25],
+    ["Bow2", 500],
+    ["Axe2", 50],
+    ["Sword2", 25],
+    ["Bow2", 500],
+    ["Axe2", 50],
+    ["Sword2", 25],
+    ["Bow2", 500],
+    ["Axe2", 50],
+    ["Super2 Sword", 25000000000000000000000000000000.1],
+    ["Sword2", 25],
+    ["Bow3", 500],
+    ["Axe3", 50],
+    ["Super3s Sword", 25000000000000000000000000000000.1],
+    
+]
+
+    let newProducts = products.map(product =>  {
+        let bonsoir = {
+            productName : product[0],
+            price : product[1]
+        }
+        return bonsoir
+    })
+    console.log(newProducts)
+    let premiumProducts = newProducts.filter(product => product.price > 300)
+    .map(product => {
+        return {
+            productName : product.productName.toUpperCase(),
+            price : product.price
+        }
+    })
+    .reduce((stocks, currentProduct)=>{
+        let stockItem = stocks.find(product => product.productName === currentProduct.productName);
+        if(stockItem){
+            ++stockItem.stock;
+        } else {
+            stocks.push({
+                productName : currentProduct.productName,
+                stock : 1
+            })
+        }
+        return stocks
+    }, [])
+    console.log(premiumProducts)
+   </script>
+</body>
+</html>
