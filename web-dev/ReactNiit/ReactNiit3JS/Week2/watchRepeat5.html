@@ -49,8 +49,10 @@
     })
     .reduce((stocks, currentProduct)=>{
         let stockItem = stocks.find(product => product.productName === currentProduct.productName);
+        console.log("stockItem : ",stockItem)
         if(stockItem){
             ++stockItem.stock;
+            console.log("++ stockItem : ",stockItem)
         } else {
             stocks.push({
                 productName : currentProduct.productName,
