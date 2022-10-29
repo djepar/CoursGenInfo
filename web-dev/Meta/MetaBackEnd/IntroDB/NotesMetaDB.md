@@ -249,3 +249,21 @@ INSERT INTO players(ID, name, age, start_date) VALUES(2, "Mark", 27, "2020-10-12
 SELECT * FROM players;
 ```
 
+### SELECT statement
+Select syntax : `SELECT column FROM table;
+Ex : 
+- `SELECT playername FROM player_tbl;`
+- `SELECT ID, name, age, level FROM table;`
+- `SELECT * FROM table;`
+
+### INSERT INTO SELECT statement
+"The INSERT INTO select statement is used to query data from a column within a source table and place the results of that query in the column within a target table"
+
+INSERT INTO SELECT statement syntax : 
+```
+INSERT INTO target_tbl(column_name) 
+SELECT column_name 
+FROM source_tbl;
+```
+
+Ex : `INSERT INTO country(countryName) SELECT country FROM players`
