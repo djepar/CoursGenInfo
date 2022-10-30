@@ -216,3 +216,20 @@ Lightweight Directory Access Protocol (LDAP) : "An open, industry-standard proto
 
 ## RADIUS
 Remote Authentication Dial-In User Service(RADIUS) : "A protocol that provides AAA services for users on a network"
+
+## Kerberos
+Kerberos : "A netwrok authentication protocol that uses 'tickets' to allow entities to prove their identity over potentially insecure channels to provide mutual authentication"
+
+How it's operate : 
+1. Users enters username/password in the client machine
+2. "Their kerberos client software will then take the password and generate a symmetric encryption key from it" 
+3. "The client sends a plain text message to the Kerberos, AS or Authentication Server WHICH INCLUDES THE USER ID of the authenticating users.
+4. AS look for the user in the authentication database.
+5. If the user is in the database, the AS "use the secret key to encrypt and send a message containing the client TGS session key". (Ticket Granting Service)
+6. "The AS also sends a second message with a Ticket Granting Ticket (TGT) which is encrypted using the TGS secret key."
+7. The user can now use the TGT to "request access to services from within the Kerberos realm. This is done by sending a message to the Ticket Granting Service with the encrypted Ticket Grantinkg Ticket."
+8. The TGS decrypts the TGT using TGS secret key and check the client ID to look if it's match. If so, it sends 2 messages to the client : 
+   1. "The first one, contains the client to server ticket which is comprised of the client ID, client address, validity period, and the client-server session key encrypted using the service's key.
+   2. The second message, contains the client-server session key itself, and is encrypted using the client TGS key."
+9. "The client has enough information to authenticate itself to the service server or SS".
+10. 
