@@ -123,7 +123,7 @@ function flatten(acc, item) {
 result6 = folders.reduce(flatten, []);
 console.log(result6)
 
-// cerate reduce ourselves
+// create reduce ourselves
 function reduce2(array, callback, initial){
     let acc = initial;
     for (let i = 0; i < array.length; i++){
