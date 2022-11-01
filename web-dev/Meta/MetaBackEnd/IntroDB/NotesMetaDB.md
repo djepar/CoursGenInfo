@@ -267,3 +267,49 @@ FROM source_tbl;
 ```
 
 Ex : `INSERT INTO country(countryName) SELECT country FROM players`
+
+## Updating data
+UPDATE statement syntax : 
+```
+UPDATE TABLE_NAME 
+SET col_name = 'new value'
+WHERE ID = 1;
+```
+
+Example one field one student: 
+```
+SELECT * FROM student_tbl WHERE 1
+UPDATE student_tbl
+SET home_address = '234 Avenue', contact_number = '223324'
+WHERE ID = 3;
+```
+
+Example one field for multiple all students :
+```
+UPDATE student_tbl
+SET college_address = 'Harper Building'
+WHERE department = 'engineering';
+```
+
+Example multiple field for multiple student :
+```
+SELECT * FROM 'student_tbl` WHERE 1
+SET college_adress = 'Harper Building', home_address = 'xyz'
+WHERE department = 'engineering';
+```
+
+## Deleting data
+DELETE statement syntax : 
+
+Example one field one student : 
+```
+DELETE FROM student_tbl
+WHERE last_name = 'Millar';
+
+```
+
+Example one field multiple students : 
+```
+DELETE FROM student_tbl
+WHERE department = 'engineering';
+```
