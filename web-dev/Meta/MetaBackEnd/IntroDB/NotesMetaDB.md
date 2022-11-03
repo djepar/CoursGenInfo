@@ -352,3 +352,49 @@ SQL Comparaison operators "are used to compare two values or expressions where t
 - Greater than (or equal to) : >(=)
 - Ex : `SELECT * FROM employee WHERE salary >= 18000;`
 - Inequality : <> or !=
+
+# Sorting and filtering data
+
+## ORDER BY clause
+Optional clause used for ordering or sorting data
+
+ORDER BY clause syntax 
+- Single column : `SELECT column_1, column_2, column_3 FROM table_name ORDER by column_name ASC | DESC;`
+  - Example : `SELECT ID, first_name, last_name, nationality FROM student_tbl ORDER BY nationality ASC`
+- Multiple columns : 
+  - `SELECT column_1, column_2 FROM table_name ORDER BY column1_name ASC, column2_name DESC`
+  - `SELECT * FROM table_name ORDER BY column1_name, column2_name ASC|DESC;`
+  - Example : `SELECT ID, first_name, last_name, date_of_birth, nationality FROM student_tbl ORDER BY nationality, ASC, date_of_birth DESC;`
+
+## WHERE clause
+The WHERE clause : "Filter and retrieve records that meet a specific condition"
+
+WHERE clause syntax : `SELECT column1, column2 FROM table_name WHERE column = value;
+__Example__ : 
+- `SELECT * FROM student_tbl WHERE faculty = "Engineering" `
+- `SELECT * FROM student_tbl WHERE date_of_birth BETWEEN '2010-01-01' AND '2010-06-30'
+- `SELECT * FROM student_tbl WHERE faculty LIKE 'Sc%';
+- `SELECT * FROM student_tbl WHERE country IN('USA;, 'UK');
+
+
+Logical operators: 
+- ALL : "Used to compare a single value to all the values in another value set
+- AND : "Allows for the existence of multiple conditions in an SQL statement's WHERE clause"
+- Any: "Used to compare a value to any applicable value in the list as per the condition"
+- Between : "Filter records within g numeric or time and date range"
+- EXISTS : "Used to search for the presence of arow in a specified table that meets a certain criterion.
+- Like : "Specify a pattern within the search criteria"
+- In : "Specify multiple possible values for a column"
+- NOT : "Reverses the meaning of the logical operator with which it is used. For example : NOT EXISTS, NOT BETWEEN. __This is a negate operator__."
+- OR : Used to combine multiple conditions in an SQL statement's WHERE clause. 
+- IS NULL : "Used to compare a value with a NULL value"
+- UNIQUE : "Searches every row of a specified table for uniqueness (no duplicates)"
+
+## SELECT DISTINCT clause
+SELECT DISTINCT : "retrieve a unique set of values in a SELECT statement"
+SELECT DISTINCT syntax : `SELECT DISTINCT country from student_tbl;`
+ 
+Important points : 
+- "When only one column or expression is provided in the DISTINCT clause, the query will return the unique values for that columns."
+- "When more than one column or expression is provided in the DISTINCT clause, the query will retrieve unique combinations for those columns."
+- "The DISTINCT clause doesn't ignore NULL values in DISTINCT column(s). NULL values are considered as unique values by DISTINCT"
