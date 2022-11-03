@@ -313,3 +313,42 @@ Example one field multiple students :
 DELETE FROM student_tbl
 WHERE department = 'engineering';
 ```
+
+
+# SQL operators
+Operators : "Words or characters used to perform activities in a database"
+
+General syntax : `SELECT Column_Name_1 Operator Column_Name2 FROM Table_Name;` 
+(from https://www.javatpoint.com/sql-arithmetic-operators)
+
+General syntax with condition : `SELECT Column_Name_1 Operator Column_Name2 FROM Table_Name WHERE Condition;` 
+(from https://www.javatpoint.com/sql-arithmetic-operators)
+## SQL Arithmetic Operators
+
+Arithmetic operators : "used to perform mathematicla calculations in a database"
+- Addition
+  - Ex : `Select 5 + 5` = 10
+  - `SELECT column_name1 + column_name2 FROM table_name;`
+  - ` SELECT * FROM employee WHERE salary+ allowance = 25000;`
+- Subtraction
+  - Ex : `Select 5 - 5` = 0
+  - `SELECT column_name1 - column_name2 FROM table_name;`
+  - `SELECT salary-tax FROM employee;`
+  - `SELECT * FROM employee WHERE salary - tax = 50000;`
+- Multiplication
+  - Ex : `Select 5 * 5` = 25
+- Division
+  - Ex : `Select 5 / 5` = 1
+- Modulus
+  - Ex : `Select 5 % 5` = 10
+
+## SQL Comparaison operators
+SQL Comparaison operators "are used to compare two values or expressions where the outcome result can be either true or false"
+
+- Equal to : =
+  - Ex : `SELECT * FROM employee WHERE salary = 18000;`
+- Less than (or equal to) /  : <(=)
+  - Ex : `SELECT * FROM employee WHERE salary < 18000;`
+- Greater than (or equal to) : >(=)
+- Ex : `SELECT * FROM employee WHERE salary >= 18000;`
+- Inequality : <> or !=
