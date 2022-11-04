@@ -398,3 +398,59 @@ Important points :
 - "When only one column or expression is provided in the DISTINCT clause, the query will return the unique values for that columns."
 - "When more than one column or expression is provided in the DISTINCT clause, the query will retrieve unique combinations for those columns."
 - "The DISTINCT clause doesn't ignore NULL values in DISTINCT column(s). NULL values are considered as unique values by DISTINCT"
+
+# Designing database schema
+"In the context of a MySQL database, a schema means a collection of data structures or an abstract design of how data is stored in a database.
+Schema and database are interchangeable terms within MySQL"
+
+
+Different meaning between different database langage :
+- SQL server : "A collection of individual, but related components"
+  - Schema objects : tables, relationships, keys, datatypes and columns.
+- PostgreSQL : "A namespace with named database objects"
+- Oracle : "Property of each respective database user"
+
+Database schema advantages :
+- Management : "provide logical groupings for objects"
+- Accessibility : Enable greater accessibility to objects
+- Security : "Offer a range of useful security features"
+- Ownership : "Permit transfer of ownership between users"
+
+The three categories of database schema :
+"""
+1. Conceptual or logica; schema that defines entities, attributes and relationships.
+   1. Entity relationship modeling : Illustrating relationships between entity types
+2. Internal or physical schema that defines how data is stored in a secondary storage. In other words, the actual storage of data and access paths.
+3. External or view schema that defines different user views.
+"""
+
+# Relational database design
+## Table relationships 
+- One-to-many 
+  - "a record in Table A can relate to zero, one, or many records in Table B. Many records in Table B can relate to one record in Table A."
+- One-to-one 
+  - "each record in Table a relates to one, and only one, record in Table B", and vice-versa.
+- Many-to-many 
+  - "many records in Table A can relate to many records in Table B. And many records in Table B can relate to many records in Table A"
+
+## Relational model 
+Database as "a collection of inter-related relations (or tables)". Made of :
+- Data
+- Relationships
+- Constraints
+
+### Fundamental concepts of the relational model
+- Relation : a file or table with data in it. "Each row represents a group of related data values", also called a tuple. The columns can be called fields or attributes. 
+- Column : "The principal storage unit of a database is a column (attribute)". "Every column has a specific data type".
+- Domain : "a set of acceptable values that a column is allowed to contain". 
+- Record or tuple : "a row within a table"
+- Key : "Each row or tuple has one or more attributes, known as a relation key, that can uniquely identify a specific row. This is also known as the primary key"
+- Degree : "number of columns or attributes within a relation"
+- Cardinality : "how many records there are within a particular table in a database"
+- Contraints : "In the relational model, every relation needs to meet three conditions (relational integrity constraints)
+  - Key constraints
+    - Need a unique key that is not null
+  - Domain constraints
+    - Valid data type in respect with the domain
+  - Referential integrity constraints
+    - "The referential integrity constraints states that if a relation refers to a key attribute of another relation, then that key must exist"
