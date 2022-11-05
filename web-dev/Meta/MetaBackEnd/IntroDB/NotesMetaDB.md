@@ -454,3 +454,42 @@ Database as "a collection of inter-related relations (or tables)". Made of :
     - Valid data type in respect with the domain
   - Referential integrity constraints
     - "The referential integrity constraints states that if a relation refers to a key attribute of another relation, then that key must exist"
+
+## Primary Key
+Must be unique, used to identify a record
+Can also use a composite primary key : "A combination of multiple attributes"
+
+## Foreign key
+Foreign key : "one or more columns used to connect two tables in order to create cross-referencing between them"
+
+## Keys in depth
+"A relational database enables you to retrieve every single piece of stored data. This can be done by specifying:
+- the name of the target table (or tables), 
+- the name of the required column (or columns),
+- and the primary key of the table."
+
+To create a table with a primary key : 
+- `CREATE TABLE Owner(ownerId varchar(10), ownerName varchar(50), ownerdress varchar(255), PRIMARY KEY (ownerID));`
+- `CREATE TABLE Owner(ownerId varchar(10) PRIMARY KEY, ownerName varchar(50));`
+
+To reference to a foreign key
+- `ALTER TABLE vehicle ADD FOREIGN KEY (ownerID) REFERENCES owner(ownerID);`
+
+## Finding entities
+Entity : "an object that has properties which define its characteristics. An entity can be anything that represents a single object in a database, such as a place or person". With relationa database, each object is an entity.
+
+Attributes : 
+- Simple attributes
+  - Cannot be split
+- Composite attributes
+  - Can be split in sub-attribute
+- Single valued attributes
+  - "Can only store one value"
+- Multi-valued attributes
+  - More than one value (ex : emails)
+- Derived attributes
+  - Example, generating the age from the date of birth column, or the total price.
+- Key attributes
+  - Unique value
+
+## Entity relationship diagrams (ERD)
