@@ -502,4 +502,11 @@ Database normalization challenges
 
 ## First Normal Form (1NF)
 First Normal Form : data atomicity and unrepeated groups of data.
-'The dataatomicity rule means taht you can only have one single instance value of the column attribute in any cell of the table'
+'The data atomicity rule means taht you can only have one single instance value of the column attribute in any cell of the table'
+
+## Second Normal Form (2NF)
+"In the second normal form, you need to avoid any partial dependency relationships between data. Partial dependency refers to tables with a composite primary key. Namely a key that consists of a combination of two or more columns, where a non-key attribute value depends only on one part of the composite key"
+
+## Third normal form (3NF)
+"Must already be in the second normal form. 
+Must have no transitive dependency. This means that any non-key attribute may not be functionally dependent on another non-key attribute in the same table"
