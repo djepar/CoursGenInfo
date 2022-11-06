@@ -492,4 +492,14 @@ Attributes :
 - Key attributes
   - Unique value
 
-## Entity relationship diagrams (ERD)
+# Database normalization
+Database normalization challenges
+- Insert anomaly : 'Insertion of one record leads to the insertion of several more required data sets'
+- Update anomaly : 'Updating a record in a table column requires further updates in other columns'
+- Deletion anomaly : 'Deletion of one record leads to the deletion of several more required data sets'
+
+'Normalization optimizes the database design by creating a single purpose for each table'
+
+## First Normal Form (1NF)
+First Normal Form : data atomicity and unrepeated groups of data.
+'The dataatomicity rule means taht you can only have one single instance value of the column attribute in any cell of the table'
