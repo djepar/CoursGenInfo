@@ -286,3 +286,21 @@ Access Control List (ACL) : "A way of defining permissions or authorizations for
 Accounting : "Keeping records of what resources and services your users accessed, or what they did when they were using your systems"
 
 "__TACASCS+__ is a device access AAA system that manages who has access to your network devices and what they do on them"
+
+# Secure Network Architecture
+## Network Hardening Best Practices
+Network hardening : "The process of securing a network by reducing its potential vulnerabilities through configuration changes and taking specific steps"
+
+"Disabling unnecessary extra services or restricting access to them"
+
+- Implicit deny (whitelisting (instead of blacklisting))  : "A network security concept where anything not explicitly permitted or allowed should be denied"  
+  - Can be done with ACL configuration and firewall.
+- Monitoring networking 
+  - Analyzing logs : "The practice of collecting logs from different network and sometimes client devices on your network, then performing an automated analysis on them"
+  - "__Logs analysis systems__ are confirgured using user-degined rules to match interesting or atypical log entries"
+  - "__Normalizing log data__ is an important step, since logs from different devices and systems may not be formatted in a common way"
+- Correlation analysis : "the process of taking log data from different systems and matching events across the systems" also important in post-fail analysis
+  - Good tools for that : __Splunk__
+- Flood guards : "Provide protection against DoS"
+  - Like fail2ban
+- Network segmentation : Separation of network virtualy
