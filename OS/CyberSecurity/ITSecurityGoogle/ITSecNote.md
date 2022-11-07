@@ -217,6 +217,10 @@ Lightweight Directory Access Protocol (LDAP) : "An open, industry-standard proto
 ## RADIUS
 Remote Authentication Dial-In User Service(RADIUS) : "A protocol that provides AAA services for users on a network"
 
+"The Network Access Server doesn't handle authentication decisions directly. Instead, it related authentication messages between the client and the RADIUS server"
+
+"Client don't actually interact directly with the RADIUS server; the authentication is relayed via the Network Access Server."
+
 ## Kerberos
 Kerberos : "A netwrok authentication protocol that uses 'tickets' to allow entities to prove their identity over potentially insecure channels to provide mutual authentication"
 
@@ -232,4 +236,53 @@ How it's operate :
    1. "The first one, contains the client to server ticket which is comprised of the client ID, client address, validity period, and the client-server session key encrypted using the service's key.
    2. The second message, contains the client-server session key itself, and is encrypted using the client TGS key."
 9. "The client has enough information to authenticate itself to the service server or SS".
-10. 
+
+
+## TACACS+
+Terminal Access Controller Access-Control System Plus
+"It's a Cisco developed AAA protocol that was released as an open standard in 1993"
+"TACACS+ is mainly used as an authentication system for network infrastructure devices, which tend to be high value targets for attackers."
+
+## Single Sign-On
+Single Sign-on (SSO) : "An authentication concept that allows users to authenticate once to be granted access to a lot of different services and applications"
+Kerberos is an example of SSO system. 
+
+An other example of an SSO system is OpenID.
+
+# Authorization
+Authorization : "Pertains to describing what the user account has access to, or doesn't have access to"
+"One very popular open standard for authorization and access delegation is OAuth"
+
+## Mobile Security Methods
+### Common mobile security threats and challenges
+- Phishing : "Phishing attacks can use SMS messaging, email accounts, messages via numerous social media applications, or malicious links in browsers to target your movile devices"
+- Malicious applications (malware) : "Malware can take the form of apps designed to collect and transmit personal and corporate information to third parties"
+- Insecure Wi-fi and "meddler in the middle" attacks : "An attacker places themself in the middle of two hosts that think they're communicating directly. The attacker may monitor the information from these hosts and potentially modify it in transit. Open or "free" Wi-fi hotspots are especially susceptible to meddler in the middle and similar attacks."
+- Poor update habits for devices and apps : "An example is failure to install security patches regularly deployed through software and firmware updates. Unpatched devices and applications often contain exploits and vulnerabilities that attackers may use to collect sensitive data"
+
+### Security measures used to protect mobile devices
+- Screen Locks
+- Remote wipes : "Remotes wipes are methods to remove data from a device remotely.
+  - Locator applications
+  - OS updates
+  - Device encrpytion
+  - Remote backup applications
+  - Failed login attempt restrictions
+  - Antivirus/Antimalware
+  - Firewall
+
+## Access Control
+OAuth : "An open standard that allows users to grant third-party websites and applications access to their information without sharing account credentials"
+Connecting to a third-party through Google or Facebook account
+"OAuth permissions can be used in phishing-style attacks to gain access to accounts, __without requiring credentials__ to be compromised"
+
+"OAuth is specifically an authorization system and OpenID is an authentication system"
+
+## Access Control List
+Access Control List (ACL) : "A way of defining permissions or authorizations for objects"
+"These individual access permissions per object are called Access Control Entries and they make up the ACL"
+
+# Accounting
+Accounting : "Keeping records of what resources and services your users accessed, or what they did when they were using your systems"
+
+"__TACASCS+__ is a device access AAA system that manages who has access to your network devices and what they do on them"

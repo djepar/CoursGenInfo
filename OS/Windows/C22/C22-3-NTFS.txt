@@ -3,7 +3,7 @@ Qu'est-ce que les droits NTFS :
     L'ensemble des droits que les utilisateurs ont sur les fichiers.
     Il y a un ensemble de droits spéciaux tels que parcours de dossier, exécuter des fichiers, liste du dossier, lecture de données, etc (voir Theorie des droits NTFS)
 
-Les droits ACL 
+Les droits ACL (Access Control List)
     Contrôle total :
         Sur tous les dossiers, sous-dossiers et fichiers. 
             Tout
