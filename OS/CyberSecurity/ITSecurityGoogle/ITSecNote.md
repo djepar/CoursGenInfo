@@ -304,3 +304,28 @@ Network hardening : "The process of securing a network by reducing its potential
 - Flood guards : "Provide protection against DoS"
   - Like fail2ban
 - Network segmentation : Separation of network virtualy
+
+## Network Hardware Hardening
+DHCP Discovering
+DHCP (Dynamic Host Configuration Protocol) : "Protocol where devices on a network are assigned critical configuration information for communicating on the network"
+- DHCP Snooping
+  - "A switch that has DHCP snooping will monitor DHCP traffic being sent across it. It will also track IP assignments and map them to hosts connected to switch ports."
+  - Protect against : Rogue DHCP Server-Attack : "If an attacker can manage to deploy a rogue DHCP server on your network, they could hand out DHCP leases with whatever information they want. This includes setting a gateway address or DNS server, that's actually a machine within their control."
+- Dynamic ARP inspection : 
+  - ARP can lead to Men-in-the-middle attack "because of the unauthenticated nature of ARP" (Gratuitous ARP response)
+  - "IP source guard (IPSG) can be enabled on enterprise switches along with DHCP snooping"
+- 802.1X --> "IEEE standard for encapsulating Extensible Authentication Protocol (EAP)"
+  - EAP-TLS : "An authentication type supported by EAP that uses TLS to provide mutual authentication of both the client and the authenticating server"
+
+## IEEE 802.1X
+"There are three nodes in the authentication process : supplicant, authenticator, and authentication server."
+"The authentication server uses either a shared key system or open access system to control who is able to connect to the network"
+"Based on the criteria of the authentication server the supplicator will grant the authentication request and begin the connection process or it will be sent an Access REject message and terminate the connection"
+
+## Network Software Hardening
+- Firewalls
+  - Host-based firewall
+  - Network-based firewall
+- Proxies
+  - HAPROX : "is a free, very fast and reliable reverse-proxy offering high availability, load balancing, and proxyingfor TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers a significant portion of thw world's most visited one"
+- VPN: "are commonly used to provide __Secure remote access__, and __link two networks securely__"
