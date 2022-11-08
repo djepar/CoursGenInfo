@@ -328,4 +328,6 @@ DHCP (Dynamic Host Configuration Protocol) : "Protocol where devices on a networ
   - Network-based firewall
 - Proxies
   - HAPROX : "is a free, very fast and reliable reverse-proxy offering high availability, load balancing, and proxyingfor TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers a significant portion of thw world's most visited one"
+  - Appache : "In addition to being a 'basic' web server, and providing static and dynamic content to end-users, Apache httpd (as well as most other web servers) can also act as a reverse proxy server, also-known-as a 'gateway' server"
 - VPN: "are commonly used to provide __Secure remote access__, and __link two networks securely__"
+- 
