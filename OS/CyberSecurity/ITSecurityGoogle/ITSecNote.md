@@ -414,3 +414,9 @@ Ex : "Telnet access for a managed switch has no business being enabled in a real
 ## Host-based firwalls
 Host-based firewalls : "Protect individual hosts from being compromised when they're used in untrusted, potentially malicious environments"
 A host-based firewall "plays a big part in reducing what's accessible to an outside attacker"
+If the users of the system have administrator rights, then they have the ability to change firewall rules and configurations"
+
+## Logging and Auditing
+Security information and event managements systems (SIEMS) : "A SIEM can be thought of as a centralized log server. It has some extra analysis features too"
+Normalization : "The process of of taking log data in different formats and converting it into a standardized format that's consistent with a defined log structure"
+"Once logs are centralized and standardized, you can write automated alerting based on __rules__"
