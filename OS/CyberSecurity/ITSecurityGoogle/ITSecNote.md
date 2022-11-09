@@ -330,4 +330,87 @@ DHCP (Dynamic Host Configuration Protocol) : "Protocol where devices on a networ
   - HAPROX : "is a free, very fast and reliable reverse-proxy offering high availability, load balancing, and proxyingfor TCP and HTTP-based applications. It is particularly suited for very high traffic web sites and powers a significant portion of thw world's most visited one"
   - Appache : "In addition to being a 'basic' web server, and providing static and dynamic content to end-users, Apache httpd (as well as most other web servers) can also act as a reverse proxy server, also-known-as a 'gateway' server"
 - VPN: "are commonly used to provide __Secure remote access__, and __link two networks securely__"
-- 
+
+# Wireless Security
+## WEP Encryption and Why You Shouldn't Use it
+Wire Equivalent Privacy (WEP): Bad for privacy. 
+- No one should use WEP
+-  Support originally two modes : Open system authentification and shared key authentication
+
+## LEt's Get rid of WEP!WPA/WPA2
+Wi-fi Protected Access (WPA) : "Designed as a short-term replacement that would be compatible with older WEP-enabled hardware with a simple firmware update"
+Temporal Key Integrity Protocol (TKIP) add three features:
+1. "more secure key derivation method was used to more securely incorporate the IV into the per packet encryption
+2. a sequence counter was implemented to prevent replay attacks by rejecting out of order packets
+3. A 64-bit MIC or Message Integrity Check was introduced to prevent forging, tampering, or corruption of packets." 
+"Under WPA, the __pre-shared key__ is the Wifi password you share with people when they come over and want to use your wireless network"
+WPA2 implement CCMP -> Counter Mode CBC-MAC Protocol
+
+Four-way Handshake: "It's designed to allow an AP to confirm that the client has the correct pairwise master key, or pre-shared key in a WPA-PSK setup without disclosing the PMK"
+
+## Wireless Hardening
+Best option : 802.1X with EAP-TLS
+- Really complex 
+- "Need a Radius server and an additional authentication back-end"
+"If 802.1X is to complicated for a company, the next best alternative would be WPA2 with AES/CCMP mode"
+- But we need to set up "A long and complex passphrase that wouldn't be found in a dictionary"
+- Disable WPS
+
+# Network Monitoring
+## Sniffing the Network
+Packet sniffing (packet capture) : "The process of intercepting network packets in their entirety for analysis"
+Promiscuous Mode : "A type of computer networking operational mode in which all network data packets can be accesed and viewed by all network adapters operating in this mode"
+- On OSX :
+  - `tcpdump -li en0`
+- On Windows
+Port mirroring : "Allows the switch to take all packets form a specified port, port range, or entire VLAN and mirror the packets to a specified switch port"
+Monitor mode : "Allows us to scan across channels to see all wireless traffic being sent by APs and clients"
+
+## Wireshark and tcpdump
+Tcpdump : "A super popular, lightweight, command-line based utility that you can use to capture and analyse packets"
+`sudo tcpdump -i eno1 ip and host example.com`
+
+
+
+Wireshark 
+
+## Intrusion Detection /Prevention Systems
+Intrusion Detection and Prevention System(IDS/IPS) "operate by monitoring network traffic and analyzing it"
+"They look for matching behavior or characteristics that would indicate malicious traffic"
+Network base : "__Network Intrusion Detection System (NIDS)__ the detection system would be deployed somewhere on a network where it can __monitor traffic__ for a network segment or subnet"
+
+Network Intrusion Prevention System (NIPS) : can "take action against a suspected malicious traffic"
+
+NIPS or NIDS software : Snort, Suricata, Zeek Network Security Monitor
+
+## Unified Threat Management (UTM)
+"UTM solutions stretch beyond the traditional firewall to include an array of network security tools with a single management interface. UTM simplifies the configuration and enforcement of security controls and policies, saving time and resources. Security event logs and reporting are also centralized and simplified to provide a holistic view of network security events"
+
+## Home Network Security
+Common security vulnerabilities
+- Meddler in the middle attacks
+- Data Theft
+- Ransomware
+
+## Keeping home networks secure
+- Change the default name and password 
+- Limit access to the home network
+- Create a guest network
+- Turn on WiFi network encryption
+- Turn on the router's firewall
+- Update to the newest WiFi standard
+
+# System Hardening
+## Intro to Defense in Depth
+Defense in depth : "The concept of having multiple, overlapping systems of defense to protect IT systems"
+
+## Disabling Unnecessary Components
+Attack vector : "The method or mechanism by which an attacker or malware gains access to a network or system"
+Attack surface : "The sum of all the different attack vectors in a given system"
+"The less complex somthing is, the less likely there will be undetected flaws"
+"Another way to keep things simple is to reduce your software deploywments"
+Ex : "Telnet access for a managed switch has no business being enabled in a real-world environment"
+
+## Host-based firwalls
+Host-based firewalls : "Protect individual hosts from being compromised when they're used in untrusted, potentially malicious environments"
+A host-based firewall "plays a big part in reducing what's accessible to an outside attacker"
