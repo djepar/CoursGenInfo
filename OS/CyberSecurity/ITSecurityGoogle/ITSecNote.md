@@ -420,3 +420,11 @@ If the users of the system have administrator rights, then they have the ability
 Security information and event managements systems (SIEMS) : "A SIEM can be thought of as a centralized log server. It has some extra analysis features too"
 Normalization : "The process of of taking log data in different formats and converting it into a standardized format that's consistent with a defined log structure"
 "Once logs are centralized and standardized, you can write automated alerting based on __rules__"
+
+## Windows Defender Guide 
+User Account Control (UAC) : "allows IT administrators to create standard user accounts with limited access rights and privileges for end users. This configuration can prevent users from installing unauthorized programs, changing system settings, tampering with firewalls, and more"
+
+## Antimalware Protection
+"Lots of unprotected systems would be compromised __in a matter of minutes__ if directly connected to the internet without any safeguards or protections in place"
+"Antivirus software will monitor and analyze things, like new files being created or being modified on the system, in order to watch for any behavior that matches a known malware signature", but "it protects against the most common attacks out there on the internet."
+"Antivirus software is just one piece of our anti-malware defense"
