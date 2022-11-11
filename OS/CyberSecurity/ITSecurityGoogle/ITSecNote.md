@@ -470,3 +470,29 @@ Hey Escrow : "Allows the encryption key to be securely stored for later retrieva
 "Understanding __what your users need__ to do their jobs will help shape your approach to software policies and guidelines"
 "Helping your users accomplish tasks by recommending or supporting specific software makes for a more __secure environment__"
 "Extensions that require full access to web sites visited can be risky, since the extension developer has the power to modify pages visited"
+
+# Risk in the Workplace
+## Security Goals
+"If your company handles credit card payments, then you have to follow the __PCI DSS__, or __Payment Card Industry Data Security Standard__"
+PCI DSS Objectives
+"""
+1. Build and maintain a secure network and systems
+2. Protect cardholder data.
+3. Maintain a vulnerability management program
+4. Implement strong access control measures
+5. Regularly monitor and test networks
+6. Maintain an information security policy
+"""
+
+## Measuring and Assessing Risk
+"Security is all about determining __risks__ or exposure; understanding the likelihood of __attacks__; and designing __defenses__ around these risks to __minimize__ the impact of an attack."
+"Security risk assessment starts with __threat modeling__"
+"High-value data usually includes account information, like usernames and passwords. Typically, __any kind of user data is considered high value__, especially if payment processing is involved"
+Vulnerability Scanner : "A computer program designed to assess computers, computer systems, networks or applications for weaknesses"
+Ex : Nessus, OpenVAS, Qualys
+Penetration testing : "The practice of attempting to break into a system or network to verify the systems in place"
+
+## Privacy Policy
+Privacy policies : "oversee the access and use of sensitive data"
+"It's a good practice to apply the principle of __least privilege__ here, by not allowing access to this type of data by default"
+"__Data-handling policies__ should cover the details of how different data is classified"
