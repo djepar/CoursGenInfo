@@ -4,22 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>box Model</title>
+    <title>CSS Box Model</title>
     <style>
-        div {
-            width : 33%;
-            height: 3rem;
-            padding : 3rem;
+        h2 {
             background-color: lightgreen;
-            border-color: black;
-            border : 4rem 10rem;
-            border-style: groove;
+            border : 3px solid black;
+            width : 33%;
+            margin : 5px 33%;
+            padding : 1rem;
             text-align: center;
+        }
+        .container {
+            background-color: blanchedalmond;
+            position : relative;
+            width : 100%;
+            height: 100px;;
+        }
+        p.bonjour{
+            background-color: blue;
+            position: sticky fixed;
+            top : 0;
+        }
+        div {
+            padding : 25px;
+            position: absolute;
+            border : 3px solid black;
         }
     </style>
 </head>
 <body>
-    <div>This is a div</div>
-    <div>This is a div</div>
+    <p class="bonjour">Bonjour</p>
+    <h2>Title</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
+    <div class="container">
+    <div>Static</div>
+</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quam ullam qui rem aliquam, tempore odio, quae hic explicabo, distinctio culpa unde quaerat eius dolores quisquam. Laudantium consectetur id quisquam.</p>
 </body>
 </html>

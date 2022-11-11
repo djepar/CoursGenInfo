@@ -411,6 +411,7 @@ Attack surface : "The sum of all the different attack vectors in a given system"
 "Another way to keep things simple is to reduce your software deploywments"
 Ex : "Telnet access for a managed switch has no business being enabled in a real-world environment"
 
+
 ## Host-based firwalls
 Host-based firewalls : "Protect individual hosts from being compromised when they're used in untrusted, potentially malicious environments"
 A host-based firewall "plays a big part in reducing what's accessible to an outside attacker"
@@ -428,3 +429,44 @@ User Account Control (UAC) : "allows IT administrators to create standard user a
 "Lots of unprotected systems would be compromised __in a matter of minutes__ if directly connected to the internet without any safeguards or protections in place"
 "Antivirus software will monitor and analyze things, like new files being created or being modified on the system, in order to watch for any behavior that matches a known malware signature", but "it protects against the most common attacks out there on the internet."
 "Antivirus software is just one piece of our anti-malware defense"
+
+## Disk Encryption
+Full-disk encryption (FDE): "Works by automatically converting data on a hard drive into a form that cannot be understood by anuone who doesn't have the key to 'undo' the conversation"
+
+Secure boot : Bit Locker(Microsoft), FileVault 2 (Mac) Dm crypt (Linux)
+
+"When you implement a full disk encryption solution at scale, it's super important to think about how to handle cases where password are forgotten."
+Hey Escrow : "Allows the encryption key to be securely stored for later retrieval by an authorized party"
+
+"__Home directory__ or __file-based encryption__ only guarantees confidentiality and integrity of files protected by encryption."
+
+## Bastion Host 
+"Bastion hosts are special-purpose machines that permit restricted access to more sensitive networks or systems. By having one specific purpose, these systems can have strict authentication enforced, more firewall rules locked down, and closer monitoring and logging"
+
+
+# Application Hardening
+## Software Patch Management
+"As an IT Support Specialist, it's critical that you make sure that you install software updates and security patches in a timely way, in order to __defend your company's systems and networks__"
+
+## Browser Hardening
+### Identifying trusted versus untrusted sources
+- "Use antivirus and anti-malware software and browser extensions"
+- "Check for SSL certificates"
+- "Ensure the URL displayed in the address bar shows the correct domain name"
+- "Search for negative review of the website from trusted sources"
+- "Don't automatically trust website links provided by people or organization you trust."
+- "Use hashing algorithms for downloaded file"
+
+## Browser settings
+- Block pop-up
+- Clear browsing data and cache
+- Use private-browsing mode
+- Sign-in/browser data synchronization
+  Use ad blockers
+
+## Application Policies
+"A common recommendation, or even a requirement, is to only support or require the __latest version__ of a piece of software"
+"It's generally a good idea to __disallow risky classes__ of software by policy. Things like file sharing software and piracy-related software tend to be closely associated with malware infections"
+"Understanding __what your users need__ to do their jobs will help shape your approach to software policies and guidelines"
+"Helping your users accomplish tasks by recommending or supporting specific software makes for a more __secure environment__"
+"Extensions that require full access to web sites visited can be risky, since the extension developer has the power to modify pages visited"
