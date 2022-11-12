@@ -35,7 +35,7 @@ Malware : "A type of malicious software that can be used to obtain your sensitiv
 - Denial-of-service(DoS) attack: "An attack that tries to prevent access to a service for legitimate users by overwhelming the network or server"
   - Ping of death (large ping)
   - Ping flood (a lot of ping)
-  - SYN flood | Half-open attackss
+  - SYN flood | Half-open attacks
   - Distributed denial-of-service attack(DDoS) : A DoS attack using multiple systems
 
 # Other Attacks
@@ -496,3 +496,74 @@ Penetration testing : "The practice of attempting to break into a system or netw
 Privacy policies : "oversee the access and use of sensitive data"
 "It's a good practice to apply the principle of __least privilege__ here, by not allowing access to this type of data by default"
 "__Data-handling policies__ should cover the details of how different data is classified"
+
+## Data Destruction
+Data destruction : "is removing or destroying data stored on electronic devices so that an operating system or application cannot read it. Data destruction is required when a company no longer needs a device, when there are unused or multiple copies of data, or you are required to destroy specific data"
+
+### Recycling
+"Standard recycling methods include the following: 
+- Erasing/wiping
+- Low-level formatting
+- Standard formatting"
+
+# Users
+## User Habits
+"You can build the world's best security systems, but they won't protect you if the users are going to be practicing __unsafe security__"
+Risky business "You should __never upload confidential information__ onto a third-party service that hasn't been evaluated by your company"
+"It's important to __make sure employees use new and unique passwords__, and don't reuse them from other services"
+"A much greater risk in the workplace that users should be educated on is __cerdential theft__ from phishing emails"
+"If someone entered their password into a phishing site, or even suspects they did, it's important to __change their password__ as soon as possible"
+
+## Third-Party Security
+"If they have subpar security, you're undermining your security defenses by potentially opening a new avenue of attack"
+
+## Security Training
+"Helping others keep security in mind will help decrease the security burdens you'll have as an IT Support Specialist"
+
+# Incident Handling
+## Incident Reporting and Analysis
+- Detect it
+- Analyse it --> "determine the effects and the scope of damage"
+"If an account was compromised, change the password immediately. If the owner is unable to __change the password__ right away, then __lock the account__"
+"__Severity__ includes factors like what and how many systems were compromised, and how the breach affects business functions"
+"The __impact__ of an incident is also an important issue to consider"
+Data exfiltration : "The unauthorized transfer of data from a computer"
+Revocerability : "How complicated and time-consuming the recovery effort will be"
+
+## Incident Response
+Incident Response : "When you've had a data breach, you may need forensic analysis to analyze the attack. This analysis usually involves extensive evidence gathering"
+
+Regulated data : "It's important to consider the type of data involved in an incident. Many types of data are subject to government regulations that require you to take extra care when handling it"
+
+Digital Rights Management (DRM) : "help ensure data regulations compliante. DRM technology comes in the form of either software or hardware solutions"
+- Restrict users
+- Set expiration dates
+- Limit access
+
+End User Licensing Agreements (EULAs) : "are similar to DRM in specifying certain rights and restrictions that apply to the software. [...] you can't complete an installation (or acess, share, or download data) until you agree to the terms written in the EULa statement"
+
+Chain of custody : "refers to a process that tracks evidence movement through its collection, safeguarding, and analysis lifecycle."
+
+## Bring Your Own Device (BYOD)
+BYOB threats
+- Loss or theft
+- Data loss
+- Data leakage
+- Data portability
+- Data portability
+- Security vulnerabilities
+- Meddler in the middle attacks
+- Malware
+- Jailbreaking
+
+Solutions 
+- BYOD policy
+- Mobile Device management (MDM) software
+- "Use an Enterprise Mobile Management (EMM) system"
+- "Require the use of multi-factor authentication (MFA)"
+- Acceptable use policy(AUP)
+- Non-disclosure agreements (NDA)
+- Restrict data access
+- Educate staff about data security
+- Back up device data
+- Data leakage prevention (DLP)
