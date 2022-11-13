@@ -59,9 +59,12 @@ git let us use `bisect` that do that automaticaly.
 
 ## Finding Invalid Data 
 `cat contacts.csv | ./import.py --server test`
+
 Important to put server. 
+
 Using `wc` to count the number of files
 `wc -l contacts.csv`
+
 Searching invalid Data with head and tail
 `head -50 contacts.csv | ./import.py --server test`
 `less -50 contacts.csv | ./import.py --server test`
@@ -69,10 +72,10 @@ Searching invalid Data with head and tail
 
 # Introduction to Slowness
 ## Why is my computer slow?
-Monitoring are system to see where is the bottleneck component. 
-On Linux : top
-MacOs : Activity Monitor
-Windows : Resource Monitor and Performance Monitor. 
+Monitoring are system to see where is the bottleneck component :
+- On Linux : top
+- MacOs : Activity Monitor
+- Windows : Resource Monitor and Performance Monitor. 
 
 ## How Computers Use Resources
 The data uses by a processes can be on the CPU/GPU, RAM,  Hard-driver or Network (from the quicker to slower)
@@ -92,8 +95,11 @@ Possibles causes
 
 ## Slow Web Server
 If the loading page is slow, we can use the tool `ab` (Apache Benchmark) "to figure out how slow it is."
+
 Priority in linux : lower the number, the higher the priority. 
+
 To change the priority  : `nice` and `renice`
+
 Example "for pid in $(pidof ffmpeg); do renice 19 #pid; done
 To resolve the ffmpeg problem
 `for pid in $(pidof ffmpeg); do while kill -CONT $pid: do sleep 1; done
@@ -119,7 +125,7 @@ https://www.reddit.com/r/linux/comments/d7hx2c/why_nice_levels_are_a_placebo_and
 
 # Slow code
 ## Writing Efficient Code 
-"We should always start bu writing clear code that does what it should, and only try to make it faster if we realize that's not fast enough."
+"We should always start by writing clear code that does what it should, and only try to make it faster if we realize that's not fast enough."
 "Trying to optimize every second out of a script is probably not worth your time." 
 __Good practice__ : 
 - "Storing data that was already calculated"
@@ -135,21 +141,27 @@ Avoiding expensive action ("Those that can take a long time to complete")
 
 ## Using the Right Data Structures
 Lists : "Sequences of elements. We can add, remove, or modify the elements in them, and we can iterate through the whole list to operate on each of the elements. "
+
 Called : "Arraylist in Java, Vector in C++, Array in Ruby, Slice in Go"
+
 Dictionaries : "Store key-value pairs. We add data by associating a value to a key, and then we retrieve a value by looking up a specific key."
+
 Called : "HashMap in Java, Unordered Map in C++, Hash in Ruby, Map in Go". 
 Advantage : really fast to find value with a key. 
 
 "If you need to acess elements by position, or will always iterate through all the elements, use a list to store them."
+
 "If we need to look up the elements using a key, we'll use a dictionary."
 
 ## Expensive Loops
 "If you do an expensive operation inside a loop, you multiply the time it takes to do the expensive operation by the amount of times you repeat the loop."
+
 "Make sure that the list of elements that you're iterating through is only as long as you really need it to be."
+
 "Another thing to remember about loops is to break out of the loop once you've found what you were looking for"
 
 ## Keeping Local Results
-"If we're parsing a large file and only keeping a few key pieces of information form it, we can create a cache to store only that information, or if we're getting some information over the network, we cna keep a local copu of the file to avoid downloading it over and over again". 
+"If we're parsing a large file and only keeping a few key pieces of information form it, we can create a cache to store only that information, or if we're getting some information over the network, we can keep a local copy of the file to avoid downloading it over and over again". 
 
 ## Slow Script with Expensive Loop
 Three values of the `time` command :
@@ -189,7 +201,7 @@ for root, _, files in os.walk('images'):
         if not basename.endswith(".jpg");
             continue
         executor.submit(process_file, root, basename)
-print("Waiting for al threads to finish.")
+print("Waiting for all threads to finish.")
 executor.shutdown()
 ```
 To make process instead of thread :
@@ -203,7 +215,7 @@ for root, _, files in os.walk('images'):
         if not basename.endswith(".jpg");
             continue
         executor.submit(process_file, root, basename)
-print("Waiting for al threads to finish.")
+print("Waiting for all threads to finish.")
 executor.shutdown()
 ```
 ## Worklabs
