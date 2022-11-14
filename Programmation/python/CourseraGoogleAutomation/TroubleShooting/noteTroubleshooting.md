@@ -233,3 +233,31 @@ def run(task)
     p.map(run, tasks)
 
 ```
+
+# Why Programs Crash
+## Systems That Crash
+1. Reduce the scope
+   1. Looking at the log
+   2. Trying to make the bug again, on the computer where it's happen and another
+2. Try if it's happen reliably ("Do all invoice generations fail?")
+3. Look for the hardware (trying another computer)
+   1. Look for the RAM
+   2. Looking for overheating
+   3. Look for the Graphic/audio card
+
+## Understanding Crashing Applications
+To see logs :
+- Linux : Varlog or usrlog 
+- MacOS : Console App 
+- Windows : Event Viewere
+
+To get more information about a program : 
+- Linux : strace
+- MacOS : dtruss
+- Windows : Process Monitor
+
+"To find the root cause of a crashing application, we'll want to look at all available logs, figure out what changed, trace the system or library calls the program makes, and create the smallest possible reproduction case"
+
+## What to do when you can't fix the program?
+Wrapper : "A function or program that provides a compatibility layer between two functions or programs, so they can work well together"
+Watchdog : "A process that checks whether a program is running, and, when it's not, starts the program again"
