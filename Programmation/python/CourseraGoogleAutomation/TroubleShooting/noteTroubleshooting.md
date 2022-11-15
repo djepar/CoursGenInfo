@@ -249,15 +249,95 @@ def run(task)
 To see logs :
 - Linux : Varlog or usrlog 
 - MacOS : Console App 
+  - System Log Folder: /var/log
+  - System Log: /var/log/system.log
+  - Mac Analytics Data: /var/log/DiagnosticMessages
+  - System Application Logs: /Library/Logs
+  - System Reports: /Library/Logs/DiagnosticReports
+  - User Application Logs: ~/Library/Logs (in other words, /  
+  - Users/NAME/Library/Logs)
+  - User Reports: ~/Library/Logs/DiagnosticReports (in other words, /Users/NAME/Library/Logs/DiagnosticReports)
 - Windows : Event Viewere
 
 To get more information about a program : 
 - Linux : strace
 - MacOS : dtruss
+  - To look at a a specific PID : `dtruss -p 1871`
 - Windows : Process Monitor
+  - Run then perfmon
 
 "To find the root cause of a crashing application, we'll want to look at all available logs, figure out what changed, trace the system or library calls the program makes, and create the smallest possible reproduction case"
 
 ## What to do when you can't fix the program?
 Wrapper : "A function or program that provides a compatibility layer between two functions or programs, so they can work well together"
 Watchdog : "A process that checks whether a program is running, and, when it's not, starts the program again"
+
+## Internal Server Error
+Usually a 500 error on the browser
+To look for log more information :
+```
+ssh webserver
+date
+cd /var/log/
+ls -lt | head
+```
+
+Netstat to access "a  bunch of sockets that are restricted to route the administrator user on Linux" : `sudo netstat -nlp | grep :80`
+
+"The /etc directory will contain the application folder that stores configuration files"
+
+## Resources for Understanding Crashes
+Worst crashes 
+- Linux and MacOS : Kernel Panic
+- Windows : Blue Screen of Death
+
+# Code that Crashes
+## Accessing Invalid Memory
+"Accessing invalid memory means that the process tried to access a portion of the system's memory that wasn't assigned to it."
+
+Pointers : "The variables that store memory addresses"
+
+Can be a pointers problem, which are called segmentation faults or segfaults.
+
+"""Common programming errors that lead to segmentation faults:
+- Trying to access a list element outside of the valid range
+- Trying to use a portion of memory after having given it back
+- Trying to write more data than the requested portion of memory can hold
+"""
+
+In case of a seffault : "is to attach a debugger to the faulty program. This way when the program crashes, you'll get information about the function where the fault happened"
+
+Undefined behavior : "The code is doing something that's not valid in the programming language"
+
+Valgrind : "A very powerful tool that can tell us if the code is doing any invalid operations, no matter if it crashed or not"
+
+Dr. Memory : "can assist in finding out if invalid operations are occuring in a program running on Windows or Linux"
+
+## Unhandled Errors and Exceptions
+Traceback : "Shows the lines of the different functions that were being executed when the problem happened"
+
+In Python, the debugger is pdb.
+
+Printf debugging : Written statement in the code with var value to look where the program generate error
+
+Logging module (in Python) : " The logging module sets debug messages to show up when the code fails"
+
+## Fixing Someone Else's Code
+1. Reading the comments or adding comments if no comments
+2. Reading the test associated with the code or write test if there is none
+3. Locate the affected function
+
+## Debugging a Segmentation Fault
+Core files : "Store all the information related to the crash so that we, or someone else, can debug what's going on"
+In linux : 
+```
+ulimit -c unlimited
+ls -l core
+gdb -c core example
+(gdb) backtrace 
+(gdb)up
+(gdb)print i
+```
+
+## Debugging a Python Crash
+Python Debugger : `pdb3 name_script.py` then `next` or `continue`
