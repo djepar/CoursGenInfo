@@ -69,7 +69,9 @@ A components is a "stand alone parts of a UI"
 
 ## Introduction to functional components
 "React provides two types of components : functional components and class components."
+
 Ex of Functional components 
+
 Functional component "must be used as a JSX element"
 ``` 
 function Welcome(){
@@ -108,18 +110,23 @@ export default App;
 ```
 
 "React is scripted using a special syntax called JavaScript XML or JSX."
-"JSX syntax looks very similar to HTML. What ares its advandates is that it allows you to write JavaAcript code inside what looks like HTML elements."
+
+"JSX syntax looks very similar to HTML. What ares its advandages is that it allows you to write JavaSript code inside what looks like HTML elements."
+
 "All component names in React must be capitalized."
 
 ## Transpiling JSX
 "A browser cannot understand JSX syntax."
+
 Transpiling : "interpreting a programming language and translating it to a specific target language".
+
 With the help of Babel, JSX is transform into plain JS code. 
 
 ## Customizing the project
 Two approaches to organize by files :
 - "Grouping by features
 - Grouping by file type"
+
 Better not to nest folders too deep.
 
 className : the "class" attribute is already a reserved keyword in JSX, so to assign a class for the HTML of a React, the syntax is className.
@@ -147,12 +154,16 @@ export function App(props) {
 };
 ```
 "Props are passed using JSX syntax : it's helpful to think of props as arguments that components can accept and are passed using JSX".
+
 "Props are like a JavaScript object, in that they can accept many data types including strings, integers, functions, arrays and objects."
+
 We can never change the props in the component. 
 
 ## Introducing JSX
-Let developper to "write HTML directly inside JavaScript code"
+Lets developper "write HTML directly inside JavaScript code"
+
 "You can define how React renders a component using a regular JavaScript function"
+
 "The HTML code must be wrapped in a top level element, such as a div tag."
 
 ## Props and children
@@ -243,7 +254,8 @@ Ex of the smallest possible function
 `const example = function() {}`
 `const example = () => {}`
 
-"Another interesting thing about arrow functinos is the implicit return. However, it only works if it's on the same line of code as the arrow itself. In other words, the implicit return works if the entire component is a single line of code."
+"Another interesting thing about arrow functions is the implicit return. However, it only works if it's on the same line of code as the arrow itself. In other words, the implicit return works if the entire component is a single line of code."
+
 `const Nav = () => <ul><li>Home</li></ul>`
 
 ### Using Arrow Functions in Other Situations
@@ -282,6 +294,7 @@ function Example() {
 ```
 ### Using function calls in JSX
 "Another way to work with an expression in JSX is to invoke a function. Function invocation is an expression because every expression returns a value, and function invocation will always return a value, even when that return value is undefined"
+
 For example with the Math.floor and Math.random
 ```
 function Example2() {
@@ -358,7 +371,8 @@ export default App;
 
 # Dynamic events and how to handle them
 ## Types of events 
-"Evevents are the process by which JavaScript interacts with HTML and can occur when the user or the browser manipulated a page."
+"Events are the process by which JavaScript interacts with HTML and can occur when the user or the browser manipulated a page."
+
 For examples : clicks, movements or commands. 
 ### Event Groups
 """
@@ -373,7 +387,7 @@ For examples : clicks, movements or commands.
 """
 
 ## Eventful issues
-using the try...catch syntax to find error easily.
+Using the try...catch syntax to find error easily.
 
 Reminder of JS try..catch :
 ```
@@ -407,7 +421,7 @@ Event handling in HTML
 onclick="clickhandler()">Click me!</button>
 ```
 In React
-1. ""Plug into" HTML element on which to listen to an event"
+1. "Plug into" HTML element on which to listen to an event"
 ```
 const jsBtn = document.getElementById('js-btn')
 jsBtn.addEventListener('click', function(){
@@ -469,7 +483,7 @@ export default App;
 ```
 
 ## JavaScript bind()
-"The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+"The `bind()` method creates a new function that, when called, has its `this` keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
 
 ```
 var foo = {
@@ -509,9 +523,11 @@ Normalize behavior for all browser.
 
 ## Passing a function vs calling a fct
 Calling (WRONG in this case)= `return <button onClick={this.handleclick()}>Click me</button>`
+
 Passing = `<button onClick={this.handleClick}>Click me</button>`
-### How to pass a paremeter to an event handler then
+### How to pass a parameter to an event handler then
 Like this : `button onClick={() => this.handleClick(id)}/>`
+
 Or : `<button onClick>={this.handleClick.bind(this, id)}/>`
 
 # Data and Events
@@ -519,6 +535,7 @@ Or : `<button onClick>={this.handleClick.bind(this, id)}/>`
 
 Using a centralized point of data : 
 - "Allow you to edit multiple items at the same time if they reference the same data, reduces odds of typing errors, and is more efficient when data changes often"
+
 Ex : 
 Initialy
 ```
@@ -563,6 +580,7 @@ function PromoHeading(props){
 
 ## Hooks
 useState hook : Manage the state 
+
 First, import the useState : `import React, {useState} from 'rect';`
 
 Provide any name : `const [showMenu, setShowMenu] = useState(false);`
@@ -577,12 +595,12 @@ var setShowMenu = menustate[1]; //Access second item in array
 - Creates a state variable with an initial value (showMenu)
 - Creates a function to set that state variable's value (setShowMenu)"
 
-"Hooks can be called only at the top level and only form React functions"
+"Hooks can be called only at the top level and only from React functions"
 
 "In React, state is always referred to the local state of a component."
 
 ## What is State
-"Data in a component that determines behavior. "
+"Data in a component that determines behavior."
 
 "A child component will receive the data via properties, passing state that's set in a parent stateful component."
 
@@ -593,7 +611,8 @@ useState hook : " Enables use of components for controlling state"
 ### Stateless component
 ```
 function App(){
-    return <h1>A completely stateless component!</h1> //--> only render the text
+    return <h1>A completely stateless component!</h1> 
+    // only render the text
 };
 ```
 ### Stateful component
@@ -604,6 +623,7 @@ function App(){
     return (
         <div>
             <h1>A state value: {word}</h1> // --> Render a variable
+        </div>
     )
 }
 ```
@@ -611,20 +631,21 @@ function App(){
 ## Observing state
 
 `const [date, setDate] = React.useState(new Date());`
-Where is the date is where we can __access date state__ and the setDate is where we __update state__.
+
+Date is where we can __access date state__ and setDate is where we __update state__.
 
 
 ## Managing state
 "Lifting state up is about cutting the state from the child component and moving it to the parent component's code, with the intent of making the state available in sibling components".
 
 ## Prop drilling
-"A situation where you are passing data form a parent to a child component, then to a grand child component, and so on, until it reaches a more distant component further down the component tree, where this data is required."
+"A situation where you are passing data from a parent to a child component, then to a grand child component, and so on, until it reaches a more distant component further down the component tree, where this data is required."
 
 "The more layers there are, the more repetitive and unnecessary this feels."
 
 ## React state management
 Context API is easier then Prop drilling. 
-To put in place a Context APi, it's require a Context Provider ("component that store the state") which will be use by Context Consumer ("Component that will use the state")
+To put in place a Context API requires a Context Provider ("component that store the state") which will be use by a Context Consumer ("Component that will use the state")
 
 For help wiht immutable variable in Rect : https://github.com/immerjs/immer and https://github.com/kolodny/immutability-helper
 
@@ -636,14 +657,14 @@ From : https://beta.reactjs.org/learn/keeping-components-pure
 - It's doesn't "change objects or variables that existed before it was called"
 
 ### Side Effects
-"Components should only *return* their JASX, and not *change* any objects or variables that existed before rendering"
+"Components should only *return* their JSX, and not *change* any objects or variables that existed before rendering"
 
 Event Handler can content side effet, because it's the point to change how the website look.
 
 # Linking and Routing
 ### Approach to Single Page Applications
 1. Bundling : "when the browser requests the application, return and load all necessary HTML, CSS and JavaScript immediately"
-2. Lazy loading or code splitting : "when the browser requests the application, return only the minimu HTML, CSS and JavaScript needed to load the application, for example, when a user navigates to a specific section of the application."
+2. Lazy loading or code splitting : "when the browser requests the application, return only the minimum HTML, CSS and JavaScript needed to load the application, for example, when a user navigates to a specific section of the application."
 
 ## Basic Types of navigation
 "In React, the entire app is loaded inside a single div, you're not actually visiting different pages, and different views are rendered when React makes changes to the Virtual Dom, with React updating the real DOM accordingly"
