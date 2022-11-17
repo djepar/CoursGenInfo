@@ -341,3 +341,27 @@ gdb -c core example
 
 ## Debugging a Python Crash
 Python Debugger : `pdb3 name_script.py` then `next` or `continue`
+
+
+# Handling Bigger Incidents
+## Crashes in Complex Systems
+1. Look at the general system logs
+2. If the problems start appearing at the same time as some change, trying to rollback can help.
+3. If the error message is not helpful, we can "include what the request and the response were and why the response was invalid" (in the case of a server problem, writing similar report for other kind of problem)
+4. Find if there is one server/machine/computer where the problem start or came from. Isolating it if it's the case
+
+## Communication and Documentation During Incidents
+Regular information to the users for the update and issues that are coming/happened. 
+When an issue is fix, it's important to sum up what happen, why, when and how it's was fix and how we can prevent it from happening again
+
+## Writing Effective Postmortems
+Postmortems : "Documents that describe details of incidents to help us learn from our mistakes"
+Shouldn't be a blame.
+Should include :
+"""
+- What caused the issue
+- What the impact of the issue was
+- How it got diagnosed
+- The short-term remediation you applied
+- The long-term remediation you applied
+"""
