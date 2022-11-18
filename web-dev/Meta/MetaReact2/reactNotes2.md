@@ -78,3 +78,6 @@ Rules for keys :
 - Unique IDs
   - Shouldn't be neither random nor index
 
+# Forms in React
+## What are controlled components?
+Controlled components : "a set of components that offer a declarative application programming interface or API to enable full control of the state of form elements at any point in time using React state"
