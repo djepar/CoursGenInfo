@@ -81,3 +81,93 @@ Rules for keys :
 # Forms in React
 ## What are controlled components?
 Controlled components : "a set of components that offer a declarative application programming interface or API to enable full control of the state of form elements at any point in time using React state"
+
+State delegation is done through the value prop.
+
+Value : "A special property to determine input content"
+
+To create a controlled component : local state + value prop
+
+To get update use the second prop : onChange callback who receives an event parameter
+
+```
+handleChange(event){
+  setValue(event.target.value);
+}
+
+<form onSubmit={handleSubmit}>
+...
+</form>
+handleSubmit(event){
+  validate(value);
+  event.preventDefault();
+}
+```
+
+## Controlled components vs Uncontrolled components
+###  Uncontrolled Inputs 
+"Uncontrolled inputs are like standard HTML form inputs" :
+
+```
+const Form = () => {
+  return (
+    <div>
+      <input type="text" />
+    </div>
+  );
+};
+```
+
+It's in the DOM itself. We get the value by using React ref :
+
+```
+const Form = () => {
+  const inputRef = useRef(null);
+
+  const handleSubmit = () => {
+    const inputValue = inputRef.current.value;
+    // Do something with the value
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input ref={inputRef} type="text" />
+    </form>
+  );
+};
+```
+
+
+### Controlled Inputs
+Controlled inputs : "accept their value as a prop and a callback to change that value. That implies that the value of the input has to live in the React state somewhere. Typically, the component that renders the input (like a form component) save that in its state" :
+
+```
+const Form = () => {
+  const [value, setValue] = useState("");
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
+  }
+
+  return (
+    <form>
+      <input
+        value={value}
+        onChange={handleChange}
+        type="text"
+      />
+      </form>
+  );
+};
+```
+
+### The file input type 
+"There are some specific form inputs that are always uncontrolled, like the file input tag."
+
+## Creating a Form component in React
+Tasks : 
+- Create a controlled component in React
+- Use local state and the onChange event
+- Avoid the default behavior of the submit event
+- Disable the submit button
+
