@@ -164,10 +164,5 @@ const Form = () => {
 ### The file input type 
 "There are some specific form inputs that are always uncontrolled, like the file input tag."
 
-## Creating a Form component in React
-Tasks : 
-- Create a controlled component in React
-- Use local state and the onChange event
-- Avoid the default behavior of the submit event
-- Disable the submit button
-
+## Create a Controlled Form Component
+"The two props to add when creating a controlled range are : `value` and `onChange`. The `value` prop is used to hook the local state up and `onChange` prop is used to receive the changes and update the state accordingly"
