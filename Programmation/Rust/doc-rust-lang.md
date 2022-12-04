@@ -1,21 +1,33 @@
 # Chapter 1
 
 ## Installation : 
+
+If linker problem --> install C compiler 
+
 ### Linux and MacOs
 curl --proto 'https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+Installing a C compiler in macOS : `xcode-select --install`
+
 ### Windows
 Download and install rustup on the website
 
 ### Troubleshooting
-rustc --version
+`rustc --version`
 
+### Updating and Uninstalling
+`rustup update`
+
+To uninstall : `rustup self uninstall`
 ## HelloWorld
 ### Create a Project Directory
+```
 mkdir /projects
 cd projects
 mkdir hello_word 
 cd hello_world
-    
+```
+
 ### Create the source files
 main.rs // the rust files always end up with .rs
 
