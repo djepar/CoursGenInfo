@@ -1,0 +1,1 @@
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/doc-rust-lang/Chapter3/VariablesTesting/target/debug/VariablesTesting: /Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/doc-rust-lang/Chapter3/VariablesTesting/src/main.rs
