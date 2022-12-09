@@ -71,44 +71,46 @@ To see the binary executable
 You can compile the program and give the executable to someone else and they can run it without having to install Rust
 
 ## Hello, Cargo! 
-    Creating a cargo projects   
-        $ cargo new hello_cargo
-        $cd hello_cargo
-    List of files created by this command
-        A src Directory
-            With a main.rs
-        a Cargo.toml
-        It has created also a git repository with a .gitignore files
-            To override the behavior : cargo new --vcs=git
-        A TOML format 
-            Tom's Obvious Minimal language
-            first line : the package
-            then we see the name the version and the edition
-            Finaly we will see the dependencies
-        The top-level project Directory
-            Readme files
-            License information
-            TOML files
-    Building and running a cargo project
-        $ cargo build
-            to create an executable 
-        The executable is in the debug
-        to run it only write  the name of the files 
-            Windows
-               $ hello_cargo.exe
-            LinMac
-                $ hello_cargo
-            All in one command  
-                $ cargo run
-    Cargo lock 
-        Files at the top level  
-            This files keeps traks of the exacts versions of dependencies
-            This files is always update automaticaly by cargo. 
-    $ cargo check
-        A command that quickly checks if the code is compiling without creating an executable
-    $ cargo -- release
-        Will create an executable in target/release instand of target/Building
-     
+Creating a cargo projects   
+`$ cargo new hello_cargo`
+`$cd hello_cargo`
+
+List of files created by `cargo new`
+- A src Directory
+  - main.rs
+  - Cargo.toml
+- It has created also a git repository with a .gitignore files
+  - To override the behavior : cargo new --vcs=git
+- A TOML format 
+  - Tom's Obvious Minimal language
+    - first line : the package
+    - then we see the name the version and the edition
+    - Finaly we will see the dependencies
+- The top-level project Directory
+  - Readme files
+  - License information
+  - TOML files
+
+
+## Building and running a cargo project
+To create an executable : `$ cargo build` 
+    The executable is in the debug
+    to run it only write  the name of the files 
+        Windows
+            $ hello_cargo.exe
+        LinMac
+            $ hello_cargo
+        All in one command  
+            $ cargo run
+Cargo lock 
+    Files at the top level  
+        This files keeps traks of the exacts versions of dependencies
+        This files is always update automaticaly by cargo. 
+$ cargo check
+    A command that quickly checks if the code is compiling without creating an executable
+$ cargo -- release
+    Will create an executable in target/release instand of target/Building
+    
 # Chapter 2 : Programming a guessing game
     Setting up  
         cargo new guessing_game
@@ -207,34 +209,60 @@ You can compile the program and give the executable to someone else and they can
 ### Keywords
 Words reserved by the language only.
 We cannot use these words as names of variables or functions
-### Variables and Mutability
-A immutable variable once bound to a name can't change that value.
-To have a mutable variable : `let mut x = 5;`
+### 3. Variables and Mutability
+We cannot change the value of a immutable variable once declare. 
+To assign a mutable variable : `let mut x = 5;`
 
-    Constants
-        Like immutables variables, constants are values that are bound to a name and are not allowed to change
-        Compare to variable, a constant cannot becomme mutable with 'mut'
-        A constant is not immutable by default, it's always immutable
-        Can be declare in any scope, including global scope
-        A constant may be set only to a constant expression, not the result of a value that could only be computed at runtime
-            const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
-    Shadowing
-        When we declare a new variable with the same name as a previous variable
-            let x = 5;
-            let x = x +1;
-        Compare to mutable  
-            More secure if we don't want this variable to change except when we want it to.
-            We can change the type of the variable  
-                let spaces = "    ";
-                let spaces:u32 = spaces.len(); //pas sur si c'est bon
-    Data types  
-        Rust is a statically typed language : it must know the types of all variables at compile time.
-        The compiler can usually infer what type we want to use based on the value and how we use it. 
+#### __Constants__ : 
+- Like immutables variables, constants are values that are bound to a name and are not allowed to change
+- Compare to variable, a constant cannot becomme mutable with 'mut'
+- A constant is not immutable by default, it's always immutable
+- Can be declare in any scope, including global scope
+- A constant may be set only to a constant expression, not the result of a value that could only be computed at runtime
+  - `const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;`
+
+Le hardcodage de constance est utile pour nommer et donner un sens à une variable constance
+
+#### __Shadowing__ :
+
+- When we declare a new variable with the same name as a previous variable
+```
+    let x = 5;
+    let x = x +1;
+ ```
+See /Rust/doc-rust-lang/Chapter3/VariablesTesting
+
+__Compare to mutable__ :
+- More secure if we don't want this variable to change except when we want it to.
+- We can change the type of the variable  
+- "Shadowing only changes variable within a syntactic scope, while mutation can change an outer variable in a nested scope"
+
+
+
+```
+let spaces = "    ";
+let spaces = spaces.len(); 
+```
+
+
+
+## 3.2 Data types
+
+Rust is a statically typed language : it must know the types of all variables at compile time.
+
+The compiler can usually infer what type we want to use based on the value and how we use it.
+
+Le compilateur peut habituellement inférer le type en fonction de la valeur de la variable, toutefois, lorsque le compilateur rencontre des cas où il parse une string.  
+
+`let guess: u32 = "42".parse().expect("Not a number!");`
                 
-        Scalar types    
-            Represent a single value. 
-            Rust has four primary scalar types : Integers, floating-point numbers, booleans and characters.
-                Integers types : number without a fractional component
+__Scalar types__  :
+
+Represent a single value. 
+
+
+         -Rust has four primary scalar types : Integers, floating-point numbers, booleans and characters.
+        Integers types : number without a fractional component
                     i for signed
                     u for unsigned
                     number for number of bit

@@ -1,0 +1,1 @@
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/doc-rust-lang/Chapter1/bonjour_monde/target/debug/bonjour_monde: /Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/doc-rust-lang/Chapter1/bonjour_monde/src/main.rs
