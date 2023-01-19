@@ -1,0 +1,11 @@
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/bevy/bevy_testing/target/debug/deps/approx-f4048048b7647cc5.rmeta: /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/lib.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/abs_diff_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/relative_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/ulps_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/macros.rs
+
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/bevy/bevy_testing/target/debug/deps/libapprox-f4048048b7647cc5.rlib: /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/lib.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/abs_diff_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/relative_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/ulps_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/macros.rs
+
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/bevy/bevy_testing/target/debug/deps/approx-f4048048b7647cc5.d: /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/lib.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/abs_diff_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/relative_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/ulps_eq.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/macros.rs
+
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/lib.rs:
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/abs_diff_eq.rs:
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/relative_eq.rs:
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/ulps_eq.rs:
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/approx-0.5.1/src/macros.rs:

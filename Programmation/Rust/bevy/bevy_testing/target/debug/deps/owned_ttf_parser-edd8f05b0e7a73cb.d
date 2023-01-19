@@ -1,0 +1,10 @@
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/bevy/bevy_testing/target/debug/deps/owned_ttf_parser-edd8f05b0e7a73cb.rmeta: /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/lib.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/convert.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/owned.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/preparse.rs
+
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/bevy/bevy_testing/target/debug/deps/libowned_ttf_parser-edd8f05b0e7a73cb.rlib: /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/lib.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/convert.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/owned.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/preparse.rs
+
+/Users/admin/Documents/informatique/CoursGenInfo/Programmation/Rust/bevy/bevy_testing/target/debug/deps/owned_ttf_parser-edd8f05b0e7a73cb.d: /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/lib.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/convert.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/owned.rs /Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/preparse.rs
+
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/lib.rs:
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/convert.rs:
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/owned.rs:
+/Users/admin/.cargo/registry/src/github.com-1ecc6299db9ec823/owned_ttf_parser-0.17.1/src/preparse.rs:

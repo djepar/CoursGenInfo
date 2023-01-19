@@ -1,21 +1,33 @@
 # Chapter 1
 
 ## Installation : 
+
+If linker problem --> install C compiler 
+
 ### Linux and MacOs
 curl --proto 'https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+
+Installing a C compiler in macOS : `xcode-select --install`
+
 ### Windows
 Download and install rustup on the website
 
 ### Troubleshooting
-rustc --version
+`rustc --version`
 
+### Updating and Uninstalling
+`rustup update`
+
+To uninstall : `rustup self uninstall`
 ## HelloWorld
 ### Create a Project Directory
+```
 mkdir /projects
 cd projects
 mkdir hello_word 
 cd hello_world
-    
+```
+
 ### Create the source files
 main.rs // the rust files always end up with .rs
 
@@ -59,44 +71,46 @@ To see the binary executable
 You can compile the program and give the executable to someone else and they can run it without having to install Rust
 
 ## Hello, Cargo! 
-    Creating a cargo projects   
-        $ cargo new hello_cargo
-        $cd hello_cargo
-    List of files created by this command
-        A src Directory
-            With a main.rs
-        a Cargo.toml
-        It has created also a git repository with a .gitignore files
-            To override the behavior : cargo new --vcs=git
-        A TOML format 
-            Tom's Obvious Minimal language
-            first line : the package
-            then we see the name the version and the edition
-            Finaly we will see the dependencies
-        The top-level project Directory
-            Readme files
-            License information
-            TOML files
-    Building and running a cargo project
-        $ cargo build
-            to create an executable 
-        The executable is in the debug
-        to run it only write  the name of the files 
-            Windows
-               $ hello_cargo.exe
-            LinMac
-                $ hello_cargo
-            All in one command  
-                $ cargo run
-    Cargo lock 
-        Files at the top level  
-            This files keeps traks of the exacts versions of dependencies
-            This files is always update automaticaly by cargo. 
-    $ cargo check
-        A command that quickly checks if the code is compiling without creating an executable
-    $ cargo -- release
-        Will create an executable in target/release instand of target/Building
-     
+Creating a cargo projects   
+`$ cargo new hello_cargo`
+`$cd hello_cargo`
+
+List of files created by `cargo new`
+- A src Directory
+  - main.rs
+  - Cargo.toml
+- It has created also a git repository with a .gitignore files
+  - To override the behavior : cargo new --vcs=git
+- A TOML format 
+  - Tom's Obvious Minimal language
+    - first line : the package
+    - then we see the name the version and the edition
+    - Finaly we will see the dependencies
+- The top-level project Directory
+  - Readme files
+  - License information
+  - TOML files
+
+
+## Building and running a cargo project
+To create an executable : `$ cargo build` 
+    The executable is in the debug
+    to run it only write  the name of the files 
+        Windows
+            $ hello_cargo.exe
+        LinMac
+            $ hello_cargo
+        All in one command  
+            $ cargo run
+Cargo lock 
+    Files at the top level  
+        This files keeps traks of the exacts versions of dependencies
+        This files is always update automaticaly by cargo. 
+$ cargo check
+    A command that quickly checks if the code is compiling without creating an executable
+$ cargo -- release
+    Will create an executable in target/release instand of target/Building
+    
 # Chapter 2 : Programming a guessing game
     Setting up  
         cargo new guessing_game
@@ -195,85 +209,141 @@ You can compile the program and give the executable to someone else and they can
 ### Keywords
 Words reserved by the language only.
 We cannot use these words as names of variables or functions
-### Variables and Mutability
-A immutable variable once bound to a name can't change that value.
-To have a mutable variable : `let mut x = 5;`
+### 3. Variables and Mutability
+We cannot change the value of a immutable variable once declare. 
+To assign a mutable variable : `let mut x = 5;`
 
-    Constants
-        Like immutables variables, constants are values that are bound to a name and are not allowed to change
-        Compare to variable, a constant cannot becomme mutable with 'mut'
-        A constant is not immutable by default, it's always immutable
-        Can be declare in any scope, including global scope
-        A constant may be set only to a constant expression, not the result of a value that could only be computed at runtime
-            const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
-    Shadowing
-        When we declare a new variable with the same name as a previous variable
-            let x = 5;
-            let x = x +1;
-        Compare to mutable  
-            More secure if we don't want this variable to change except when we want it to.
-            We can change the type of the variable  
-                let spaces = "    ";
-                let spaces:u32 = spaces.len(); //pas sur si c'est bon
-    Data types  
-        Rust is a statically typed language : it must know the types of all variables at compile time.
-        The compiler can usually infer what type we want to use based on the value and how we use it. 
+#### __Constants__ : 
+- Like immutables variables, constants are values that are bound to a name and are not allowed to change
+- Compare to variable, a constant cannot becomme mutable with 'mut'
+- A constant is not immutable by default, it's always immutable
+- Can be declare in any scope, including global scope
+- A constant may be set only to a constant expression, not the result of a value that could only be computed at runtime
+  - `const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;`
+
+Le hardcodage de constance est utile pour nommer et donner un sens à une variable constance
+
+#### __Shadowing__ :
+
+- When we declare a new variable with the same name as a previous variable
+```
+    let x = 5;
+    let x = x +1;
+ ```
+See /Rust/doc-rust-lang/Chapter3/VariablesTesting
+
+__Compare to mutable__ :
+- More secure if we don't want this variable to change except when we want it to.
+- We can change the type of the variable  
+- "Shadowing only changes variable within a syntactic scope, while mutation can change an outer variable in a nested scope"
+
+
+
+```
+let spaces = "    ";
+let spaces = spaces.len(); 
+```
+
+
+
+## 3.2 Data types
+
+Rust is a statically typed language : it must know the types of all variables at compile time.
+
+The compiler can usually infer what type we want to use based on the value and how we use it.
+
+Le compilateur peut habituellement inférer le type en fonction de la valeur de la variable, toutefois, lorsque le compilateur rencontre des cas où il parse une string, le compilateur doit savoir le type des variables à parse.
+
+Exemple : `let guess: u32 = "42".parse().expect("Not a number!");`
+
+Broken exemple : `let guess = "42".parse().expect("Not a number!");`
+`error[E0282]: type annotations needed`
+
+###__Scalar types__  :
+
+Represent a __single value__. 
+
+Four primary scalar types : Integers, floating-point numbers, booleans and characters.
+        
+Integers types : number without a fractional component
+- i for signed (negative, zero and positive)
+- u for unsigned (positive or zero)
+- syntax : i or u + length (ex : i128 for signed 128bit integer). The isize or usize also depend of the architecture, if 32-bit architecture : the arch or top is i32-u32.
+
+Integer can we wrote in : Decimal (98_222), hex (0xff), octal(0o77), binary (0b1111_0000) and byte (b'A') (u8 only) 
+
+Integer __overflow__ behaviors :
+- The program will panic at runtime
+- In --release (mode), Rust performs two's complement wrapping
+
+ __To handle overflowing manually__ : 
+- Wrap with wrapping_* methods (such as wrapping_add)
+- Return the None value if there is overflow with the checked
+- Returning the value and a boolean indicating wheter there was overflow with the overflowing_* methods
+- Saturate at the value's minimum or maximum values with saturating_*methods
+
+#### __Floating-Point types__ : Numbers with decimal point
+- Primitive float types : f32 and f64
+- f64 is the default type because the modern cpu, it's almost the same speed that with f32
+- All floating point are signed
+- Represented according to the IEEE-754
+
+ __Numeric Operations__ :
+Rust support basic mathematical operations : addition, substraction, multiplication, division and remainder
+- Integer division rounds down to the nearest integer
+See `/doc-rust-lang/Chapter3/NumericOperation`
+
+#### __The boolean type__    
+Value : Can be true or false
+
+Size : one byte
+Ex : 
+```
+let t = true; // Implicit annotation
+let f: bool = false; // Explicit type annotation
+```
+
+
+#### __The Character type__
+
+Char is the most primitive Rust alphabetic type
+                    
+Wrap in ''
+
+Size : A char is four bytes, which is more than ASCII accepted as char in Rust
+        
+## Compound types  
+
+Primitives compound types in rust : __tuples__ and __arrays__
+
+
+A general way of grouping a number of values with a variety of types into one compound type.
                 
-        Scalar types    
-            Represent a single value. 
-            Rust has four primary scalar types : Integers, floating-point numbers, booleans and characters.
-                Integers types : number without a fractional component
-                    i for signed
-                    u for unsigned
-                    number for number of bit
-                    i8 u8, etc until 128 bit
-                    arch isize usize
-                    Integer can we wrote in 
-                        Decimal, hex, octal, binary and byte (u8 only)
-                    Integer overflow
-                        Two behaviors
-                            The program will panic at runtime
-                            In --release (mode), Rust performs two's complement wrapping
-                    To handle overflowing
-                        Wrap with wrapping_* methods (such as wrapping_add)
-                        Return the None value if there is overflow with the checked
-                        Returning the value and a boolean indicating wheter there was overflow with the overflowing_* methods
-                        Saturate at the value's minimum or maximum values with saturating_*methods
-                Floating-Point types    
-                    Numbers with decimal point
-                        f32 and f64 are the two primitive float types.
-                            f64 is the default type because the modern cpu, it's almost the same speed that with f32
-                        All floating point are signed
-                        Represented according to the IEEE-754
-                Numeric Operations
-                    Rust support basic mathematical operations : addition, substraction, multiplication, division and remainder
-                        Integer division rounds down to the nearest integer
-                The boolean type    
-                    Can be true or false
-                    Size : one byte
-                    Ex : let t = true;
-                    Explicit type annotation
-                        let f: bool = false; 
-                The Character type      
-                    Char is the most primitive rust alphabetic type
-                    Wrap in ''
-                    A char is four bytes 
-                    More than ASCII accepted as char in Rust
-        Compound types  
-            Primitives compound types in rust : tuples and arrays
-            tuples  A general way of grouping a number of values with a variety of types into one compound type.
-                Fixed length : once declared, they cannot grow or shrink in size
-                Creating tuples 
-                Writing a comma-seperated list of values inside parentheses
-                let tup: (i32, f64, u8) = (500, 6.4, 1);
-                let (x, y, z) = tup; // destructure a tuple value to call individual variables of the tuple
-                Accessing a tuple directly
-                    let tup: (i32, f64, u8) = (500, 6.4, 1);
-                    let five_hundred = x.0;
-                    let six_point_four = x.1;
-                    let one = x.2;
-                tuples without any value is writting (), it's called unit Type
-            Array Type
+Fixed length : once declared, they cannot grow or shrink in size
+                
+Creating tuples 
+                
+Writing a comma-seperated list of values inside parentheses
+```
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+let (x, y, z) = tup; // destructure a tuple value to call individual variables of the tuple
+```
+
+__Accessing a tuple directly__ :
+
+
+```
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+let five_hundred = x.0;
+let six_point_four = x.1;
+let one = x.2;
+```
+
+tuples without any value is writting (), it's called unit 
+
+
+
+Array Type
                 Every element of an array must have the same type
                 Syntax : let a = [1, 2, 3, 4, 5];
                 Array in Rust have a FIXED length
