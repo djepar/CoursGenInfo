@@ -166,3 +166,38 @@ const Form = () => {
 
 ## Create a Controlled Form Component
 "The two props to add when creating a controlled range are : `value` and `onChange`. The `value` prop is used to hook the local state up and `onChange` prop is used to receive the changes and update the state accordingly"
+
+# React Context
+Props : passed to the components
+  short for properties
+  Components configurations
+  immutable
+
+
+State : Managed within the component
+  "this object is a way to allow react to determine when it should re-render a component. 
+  A component react is set up so that any change to the value served in the state object will trigger a rear ender of a given component states."
+  Start with a Default value then change with user event
+  A state is a snapshot or "a serialize double representation of one point in time"
+  State is optional (and normally will slow your program if use too much   )
+
+
+"The props and state together constitute the raw data that the html output derives from both props and states are plain Js objects and are deterministic."
+
+**Stateless components** : "have only props and no state there's not much going on besides the render function and all their logic revolves around the props they receive"
+  Easy to follow and test
+
+**Stateful components** : both props and state
+  Can be use for : 
+    - client-server communication
+    - data processing
+    - Responding to user events
+
+## Context
+An alternative to passing data
+
+Use for the **props drilling problem**, when passing data through all component tree levels (even components that do not need it)
+
+** Context application programming interface (Context API)** :
+  - Alternative way to pass data
+  - Useful for global state
