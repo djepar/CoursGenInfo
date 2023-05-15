@@ -112,98 +112,95 @@ $ cargo -- release
     Will create an executable in target/release instand of target/Building
     
 # Chapter 2 : Programming a guessing game
-    Setting up  
-        cargo new guessing_game
-        cd guessing_game
-        Test
-            cargo run
-    Input/output library
-        use std::io; //to use a library, at the begginning of the code
-    Storing values with variables
-        Create a variable to store user Input   let mut guess = String::new();
-            To define : let apples = 5;
-            To define a mutable variable we add mut : let mut apples = 5;
-    Associated function 
-        We can associate a function to a type like in the guessing game 
-            let mut guess = String::new();
-    Calling the stdin function from the io module define earlier
-            if we didnt add the module earlier  
-                std::io::stdin
-        io::stdin()
-            .read_line(&mut guess)
-                read_line take what the user types and append it into a string.
-                This mean we need a mutable string.
-                Here the references is mutable (reference are by default immutable like variables)
-        Handling potential failure
-            .expect("Failed to read line")'
-            Could be read as  : io::stdin().read_line(&mut gues).expect("Failed to read line");
-        io::Result (read_line return a io::result that will be handle by the expect method)
-            Rust has a number of types named Result 
-                The type of result is enumerations or enums
-                    Can have a fixed set of possibilities knows as variants.
-                Enums are often use with the conditional match
-            The purpose of Result types is to encode error-handling information
-            Result variant are 
-                Ok : operation is successful and inside ok is the successfully generated value
-                Err : operation has failed and err contains information about how or why the operation failed
-            Expect method to manage io::result.
-        Printing values with println! placeholders
-            println1("You guessed: {}", guess);
-                the bracket are the placeholders and it's will show the value  of the variable by order.
-                Exemple 
-                    let x = 5;
-                    let y = 10;
-                    println!("x = {} and y = {}", x, y);
-    Generating a Secret Number
-        Using a crate
-            Crate are use to have more functionality. 
-            Library crate cannot be used on its own.
-        Opening Cargo.toml 
-            Writting beneath [dependencies]
-                rand = "0.8.3"
-                Cargo use Semantic versioning
-                We should read in this example, any version at leat 0.8.3 but below 0.9.0
-        To update a crate   
-            $ cargo update
-        Random numbers
-            use rand::Rng;
-                Rng trait defines methods that random number generators implement
-            rand::thread_rng()
-                give us the particular random number generator, one that is local to the current thread of execution and seeded by the operating system
-            gen_range() take the range in parameters
-                gen_range(1..101) = 1..=100
-        Render is own documentation for all the dependencies    
-            $cargo doc --Opening
-    Comparing the Guess to the Secret Number    
-        Ordering type is another enum 
-            Variants are : less, greater and equal
-        Match expression are made of arms
-            Arms are pattern to match against and the code that should be run if the value given to match fits that arm's pattern. 
-        Type errors
-            We compare the number with a string, but we need a number.
-                Rust put by default the i32 (32-bit number)
-        let guess : u32 = guess.trim().parse().expect("Please type a number!");
-            trim : eliminate the \n and \r
-            parse : parses a string into some number    
-                The compiler need the size/type of the number   
-                    that is why after guess there is ':' and the type (u32 in that case)
-    Allowing multiple guesses with looping
-        To create an infinite loop
-            loop {}
-    Quitting after a correct guess  
-        break 
-            match guess.cmp(&secret_number) {
-            Orderning::Less => println!("Too small!");
-            Orderning::Greater => println!("Too big!");
-            Orderning::Equal => {
-                println!("You win!");
-                break;
-            }
-    Handling Invalid Input  
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num;
-            Err(_) => continue;
-        };
+## Input/output library
+`use std::io; //to use a library, at the begginning of the code`
+
+## Storing values with variables
+Create a variable to store user Input   let mut guess = String::new();
+- To define : `let apples = 5;`
+- To define a mutable variable we add mut : `let mut apples = 5;`
+
+
+## Associated function 
+We can associate a function to a type like in the guessing game  : `let mut guess = String::new();`
+
+## Receiving User Input
+If we include `use std::io;`, we can "now call the `stdin` function from the io module, which whill allow us to handle user input : "
+
+```
+io::stdin()
+    .read_line(&mut guess)
+```
+
+Si nous n'avions pas inclut `use std::io;`, nous pouvons toujours écrire dans le programme : 
+
+```
+std::io::stdin()
+    .read_line(&mut guess)
+```
+
+## Handling potential failure
+```
+std::io::stdin()
+    .read_line(&mut guess)
+    .expect("Failed to read line"); // could have been written : io::stdin().read_line(&mut guess).expect("Failed to read line");
+```
+      
+`io::Result` : (read_line return a io::result that will be handle by the expect method)
+
+Rust has a number of types named Result 
+
+The type of result is enumerations or enums, can have a fixed set of possibilities knows as variants.
+
+Enums are often use with the conditional match
+            
+The purpose of Result types is to encode error-handling information
+            
+Result variant are 
+- Ok : operation is successful and inside ok is the successfully generated value
+- Err : operation has failed and err contains information about how or why the operation failed --> Expect method to manage io::result.
+
+## Printing values with println! placeholders
+`println!("You guessed: {}", guess);`
+
+The bracket are the placeholders and it's will show the value  of the variable by order.
+    
+## Generating a Secret Number
+
+Crate are use to have more functionality
+        
+"Before we can write code that uses rand, we need to movify the Cargo.toml file to include the rand crate as a dependency."
+```
+[dependencies]
+rand = "0.8.3" //   We should read in this example, any version at least 0.8.3 but below 0.9.0
+```
+
+Cargo use Semantic versioning
+        
+To update a crate : `cargo update`, it's will change for example rand from v0.8.3 -> v0.8.4
+## Random numbers
+`use rand::Rng;`
+            
+`rand::thread_rng()` :  give us the particular random number generator, one that is local to the current thread of execution and seeded by the operating system
+
+`gen_range()` : take the range in parameters, for example  :
+
+`gen_range(1..101)` = 1.. = 100
+   
+
+## Comparing the Guess to the Secret Number   
+__Ordering__ type is an enum. 
+- Variants can be : less, greater and equal
+        
+__Match expression__ are made of arms
+- _Arms_ : are pattern to match against and the code that should be run if the value given to match fits that arm's pattern. 
+
+__Type errors__ 
+We compare the number with a string, but we need a number.
+        
+`let guess : u32 = guess.trim().parse().expect("Please type a number!");`
+- `trim()` : eliminate the \n and \r
+- `parse()` : parses a string into some number    
 
 # Chapter 3 : Common programming concepts
 ### Keywords
@@ -259,7 +256,7 @@ Exemple : `let guess: u32 = "42".parse().expect("Not a number!");`
 Broken exemple : `let guess = "42".parse().expect("Not a number!");`
 `error[E0282]: type annotations needed`
 
-###__Scalar types__  :
+### __Scalar types__  :
 
 Represent a __single value__. 
 
@@ -297,6 +294,7 @@ See `/doc-rust-lang/Chapter3/NumericOperation`
 Value : Can be true or false
 
 Size : one byte
+
 Ex : 
 ```
 let t = true; // Implicit annotation
@@ -308,11 +306,11 @@ let f: bool = false; // Explicit type annotation
 
 Char is the most primitive Rust alphabetic type
                     
-Wrap in ''
+Wrap in `''`
 
 Size : A char is four bytes, which is more than ASCII accepted as char in Rust
         
-## Compound types  
+### Compound types  
 
 Primitives compound types in rust : __tuples__ and __arrays__
 
@@ -321,9 +319,10 @@ A general way of grouping a number of values with a variety of types into one co
                 
 Fixed length : once declared, they cannot grow or shrink in size
                 
-Creating tuples 
+__Creating tuples__ :
                 
 Writing a comma-seperated list of values inside parentheses
+
 ```
 let tup: (i32, f64, u8) = (500, 6.4, 1);
 let (x, y, z) = tup; // destructure a tuple value to call individual variables of the tuple
@@ -343,180 +342,298 @@ tuples without any value is writting (), it's called unit
 
 
 
-Array Type
-                Every element of an array must have the same type
-                Syntax : let a = [1, 2, 3, 4, 5];
-                Array in Rust have a FIXED length
-                    To have a flexible list we use a vector not an array. 
-                To define the type of element
-                    let a: [i32; 5] = [1, 2, 3, 4, 5]; 
-                To initialize an array to contain the same value for each element   
-                    let a = [3;5]; //same as let a = [3, 3, 3, 3, 3];
-                Accessing Array Elements
-                    An array is a single chunk of memory of a known, fixed size that can be alocated on the stack. 
-                    Accessing thtrough indexing.
-                    Ex: let first = a[0]; let second = a[1];
-                    Invalid Array Element Access
-                        If the index is > than the number of element  = error
-                        Rust check during runtime to see if it's higher and show a message error in the terminal. 
-        Functions
-            Main : entry point of many programs.
-            fn : keyword to declare a new function
-            function names
-                Snake case: all lowercase with underscore to separate words.
-            Curly bracket show the bound of the function : where it's start and ended.
-        Parameters
-            Parameters are special variable that aare part of a function's signature. 
-            The concrete value of a parameters are arguments. 
-            The parameters and arguments are seperated with comma. 
-        Statements and Expressions
-            The bodies of function are made up of a series of statements optionnaly ending in an expression. 
-            Rust is an expression-based language. 
-            Statements : instruction that perform action but do not return a value. 
-                Function definitions are also statements
-            Expression evaluate a resulting value. 
-                Calling a function or a macro is an expression
-                A new scope block created with curly bracket is an expression       
-                    fn main() {
-                        let y = {          //all in this bracket is an expression.
-                            let x = 3;
-                            x + 1  //expressions do not include ending semicolons, adding a semicolons turn it into a statement and will then not return a value. 
-                        };
-                        println!("The value of y is: {}", y);
-                    }
-            Compare to other language such as C or Ruby, we cannot do x= y = 6.
-        Functions with Return Values
-            We don't name return values but we must declare their type after an arrow (->)
-            In Rust, the return value function is the value of the final expression in the block of the body of a function.
-                We can use the keyword and specifying a value, but most functions return the last expression implicitly. 
-        Comments
-            Ignore by the compiler
-            Written with // or /* comment */
-        Control Flow
-            The ability to run some code depending on a if condition or to run some code repeatedly while a condition is true.
-            if expression   
-                Branch the code depending on condition
-                    Called arms
-                Start with if keyword
-                Condition must be a bool, if the condition isn't a bool, wwe will get an error. 
-            Handling multiple conditions with else if
-                You can use multiple conditions by combining if and else in an else if expression. 
-                    match is better for a lot of else if
-            Using if in a let statement
-                Because if is an expression, it can be use on the right side of a let statement 
-                    let condition = true;
-                    let number = if condition {5} else {6};
-            Repetition with Loops
-                Repeating code with loop    
-                    Infinite loop.
-                    break to exit the loop
-                    continue : to skip to the next iteration
-                    break and continue applie to the innermost loop (if there is loops within loops)
-                Label loop  
-                    'counting_up: loop {} // this loop is called 'counting_up
-            Returning Values from Loops 
-                we can write it like this : break variables * 2; // on the last line of the loop
-            Conditional Loops with while
-                While the condition of the loop is true, the loop runs, otherwise it's will breaks
-                    Could be done with loop, if and else, but Rust has a buil-in lnaguage construct for that : while loop
-                    while number != 0 { 
-                        println!("{}", number);
-                        number -= 1;
-                    }
-            Looping Through a Collection with for
-                Can be use to iterate over an elements of a collection such as an array. 
-                    while index < 5 {
-                        println!("the value is : {}", a[index]);
+__Array Type__:
 
-                     index += 1;
-                    }
-                    or
-                    for element in a {
-                        println!("the value is: {}", element);
-                         
-                    }
-                Range function and reverse 
-                    generate all numbers in sequence starting from one number and ending before another number
-                        for number in(1..4).rev(){
-                            println!("{}!}, number);
-                        }
+Every element of an array must have the same type
+
+Syntax : `let a = [1, 2, 3, 4, 5];`
+
+Array in Rust have a FIXED length
+                    
+To have a flexible list we use a vector not an array. 
+
+To define the type of element
+
+`let a: [i32; 5] = [1, 2, 3, 4, 5]; `
+
+To initialize an array to contain the same value for each element   
+
+`let a = [3;5]; //same as let a = [3, 3, 3, 3, 3];`
+
+__Accessing Array Elements__ :
+
+An array is a single chunk of memory of a known, fixed size that can be alocated on the stack.
+
+__Accessing thtrough indexing__
+
+Ex: `let first = a[0]; let second = a[1];`
+
+Invalid Array Element Access
+
+If the index is > than the number of element  = error
+Rust check during runtime to see if it's higher and show a message error in the terminal. 
+        
+## Functions
+
+`main` : entry point of many programs.
+
+`fn` : keyword to declare a new function
+
+The Rust function __naming convention__ : snake case, which is all lowercase with underscore to separate words.
+
+__Curly bracket__ show the bound of the function : where it's start and ended.
+
+__Parameters__ :
+
+Parameters "are special variable that are part of a function's signature."
+
+The concrete value of a parameters are arguments. 
+            
+The parameters and arguments are separated with comma. 
+
+__Statements and Expressions__ :
+
+The bodies of function are "made up of a series of statements optionnaly ending in an expression." 
+            
+Rust is an expression-based language. 
+            
+Statements are instruction that __perform__ action but do not return a value.  
+Function definitions are also statements
+            
+Expressions __evaluate__ a resulting value. 
+
+Calling a function or a macro is an expression as is creating a new scope block with curly bracket.
+```
+fn main() {
+    let y = {          //all in this bracket is an expression.
+        let x = 3;
+        x + 1  //expressions do not include ending semicolons, adding a semicolons turn it into a statement and will then not return a value. 
+    };
+    println!("The value of y is: {}", y);
+}
+```
+
+            
+__Functions with Return Values__ :
+
+We don't name return values but we must declare their type after an arrow (->)
+            
+In Rust, the return value function is the value of the final expression in the block of the body of a function.
+                
+We can use the keyword and specifying a value, but most functions return the last expression implicitly. 
+
+
+## Comments
+Ignore by the compiler
+
+Written with `//` or `/* comment */`
+
+## Control Flow
+         
+The ability to run some code depending on a if condition or to run some code repeatedly while a condition is true.
+
+__if expressions__ :
+
+Branch the code depending on condition, each new branch is called an arm
+
+Start with `if` keyword
+                
+Condition must be a bool, if the condition isn't a bool, we will get an error. 
+            
+__Handling multiple conditions with else if__ :
+
+You can use multiple conditions by combining if and else in an else if expression. 
+
+```
+fn main() {
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    } else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    }else if number % 2 == 0 {
+        println!("number is divisible by 2");
+    } else {
+        println!("number is not divisible by 4,3, or 2");
+    }   
+}
+```
+
+When we have a lot of `if`  and `else`, the `match` is better
+            
+__Using if in a let statement__ :
+
+Because if is an expression, it can be use on the right side of a let statement 
+```
+fn main() {
+    let condition = true;
+    let number = if condition {5} else {6};
+    println!("The value of number is : {number}");
+}
+```
+__Repetition with Loops__ :
+
+Repeating code with loop    
+
+```
+fn main() {
+    loop {
+        println!("again!");
+    }
+}
+```
+Infinite loop, will need a `break` to exit the loop
+
+continue : to skip to the next iteration
+
+break and continue applie to the innermost loop (if there is loops within loops)
+                
+Label loop  
+```
+'counting_up: loop {} // this loop is called`
+```
+
+Returning Values from Loops : `break variables * 2; // on the last line of the loop`
+            
+__Conditional Loops with while__ :
+
+While the condition of the loop is true, the loop runs, otherwise it's will breaks
+                    
+Could be done with loop, if and else, but Rust has a buil-in language construct for that : while loop
+
+```
+fn main() {
+    let mut number = 3;
+
+    while nunmber != 0{
+        println!("{number}");
+
+        number -= 1;
+    }
+    println!("LIFTOFF!!!");
+}
+```
+            
+__Looping Through a Collection with for__ :
+
+Can be use to iterate over an elements of a collection such as an array. 
+
+```
+fn main() {
+    let a = [10,20,30,40,50];
+    let mut index = 0;
+
+    while index < 5 {
+    println!("the value is : {}", a[index]);
+
+    index += 1;
+    }         
+}
+```
+Range function and reverse generate all numbers in sequence starting from one number and ending before another number
+```
+for number in(1..4).rev(){
+    println!("{}!}, number);
+}
+```
 # Chapter 4 : Understanding Ownership                 
 ## 4.1 What is Ownership
-    Enable Rust to make memory safety guarantess without a garbage collector.
-    Set of rules that governs how a Rust program manages memory
-        Ways to manage memory
-            Garbage collection
-            Manually manage memory
-            Ownership
-    The Stack and the Heap (la pile et le tas)
-        Both are parts of memory available to your code to use at runtime
-        Stacks :
-            stores values in the order it gest them and removes the values in the opposite order. Last in, first out. 
-                Adding data : pushing onto the stack
-                Removing data : popping of the stack
-                All date must have a fixed sized in a stack. 
-                Unknown data sized must go in the heap. 
-        Heap    
-            Less organized
-            Putting data through a request with an amount of space. 
-                Allocating on the heap : The memory allocators finds an empty spot in the heap big enough and mark it and return a pointer (the address of that location)
-                    Take more times than with Stacks
-                        
-        Ownership rules 
-            Each value in Rust has a variable that's called its owner
-            There can only be one owner at a time.
-            When the owner goes out of scope, the value will be dropped. 
-        Variable Scope
-            The scope is the range within a program for which an item is valid. 
-                A variable is valid when into scope 
-                The variable remain valid until out of scope
-        The String Type 
-            string literals : They are immutable
-            String type (the other one) : 
-                Manages data allocated on the heap and as such is able to store an amount of text that is unknow to the compiler
-            let s = String::from("hello");
-            :: operator allow to namespace from
-        Memory and Allocation
-            string literal : the content is known at compile time
-                The text is hardcoded directly into the final executable. 
-                Fast and efficient. 
-            String type : 
-                Mutable and growable
-                We need to allocate an amount of memory to the heap unknown at compile time
-                    The memory must be requested from the memory allocator at runtime. 
-                        Done when we call String::from
-                    We need a way to returning this memory to the allocator when we're done with our String. 
-                        Only one allocate and only one free
-                With rust : the memory is automatically returned once the variable that owns it goes out of scope. 
-                    with drop (automatically at the closing curly bracket)
-        Ways Variables and Date Interact : *move*
-            Not a shallow copy and a deep copy like other language  
-            It's a move in this case. 
-            For normal data type   
-                let x = 5;
-                let y = x; 
-                Nothing special 
-            With String 
-                let s1 = String::from("hello");
-                let s2 = s1;
-                it's not copy it's a ptr. 
-                So s2 copy the ptr of s1. 
-                When s1 go out of scope, there would be a double free error.  (because Rust automatically calls the drop function and cleans up the heap memory of that variable when it's out of scope.)
-                    That's why once we move s1 to s2, s1 doesnt work anymore. 
-                Can be mutatated 
-                    let mut s = String::from("hello");
-                    s.push_str(", world!"); // push_str() appends a literal. 
-                    println!("{}", s); // This will print 'Hello World!'
-        Ways Variables and Data Interact : *Clone*
-            To copy the heap data of the String and not only the stack data : Clone
-                let s1 = String::from("hello");
-                let s2 = s1.clone();`
-        Stack-Only Data : Copy
-            This is ok : 
-                let x = 5;
-                let y = x;
-                println!("x = {}, y = {}", x, y);
-            Because integer have known size and are entirely stock on the stack.
+Enable Rust to guarantees memory safety without a garbage collector.
+
+### Ownership
+Set of rules that governs how a Rust program manages memory
+
+__The Stack and the Heap (la pile et le tas)__ :
+
+Both are parts of memory available to your code to use at runtime       
+- Stacks : stores values in the order it gest them and removes the values in the opposite order. Last in, first out. 
+    - Adding data : pushing onto the stack
+    - Removing data : popping of the stack
+    - All date must have a fixed sized in a stack. 
+    - Unknown data sized must go in the heap. 
+- Heap : less organized and require the size of the variable. Slower than the stack but more flexible.  
+    - Allocating on the heap : The memory allocators finds an empty spot in the heap big enough and mark it and return a pointer (the address of that location)           
+        
+### Ownership rules
+- Each value in Rust has a variable that's called its owner
+- There can only be one owner at a time.
+- When the owner goes out of scope, the value will be dropped. 
+        
+### Variable Scope
+The scope is the range within a program for which an item is valid. 
+
+
+A variable is valid when into scope and remains valid until out of scope
+        
+__The String Type__ : 
+- string literals : They are immutable
+- String type (the other one) : Manages data allocated on the heap and as such is able to store an amount of text that is unknow to the compiler : `let s = String::from("hello");`
+
+### Memory and Allocation
+- string literal : the content is known at compile time
+    - The text is hardcoded directly into the final executable. 
+    - Fast and efficient. 
+            
+- String type : 
+    - Mutable and growable
+    - We need to allocate an amount of memory to the heap unknown at compile time
+    - The memory must be requested from the memory allocator at runtime. Done when we call `String::from`
+    - Only one allocate and only one free
+
+With rust : the memory is automatically returned once the variable that owns it goes out of scope with drop (automatically at the closing curly bracket)
+
+
+### Ways Variables and Date Interact : *move*
+Moving through binding a copy : 
+```
+let x = 5;
+let y = x;
+```
+
+"We now have two variables, x and y, and both equal 5. This is indeed what is happening, because integers are simple values with a known, fixed size, and these two values are pushed onto the stack."
+
+
+Trying to do the same thing with the  String type :
+```
+let s1 = String::from("hello");
+let s2 = s1;
+```
+
+In that case, it's not a copy it's a ptr. 
+
+So s2 copy the ptr of s1. 
+                
+When s1 go out of scope, there would be a double free error.  (because Rust automatically calls the drop function and cleans up the heap memory of that variable when it's out of scope.)
+                    
+That's why once we move s1 to s2, s1 doesnt work anymore. 
+
+Can be mutatated 
+```
+let mut s = String::from("hello");
+s.push_str(", world!"); // push_str() appends a literal. 
+println!("{}", s); // This will print 'Hello World!'
+```
+
+### Ways Variables and Data Interact : *Clone*
+To copy the heap data of the String and not only the stack data, we can Clone it :
+                
+```
+let s1 = String::from("hello");
+let s2 = s1.clone();
+
+println!("s1 = {}, s2 = {}", s1, s2);
+```
+
+Stack-Only Data : Copy
+
+```
+let x = 5;
+let y = x;
+println!("x = {}, y = {}", x, y);
+```
+
+Because integer have known size and are entirely stock on the stack.
             Copy trait : if a type implements the Copy Trait, a variable is still valid after assignment to another variable. 
                 Rust wont let us add copy trait to a type that has implemented the drop trait. 
             Type that implement copy    
