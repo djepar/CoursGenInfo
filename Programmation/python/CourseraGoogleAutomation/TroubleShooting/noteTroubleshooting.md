@@ -365,3 +365,39 @@ Should include :
 - The short-term remediation you applied
 - The long-term remediation you applied
 """
+
+# Managing Resources
+## Memory Leaks and How to Prevent Them
+**Memory leaks** : "A chunk of memory that's no longer needed is not release"
+**Garbage collector**: "In charge of freeing the memory that's no longer in use"
+**Memory profiler** : To checkhow the memory is being used
+    In C and C++ : Valgrind
+    In Python : a bunch of tool : 
+
+## Managing Disk Space
+Used of disk space 
+- Installed binaries and libraries
+- Data stored by the applications
+- Cached information
+- Logs
+- Temporary files
+- Backups
+
+Running out of space create bug and problems.
+
+## Network Saturation
+**Latency** : The delay between sending a byte of data from one point and receiving it on the other. 
+
+**Bandwidth** : How much data can be sent or received in a second. 
+
+** Trafic shapping ** : A way of marking a data packets sent over the network with different priorities to avoid huge chunks of data use all of the bandwidth.
+
+## Dealing with Memory Leaks
+**Scroll buffer** : Feature that lets us scroll up and see the things that we executed and their output. 
+
+**Decorator** : Used in Python to add extra behavior to functions without having to modify the code.
+
+# Managing Our Time
+## Getting to the Important Tasks
+**Technical dept** : The pending work that accumulates when we choose a quck-and-easy solution instad of applying a sustainable long-term one.
+
