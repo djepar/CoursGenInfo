@@ -201,3 +201,542 @@ Use for the **props drilling problem**, when passing data through all component 
 ** Context application programming interface (Context API)** :
   - Alternative way to pass data
   - Useful for global state
+
+## How re-rendering works with Context
+"When it comes to the default behavior of React rendering, if a component renders, React will recursively re-render all its children regardless of props or context."
+
+"Imagine the following component structure, where the top level component injects a Context provider at the top : 
+`App (ContextProvider) > A > B > C`
+```
+const App = () => {
+  return (
+    <AppContext.Provider>
+    <ComponentA />
+    </AppContext.Provider>
+  );
+};
+const ComponentA = () => <ComponentB />;
+const ComponentB = () => <ComponentC />;
+const ComponentC = () => null;
+```
+"
+It's will re-render like this : 
+`App (contextProvider) -> A -> B -> C`
+
+Can be bad for the performance. "To mitigate this issue, you cna make use of the top level API React.memo()."
+
+"If your component renders the same result given the same props, you can wrap it in a call to `React.memo` for a performance boost by memoizing the result"
+
+**Memoization** : "is a programming technique to accelerates performance by caching the return values of expensive function calls. "
+
+```
+const App = () => {
+  return (
+    <AppContext.Provider>
+    <ComponentA />
+    </AppContext.Provider>
+  );
+};
+const ComponentA = React.memo(() => <ComponentB />);
+const ComponentB = () => <ComponentC />;
+const ComponentC = () => null;
+```
+
+"A good rule of thumb is to wrap the React component right after your context provider with `React.memo`."
+
+New scenario from the previous example "where the context value that gets injected is defined as an object called value with two properties, 'a' and 'b', being both strings. Also, ComponentC is now a consumer of context, so any time the provider `value` prop changes, `ComponentC` will re-render. "
+
+```
+const App = () => {
+  const value = {a: 'hi', b: 'bye'};
+  return (
+    <AppContext.Provider value={value}>
+    <ComponentA />
+    </AppContext.Provider>
+  );
+};
+const ComponentA = React.memo(() => <ComponentB />);
+const ComponentB = () => <ComponentC />;
+const ComponentC = () => {
+  const contextValue = useContext(AppContext);
+  return null;
+};
+```
+
+"imagine that the value prop from the provider changes to `{a: 'hello', b: 'bye'}`.
+
+If that happens, the sequence of re-render would be : 
+
+`App (ContextProvider) -> C`"
+
+The problem is the ComponentC get re-rendered even though the provider value doesn't seem to change (ish paraphrasé)
+
+"Because object comparison in JavaScript is done by reference. Every time a new re-render happens in the App component, a new instance of the value object is created, resulting in the provider performing a compaison agaisnt its previous value and determining that it has changed, hence informing all context consumers that they should re-render." 
+
+To resolve this we use `useMemo`
+
+
+```
+const App = () => {
+  const a = 'hi';
+  const b = 'byes';
+  const value = useMemo(() => ({a,b}), [a,b]);
+  return (
+    <AppContext.Provider value={value}>
+    <ComponentA />
+    </AppContext.Provider>
+  );
+};
+const ComponentA = React.memo(() => <ComponentB />);
+const ComponentB = () => <ComponentC />;
+const ComponentC = () => {
+  const contextValue = useContext(AppContext);
+  return null;
+};
+```
+
+
+# Getting started with hooks
+## Revising useState hook
+Array destructuring : "a way to get individual items from an array of items and save thoes individual items as separate components"
+
+Exemple : 
+```
+let veggies = [parsley, onion, carrot];
+const [v1, v2, v3] = veggies;
+```
+We can give any name we want to the items of the new array. 
+
+Object destructuring : we have to destructured a property of an object using that exact properties name as the name of the destructured variable. 
+
+For that reason, React use a Array data structure used as return value of **useState hook**
+
+## Working with complex data in useState
+
+How to use object as state variables when using useState
+
+Intuitively we could try "of holding state in an object and updating it based on user-generated events" 
+
+```
+import { useState } from "react"; 
+ 
+export default function App() { 
+  const [greeting, setGreeting] = useState({ greet: "Hello, World" }); 
+  console.log(greeting, setGreeting); 
+ 
+  function updateGreeting() { 
+    setGreeting({ greet: "Hello, World-Wide Web" }); 
+  } 
+ 
+  return ( 
+    <div> 
+      <h1>{greeting.greet}</h1> 
+      <button onClick={updateGreeting}>Update greeting</button> 
+    </div> 
+  ); 
+} 
+```
+
+It's costly because it's change the whole object. 
+
+### The suggested approach
+
+"to copy the state object and then update the copy." with -> `...`
+
+```
+import { useState } from "react"; 
+ 
+export default function App() { 
+  const [greeting, setGreeting] = useState({ greet: "Hello, World" }); 
+  console.log(greeting, setGreeting); 
+ 
+  function updateGreeting() { 
+    const newGreeting = {...greeting}; 
+    newGreeting.greet = "Hello, World-Wide Web"; 
+    setGreeting(newGreeting); 
+  } 
+ 
+  return ( 
+    <div> 
+      <h1>{greeting.greet}</h1> 
+      <button onClick={updateGreeting}>Update greeting</button> 
+    </div> 
+  ); 
+} 
+```
+
+### Updating the state object using arrow functions 
+
+How to change the state object when only one propertie change and the rest remain unchanged.
+
+``` 
+import { useState } from "react"; 
+ 
+export default function App() { 
+  const [greeting, setGreeting] = useState( 
+    { 
+        greet: "Hello", 
+        place: "World" 
+    } 
+  ); 
+  console.log(greeting, setGreeting); 
+ 
+  function updateGreeting() { 
+    setGreeting(prevState => { 
+        return {...prevState, place: "World-Wide Web"} 
+    }); 
+  } 
+ 
+  return ( 
+    <div> 
+      <h1>{greeting.greet}, {greeting.place}</h1> 
+      <button onClick={updateGreeting}>Update greeting</button> 
+    </div> 
+  ); 
+} 
+```
+
+## Side Effects 
+
+Pure function  : 
+  - had no side effects
+  - Always return the same out put
+
+Example of a pure function : 
+```
+function EstablishedYear(props) {
+  return <h1>Established year: {props.year}</h1>
+}
+function App() {
+  return <EstablishedYear year={2030}/>
+
+}
+export default App;
+```
+
+Impure function : 
+  - has side effects
+  - Performs a side effect 
+      - invoke console.log
+      - invoke fetch
+      - invoke geolocation
+
+Example of an impure function
+```
+function ShoppingCart(props) {
+  const total = props.count * props.price;
+  console.log(total)
+  return <h1>Total: {total}</h1>
+}
+export default function App(){
+  return (
+    <ShoppingCart items={5} pricePerItem={10}/>
+  )
+}
+```
+## useEffect hoook
+
+
+With useEffect hook
+```
+function ShoppingCart(props) {
+  const total = props.count * props.price;
+  useEffect(()=> console.log(total), []);
+
+  return <h1>Total: {total}</h1>
+}
+```
+
+
+"The code you place inside the `useEffect` hook always runs after your component mounts or, in other words, after React has updated the DOM"
+
+If there is no second argument, "the effect will run after every render." : 
+
+```
+useEffect(() => {
+  document.title = "Little Lemon";
+});
+```
+
+"A way to instruct React to skip applying an effect is passing an array as a second parameter to `useEffect` : 
+
+```
+useEffect(() => {
+  document.title = `Little Lemon, v${version}`;
+}, [version]); // only re-run the effect if version changes.
+```
+
+"React doesn't limit you in the number of effects your component can have. In fact, it encourages you to group related logic together in the same effect and break up unrelated logic into different effects."
+
+``` 
+function MenuPage(props) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    document.title = 'Little Lemon';
+  }, []);
+
+  useEffect(() => {
+    fetch(`https://littlelemon/menu/${id}`)
+    .then(response => response.json())
+    .then(json => setData(json));
+  }, [props.id]);
+}
+```
+
+## Effects with Cleanup
+
+To avoid memory leak, we need to clean up resources when some side effects are in effect. 
+
+Example ("you may want to set up a subscription to an external data source. In that scenario, it is vital to perform a cleanup after the effect finishes its executions")
+
+```
+function LittleLemonChat(props) { 
+  const [status, chatStatus] = useState('offline'); 
+
+  useEffect(() => { 
+    LemonChat.subscribeToMessages(props.chatId, () => setStatus('online')) 
+
+    return () => { 
+      setStatus('offline'); 
+      LemonChat.unsubscribeFromMessages(props.chatId); 
+    }; 
+  }, []); 
+
+  // ... 
+} 
+```
+
+# Rules of Hooks and Fetching Data with Hooks
+
+## Hooks rules
+
+- Only call hooks from a React component function
+  - This mean we should not call hooks from JS function, but only from React component
+  - The setState can be use wherever
+- Only call hooks at the top level
+  - "The second rule means you must call your hooks before a return statement outside of loops, conditions or nested functions."
+- You can call multiple state of effect hooks
+  - "There can be multiple hook calls as long as they are always in the same order."
+- Make multiple hook calls in the same sequence
+  - The condition must be inside de hook.
+
+## Things to know before fetching data
+
+"Fetch is used to make a server requests to retrieve some JSON data from it. 
+Fetch API is a set of functionalities that we have at our disposal to use in JavaScript to make such server request."
+
+"When JavaScript uses the fetch function it is delegating duties to an external API so that it can continue its process. This is known as asynchronous JavaScript"
+
+## Data fetching using hooks
+
+"there is only one more ingredient that you need to keep in mind when working with React, namely, that fecthing data from a third-party API is considered a side-effect.
+[...]
+you need to use the useEffect hook to deal with using the Fetch API calls in React."
+
+```
+import { useState, useEffect } from "react"; 
+ 
+export default function App() { 
+  const [btcData, setBtcData] = useState({}); 
+  useEffect(() => { 
+    fetch(`https://api.coindesk.com/v1/bpi/currentprice.json`) 
+      .then((response) => response.json()) 
+      .then((jsonData) => setBtcData(jsonData.bpi.USD)) 
+      .catch((error) => console.log(error)); 
+  }, []); 
+ 
+  return ( 
+    <> 
+      <h1>Current BTC/USD data</h1> 
+      <p>Code: {btcData.code}</p> 
+      <p>Symbol: {btcData.symbol}</p> 
+      <p>Rate: {btcData.rate}</p> 
+      <p>Description: {btcData.description}</p> 
+      <p>Rate Float: {btcData.rate_float}</p> 
+    </> 
+  ); 
+} 
+```
+
+In case there is a delayed, we should put two renderer "whether or not the data has been successfully fetched."
+
+Example : 
+```
+return someStateVariable.length > 0 ? (
+  <div>
+    <h1>Data returned : </h1>
+    <h2>{someStateVariable.results[0].price} </h2>
+  </div>
+) ; (
+  <h1>Data pending...</h1>
+);
+```
+
+## Fetching data
+
+"The fetchData function initially fetches data from the randomuser.me API, next it retrieves a response form the API in JSON format, and finally updates the state variable with the returned data."
+
+
+# Advance hooks
+
+## useReducer
+
+useState : 
+  - Initial state
+
+useReducer :
+  - Initial state and reducer function
+
+
+Example of useReducer : 
+
+```
+import {useReducer} from 'react';
+import './App.css';
+
+const reducer = (state, action) => {
+  if (action.type === 'buy_ingredient') return {money: state.money - 10};
+  if (action.type === 'sell_a_meal') return {money: state.money + 10};
+  return state
+}
+
+fucntion App() {
+  const initialState = {money: 100};
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div className="App">
+      <h1> Wallet: {state.money}</h1>
+      <div>
+        <button onClick={() => dispatch({type: 'buy_ingredients'})}>Shopping for veggies</button>
+        <button onClick={() => dispatch({type: 'sell_a_meal'})}>Serve a meal to the customer</button>
+      </div>
+    </div>
+  )
+}
+
+export default App;
+``` 
+
+## When to choose useReducer vs useState
+
+useState :
+  - When the data is less complex (primitive data like string numbers or booleans.) 
+
+useReducer
+  - for more complex data like arrays and objects. 
+
+
+## useRef to access underlying DOM
+
+Example : 
+
+```
+import React from "react";
+import './App.css';
+
+fucntion App() {
+  const formInputRef = React.useRef(null);
+
+  const focusInput = () => {
+    formInputRef.current.focus();
+  }
+  return (
+    <>
+      <h1>Using useRef to access underlying Dom</h1>
+      <input ref={formInputRef} type="text" />
+      <button onClick={focusInput}>
+      Focus input
+      </button>
+    </>
+  );
+}
+
+export default App;
+
+```
+
+## Custom hooks
+
+"In essence, hooks give you a repeatable, streamlined way to deal with specific requirements in your React apps. For example, the `useState` hook gives us a reliable way to deal with state updates in React components."
+
+"A custom hook is simply a way to extract a piece of functionality that you can use again and again. Put differently, you can code a custom hook when you want to avoid duplication or when you do not want to build a piece of functionality from scratch across multiple React projects. By coding a custom hook, you can create a reliable and streamlined way to reuse a piece of functionality in your React apps."
+
+Example : 
+```
+import { useState} form "react";
+import useConsoleLog from "./useConsoleLog";
+
+
+
+function App() {
+  const [count, setcount] = useState(0);
+  useConsoleLog(count);
+
+  function increment(){
+    setCount(prevCount => prevCount + 1)
+  }
+  return (
+    <div>
+    <h1>Count: {count}</h1>
+    <button onClick={increment}> Plus 1</button>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+Other page of the example (a file name useConsoleLog.js)
+
+```
+import {useEffect} from "react";
+
+function useConsoleLog(varName) {
+  useEffect(() => {
+    console.log(varName);
+  }, [varName]);
+}
+
+export default useConsoleLog;
+
+```
+
+
+# JSX Deep Dive
+
+## JSX, Components and Elements
+
+JSX : Syntax extension to JavaScript (JS)
+
+React : Uses JSX to describe UI appearance
+
+## Component composition with children
+
+Containment : "refers to the fact that some components donèt know their children ahead of time. This is especially common for components like a sidebar or a dialog."
+
+Example of a dialog
+
+```
+function Dialog(props){
+  return (
+    <div className="modal">
+      {props.children}
+    </div>
+  );
+}
+
+function ConfirmationDialog() {
+  return(
+    <Dialog color="blue">
+      <h1 className="Dialog-title">
+        Thanks!
+      </h1>
+      <p className="Dialog-message">
+      We'll process your order in less than 24 hours.
+      </p>
+    </Dialog>
+  );
+}
