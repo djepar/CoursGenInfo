@@ -740,3 +740,137 @@ function ConfirmationDialog() {
     </Dialog>
   );
 }
+```
+
+## Types of Children
+
+"In JSX expressions, the content between an opening and closing tag is passed as a unique prop called children."
+
+### The "types of JavaScript values that are ignored as children and don't render anything."
+
+#### String Literals
+"String lietrals refer to simple JavaScript strings. They can be put between the opening and closing tags, and the children prop will be that string."
+
+1. "JSX removes whitespaces at the beginning and end of a line, as well as blank lines"
+2. "New lines adjacent to tags are removed"
+3. "JSX condenses new lines that happen in the middle of string literals into a single space"
+
+#### JSX Elements
+"You can provide JSX elements as children to display nested components"
+
+``` 
+<Alert>
+  <Title/>
+  <Body/>
+</Alert>
+```
+
+"JSX also provide JSX elements as children to display nested components"
+<Alert>
+  <div>Are you Sure?</div>
+  <Body/>
+</Alert>
+```
+
+"A React component can also return a bunch of elements without wrapping them in an extra tag. For that, you can use React Fragments either using the explicit component imported from React or empty tags, which is shorter syntax for fragment. A react Fragment component lets you group a list of children without adding extra nodes to the DOM."
+
+They are both equivalents
+```
+return (
+  <React.Fragment>
+    <li>Pizza margarita</li>
+    <li>Pizza diavola</li>
+  </React.Fragment>
+);
+
+return (
+  <>
+    <li>Pizza margarita</li>
+    <li>Pizza diavola</li>
+  </>
+);
+```
+
+#### JavaScript Expression
+"You can pass any JavaScript expression as children by enclosing it within curly braces. {}. The bellow expressions are identical:"
+```
+<MyComponent>Little Lemon </MyComponent>
+<MyComponent>{'Little Lemon'}</MyComponent>
+```
+
+The last one is less used by convention.
+```
+function Dessert(props) {
+  return <li>{props.title}</li>
+}
+
+function List() {
+  const desserts = ['tiramisu', 'ice cream', 'cake'];
+  return (
+    <ul>
+    {desserts.map((dessert)) => <Item key={dessert} title={dessert} />}
+    </ul>
+  );
+}
+```
+
+#### Function
+
+"Suppose you insert a JavaScript expression inside JSX. In that case, React will evaluate it to a string, a React element, or a combination of the two. However, the children prop works just like any other prop, meaning it can be used to pass any type of data, like a functions.
+
+
+Function as children is a React pattern used to abstract shared functionality that you will see in detail in the next lesson."
+
+## Manipulating children dynamically in JSX
+
+2 Apis : 
+
+### React.CloneElement
+As a react global object
+```
+Import React from 'react';
+
+React.cloneElement(...)
+```
+
+Named import
+```
+Import {cloneElement} form 'react'
+cloneElement(...)
+```
+
+Syntax : React.cloneElement(element, [props])
+- Modify children properties
+- Add to children properties
+- Extend the functionality of children 
+
+```
+const buttonElement = {
+  type: SubmitButton,
+  props: {
+    color: "green",
+    children: "Submit!",
+  },
+};
+
+const output = React.cloneElement(buttonElement)
+
+
+--> the output 
+
+{
+  type:SubmitButton,
+  props:{
+    color: "green",
+    children: "Submit!",
+    disabled: false,
+  },
+};
+```
+
+### React.children
+A really useful function is React.Children.map(children, callback)
+
+
+ 
+
