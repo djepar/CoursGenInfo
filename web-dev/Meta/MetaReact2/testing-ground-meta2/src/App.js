@@ -3,6 +3,7 @@ import './App.css';
 import Title from './Title';
 import Body from './Body';
 import * as React from "react"; 
+import {useState, useEffect} from 'react';
 
 const Row = ({children, spacing}) => {
   const childStyle = {
@@ -23,6 +24,34 @@ const Row = ({children, spacing}) => {
   );
 };
 
+const withMousePosition = (WrappedComponent) => {
+  return (props) => {
+    const [mousePosition, setMousePosition] = React.useState({
+      x:0,
+      y: 0,
+    })
+
+    useEffect(() => {
+      const handleMousePositionChange = (e) => {
+        setMousePosition({
+          x: e.clientX,
+          y: e.clientY,
+        });
+      };
+      window.addEventListener("mousemove", handleMousePositionChange);
+      return () => {
+        window.removeEventListener("mouseover", handleMousePositionChange);
+      }
+    }, []);
+
+    return <WrappedComponent {...props} mousePosition={mousePosition} />;
+  }
+}
+
+const PanelMouseTracker = withMousePosition(PanelMouseLogger);
+const PointMouseTracker = withMousePosition(PointMouseLogger);
+
+
 
 function LiveOrders() {
   return (
@@ -39,6 +68,30 @@ function LiveOrders() {
 }
 
 
+const PanelMouseLogger = ({ mousePosition}) => {
+  if (!mousePosition) {
+    return null;
+  }
+
+  return (
+    <div className='BasicTracker'>
+      <p>Mouse position :</p>
+      ({mousePosition.x}, {mousePosition.y})
+    </div>
+  );
+};
+const PointMouseLogger = ({ mousePosition}) => {
+  if (!mousePosition) {
+    return null;
+  }
+  return (
+    <p>
+      ({mousePosition.x}, {mousePosition.y})
+    </p>
+  );
+};
+
+
 
 function App() {
   return (
@@ -46,6 +99,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      
+      <div>
+      <PanelMouseTracker />
+      <PointMouseTracker/>
+
+      </div>
+    
+
 
       <div>Bonjour</div>
       {/** JSX removes whitespaces at the beginning and end of a line, as well as blank lines  */}
@@ -87,7 +148,11 @@ function App() {
 
     <div>{true}</div>
       
+   
+
     </div>
+
+
   );
 }
 
