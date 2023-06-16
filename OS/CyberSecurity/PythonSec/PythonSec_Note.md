@@ -92,3 +92,29 @@
 
 ```
 from scapy.all import *
+
+
+
+# Create an HTTP packet
+http_packet = Ether() / IP(dst="www.google.com") / TCP() / "GET / HTTP/1.1\r\nHost: www.example.com\r\n\r\n"
+
+# Create a list of packets containing the HTTP packet
+packet_list = [http_packet]
+
+# Write the packets to the capture file
+wrpcap("http.cap", packet_list)
+
+# To see the information 
+packet 
+
+p = packet[0] 
+p.show()
+
+# Creating packet 
+p2 = IP()/TCP()
+p2.show()
+
+# changing a port
+p2[TCP].dport = 35
+
+p3 = IP(dst=8.8.8.8)/TCP(dport=53)
