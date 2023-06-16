@@ -872,5 +872,245 @@ const output = React.cloneElement(buttonElement)
 A really useful function is React.Children.map(children, callback)
 
 
- 
+## Spread Attributes
+
+### Spread operator
+"The spread operator is a great tool that enables the creation of more flexible components, especially when forwarding props automatically to other components that expect themn as well as providing your consumers with a nice component. 
+**Copy an object**: 
+```
+const order = {
+  id: 1, 
+  username: "John Doe",
+  item: "Pizza Margherita",
+  price: "30.00",
+};
+
+const orderCopy = {...order};
+
+const orderAmemnd = {
+  ...order,
+  item: "Pizza Proscuitto",
+};
+```
+
+** OrderList**: 
+```
+/** Normal version **/ 
+function OrderList() {
+  return (
+    <Order id="1" username="John Doe" item="Pizza Margherita" price="30.00" />
+  );
+
+ /** Simplified version **/ 
+function OrderList() {
+  const order =  {
+    id: 1,
+    username\ : ="John Doe",
+    item : "Pizza Margherita",
+    price: "30.00"
+  };
+  return <Order {...order} />
+  );
+} 
+}
+```
+
+
+# Reusing behavior
+
+## Cross-cutting concerns in React
+
+
+**Live orders list**:
+```
+function LiveOrdersList() {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const handleNewOrders = () => {
+      const newOrders = DataSource.getOrders();
+      setOrders(newOrders)
+    }
+    DataSource.addListener(handleNewOrders)
+
+    return () => {
+      DataSource.removeListener(handleNewOrders)
+    };
+  }, [])
+
+  return <LiveOrder orders={orders} />
+}
+```
+
+**Newsletter list**:
+```
+function NewsletterList() {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const handleNewUsers = () => {
+      const newUsers = DataSource.getSubscribers();
+      setUsers(newUsers)
+    }
+    DataSource.addListener(handleNewUsers)
+
+    return () => {
+      DataSource.removeListener(handleNewUsers)
+    };
+  }, []);
+
+  return <UserList users={users} />
+}
+```
+
+"You can imagine that in a large app the same pattern of subscribing to data source and setting local state with new data will occur over and over again. So far you have seen that our custom hook to encapsulate that logic is one of the solutions at your disposal, however, that introduces the issue of having to alter the implementation of each component that needs that data and thus making all of them stateful. 
+
+How could you define the subscription logic in a single place?
+
+Share it across many components and keep them unchanged and stateless."
+
+"Higher-order component (HOC) :  is an advanced pattern that emerges from React's compositional nature. 
+
+Specifically, a high-order component is a function that takes a component and returns a new component."
+
+```
+const withSubscription = (Wrapped Component, selectData) => {
+  return (props) => {
+    const [data,setData] = useState([]);
+  
+    useEffect(() => {
+      const handleChange = () => {
+        const newData = selectData(DataSource, props);
+        setData(newData)
+      }
+      DataSource.addListener(handleChange)
+
+      return () => {
+        DataSource.removeListener(handleChange)
+      };
+    }, []);
+
+    return <WrappedCoomponent data={data} {...props} />
+  }
+
+}
+```
+
+"A HOC transforms a component into another component. In other words, it enhances or extends the capabilities of the component provided."
+
+**HOC Usage**: 
+```
+const LiveOrdersListWithSubscription = withSubscription( 
+  LiveOrders,
+  () => DataSource.getOrders() 
+);
+
+const UsersSubscribedWithSubscription = withSubscription( 
+  UserList,
+  () => DataSource.getSubscribers()
+);
+```
+
+## Higher-order components
+
+"Higher-order component (HOC) as a pattern to abstract shared behavior, as well as a basic example of an implementation."
+
+### Best HOC pracctice
+
+**Don't mutate the original component**:
+```
+const HOC = (WrappedComponent) => {
+  // Don't do this and mutate the orignal component
+  WrappedComponent = () => {
+
+  };
+  ...
+}
+```
+**Pass unrelated props through to the Wrapped Component** :
+
+```
+const withMousePosition = (WrappedComponent) => {
+  const injectedProp = {mousePosition: {x:10, y: 10}};
+
+  return (originalProps) => {
+    return <WrappedComponent injectedProp={injectedProp} {...originalProps} />
+  }
+}
+```
+
+**Maximize composability**
+
+"`connect` is a function that returns a higher-order component, presenting a valuable property for composing several HOCs together"
+
+Syntax : `const EnhancedComponent = connect(selector, actions)(WrappedComponent);`
+
+```
+const enhance = compose(
+  //They are both single-arguments HOCs
+  withMousePosition,
+  withURLLocation,
+  connect(selector)
+);
+
+//Enhance is a HOC
+const EnhancedComponent = enhance(WrappedComponent);
+
+``` 
+
+`compose(f,g,h)` is the same as `(...args) => f(g(h(...args)))`
+
+**Caveats** :
+1. "Dont use HOCs inside other components: always create your enhanced components outside any component scope. Otherwise, if you do so inside the body of other components and a re-render occurs, the enhanced component will be different" That forces Reacts remount it instead of just updating it. As a result, the component and its children would love their previous state. "
+
+```
+const Component = (props) => {
+  //This is WRONG!!!!
+  const EnhancedComponent = HOC(WrappedComponent);
+  return <EnhancedComponent />;
+};
+
+//This is the correct way
+const EnhancedComponent = HOC(WrappedComponent);
+const Component = (props) => {
+  return <EnhancedComponent />;
+};
+```
+
+2. "Refs aren't passed through: since react refs are not props, they are handled specially by React. If you add a ref to an element whose component is the result of a HOC, the ref refers to an instance of the outermost container component, not the wrapped component. To solve this, you can use the React.forwardRefAPI."
+
+
+
+## Render Props
+
+Render props : "take functions that return React elements and call them inside their render logic".
+
+Example : 
+```
+<MealProvider render={data => (
+  <p>Ingredients: {data.ingredients}</p>
+)}>
+```
+
+# Integration tests with React Testing Library
+
+
+## React Testing Library
+
+Best practices :
+- "Avoid including implementation details
+- work with DOM nodes
+- Resemble software usage
+- Maintainability
+
+**Jest** : JavaScript test runner 
+  - Provides access to jsdom
+  - good iteration speed
+  - powerful features like moking"
+"Jest is a JavaScvript test runner that lets you access an artificial DOM called jsdom. While jsdom is only an approximation of how the browser works, it is often enough for testing React components"
+**React Testing Library**
+- Set of utilities 
+- fulfils testing best practices
+
+"React Testing Library is designed to fulfill all testing best practices out of the box, so that you are able to focus on the business logic your tests need to run assertions on."
 
