@@ -1114,3 +1114,12 @@ Best practices :
 
 "React Testing Library is designed to fulfill all testing best practices out of the box, so that you are able to focus on the business logic your tests need to run assertions on."
 
+
+## Continuous integration
+
+"Continuous Integration (CI) is a software development technique in which developers use a version control system, like Git, and push code changes daily, multiple times a day. Instead of building out features in isolation and integrating them atthe end of the development cycle, a more iterative approach is employed."
+
+Why CI? 
+
+"Having a shorter feedback loop involves more iterations. This number of iterations, not the number of hours invested, drives the process forward."
+
