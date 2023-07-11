@@ -16,4 +16,6 @@ How do these all work together? "When you visit a website on the internet you're
 - Availability : "Make sure our data is accessible and available when we need it."
   - Encryption/Authentification
 
+# Network Fundamentals
 
+## The 3-way handshake
